@@ -46,7 +46,7 @@ public class StartingScreen extends JFrame {
 	private JButton btnReset = new JButton("Reset");
 
 	private ImageIcon imgBackground = new ImageIcon(
-			new ImageIcon("images/fancyRoll.jpg").getImage().getScaledInstance(900, 860, Image.SCALE_SMOOTH));
+			new ImageIcon("program/images/fancyRoll.jpg").getImage().getScaledInstance(900, 860, Image.SCALE_SMOOTH));
 
 	private Font fontRadioButtons = new Font("Gabriola", Font.PLAIN, 24);
 	private Font fontHeader = new Font("Gabriola", Font.BOLD, 92); 

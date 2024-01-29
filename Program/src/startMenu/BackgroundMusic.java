@@ -5,6 +5,7 @@ import java.io.File;
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
+import javax.sound.sampled.FloatControl;
 
 /**
  * This class is used to select a music file. The chosen music file
@@ -57,7 +58,7 @@ public class BackgroundMusic extends Thread {
 	public void run() {
 		while(isPlaying && clip == null) {
 			try {
-				File musicPath = new File("music/bgMusic.wav");				
+				File musicPath = new File("program/music/bgMusic.wav");
 				AudioInputStream ais = AudioSystem.getAudioInputStream(musicPath);
 				clip = AudioSystem.getClip();
 				clip.open(ais);
