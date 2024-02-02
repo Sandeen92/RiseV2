@@ -14,7 +14,7 @@ public class Tax implements Tile {
 	private String info, tileName;
 	private static Player player;
 	private int taxToPay = 200;
-	private ImageIcon img = new ImageIcon("tilePics/tax.png");
+	private ImageIcon img = new ImageIcon("program/tilePics/tax.png");
 	
 	public Tax() {
 		

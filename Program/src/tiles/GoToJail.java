@@ -10,7 +10,7 @@ import javax.swing.ImageIcon;
  */
 public class GoToJail implements Tile {
 
-	private ImageIcon img = new ImageIcon("tilePics/gojail.png");
+	private ImageIcon img = new ImageIcon("program/tilePics/gojail.png");
 
 	/**
 	 * returns null
