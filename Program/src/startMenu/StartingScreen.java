@@ -39,7 +39,7 @@ public class StartingScreen extends JFrame {
 
 	private BackgroundMusic bgm = new BackgroundMusic();
 	private PlayerList playerList = new PlayerList();
-	private GamePanels mainWindow = new GamePanels();
+	private GamePanels mainWindow = new GamePanels(bgm);
 
 	private JButton btnConfirm = new JButton("Confirm");
 	private JButton btnStartGame = new JButton("Start Game");
@@ -193,7 +193,6 @@ public class StartingScreen extends JFrame {
 		lblBackground.add(btnStartGame);
 		lblBackground.add(mute);
 		add(lblBackground);
-		new Menu(bgm);
 	}
 
 	public void createFrame() {
