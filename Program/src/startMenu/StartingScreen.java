@@ -102,15 +102,29 @@ public class StartingScreen extends JFrame {
 	public static void main(String[] args) {
 		StartingScreen su = new StartingScreen();
 		su.initializeGUI();
-
+		su.repaint();
 	}
 
-	
+	/**
+	 * Method to check if the OS is MacOS
+	 * Note: Temporary solution to fix the font size on MacOS, should be moved to UTIL class.
+	 * @return boolean
+	 */
+	private boolean isMacOS() {
+		String os = System.getProperty("os.name");
+		return os.contains("Mac");
+	}
+
 	/**
 	 * Method to initilize the GUI.
 	 */
 	public void initializeGUI() {
-
+		if (isMacOS()){ // Temporary solution to fix the font size on MacOS, should be moved to UTIL class.
+			fontRadioButtons = new Font("Arial", Font.PLAIN, 24);
+			fontHeader = new Font("Arial", Font.BOLD, 72);
+			fontLabel = new Font("Arial", Font.BOLD, 30);
+			fontLabelPlayer = new Font("Arial", Font.BOLD, 20);
+		}
 		bgm.startMusic();
 
 		createFrame();
