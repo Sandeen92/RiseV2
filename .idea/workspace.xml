@@ -5,9 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="369cbea7-d726-43f1-931c-763e77531bfd" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program/src/board/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/board/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program/src/board/ColorIconMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/board/ColorIconMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program/src/board/Rules.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/board/Rules.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program/src/combinedPanels/GamePanels.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/combinedPanels/GamePanels.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program/src/dice/Dice.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/dice/Dice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program/src/endGame/WinMusic.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/endGame/WinMusic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program/src/endGame/WinPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/endGame/WinPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program/src/events/ManageEvents.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/events/ManageEvents.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program/src/messageGui/DeathGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/messageGui/DeathGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program/src/messageGui/SecretGui.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/messageGui/SecretGui.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program/src/messageGui/WinGui.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/messageGui/WinGui.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program/src/startMenu/BackgroundMusic.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/startMenu/BackgroundMusic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program/src/startMenu/Introduction.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/startMenu/Introduction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program/src/startMenu/StartingScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/startMenu/StartingScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program/src/tileCollection/TileCollection.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/tileCollection/TileCollection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program/src/tiles/FortuneTeller.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/tiles/FortuneTeller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program/src/tiles/Go.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/tiles/Go.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program/src/tiles/GoToJail.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/tiles/GoToJail.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program/src/tiles/Jail.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/tiles/Jail.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program/src/tiles/SundayChurch.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/tiles/SundayChurch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program/src/tiles/Tavern.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/tiles/Tavern.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program/src/tiles/Tax.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/tiles/Tax.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program/src/tiles/Work.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/tiles/Work.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +53,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "Pjäser(main--development)",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "settings.editor.selected.configurable": "preferences.pluginManager"

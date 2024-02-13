@@ -1,11 +1,13 @@
 package player;
 
 import java.awt.Color;
+import java.awt.Image;
 import java.util.ArrayList;
 
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
+import board.ColorIconMap;
 import messageGui.WinGui;
 import tiles.Property;
 import tiles.Tavern;
@@ -14,7 +16,7 @@ import tiles.Tile;
 /**
  * Player class deals with everything that has to do with a player.
  * 
- * @author AevanDino, Seth Öberg, Muhammad Hasan, Sebastian Viro
+ * @author AevanDino, Seth ï¿½berg, Muhammad Hasan, Sebastian Viro
  */
 public class Player {
 
@@ -384,15 +386,37 @@ public class Player {
 
 	public void checkPlayerRank() {
 
-		if (getNetWorth() >= 2000) {
+		if (getNetWorth() >= 1600) {
 			setPlayerRank(PlayerRanks.KNIGHT);
+			String playerColor = getPlayerColor().toString();
+			System.out.println(playerColor);
+
+			switch (playerColor) {
+				case "RED":
+				playerIcon = resizeImage(new ImageIcon("Program/images/Red_knight.svg.png"));
+					break;
+				case "GREEN":
+				playerIcon = resizeImage(new ImageIcon("Program/images/Green_knight.svg.png"));
+				    break;
+				case "YELLOW":
+				playerIcon = resizeImage(new ImageIcon("Program/images/Yellow_knight.svg.png"));
+					break;
+				case "CYAN":
+				playerIcon = resizeImage(new ImageIcon("Program/images/Cyan_knight.svg.png"));
+					break;
+			}			 
 		}
 
 		if (getNetWorth() >= 4000) {
 			setPlayerRank(PlayerRanks.LORD);
+			//Get playerColor && Change imageIcon to rook
+			//ColorIconMap.changePlayerIcon(this);
 		}
+
 		if (getNetWorth() >= 7500) {
 			setPlayerRank(PlayerRanks.KINGS);
+			//Get playerColor && Change imageIcon to king 
+			//ColorIconMap.changePlayerIcon(this);
 		}
 	}
 
@@ -417,6 +441,14 @@ public class Player {
 	 */
 	public Color getPlayerColor() {
 		return playerColor;
+	}
+
+	private static ImageIcon resizeImage(ImageIcon originalIcon) {
+		Image originalImage = originalIcon.getImage();
+		int width = 40;
+		int height = 40;
+		Image resizedImage = originalImage.getScaledInstance(width, height, Image.SCALE_SMOOTH);
+		return new ImageIcon(resizedImage);
 	}
 
 }

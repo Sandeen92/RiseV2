@@ -15,7 +15,7 @@ public class Go implements Tile {
 	private String info;
 	private String name = "GO";
 	
-	private ImageIcon img = new ImageIcon("tilePics/Go.png");
+	private ImageIcon img = new ImageIcon("Program/tilePics/Go.png");
 	
 	/**
 	 * Constructor with name

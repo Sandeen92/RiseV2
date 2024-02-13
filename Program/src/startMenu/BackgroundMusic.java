@@ -72,7 +72,7 @@ public class BackgroundMusic extends Thread {
 	public void run() {
 		while(isPlaying && clip == null) {
 			try {
-				File musicPath = new File("music/bgMusic.wav");				
+				File musicPath = new File("Program/music/bgMusic.wav");				
 				AudioInputStream ais = AudioSystem.getAudioInputStream(musicPath);
 				clip = AudioSystem.getClip();
 				clip.open(ais);
