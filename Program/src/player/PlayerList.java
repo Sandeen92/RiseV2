@@ -32,7 +32,6 @@ public class PlayerList {
 	 */
 	public PlayerList(EastSidePanel p) {
 		currentPlayer = 0;  
-		
 	}
 	
 	/**

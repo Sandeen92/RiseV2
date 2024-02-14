@@ -401,9 +401,27 @@ public void checkPlayerRank() {
     Color RED = new Color(255, 0, 10, 255);
     Color GREEN = new Color(35, 254, 14, 255);
     Color CYAN = new Color(93, 188, 210, 255);
-    Color YELLOW = new Color(206, 183, 51, 255);	
+    Color YELLOW = new Color(206, 183, 51, 255);
+	
+	if (getNetWorth() <= 1499) {
 
-    if (getNetWorth() >= 2000) {
+		if (this.getPlayerColor().equals(RED)) {
+            this.playerIcon = resizeImage(new ImageIcon("Program/images/Red_pawn.svg.png"));
+        }
+        else if (this.getPlayerColor().equals(GREEN)) {
+            this.playerIcon = resizeImage(new ImageIcon("Program/images/Green_pawn.svg.png"));
+        }
+        else if (this.getPlayerColor().equals(CYAN)) {
+            this.playerIcon = resizeImage(new ImageIcon("Program/images/Blue_pawn.svg.png"));
+        }
+        else if (this.getPlayerColor().equals(YELLOW)) {
+            this.playerIcon = resizeImage(new ImageIcon("Program/images/Yellow_pawn.svg.png"));
+        }
+
+		setPlayerRank(PlayerRanks.PEASANT);
+	}
+
+    if (getNetWorth() >= 1510 && getNetWorth() <= 1650) {
         
         if (this.getPlayerColor().equals(RED)) {
             this.playerIcon = resizeImage(new ImageIcon("Program/images/Red_knight.svg.png"));
@@ -421,7 +439,7 @@ public void checkPlayerRank() {
         setPlayerRank(PlayerRanks.KNIGHT);
     }
 
-    if (getNetWorth() >= 4000) {
+    if (getNetWorth() >= 1650 && getNetWorth() <= 7500) {
 
         if (this.getPlayerColor().equals(RED)) {
             this.playerIcon = resizeImage(new ImageIcon("Program/images/Red_rook.svg.png"));
