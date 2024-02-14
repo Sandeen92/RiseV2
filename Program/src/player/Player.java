@@ -403,7 +403,7 @@ public void checkPlayerRank() {
     Color CYAN = new Color(93, 188, 210, 255);
     Color YELLOW = new Color(206, 183, 51, 255);	
 
-    if (getNetWorth() >= 1510) {
+    if (getNetWorth() >= 2000) {
         
         if (this.getPlayerColor().equals(RED)) {
             this.playerIcon = resizeImage(new ImageIcon("Program/images/Red_knight.svg.png"));
