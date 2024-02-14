@@ -385,46 +385,79 @@ public class Player {
 		return this.propertiesOwned.get(pos);
 	}
 
-	public void checkPlayerRank() {
+	/**
+ * This method is used to check the player's rank and update the player icon accordingly.
+ * 
+ * The method checks the player's net worth and sets the player icon to a knight, rook, king, or lord icon depending on the net worth.
+ * 
+ * The method uses four colors (red, green, cyan, and yellow) to represent the different player ranks. The color of the player is used to determine which rank icon to display.
+ * 
+ * The method uses the resizeImage method to resize the player icon to a specified width and height.
+ * 
+ * @return nothing
+ */
+public void checkPlayerRank() {
 
-		Color RED = new Color(255, 0, 10, 255);
-			Color GREEN = new Color(35, 254, 14, 255);
-			Color CYAN = new Color(93, 188, 210, 255);
-			Color YELLOW = new Color(206, 183, 51, 255);	
+    Color RED = new Color(255, 0, 10, 255);
+    Color GREEN = new Color(35, 254, 14, 255);
+    Color CYAN = new Color(93, 188, 210, 255);
+    Color YELLOW = new Color(206, 183, 51, 255);	
 
-		if (getNetWorth() >= 1510) {
-			
-			//StringColorMap.getColorFromMap("RED");
-			if (this.getPlayerColor().equals(RED)) {
-				this.playerIcon = resizeImage(new ImageIcon("Program/images/Red_knight.svg.png"));
-			}
-			else if (this.getPlayerColor().equals(GREEN)) {
-                this.playerIcon = resizeImage(new ImageIcon("Program/images/Green_knight.svg.png"));
-            }
-			else if (this.getPlayerColor().equals(CYAN)) {
-                this.playerIcon = resizeImage(new ImageIcon("Program/images/Blue_knight.svg.png"));
-            }
-			else if (this.getPlayerColor().equals(YELLOW)) {
-                this.playerIcon = resizeImage(new ImageIcon("Program/images/Yellow_knight.svg.png"));
-            }
+    if (getNetWorth() >= 1510) {
+        
+        if (this.getPlayerColor().equals(RED)) {
+            this.playerIcon = resizeImage(new ImageIcon("Program/images/Red_knight.svg.png"));
+        }
+        else if (this.getPlayerColor().equals(GREEN)) {
+            this.playerIcon = resizeImage(new ImageIcon("Program/images/Green_knight.svg.png"));
+        }
+        else if (this.getPlayerColor().equals(CYAN)) {
+            this.playerIcon = resizeImage(new ImageIcon("Program/images/Blue_knight.svg.png"));
+        }
+        else if (this.getPlayerColor().equals(YELLOW)) {
+            this.playerIcon = resizeImage(new ImageIcon("Program/images/Yellow_knight.svg.png"));
+        }
 
-			setPlayerRank(PlayerRanks.KNIGHT);
+        setPlayerRank(PlayerRanks.KNIGHT);
+    }
 
-			//Hämta alla instanser av player och ändra dens ikon beroende på player instansen färg
-	}
-	
-		if (getNetWorth() >= 4000) {
-			setPlayerRank(PlayerRanks.LORD);
-			//Get playerColor && Change imageIcon to rook
-			//ColorIconMap.changePlayerIcon(this);
-		}
+    if (getNetWorth() >= 4000) {
 
-		if (getNetWorth() >= 7500) {
-			setPlayerRank(PlayerRanks.KINGS);
-			//Get playerColor && Change imageIcon to king 
-			//ColorIconMap.changePlayerIcon(this);
-		}
-	}
+        if (this.getPlayerColor().equals(RED)) {
+            this.playerIcon = resizeImage(new ImageIcon("Program/images/Red_rook.svg.png"));
+        }
+        else if (this.getPlayerColor().equals(GREEN)) {
+            this.playerIcon = resizeImage(new ImageIcon("Program/images/Green_rook.svg.png"));
+        }
+        else if (this.getPlayerColor().equals(CYAN)) {
+            this.playerIcon = resizeImage(new ImageIcon("Program/images/Blue_rook.svg.png"));
+        }
+        else if (this.getPlayerColor().equals(YELLOW)) {
+            this.playerIcon = resizeImage(new ImageIcon("Program/images/Yellow_rook.svg.png"));
+        }
+
+        setPlayerRank(PlayerRanks.LORD);
+
+    }
+
+    if (getNetWorth() >= 7500) {
+
+        if (this.getPlayerColor().equals(RED)) {
+            this.playerIcon = resizeImage(new ImageIcon("Program/images/Red_king.svg.png"));
+        }
+        else if (this.getPlayerColor().equals(GREEN)) {
+            this.playerIcon = resizeImage(new ImageIcon("Program/images/Green_king.svg.png"));
+        }
+        else if (this.getPlayerColor().equals(CYAN)) {
+            this.playerIcon = resizeImage(new ImageIcon("Program/images/Blue_king.svg.png"));
+        }
+        else if (this.getPlayerColor().equals(YELLOW)) {
+            this.playerIcon = resizeImage(new ImageIcon("Program/images/Yellow_king.svg.png"));
+        }
+
+        setPlayerRank(PlayerRanks.KINGS);
+    }
+}
 
 	/**
 	 * @return propertiesOwned, returns entire ArrayList of properties owned.
@@ -449,16 +482,18 @@ public class Player {
 		return playerColor;
 	}
 
-	public void setPlayerIcon(ImageIcon newIcon) {
-		this.playerIcon = newIcon;
-	}
-
-	private static ImageIcon resizeImage(ImageIcon originalIcon) {
-		Image originalImage = originalIcon.getImage();
-		int width = 40;
-		int height = 40;
-		Image resizedImage = originalImage.getScaledInstance(width, height, Image.SCALE_SMOOTH);
-		return new ImageIcon(resizedImage);
-	}
+	    /**
+     * Resizes an image icon to a specified width and height, using the specified scaling algorithm.
+     * 
+     * @param originalIcon the original image icon to be resized
+     * @return a new image icon with the specified dimensions and the same image as the original icon
+     */
+    public static ImageIcon resizeImage(ImageIcon originalIcon) {
+        Image originalImage = originalIcon.getImage();
+        int width = 40; // specify the desired width and height
+        int height = 40;
+        Image resizedImage = originalImage.getScaledInstance(width, height, Image.SCALE_SMOOTH);
+        return new ImageIcon(resizedImage);
+    }
 
 }

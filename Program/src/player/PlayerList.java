@@ -122,43 +122,4 @@ public class PlayerList {
 			currentPlayer = 0; 
 		}	
 	}
-
-	/*public void changePlayerIcon() {
-
-		for (int i = 0; i < activePlayers.size(); i++) {
-		
-			if (activePlayers.get(i).getPlayerRank().equals(PlayerRanks.KNIGHT) 
-				&& activePlayers.get(i).getPlayerColor().equals(Color.RED)){ 
-				
-					ImageIcon knightIcon = resizeImage(new ImageIcon("Program/images/Red_knight.svg.png"));
-					activePlayers.get(i).setPlayerIcon(knightIcon);
-			}
-			else if (activePlayers.get(i).getPlayerRank().equals(PlayerRanks.KNIGHT) 
-                && activePlayers.get(i).getPlayerColor().equals(Color.CYAN)){ 
-
-					ImageIcon knightIcon = resizeImage(new ImageIcon("Program/images/Blue_knight.svg.png"));
-					activePlayers.get(i).setPlayerIcon(knightIcon);
-			} 
-			else if (activePlayers.get(i).getPlayerRank().equals(PlayerRanks.KNIGHT) 
-                && activePlayers.get(i).getPlayerColor().equals(Color.GREEN)){ 
-
-					ImageIcon knightIcon = resizeImage(new ImageIcon("Program/images/Green_knight.svg.png"));
-					activePlayers.get(i).setPlayerIcon(knightIcon);
-				}
-				else if (activePlayers.get(i).getPlayerRank().equals(PlayerRanks.KNIGHT) 
-                && activePlayers.get(i).getPlayerColor().equals(Color.YELLOW)){  
-					
-					ImageIcon knightIcon = resizeImage(new ImageIcon("Program/images/Yellow_knight.svg.png"));
-					activePlayers.get(i).setPlayerIcon(knightIcon);
-				}				
-			}
-		}
-
-	private static ImageIcon resizeImage(ImageIcon originalIcon) {
-		Image originalImage = originalIcon.getImage();
-		int width = 40;
-		int height = 40;
-		Image resizedImage = originalImage.getScaledInstance(width, height, Image.SCALE_SMOOTH);
-		return new ImageIcon(resizedImage);
-	}*/
 }

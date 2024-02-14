@@ -40,68 +40,6 @@ public class ColorIconMap {
 
 	}
 
-	/*public static ImageIcon changePlayerIcon(Player player) {
-		Color playerColor = player.getPlayerColor();
-		String playerColorString = playerColor.toString();
-
-		switch (playerColorString) {
-			case "RED":
-				if (player.getPlayerRank() == PlayerRanks.KNIGHT) {
-					//colorMap.put("RED", resizeImage(new ImageIcon("Program/images/Red_knight.svg.png")));
-					ImageIcon icon = new ImageIcon("Program/images/Red_knight.svg.png");
-					ImageIcon resizedImage = resizeImage(icon);
-
-					return resizedImage; 
-
-
-				} /*else if (player.getPlayerRank() == PlayerRanks.LORD) {
-					colorMap.put("RED", resizeImage(new ImageIcon("Program/images/Red_rook.svg.png")));
-				} else if (player.getPlayerRank() == PlayerRanks.KINGS) {
-					colorMap.put("RED", resizeImage(new ImageIcon("Program/images/Red_king.svg.png")));
-				}
-	            break;
-/* 
-			case "CYAN":
-				if (player.getPlayerRank() == PlayerRanks.KNIGHT) {
-				colorMap.put("CYAN", resizeImage(new ImageIcon("Program/images/Blue_knight.svg.png")));
-				} else if (player.getPlayerRank() == PlayerRanks.LORD) {
-				colorMap.put("CYAN", resizeImage(new ImageIcon("Program/images/Blue_rook.svg.png")));
-				} else if (player.getPlayerRank() == PlayerRanks.KINGS) {
-				colorMap.put("CYAN", resizeImage(new ImageIcon("Program/images/Blue_king.svg.png")));
-				}
-				break;
-
-            case "YELLOW":
-				if (player.getPlayerRank() == PlayerRanks.KNIGHT) {
-				colorMap.put("YELLOW", resizeImage(new ImageIcon("Program/images/Yellow_knight.svg.png")));
-				} else if (player.getPlayerRank() == PlayerRanks.LORD) {
-				colorMap.put("YELLOW", resizeImage(new ImageIcon("Program/images/Yellow_rook.svg.png")));
-				} else if (player.getPlayerRank() == PlayerRanks.KINGS) {
-				colorMap.put("YELLOW", resizeImage(new ImageIcon("Program/images/Yellow_king.svg.png")));
-				}
-				break;
-
-            case "GREEN":
-				if (player.getPlayerRank() == PlayerRanks.KNIGHT) {
-					ImageIcon icon = new ImageIcon("Program/images/Green_knight.svg.png");
-					ImageIcon resizedImage = resizeImage(icon);
-
-					return resizedImage;
-				
-				
-				//	colorMap.put("GREEN", resizeImage(new ImageIcon("Program/images/Green_knight.svg.png")));
-			//	} else if (player.getPlayerRank() == PlayerRanks.LORD) {
-			//	colorMap.put("GREEN", resizeImage(new ImageIcon("Program/images/Green_rook.svg.png")));
-			//	} else if (player.getPlayerRank() == PlayerRanks.KINGS) {
-			//	colorMap.put("GREEN", resizeImage(new ImageIcon("Program/images/Green_king.svg.png")));
-				}
-				break;
-			}
-		return null;
-		}	*/  
-
-
-
 	private static ImageIcon resizeImage(ImageIcon originalIcon) {
 		Image originalImage = originalIcon.getImage();
 		int width = 40;
