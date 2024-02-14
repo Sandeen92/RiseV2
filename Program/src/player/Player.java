@@ -8,6 +8,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 import board.ColorIconMap;
+import colorsAndIcons.StringColorMap;
 import messageGui.WinGui;
 import tiles.Property;
 import tiles.Tavern;
@@ -386,27 +387,32 @@ public class Player {
 
 	public void checkPlayerRank() {
 
-		if (getNetWorth() >= 1600) {
+		Color RED = new Color(255, 0, 10, 255);
+			Color GREEN = new Color(35, 254, 14, 255);
+			Color CYAN = new Color(93, 188, 210, 255);
+			Color YELLOW = new Color(206, 183, 51, 255);	
+
+		if (getNetWorth() >= 1510) {
+			
+			//StringColorMap.getColorFromMap("RED");
+			if (this.getPlayerColor().equals(RED)) {
+				this.playerIcon = resizeImage(new ImageIcon("Program/images/Red_knight.svg.png"));
+			}
+			else if (this.getPlayerColor().equals(GREEN)) {
+                this.playerIcon = resizeImage(new ImageIcon("Program/images/Green_knight.svg.png"));
+            }
+			else if (this.getPlayerColor().equals(CYAN)) {
+                this.playerIcon = resizeImage(new ImageIcon("Program/images/Blue_knight.svg.png"));
+            }
+			else if (this.getPlayerColor().equals(YELLOW)) {
+                this.playerIcon = resizeImage(new ImageIcon("Program/images/Yellow_knight.svg.png"));
+            }
+
 			setPlayerRank(PlayerRanks.KNIGHT);
-			String playerColor = getPlayerColor().toString();
-			System.out.println(playerColor);
 
-			switch (playerColor) {
-				case "RED":
-				playerIcon = resizeImage(new ImageIcon("Program/images/Red_knight.svg.png"));
-					break;
-				case "GREEN":
-				playerIcon = resizeImage(new ImageIcon("Program/images/Green_knight.svg.png"));
-				    break;
-				case "YELLOW":
-				playerIcon = resizeImage(new ImageIcon("Program/images/Yellow_knight.svg.png"));
-					break;
-				case "CYAN":
-				playerIcon = resizeImage(new ImageIcon("Program/images/Cyan_knight.svg.png"));
-					break;
-			}			 
-		}
-
+			//Hämta alla instanser av player och ändra dens ikon beroende på player instansen färg
+	}
+	
 		if (getNetWorth() >= 4000) {
 			setPlayerRank(PlayerRanks.LORD);
 			//Get playerColor && Change imageIcon to rook
@@ -441,6 +447,10 @@ public class Player {
 	 */
 	public Color getPlayerColor() {
 		return playerColor;
+	}
+
+	public void setPlayerIcon(ImageIcon newIcon) {
+		this.playerIcon = newIcon;
 	}
 
 	private static ImageIcon resizeImage(ImageIcon originalIcon) {

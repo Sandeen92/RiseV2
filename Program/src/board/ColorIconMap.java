@@ -40,7 +40,7 @@ public class ColorIconMap {
 
 	}
 
-	public static ImageIcon changePlayerIcon(Player player) {
+	/*public static ImageIcon changePlayerIcon(Player player) {
 		Color playerColor = player.getPlayerColor();
 		String playerColorString = playerColor.toString();
 
@@ -80,7 +80,7 @@ public class ColorIconMap {
 				colorMap.put("YELLOW", resizeImage(new ImageIcon("Program/images/Yellow_king.svg.png")));
 				}
 				break;
-*/
+
             case "GREEN":
 				if (player.getPlayerRank() == PlayerRanks.KNIGHT) {
 					ImageIcon icon = new ImageIcon("Program/images/Green_knight.svg.png");
@@ -98,7 +98,7 @@ public class ColorIconMap {
 				break;
 			}
 		return null;
-		}	  
+		}	*/  
 
 
 
@@ -116,5 +116,5 @@ public class ColorIconMap {
 	 */
 	public ImageIcon getColorFromMap(String chosenColor) {
 		return colorMap.get(chosenColor);
-	}
+	}	
 }
