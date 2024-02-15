@@ -9,7 +9,7 @@ import javax.swing.ImageIcon;
  * @author Sebastian Viro, Aevan Dino	
  */
 public class Jail implements Tile {
-	private ImageIcon img = new ImageIcon("program/tilePics/jail.png");
+	private ImageIcon img = new ImageIcon("Program/tilePics/jail.png");
 	
 	/**
 	 * Returns name of tile

@@ -39,14 +39,14 @@ public class StartingScreen extends JFrame {
 
 	private BackgroundMusic bgm = new BackgroundMusic();
 	private PlayerList playerList = new PlayerList();
-	private GamePanels mainWindow = new GamePanels();
+	private GamePanels mainWindow = new GamePanels(bgm);
 
 	private JButton btnConfirm = new JButton("Confirm");
 	private JButton btnStartGame = new JButton("Start Game");
 	private JButton btnReset = new JButton("Reset");
 
 	private ImageIcon imgBackground = new ImageIcon(
-			new ImageIcon("program/images/fancyRoll.jpg").getImage().getScaledInstance(900, 860, Image.SCALE_SMOOTH));
+			new ImageIcon("Program/images/fancyRoll.jpg").getImage().getScaledInstance(900, 860, Image.SCALE_SMOOTH));
 
 	private Font fontRadioButtons = new Font("Gabriola", Font.PLAIN, 24);
 	private Font fontHeader = new Font("Gabriola", Font.BOLD, 92); 
@@ -102,15 +102,29 @@ public class StartingScreen extends JFrame {
 	public static void main(String[] args) {
 		StartingScreen su = new StartingScreen();
 		su.initializeGUI();
-
+		su.repaint();
 	}
 
-	
+	/**
+	 * Method to check if the OS is MacOS
+	 * Note: Temporary solution to fix the font size on MacOS, should be moved to UTIL class.
+	 * @return boolean
+	 */
+	private boolean isMacOS() {
+		String os = System.getProperty("os.name");
+		return os.contains("Mac");
+	}
+
 	/**
 	 * Method to initilize the GUI.
 	 */
 	public void initializeGUI() {
-
+		if (isMacOS()){ // Temporary solution to fix the font size on MacOS, should be moved to UTIL class.
+			fontRadioButtons = new Font("Arial", Font.PLAIN, 24);
+			fontHeader = new Font("Arial", Font.BOLD, 72);
+			fontLabel = new Font("Arial", Font.BOLD, 30);
+			fontLabelPlayer = new Font("Arial", Font.BOLD, 20);
+		}
 		bgm.startMusic();
 
 		createFrame();
@@ -193,7 +207,6 @@ public class StartingScreen extends JFrame {
 		lblBackground.add(btnStartGame);
 		lblBackground.add(mute);
 		add(lblBackground);
-		new Menu(bgm);
 	}
 
 	public void createFrame() {

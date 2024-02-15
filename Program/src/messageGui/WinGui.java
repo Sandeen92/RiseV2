@@ -39,7 +39,7 @@ public class WinGui extends JPanel {
 		setLayout(null);
 
 		lblLblpic.setBounds(0, 0, 1027, 500);
-		lblLblpic.setIcon(new ImageIcon("images/Rise Winner.png"));
+		lblLblpic.setIcon(new ImageIcon("Program/images/Rise Winner.png"));
 		add(lblLblpic);
 		getFrame();
 	}

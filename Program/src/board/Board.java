@@ -21,7 +21,7 @@ import westSidePanel.WestSidePanel;
 
 
 /**
- * @author Muhammad Abdulkhuder, Seth Öberg, Rohan Samandari
+ * @author Muhammad Abdulkhuder, Seth ï¿½berg, Rohan Samandari
  *
  */
 public class Board extends JPanel {
@@ -306,7 +306,7 @@ public class Board extends JPanel {
 		}
 
 		lblNewLabel.setBounds(0, -136, 1050, 1022);
-		lblNewLabel.setIcon(new ImageIcon("program/images/RiseBoard750.png"));
+		lblNewLabel.setIcon(new ImageIcon("Program/images/RiseBoard750.png"));
 		add(lblNewLabel);
 		
 		for (int i = 0; i < panelarray.length; i++) {

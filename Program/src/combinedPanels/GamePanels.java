@@ -21,6 +21,7 @@ import dice.Dice;
 import eastSidePanels.EastSidePanel;
 import menu.Menu;
 import player.PlayerList;
+import startMenu.BackgroundMusic;
 import westSidePanel.WestSidePanel;
 
 /**
@@ -41,14 +42,14 @@ public class GamePanels extends JPanel {
 	private Dice dice = new Dice(board, playerList, westPanel, tPanel);
 	private JFrame frame = new JFrame();
 	private JLabel lblPic = new JLabel();
-	private Menu m = new Menu();
+	private Menu m;
 	private int width = (int) screenSize.getWidth();
 	private int height = (int) screenSize.getHeight();
 
 	/**
 	 * adds the panels and sets the bounds
 	 */
-	public GamePanels() {
+	public GamePanels(BackgroundMusic music) {
 		setBorder(new MatteBorder(2, 2, 2, 2, (Color) Color.BLACK));
 
 		setBackground(Color.DARK_GRAY);
@@ -64,12 +65,13 @@ public class GamePanels extends JPanel {
 		add(board);
 		dice.setBounds(346, 751, 750, 109);
 		add(dice);
+		m = new Menu(music);
 		m.setBounds(0, 0, 50, 18);
 		add(m);
 
 		BufferedImage img = null;
 		try {
-			img = ImageIO.read(new File("program/images/back2jpg.jpg"));
+			img = ImageIO.read(new File("Program/images/back2jpg.jpg"));
 
 		} catch (IOException e) {
 

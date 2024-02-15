@@ -23,7 +23,7 @@ public class FortuneTeller implements Tile{
 	private String description = "";
 	private int amount; 
 	
-	private ImageIcon img = new ImageIcon("program/tilePics/fortune.png");
+	private ImageIcon img = new ImageIcon("Program/tilePics/fortune.png");
 	
 	/**
 	 * Empty constructor

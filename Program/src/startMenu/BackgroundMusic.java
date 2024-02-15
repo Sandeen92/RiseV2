@@ -53,12 +53,26 @@ public class BackgroundMusic extends Thread {
 	}
 
 	/**
+	 * Takes in a float value between 0 and 1 and sets the volume of the music.
+	 * Could be implemented using a slider/buttons in the GUI.
+	 * CURRENTLY BEING WORKED AT
+	 * @param volume - float value between 0 and 1
+	 */
+	private void setVolume(float volume){
+		if (clip != null){
+			FloatControl volumeControl = (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
+			float min = volumeControl.getMinimum();
+			float max = volumeControl.getMaximum();
+			volumeControl.setValue((max - min) * volume + min);
+		}
+	}
+	/**
 	 * Run method from Thread class. This method starts playing music until told to stop.
 	 */
 	public void run() {
 		while(isPlaying && clip == null) {
 			try {
-				File musicPath = new File("program/music/bgMusic.wav");
+				File musicPath = new File("Program/music/bgMusic.wav");				
 				AudioInputStream ais = AudioSystem.getAudioInputStream(musicPath);
 				clip = AudioSystem.getClip();
 				clip.open(ais);
