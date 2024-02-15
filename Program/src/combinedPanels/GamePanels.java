@@ -17,6 +17,7 @@ import javax.swing.JPanel;
 import javax.swing.border.MatteBorder;
 
 import board.Board;
+import cheat.CheatGui;
 import dice.Dice;
 import eastSidePanels.EastSidePanel;
 import menu.Menu;
@@ -45,6 +46,7 @@ public class GamePanels extends JPanel {
 	private Menu m;
 	private int width = (int) screenSize.getWidth();
 	private int height = (int) screenSize.getHeight();
+	private CheatGui cheatGui;
 
 	/**
 	 * adds the panels and sets the bounds
@@ -83,7 +85,7 @@ public class GamePanels extends JPanel {
 
 		lblPic.setIcon(new ImageIcon(bimg));
 		add(lblPic);
-
+		repaint();
 	}
 
 	/**
@@ -97,6 +99,7 @@ public class GamePanels extends JPanel {
 		frame.setVisible(true);
 		frame.getContentPane().add(this);
 		frame.pack();
+		repaint();
 	}
 
 	/**

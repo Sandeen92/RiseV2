@@ -61,7 +61,7 @@ public class PlayerProperties extends JPanel implements ActionListener {
 
 		setOpaque(false);
 		setBackground(Color.DARK_GRAY);
-		setPreferredSize(new Dimension(330, 607));
+		setPreferredSize(new Dimension(360, 607));
 		setLayout(null);
 
 		lblRent.setForeground(Color.white);

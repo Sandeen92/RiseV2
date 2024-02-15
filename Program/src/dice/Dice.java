@@ -49,7 +49,7 @@ public class Dice extends JPanel implements ActionListener {
 	private int diceWidth = (screenSize.width) / 20;
 	private int diceHeight = (screenSize.height) / 10;
 	private int roll;
-
+	private CheatGui cheat = new CheatGui(this);
 	
 	
 	/**
@@ -124,7 +124,7 @@ public class Dice extends JPanel implements ActionListener {
 		btnEndTurn.addActionListener(this);
 
 		add(btnEndTurn);
-//		add(cheat); //Enable for testing with cheater.
+		add(cheat); //Enable for testing with cheater.
 		btnEndTurn.setEnabled(false);
 	}
 
@@ -248,6 +248,7 @@ public class Dice extends JPanel implements ActionListener {
 			
 			eastSidePnl.addPlayerList(playerList);
 			eastSidePnl.setTab();
+			westSidePnl.getEventPanel().resetEventPanel();
 		}
 
 	}
