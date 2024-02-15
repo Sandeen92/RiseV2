@@ -360,4 +360,9 @@ public class Dice extends JPanel implements ActionListener {
 			playerList.getActivePlayer().resetPassedGo();
 		}
 	}
+
+	//this is to get the end turn button to make sure we can test if it's clicked
+	public JButton getBtnEndTurn(){
+		return btnEndTurn;
+	}
 }

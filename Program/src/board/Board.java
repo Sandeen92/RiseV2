@@ -102,6 +102,9 @@ public class Board extends JPanel {
 		this.playerList = playerList; 
 		
 	}
+	public Board(){
+		//Test
+	}
 
 	/**
 	 * 

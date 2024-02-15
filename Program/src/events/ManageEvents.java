@@ -64,7 +64,6 @@ public class ManageEvents {
 		msgGUI = new FortuneTellerGUI();
 		westPanel.setEventManager(this);
 	}
-
 	/**
 	 * Method checks what type of tile the player has landed on.
 	 * @param tile the player landed on.

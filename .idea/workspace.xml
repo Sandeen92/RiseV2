@@ -5,36 +5,36 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="369cbea7-d726-43f1-931c-763e77531bfd" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Program/src/Tests/GeneralTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Program/src/Tests/TestStartKnight.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Program/src/Tests/TestStartLord.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Program/src/Tests/TestStartPeasant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/RiseV2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/RiseV2.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Program/src/board/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/board/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program/src/board/ColorIconMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/board/ColorIconMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program/src/board/Rules.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/board/Rules.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program/src/combinedPanels/GamePanels.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/combinedPanels/GamePanels.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Program/src/dice/Dice.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/dice/Dice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program/src/endGame/WinMusic.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/endGame/WinMusic.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program/src/endGame/WinPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/endGame/WinPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Program/src/events/ManageEvents.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/events/ManageEvents.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program/src/messageGui/DeathGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/messageGui/DeathGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program/src/messageGui/SecretGui.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/messageGui/SecretGui.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Program/src/messageGui/WinGui.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/messageGui/WinGui.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program/src/startMenu/BackgroundMusic.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/startMenu/BackgroundMusic.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program/src/startMenu/Introduction.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/startMenu/Introduction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program/src/startMenu/StartingScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/startMenu/StartingScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program/src/tileCollection/TileCollection.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/tileCollection/TileCollection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program/src/tiles/FortuneTeller.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/tiles/FortuneTeller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program/src/tiles/Go.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/tiles/Go.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program/src/tiles/GoToJail.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/tiles/GoToJail.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program/src/tiles/Jail.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/tiles/Jail.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program/src/tiles/SundayChurch.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/tiles/SundayChurch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program/src/tiles/Tavern.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/tiles/Tavern.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program/src/tiles/Tax.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/tiles/Tax.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program/src/tiles/Work.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/tiles/Work.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="Simon" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -51,11 +51,19 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "Pjäser(main--development)",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
@@ -64,6 +72,95 @@
       <recent name="C:\Users\simon\Desktop\RiseV2\Program" />
       <recent name="C:\Users\simon\Desktop\RiseV2" />
     </key>
+  </component>
+  <component name="RunManager" selected="JUnit.GeneralTests.bankruptcy">
+    <configuration name="GeneralTests.bankruptcy" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="RiseV2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Tests" />
+      <option name="MAIN_CLASS_NAME" value="Tests.GeneralTests" />
+      <option name="METHOD_NAME" value="bankruptcy" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GeneralTests.endTurn" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="RiseV2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Tests" />
+      <option name="MAIN_CLASS_NAME" value="Tests.GeneralTests" />
+      <option name="METHOD_NAME" value="endTurn" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestStartKnight.KnightRankUp" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="RiseV2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Tests" />
+      <option name="MAIN_CLASS_NAME" value="Tests.TestStartKnight" />
+      <option name="METHOD_NAME" value="KnightRankUp" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestStartPeasant.PesantRankUp" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="RiseV2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Tests" />
+      <option name="MAIN_CLASS_NAME" value="Tests.TestStartPeasant" />
+      <option name="METHOD_NAME" value="PesantRankUp" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Tests in RiseV2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="RiseV2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Tests" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.GeneralTests.bankruptcy" />
+        <item itemvalue="JUnit.GeneralTests.endTurn" />
+        <item itemvalue="JUnit.Tests in RiseV2" />
+        <item itemvalue="JUnit.TestStartKnight.KnightRankUp" />
+        <item itemvalue="JUnit.TestStartPeasant.PesantRankUp" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -80,7 +177,11 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1706082139843</updated>
+      <workItem from="1708034930787" duration="3284000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
 </project>

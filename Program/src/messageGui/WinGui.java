@@ -43,6 +43,9 @@ public class WinGui extends JPanel {
 		add(lblLblpic);
 		getFrame();
 	}
+	public JLabel getLblLblpic(){
+		return lblLblpic;
+	}
 
 	/**
 	 * Creates the frame.
