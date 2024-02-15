@@ -388,7 +388,7 @@ public class Player {
 	/**
  * This method is used to check the player's rank and update the player icon accordingly.
  * 
- * The method checks the player's net worth and sets the player icon to a knight, rook, king, or lord icon depending on the net worth.
+ * The method checks the player's net worth and sets the player icon to a peasant, knight, rook, lord, or king icon depending on the net worth.
  * 
  * The method uses four colors (red, green, cyan, and yellow) to represent the different player ranks. The color of the player is used to determine which rank icon to display.
  * 
@@ -421,7 +421,7 @@ public void checkPlayerRank() {
 		setPlayerRank(PlayerRanks.PEASANT);
 	}
 
-    if (getNetWorth() >= 1510 && getNetWorth() <= 1650) {
+    if (getNetWorth() >= 1510 && getNetWorth() <= 4000) {
         
         if (this.getPlayerColor().equals(RED)) {
             this.playerIcon = resizeImage(new ImageIcon("Program/images/Red_knight.svg.png"));
@@ -439,7 +439,7 @@ public void checkPlayerRank() {
         setPlayerRank(PlayerRanks.KNIGHT);
     }
 
-    if (getNetWorth() >= 1650 && getNetWorth() <= 7500) {
+    if (getNetWorth() >= 4000 && getNetWorth() <= 7500) {
 
         if (this.getPlayerColor().equals(RED)) {
             this.playerIcon = resizeImage(new ImageIcon("Program/images/Red_rook.svg.png"));
