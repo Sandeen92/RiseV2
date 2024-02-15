@@ -372,7 +372,7 @@ public class ManageEvents {
 	 * @param player, player who landed on the tavern.
 	 */
 	public void purchaseTavern(String source, Tavern tavern, Player player) {
-		if (source == "YES" && (tavern.getPrice() <= player.getBalance())) {
+		if (source.equals("YES") && (tavern.getPrice() <= player.getBalance())) {
 			tavern.setOwner(player);
 			player.addNewTavern(tavern);
 			tavern.setPurchaseable(false);

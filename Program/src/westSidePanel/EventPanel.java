@@ -82,7 +82,7 @@ public class EventPanel extends JPanel{
         JButton yesButton = new JButton("YES");
         yesButton.addActionListener(e -> westPanel.getEventManager().purchaseTavern(yesButton.getText(), tavern, player));
         JButton noButton = new JButton("NO");
-        noButton.addActionListener(e -> westPanel.getEventManager().purchaseTavern(yesButton.getText(), tavern, player));
+        noButton.addActionListener(e -> westPanel.getEventManager().purchaseTavern(noButton.getText(), tavern, player));
 
         add(yesButton);
         add(noButton);
