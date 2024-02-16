@@ -5,11 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="369cbea7-d726-43f1-931c-763e77531bfd" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Program/src/lan/GameClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Program/src/lan/GameServer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program/src/startMenu/BackgroundMusic.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/startMenu/BackgroundMusic.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Program/src/startMenu/StartingScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/startMenu/StartingScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/startMenu/BackgroundMusic.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/startMenu/BackgroundMusic.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/startMenu/StartingScreen$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/startMenu/StartingScreen$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/startMenu/StartingScreen$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/startMenu/StartingScreen$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/RiseV2/startMenu/StartingScreen$ButtonListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/startMenu/StartingScreen$ButtonListener.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/RiseV2/startMenu/StartingScreen$MouseAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/startMenu/StartingScreen$MouseAction.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/RiseV2/startMenu/StartingScreen.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/startMenu/StartingScreen.class" afterDir="false" />
@@ -18,6 +19,13 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -34,26 +42,55 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.StartingScreen.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2091954&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.GameClient.executor": "Run",
+    "Application.GameServer.executor": "Run",
+    "Application.StartingScreen.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/simon/Documents/GitHub/ChatProject2023",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2091954",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\simon\Desktop\RiseV2\Program" />
       <recent name="C:\Users\simon\Desktop\RiseV2" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.GameServer">
+    <configuration name="GameClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="lan.GameClient" />
+      <module name="RiseV2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="lan.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GameServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="lan.GameServer" />
+      <module name="RiseV2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="lan.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="StartingScreen" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="startMenu.StartingScreen" />
       <module name="RiseV2" />
@@ -70,6 +107,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.StartingScreen" />
+        <item itemvalue="Application.GameServer" />
+        <item itemvalue="Application.GameClient" />
       </list>
     </recent_temporary>
   </component>

@@ -1,26 +1,22 @@
 package startMenu;
 
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.Image;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.io.IOException;
+import java.net.InetAddress;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
-import javax.swing.ButtonGroup;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JCheckBox;
-import javax.swing.JComboBox;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.JRadioButton;
-import javax.swing.JTextField;
+import javax.swing.*;
 
 import combinedPanels.GamePanels;
+import lan.GameClient;
+import lan.GameServer;
 import player.PlayerList;
 
 /**
@@ -92,6 +88,7 @@ public class StartingScreen extends JFrame implements Runnable {
 	 */
 	private int amountOfPlayers;
 	private boolean isNetwork;
+	private int activePlayers = 0;
 
 	/**
 	 * Used to start the program
@@ -145,7 +142,6 @@ public class StartingScreen extends JFrame implements Runnable {
 		lblPickLANOrLocal.setFont(fontLabel);
 		lblPickLANOrLocal.setBounds(355, 175, 300, 200);
 
-		// Create two buttons that depict the two options beneath the label
 		JButton btnLAN = new JButton("LAN");
 		btnLAN.setOpaque(false);
 
@@ -183,7 +179,6 @@ public class StartingScreen extends JFrame implements Runnable {
 
 
 	public void setUpLAN() {
-		// Create two new buttons that ask the user if they want to create or join a game
 
 		JButton btnCreateGame = new JButton("Create Game");
 		btnCreateGame.setOpaque(false);
@@ -225,8 +220,9 @@ public class StartingScreen extends JFrame implements Runnable {
 
 		int i = 0;
 
-		playerLabels[i].setBounds(280, 360 + i * 40, 150, 50);
+		playerLabels[i].setBounds(375, 330 + i * 40, 150, 50);
 		playerLabels[i].setFont(fontLabelPlayer);
+		playerLabels[i].setText("Enter name: ");
 
 		playerTf[i].setBounds(375, 360 + i * 40, 150, 30);
 		playerTf[i].addMouseListener(new MouseAction());
@@ -237,6 +233,7 @@ public class StartingScreen extends JFrame implements Runnable {
 		pnlPlayerInfo.add(playerTf[i]);
 		pnlPlayerInfo.add(playerColors[i]);
 
+		activePlayers++;
 
 		JButton btnHostGame = new JButton("Host Game");
 		btnHostGame.setOpaque(false);
@@ -250,12 +247,68 @@ public class StartingScreen extends JFrame implements Runnable {
 	}
 
 	public void startLobby() {
+		String hostName = playerTf[0].getText();
 
+		JFrame lobbyFrame;
+		JLabel lblInfo;
+
+		lobbyFrame = new JFrame("Lobby");
+		lobbyFrame.setSize(400, 200);
+		lobbyFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+		lblInfo = new JLabel();
+		lblInfo.setFont(new Font("Arial", Font.BOLD, 20));
+		lblInfo.setHorizontalAlignment(JLabel.CENTER);
+		lobbyFrame.add(lblInfo, BorderLayout.CENTER);
+		lobbyFrame.setVisible(true);
+
+		lblInfo.setText(lblInfo.getText() + "Host: " + hostName + "\n");
+
+        try {
+            startServerAndConnectAsHost(hostName);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
+
+	public void startServerAndConnectAsHost(String hostName) throws IOException {
+        GameServer gameServer = new GameServer(9090);
+		Thread gameServerThread = new Thread(gameServer);
+		gameServerThread.start();
+
+		GameClient gameClient = new GameClient(hostName, "0.0.0.0", 9090);
+		gameClient.run();
 	}
 
 	public void joinGame() {
+		playerLabels[activePlayers].setBounds(375, 330 + activePlayers * 40, 150, 50);
+		playerLabels[activePlayers].setFont(fontLabelPlayer);
+		playerLabels[activePlayers].setText("Enter name: ");
 
+		playerTf[activePlayers].setBounds(375, 360 + activePlayers * 40, 150, 30);
+		playerTf[activePlayers].addMouseListener(new MouseAction());
+
+		playerColors[activePlayers].setBounds(530, 360 + activePlayers * 40, 100, 30);
+
+		JButton btnJoinGame = new JButton("Join Game");
+		btnJoinGame.setOpaque(false);
+		btnJoinGame.setBounds(350, 530, 200, 40);
+		btnJoinGame.addActionListener(e -> joinLobby(playerTf[activePlayers].getText()));
+
+		pnlPlayerInfo.add(btnJoinGame);
+		pnlPlayerInfo.add(playerLabels[activePlayers]);
+		pnlPlayerInfo.add(playerTf[activePlayers]);
+		pnlPlayerInfo.add(playerColors[activePlayers]);
+
+		lblBackground.add(pnlPlayerInfo);
 	}
+
+	public void joinLobby(String playerName) {
+		GameClient gameClient = new GameClient(playerName, "0.0.0.0", 9090);
+		gameClient.run();
+	}
+
 
 	public void setUpLocal() {
 
@@ -505,6 +558,7 @@ public class StartingScreen extends JFrame implements Runnable {
 			}
 
 		}
+
 		
 		/**
 		 * Whenever player chooses to reset the start screen
