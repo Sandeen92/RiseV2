@@ -76,8 +76,8 @@ public class BackgroundMusic extends Thread {
 				AudioInputStream ais = AudioSystem.getAudioInputStream(musicPath);
 				clip = AudioSystem.getClip();
 				clip.open(ais);
-				clip.loop(Clip.LOOP_CONTINUOUSLY);
-				clip.start();
+				//clip.loop(Clip.LOOP_CONTINUOUSLY);
+				//clip.start();
 			}
 			catch(Exception e)
 			{

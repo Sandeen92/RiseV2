@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="369cbea7-d726-43f1-931c-763e77531bfd" name="Changes" comment="" />
+    <list default="true" id="369cbea7-d726-43f1-931c-763e77531bfd" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program/src/startMenu/BackgroundMusic.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/startMenu/BackgroundMusic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program/src/startMenu/StartingScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/startMenu/StartingScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/startMenu/BackgroundMusic.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/startMenu/BackgroundMusic.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/startMenu/StartingScreen$ButtonListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/startMenu/StartingScreen$ButtonListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/startMenu/StartingScreen$MouseAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/startMenu/StartingScreen$MouseAction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/startMenu/StartingScreen.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/startMenu/StartingScreen.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -25,19 +34,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.StartingScreen.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2091954",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.StartingScreen.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2091954&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\simon\Desktop\RiseV2\Program" />

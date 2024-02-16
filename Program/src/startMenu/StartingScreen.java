@@ -20,11 +20,7 @@ import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
-import board.Board;
-import board.ColorIconMap;
 import combinedPanels.GamePanels;
-import dice.ShowPlayersTurn;
-import menu.Menu;
 import player.PlayerList;
 
 /**
@@ -33,7 +29,7 @@ import player.PlayerList;
  * @author Aevan Dino
  *
  */
-public class StartingScreen extends JFrame {
+public class StartingScreen extends JFrame implements Runnable {
 
 	private static final long serialVersionUID = 1L;
 
@@ -85,6 +81,7 @@ public class StartingScreen extends JFrame {
 	private JComboBox<String> playerColors4 = new JComboBox<String>(colors3);
 	private JComboBox[] playerColors = new JComboBox[] { playerColors1, playerColors2, playerColors3, playerColors4 };
 
+
 	/**
 	 * Mute button
 	 */
@@ -94,6 +91,7 @@ public class StartingScreen extends JFrame {
 	 * Integers
 	 */
 	private int amountOfPlayers;
+	private boolean isNetwork;
 
 	/**
 	 * Used to start the program
@@ -101,8 +99,14 @@ public class StartingScreen extends JFrame {
 	 */
 	public static void main(String[] args) {
 		StartingScreen su = new StartingScreen();
-		su.initializeGUI();
-		su.repaint();
+		 Thread t = new Thread(su);
+		 t.start();
+	}
+
+	@Override
+	public void run() {
+		initializeGUI();
+		repaint();
 	}
 
 	/**
@@ -130,26 +134,130 @@ public class StartingScreen extends JFrame {
 		createFrame();
 		bgm.startMusic();
 
-		/**
-		 * JPanel for information about players
-		 */
-		pnlPlayerInfo.setBounds(0, 0, 900, 830);
-		pnlPlayerInfo.setOpaque(false);
-		pnlPlayerInfo.setLayout(null);
+		chooseLocalOrNetwork();
 
-		/**
-		 * Label used to create a background
-		 */
-		lblBackground.setBounds(0, 0, 900, 830);
-		lblBackground.setIcon(imgBackground);
-		lblBackground.setLayout(null);
+	}
 
-		/**
-		 *  Header reading "RISE"
-		 */
-		lblRise.setFont(fontHeader);
-		lblRise.setBounds(375, 125, 175, 200);
-		lblBackground.add(lblRise);
+
+	public void chooseLocalOrNetwork() {
+
+		JLabel lblPickLANOrLocal = new JLabel("LAN or Local?");
+		lblPickLANOrLocal.setFont(fontLabel);
+		lblPickLANOrLocal.setBounds(355, 175, 300, 200);
+
+		// Create two buttons that depict the two options beneath the label
+		JButton btnLAN = new JButton("LAN");
+		btnLAN.setOpaque(false);
+
+		JButton btnLocal = new JButton("Local");
+		btnLocal.setOpaque(false);
+
+		btnLAN.setBounds(375, 315, 150, 30);
+		btnLocal.setBounds(375, 365, 150, 30);
+
+		lblBackground.add(btnLAN);
+		lblBackground.add(btnLocal);
+		lblBackground.add(lblPickLANOrLocal);
+
+		ActionListener buttonActionListener = new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				lblBackground.remove(btnLAN);
+				lblBackground.remove(btnLocal);
+				lblBackground.remove(lblPickLANOrLocal);
+				lblBackground.revalidate();
+				lblBackground.repaint();
+
+				if (e.getSource() == btnLAN) {
+                    setUpLAN();
+					isNetwork = true;
+                } else if (e.getSource() == btnLocal) {
+                    setUpLocal();
+                }
+			}
+		};
+
+		btnLAN.addActionListener(buttonActionListener);
+		btnLocal.addActionListener(buttonActionListener);
+	}
+
+
+	public void setUpLAN() {
+		// Create two new buttons that ask the user if they want to create or join a game
+
+		JButton btnCreateGame = new JButton("Create Game");
+		btnCreateGame.setOpaque(false);
+
+		JButton btnJoinGame = new JButton("Join Game");
+		btnJoinGame.setOpaque(false);
+
+		btnCreateGame.setBounds(375, 315, 150, 30);
+		btnJoinGame.setBounds(375, 365, 150, 30);
+
+		lblBackground.add(btnCreateGame);
+		lblBackground.add(btnJoinGame);
+
+		ActionListener buttonActionListener = new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				lblBackground.remove(btnCreateGame);
+				lblBackground.remove(btnJoinGame);
+				lblBackground.revalidate();
+				lblBackground.repaint();
+
+				if (e.getSource() == btnCreateGame) {
+                    createGame();
+                } else if (e.getSource() == btnJoinGame) {
+                    joinGame();
+                }
+			}
+		};
+
+		btnCreateGame.addActionListener(buttonActionListener);
+		btnJoinGame.addActionListener(buttonActionListener);
+	}
+
+	public void createGame() {
+		lblPlayer.setFont(fontLabel);
+		lblPlayer.setBounds(315, 175, 300, 200);
+
+		createRadioButtons();
+
+		int i = 0;
+
+		playerLabels[i].setBounds(280, 360 + i * 40, 150, 50);
+		playerLabels[i].setFont(fontLabelPlayer);
+
+		playerTf[i].setBounds(375, 360 + i * 40, 150, 30);
+		playerTf[i].addMouseListener(new MouseAction());
+
+		playerColors[i].setBounds(530, 360 + i * 40, 100, 30);
+
+		pnlPlayerInfo.add(playerLabels[i]);
+		pnlPlayerInfo.add(playerTf[i]);
+		pnlPlayerInfo.add(playerColors[i]);
+
+
+		JButton btnHostGame = new JButton("Host Game");
+		btnHostGame.setOpaque(false);
+		btnHostGame.setBounds(350, 530, 200, 40);
+		btnHostGame.addActionListener(e -> startLobby());
+
+
+		lblBackground.add(btnHostGame);
+		lblBackground.add(pnlPlayerInfo);
+		lblBackground.add(btnStartGame);
+	}
+
+	public void startLobby() {
+
+	}
+
+	public void joinGame() {
+
+	}
+
+	public void setUpLocal() {
 
 		/**
 		 * JLabel reading "How many players?"
@@ -199,13 +307,14 @@ public class StartingScreen extends JFrame {
 		/**
 		 * Adding stuff to background label
 		 */
-		lblBackground.add(lblRise);
-		lblBackground.add(lblPlayer);
+
 		lblBackground.add(btnConfirm);
 		lblBackground.add(pnlPlayerInfo);
 		lblBackground.add(btnReset);
 		lblBackground.add(btnStartGame);
 		lblBackground.add(mute);
+		lblBackground.add(lblRise);
+		lblBackground.add(lblPlayer);
 		add(lblBackground);
 	}
 
@@ -217,6 +326,31 @@ public class StartingScreen extends JFrame {
 		setResizable(false);
 		setLocationRelativeTo(null);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+
+		/**
+		 * JPanel for information about players
+		 */
+		pnlPlayerInfo.setBounds(0, 0, 900, 830);
+		pnlPlayerInfo.setOpaque(false);
+		pnlPlayerInfo.setLayout(null);
+
+		/**
+		 * Label used to create a background
+		 */
+		lblBackground.setBounds(0, 0, 900, 830);
+		lblBackground.setIcon(imgBackground);
+		lblBackground.setLayout(null);
+
+		/**
+		 *  Header reading "RISE"
+		 */
+		lblRise.setFont(fontHeader);
+		lblRise.setBounds(375, 125, 175, 200);
+		lblBackground.add(lblRise);
+
+		lblBackground.add(lblRise);
+		lblBackground.add(lblPlayer);
+		add(lblBackground);
 	}
 
 	/**
@@ -230,7 +364,7 @@ public class StartingScreen extends JFrame {
 			btnRadio.setOpaque(false);
 			btnGroup.add(btnRadio);
 			radioButtons[i] = btnRadio;
-			add(btnRadio);
+			lblBackground.add(btnRadio);
 		}
 	}
 	
@@ -255,6 +389,7 @@ public class StartingScreen extends JFrame {
 			pnlPlayerInfo.add(playerColors[i]);
 		}
 	}
+
 
 	/**
 	 * Buttonlistener class, listens for clicks.
@@ -304,7 +439,9 @@ public class StartingScreen extends JFrame {
 						if(playerColors[0].getSelectedItem().equals(playerColors[1].getSelectedItem())) {
 							JOptionPane.showMessageDialog(null, "Two players are not allowed to have the same color");
 						} else {
-							startUpGame();
+							if(!isNetwork) {
+								startUpLocalGame();
+							}
 						}
 						break;
 
@@ -313,7 +450,9 @@ public class StartingScreen extends JFrame {
 								|| playerColors[2].getSelectedItem().equals(playerColors[0].getSelectedItem())) {
 							JOptionPane.showMessageDialog(null, "Two or more players are not allowed to have the same color");
 						} else {
-							startUpGame();
+							if(!isNetwork) {
+								startUpLocalGame();
+							}
 						}
 						break;
 
@@ -323,7 +462,9 @@ public class StartingScreen extends JFrame {
 								|| playerColors[0].getSelectedItem().equals(playerColors[3].getSelectedItem())) {
 							JOptionPane.showMessageDialog(null, "Two or more players are not allowed to have the same color");
 						} else {
-							startUpGame();
+							if(!isNetwork) {
+								startUpLocalGame();
+							}
 						}
 						break;
 					}
@@ -334,7 +475,15 @@ public class StartingScreen extends JFrame {
 		/**
 		 * Method called when player clicks start game
 		 */
-		public void startUpGame() {
+		public void startUpLocalGame() {
+			createNewUsers();
+			mainWindow.addPlayer(playerList);
+			mainWindow.startboard();
+			dispose();
+			Introduction intro = new Introduction();
+		}
+
+		public void startUpLANGame() {
 			createNewUsers();
 			mainWindow.addPlayer(playerList);
 			mainWindow.startboard();
