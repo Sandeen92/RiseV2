@@ -31,7 +31,7 @@ public class PropertyWindow extends JPanel {
 	
 	public PropertyWindow() {
 
-		setPreferredSize(new Dimension(330, 600));
+		setPreferredSize(new Dimension(350, 600));
 		setOpaque(false);
 		setLayout(null);
 		UIManager.put("TabbedPane.contentOpaque", false);
@@ -40,9 +40,8 @@ public class PropertyWindow extends JPanel {
 		tab = new JTabbedPane();
 		tab.setTabLayoutPolicy(JTabbedPane.SCROLL_TAB_LAYOUT);
 		tab.setBorder(null);
-		tab.setBounds(0, 0, 330, 600);
+		tab.setBounds(0, 0, 350, 760);
 		add(tab);
-
 	}
 	
 	public void addPlayerList(PlayerList playerList) {
@@ -69,11 +68,11 @@ public class PropertyWindow extends JPanel {
 
 			new PropertyWindow();
 			playerProperties = new PlayerProperties(playerList, getPlayerAt(), i);
-			tab.addTab("Property" + (i + 1), playerProperties);
+			tab.addTab(playerList.getPlayerFromIndex(getPlayerAt()).getProperty(i).getName(), playerProperties);
 			tab.setBackgroundAt(i, playerList.getPlayerFromIndex(getPlayerAt()).getProperty(i).getColor());
 
 		}
-
+		tab.setSelectedIndex(-1);
 	}
 
 	/**

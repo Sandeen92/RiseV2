@@ -1,7 +1,15 @@
 package westSidePanel;
 
+import events.ManageEvents;
+import player.PlayerList;
+import tiles.Property;
+
 import java.awt.BorderLayout;
 import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import javax.imageio.ImageIO;
 import javax.swing.BorderFactory;
 import javax.swing.*;
 import javax.swing.border.Border;
@@ -21,7 +29,8 @@ public class WestSidePanel extends JPanel {
 	private static final long serialVersionUID = 1L;
 	private JLabel lblInfoTitle, lblHistoryTitle;
 	private JPanel pnlSpace, pnlHeading, pnlInfo, pnlHistory;
-	private Font font = new Font("ALGERIAN", Font.BOLD, 19);
+	private EventPanel pnlEvent;
+	private Font font = new Font("ALGERIAN", Font.BOLD, 18);
 	private JTextArea txtTileInfo = new JTextArea();
 	private JTextArea txtMessage = new JTextArea();
 	private JScrollPane scroller = new JScrollPane(txtMessage);
@@ -33,6 +42,8 @@ public class WestSidePanel extends JPanel {
 			+ "      information about!";
 	private String title = "Information";
 	private Color titleColor = Color.DARK_GRAY;
+	private ManageEvents eventManager;
+	//private EventPanel eventPanel;
 
 	public WestSidePanel() {
 		  
@@ -78,32 +89,24 @@ public class WestSidePanel extends JPanel {
 		pnlInfo.add(txtTileInfo);
 
 		/**
-		 * HistoryPanel
+		 * Event Panel
+		 *
+		 * The text message below is the message that was appended to the scrollpane below.
 		 */
-		pnlHistory = new JPanel();
-		txtMessage.setFont(new Font("Gabriola", Font.BOLD, 18));
-		txtMessage.setMargin(new Insets(10, 10, 10, 10));
-		txtMessage.setEditable(false);
-		txtMessage.setForeground(new Color(71, 60, 50, 225));
+		//txtMessage.setFont(new Font("Gabriola", Font.BOLD, 18));
+		//txtMessage.setMargin(new Insets(10, 10, 10, 10));
+		//txtMessage.setEditable(false);
+		//txtMessage.setForeground(new Color(71, 60, 50, 225));
+		/**
+		 * The scroller was used to append history of the game.
+		 */
+		//scroller.setBackground(Color.white);
+		//scroller.setForeground(Color.black);
+		//scroller.setForeground(new Color(71, 60, 50, 225));
+		//scroller.setPreferredSize(new Dimension(320, 405));
+		//scroller.setAutoscrolls(true);
 
-		scroller.setBackground(Color.white);
-		scroller.setForeground(Color.black);
-		scroller.setForeground(new Color(71, 60, 50, 225));
-		scroller.setPreferredSize(new Dimension(320, 405));
-		scroller.setAutoscrolls(true);
-		
-		lblHistoryTitle = new JLabel("Game history");
-		lblHistoryTitle.setPreferredSize(new Dimension(320, 50));
-		lblHistoryTitle.setHorizontalAlignment(SwingConstants.CENTER);
-		lblHistoryTitle.setBorder(BorderFactory.createLineBorder(Color.black));
-		lblHistoryTitle.setForeground(Color.white);
-		lblHistoryTitle.setFont(font);
-
-		pnlHistory.setPreferredSize(new Dimension(340, 475));
-		pnlHistory.setBackground(new Color(0, 0, 0, 20));
-		pnlHistory.setBorder(border);
-		pnlHistory.add(lblHistoryTitle);
-		pnlHistory.add(scroller);
+		pnlEvent = new EventPanel(this, font);
 
 		/**
 		 * The main Panel
@@ -115,9 +118,8 @@ public class WestSidePanel extends JPanel {
 		add(pnlSpace);
 		add(pnlHeading);
 		add(pnlInfo);
-		add(pnlHistory);
+		add(pnlEvent);
 	}
-
 	/**
 	 * This method is like the above method but only for those boxes which has
 	 * default color.
@@ -146,10 +148,26 @@ public class WestSidePanel extends JPanel {
 
 	/**
 	 * Adds the history of the game and updates it.
-	 * 
+	 * NOT IN USE AT THIS POINT
 	 * @param res
 	 */
 	public void append(String res) {
-		txtMessage.append(res);
+		//txtMessage.append(res);
+	}
+
+
+	/**
+	 * Allows access to the event manager.
+	 * The method below are used to access the instances of the ManageEvents class as well as the EventPanel class
+	 * @param eventManager
+	 */
+	public void setEventManager(ManageEvents eventManager) {
+		this.eventManager = eventManager;
+	}
+	public ManageEvents getEventManager() {
+		return eventManager;
+	}
+	public EventPanel getEventPanel(){
+		return pnlEvent;
 	}
 }

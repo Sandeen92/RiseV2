@@ -6,7 +6,7 @@ import java.util.Random;
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
-import javax.swing.JOptionPane;
+import javax.swing.*;
 
 import board.Board;
 import dice.Dice;
@@ -19,7 +19,6 @@ import player.Player;
 import player.PlayerList;
 import player.PlayerRanks;
 import tiles.FortuneTeller;
-import tiles.Go;
 import tiles.GoToJail;
 import tiles.Jail;
 import tiles.Property;
@@ -32,7 +31,7 @@ import westSidePanel.WestSidePanel;
 
 /**
  * The class handles all the events that occur when a player lands on a tile.
- * @author Seth Oberg, Rohan Samandari,Muhammad Abdulkhuder ,Sebastian Viro, Aevan Dino.
+ * @author Seth Oberg, Rohan Samandari,Muhammad Abdulkhuder ,Sebastian Viro, Aevan Dino, Alexander Fleming.
  */
 
 public class ManageEvents {
@@ -63,6 +62,7 @@ public class ManageEvents {
 		this.eastPanel = eastPanel;
 		deathGUI = new DeathGUI();
 		msgGUI = new FortuneTellerGUI();
+		westPanel.setEventManager(this);
 	}
 
 	/**
@@ -115,13 +115,50 @@ public class ManageEvents {
 		eastPanel.addPlayerList(playerList);
 	}
 
+	private void dialogHandler(EventCases event, Tile tile, Player player){ //TODO: Handle missing events.
+		switch (event){
+			case Property -> {
+				Property tempProperty = (Property) tile;
+				westPanel.getEventPanel().setPropertyEvent(tempProperty, player);
+			}
+			case Tavern -> {
+				Tavern tempTavern = (Tavern) tile;
+				westPanel.getEventPanel().setTavernEvent(tempTavern, player);
+			}
+			case Fortune -> {
+				//TODO: Implement fortune dialog
+			}
+			case Jail -> {
+				//TODO: Implement jail dialog
+			}
+			case GoToJail -> {
+				GoToJail tempJail = (GoToJail) tile;
+				westPanel.getEventPanel().setGotoJailEvent(tempJail, player);
+			}
+			case Work -> {
+				Work tempWork = (Work) tile;
+				westPanel.getEventPanel().setWorkEvent(tempWork, player);
+			}
+			case Tax -> {
+				Tax tempTax = (Tax) tile;
+				westPanel.getEventPanel().setTaxEvent(tempTax, player);
+			}
+			case MissingFunds -> {
+				Property tempProperty = (Property) tile;
+				westPanel.getEventPanel().setMissingFundsEvent(tempProperty, player);
+			}
+			case PayRent -> {
+				Property tempProperty = (Property) tile;
+				westPanel.getEventPanel().setPayRentEvent(tempProperty, player);
+			}
+		}
+	}
 	/**
 	 * This method is supposed to be called from any class that requires the current
 	 * player to pay any amount, if the user does not have the amount required they
 	 * should be removed from the game
 	 */
 	public void control(Player player, int amount) {
-
 		if (player.getBalance() < amount) {
 			player.setIsAlive(false);
 			playerList.switchToNextPlayer();
@@ -144,23 +181,23 @@ public class ManageEvents {
 		Property tempProperty = (Property) tile;
 		int tempInt = 0;
 
-		if (tempProperty.getPurchaseable() == true) {
+		if (tempProperty.getPurchaseable()) {
 			if (player.getBalance() < tempProperty.getPrice()) {
-				JOptionPane.showMessageDialog(null, "Not enough funds to purchase this property");
+				dialogHandler(EventCases.MissingFunds, tile, player);
 			} else {
-				propertyDialog(tempProperty, player);
+				dialogHandler(EventCases.Property, tile, player);
+				//westPanel.getEventPanel().handleEvent(EventCases.Property, tempProperty, player);
 			}
-		} else if (tempProperty.getPurchaseable() == false) {
+		} else if (!tempProperty.getPurchaseable()) {
 
 			if (tempProperty.getLevel() == 0) {
 				tempInt = tempProperty.getDefaultRent();
 
 				control(player, tempInt);
-				if (player.isAlive() == true) {
-					JOptionPane.showMessageDialog(null, player.getName() + " paid " + tempProperty.getTotalRent() + " GC to " 
-							+ tempProperty.getOwner().getName());
-					westPanel.append(player.getName() + " paid " + tempProperty.getTotalRent() + " GC to "
-							+ tempProperty.getOwner().getName() + "\n");
+				if (player.isAlive()) {
+					dialogHandler(EventCases.PayRent, tile, player);
+					//westPanel.append(player.getName() + " paid " + tempProperty.getTotalRent() + " GC to "
+					//		+ tempProperty.getOwner().getName() + "\n");
 					player.decreaseBalace(tempInt);
 					player.decreaseNetWorth(tempInt);
 					tempProperty.getOwner().increaseBalance(tempInt);
@@ -168,11 +205,10 @@ public class ManageEvents {
 			} else {
 				tempInt = tempProperty.getTotalRent();
 				control(player, tempInt);
-				if (player.isAlive() == true) {
-					JOptionPane.showMessageDialog(null, player.getName() + " paid " + tempProperty.getTotalRent() + " GC to " 
-							+ tempProperty.getOwner().getName());
-					westPanel.append(player.getName() + " paid " + tempProperty.getTotalRent() + " GC to "
-							+ tempProperty.getOwner().getName() + "\n");
+				if (player.isAlive()) {
+					dialogHandler(EventCases.PayRent, tile, player);
+					//westPanel.append(player.getName() + " paid " + tempProperty.getTotalRent() + " GC to "
+					//		+ tempProperty.getOwner().getName() + "\n");
 					player.decreaseBalace(tempInt);
 					tempProperty.getOwner().increaseBalance(tempInt);
 				}
@@ -191,9 +227,8 @@ public class ManageEvents {
 		tempWorkObject.setPlayer(player);
 		tempWorkObject.payPlayer(getRoll());
 
-		westPanel.append(player.getName() + " Got " + tempWorkObject.getPay() + " GC\n");
-		JOptionPane.showMessageDialog(null,
-				"The roll is " + roll + "\n" + "You got: " + tempWorkObject.getPay() + " GC for your hard work");
+		//westPanel.append(player.getName() + " Got " + tempWorkObject.getPay() + " GC\n");
+		dialogHandler(EventCases.Work, tile, player);
 
 	}
 
@@ -208,12 +243,15 @@ public class ManageEvents {
 
 		control(player, chargePlayer);
 
-		if (player.isAlive() == true) {
-			westPanel.append(player.getName() + " paid 200 GC in tax\n");
+		if (player.isAlive()) {
+			//westPanel.append(player.getName() + " paid 200 GC in tax\n");
 			player.decreaseBalace(chargePlayer);
 			player.decreaseNetWorth(chargePlayer);
 			taxCounter++;
+			dialogHandler(EventCases.Tax, tile, player);
 		}
+		eastPanel.addPlayerList(playerList);
+
 	}
 
 	/**
@@ -235,9 +273,9 @@ public class ManageEvents {
 
 		if (tempTavernObj.getPurchaseable()) {
 			if (player.getBalance() < tempTavernObj.getPrice()) {
-				JOptionPane.showMessageDialog(null, "Not enough funds to purchase this tavern");
+				dialogHandler(EventCases.MissingFunds, tile, player);
 			} else {
-				tavernDialog(tempTavernObj, player);
+				dialogHandler(EventCases.Tavern, tile, player); //
 			}
 		} else {
 			int randomValue = 0;
@@ -249,7 +287,7 @@ public class ManageEvents {
 			}
 			
 			control(player, randomValue);
-			if (player.isAlive() == true) {
+			if (player.isAlive()) { //TODO: Implement using the new dialog UI, handle the randomValue variable within in some smart way
 				JOptionPane.showMessageDialog(null, player.getName() + " paid " + randomValue + " GC to " 
 						+ tempTavernObj.getOwner().getName());
 				westPanel.append(player.getName() + " paid " + randomValue + " GC to "
@@ -266,14 +304,15 @@ public class ManageEvents {
 	 * @param tile
 	 * @param player in jail
 	 */
-	public void jailEvent(Tile tile, Player player) {
-		if (player.isPlayerInJail() == true && (player.getJailCounter()) < 2) {
-			westPanel.append(player.getName() + " is in jail for " + (2 - player.getJailCounter()) + " more turns\n");
+	public void jailEvent(Tile tile, Player player) { //TODO: Update the new dialog UI
+		if (player.isPlayerInJail() && (player.getJailCounter()) < 2) {
+			//westPanel.append(player.getName() + " is in jail for " + (2 - player.getJailCounter()) + " more turns\n"); TODO: These append messages can be logged
 			player.increaseJailCounter();
 			if (player.getBalance() > (player.getJailCounter() * 50)) {
 				jailDialog(player);
 			} else {
 				JOptionPane.showMessageDialog(null, "You can not afford the bail");
+				//TODO: Implement jail dialog
 			}
 		} else if (player.getJailCounter() >= 2) {
 			player.setPlayerIsInJail(false);
@@ -292,8 +331,8 @@ public class ManageEvents {
 		board.removePlayer(player);
 		player.setPositionInSpecificIndex(10);
 		board.setPlayer(player);
-		JOptionPane.showMessageDialog(null, player.getName() + " got in jail.");
-		westPanel.append(player.getName() + " is in jail for " + (2 - player.getJailCounter()) + " more turns\n");
+		dialogHandler(EventCases.GoToJail, tile, player);
+		//westPanel.append(player.getName() + " is in jail for " + (2 - player.getJailCounter()) + " more turns\n");
 	}
 
 	/**
@@ -312,34 +351,28 @@ public class ManageEvents {
 	 * @param property in question.
 	 * @param player in question.
 	 */
-	public void propertyDialog(Property property, Player player) {
-		int yesOrNo = JOptionPane.showConfirmDialog(null,
-				property.getName() + "\n" + "Do you want to purchase this property for " + property.getPrice() + " GC",
-				"Decide your fate!", JOptionPane.YES_NO_OPTION);
-
-		if (yesOrNo == 0 && (property.getPrice() <= player.getBalance())) {
+	public void purchaseTile(String source, Property property, Player player) {
+		System.out.println(source);
+		if (source.equals("YES") && (property.getPrice() <= player.getBalance())) {
 			property.setOwner(player);
 			player.addNewProperty(property);
 			property.setPurchaseable(false);
 			player.decreaseBalace(property.getPrice());
-			westPanel.append(player.getName() + " purchased " + property.getName() + "\n");
+			//westPanel.append(player.getName() + " purchased " + property.getName() + "\n");
 		}
-
 		else {
-			westPanel.append(player.getName() + " did not purchase " + property.getName() + "\n");
+			//westPanel.append(player.getName() + " did not purchase " + property.getName() + "\n");
 		}
+		westPanel.getEventPanel().resetEventPanel();
+		eastPanel.addPlayerList(playerList);
 	}
-
 	/**
 	 * Method for a dialog if the player wants to purchase a tavern.
 	 * @param tavern, the to buy.
 	 * @param player, player who landed on the tavern.
 	 */
-	public void tavernDialog(Tavern tavern, Player player) {
-		int yesOrNo = JOptionPane.showConfirmDialog(null, "Do you want to purchase this property?", "JOption",
-				JOptionPane.YES_NO_OPTION);
-
-		if (yesOrNo == 0 && (tavern.getPrice() <= player.getBalance())) {
+	public void purchaseTavern(String source, Tavern tavern, Player player) {
+		if (source.equals("YES") && (tavern.getPrice() <= player.getBalance())) {
 			tavern.setOwner(player);
 			player.addNewTavern(tavern);
 			tavern.setPurchaseable(false);
@@ -348,6 +381,10 @@ public class ManageEvents {
 		} else {
 			westPanel.append(player.getName() + " did not purchase " + tavern.getName() + "\n");
 		}
+		westPanel.getEventPanel().resetEventPanel();
+		eastPanel.addPlayerList(playerList);
+		eastPanel.revalidate();
+		eastPanel.repaint();
 	}
 
 	/**
@@ -370,7 +407,7 @@ public class ManageEvents {
 	 * get free
 	 * @param player in jail.
 	 */
-	public void jailDialog(Player player) {
+	public void jailDialog(Player player) { //TODO: Implement the new dialog UI
 		int yesOrNo = JOptionPane.showConfirmDialog(null,
 				"Do you want to pay the bail\nWhich is " + (player.getJailCounter() * 50) + " GC?", "JOption",
 				JOptionPane.YES_NO_OPTION);
@@ -390,7 +427,7 @@ public class ManageEvents {
 	 * @param tile, tile the player landed on.
 	 * @param player, player in question.
 	 */
-	private void fortuneTellerEvent(Tile tile, Player player) {
+	private void fortuneTellerEvent(Tile tile, Player player) { //TODO: Implement the new dialog UI
 		FortuneTeller tempCard = (FortuneTeller) tile;
 		if (rand.nextInt(10) == 0) {
 			new SecretGui();
@@ -407,7 +444,7 @@ public class ManageEvents {
 	 * @param tempCard, instance of FortuneTeller 
 	 * @param player, player who landed on the tile
 	 */
-	public void fortune(FortuneTeller tempCard, Player player) {
+	public void fortune(FortuneTeller tempCard, Player player) { //TODO: Implement the new dialog UI
 		tempCard.setAmount(rand.nextInt(600) - 300);
 		if (tempCard.getAmount() < 0) {
 			int pay = (tempCard.getAmount() * -1);
