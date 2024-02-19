@@ -2,19 +2,24 @@ package lan;
 
 import startMenu.StartingScreen;
 
+import javax.swing.*;
 import java.io.*;
 import java.net.*;
 import java.util.ArrayList;
+
+import static java.lang.Thread.sleep;
 
 public class GameServer implements Runnable {
     private ServerSocket serverSocket;
     private ArrayList<ClientHandler> clientHandlerPool;
     private int i = 0;
+    private StartingScreen startingScreen;
 
 
-    public GameServer(int port) throws IOException {
+    public GameServer(StartingScreen startingScreen, int port) throws IOException {
         clientHandlerPool = new ArrayList<ClientHandler>();
         serverSocket = new ServerSocket(port);
+        this.startingScreen = startingScreen;
     }
 
     public void run(){
@@ -38,6 +43,21 @@ public class GameServer implements Runnable {
         }
     }
 
+    public ArrayList<ClientHandler> getClientHandlerPool() {
+        return clientHandlerPool;
+    }
+
+
+    public void sendBoardToEachClient(){
+        for (int i = 0; i < clientHandlerPool.size(); i++) {
+            clientHandlerPool.get(i).sendBoard();
+            try {
+                sleep(200);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+        }
+    }
 
     /**
      * This inner class is responsible for handeling communication with one client
@@ -55,10 +75,21 @@ public class GameServer implements Runnable {
             this.clientNumber = nr;
         }
 
-        public void send() {
+        public void sendLobby() {
             try {
-                String o = "Hello " + clientNumber;
-                oos.writeObject(o);
+                oos.writeObject("Lobby");
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
+
+        public void sendClientNameToLobby(String userName) {
+            startingScreen.appendLobby(userName);
+        }
+
+        public void sendBoard(){
+            try {
+                oos.writeObject("Board");
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
@@ -74,9 +105,15 @@ public class GameServer implements Runnable {
                 while (true) {
                     input = ois.readObject();
 
-                    if (input!= null) {
-                        System.out.println(input);
-                        send();
+                    if (input instanceof String && ((String) input).startsWith("UN")) {
+                        String userName = ((String) input).substring(2);
+                        System.out.println(userName + " connected to lobby");
+                        sendClientNameToLobby(userName);
+
+                    }
+                    if (input instanceof String && ((String) input).equals("connect")) {
+                        System.out.println(clientNumber + " connected");
+                        sendLobby();
                     }
                 }
 
@@ -87,6 +124,7 @@ public class GameServer implements Runnable {
                 try {
                     ois.close();
                     oos.close();
+                    clientSocket.close();
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }

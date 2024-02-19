@@ -14,7 +14,8 @@ import javax.sound.sampled.FloatControl;
  * @author AevanDino
  */
 public class BackgroundMusic extends Thread {
- 
+
+	private static final long serialVersionUID = 5162710183389028792L;
 	private Clip clip;
 	private Thread musicPlayer;
 	public Boolean isPlaying;

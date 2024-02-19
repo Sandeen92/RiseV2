@@ -1,5 +1,8 @@
 package lan;
 
+import startMenu.StartingScreen;
+
+import javax.swing.*;
 import java.io.*;
 import java.net.*;
 
@@ -7,10 +10,12 @@ public class GameClient extends Thread {
     private Socket socket;
     private Connection connection;
     private String userName;
+    private StartingScreen startingScreen;
 
 
-    public GameClient(String userName, String ip, int port) {
+    public GameClient(StartingScreen startingScreen, String userName, String ip, int port) {
         this.userName = userName;
+        this.startingScreen = startingScreen;
         try {
             socket = new Socket(ip, port);
             connect();
@@ -47,12 +52,21 @@ public class GameClient extends Thread {
             }
             new Listener().start();
 
-            send();
+            sendConnect();
         }
 
-        public void send() {
+        public void sendConnect() {
             try {
-                String o = userName;
+                String o = "connect";
+                oos.writeObject(o);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
+
+        public void sendUserName() {
+            try {
+                String o = "UN" + userName;
                 oos.writeObject(o);
             } catch (IOException e) {
                 throw new RuntimeException(e);
@@ -67,13 +81,21 @@ public class GameClient extends Thread {
                     while (true) {
                         Object o = ois.readObject();
 
-                        if (o!= null) {
+                        if (o instanceof String && ((String) o).equals("Board")) {
+                            startingScreen.startUpLANGame();
+                        }
+
+                        if (o instanceof String && ((String) o).equals("Lobby")) {
+                            sendUserName();
+                        }
+
+                        if (o instanceof String) {
                             System.out.println(o);
                         }
 
                         }
                     } catch (IOException | ClassNotFoundException e) {
-                    throw new RuntimeException(e);
+                    System.out.println(userName + " disconnected");
                 }
                 finally {
                     try {
@@ -87,5 +109,11 @@ public class GameClient extends Thread {
             }
         }
 
+
+    public static void main(String[] args) {
+        StartingScreen su = new StartingScreen();
+        Thread t = new Thread(su);
+        t.start();
+    }
 }
 

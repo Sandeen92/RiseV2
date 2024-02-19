@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.Objects;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -89,6 +90,12 @@ public class StartingScreen extends JFrame implements Runnable {
 	private int amountOfPlayers;
 	private boolean isNetwork;
 	private int activePlayers = 0;
+	private int maxLANPlayers = 0;
+
+	private JFrame lobbyFrame;
+	private JList listOfPlayers;
+	private DefaultListModel<String> listModel;
+	private GameServer gameServer;
 
 	/**
 	 * Used to start the program
@@ -249,35 +256,68 @@ public class StartingScreen extends JFrame implements Runnable {
 	public void startLobby() {
 		String hostName = playerTf[0].getText();
 
-		JFrame lobbyFrame;
-		JLabel lblInfo;
-
 		lobbyFrame = new JFrame("Lobby");
 		lobbyFrame.setSize(400, 200);
 		lobbyFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-		lblInfo = new JLabel();
-		lblInfo.setFont(new Font("Arial", Font.BOLD, 20));
-		lblInfo.setHorizontalAlignment(JLabel.CENTER);
-		lobbyFrame.add(lblInfo, BorderLayout.CENTER);
+
+		JPanel panel = new JPanel(new BorderLayout());
+
+
+		listModel = new DefaultListModel<>();
+		listOfPlayers = new JList<>(listModel);
+		listOfPlayers.setFont(new Font("Arial", Font.BOLD, 20));
+
+		panel.add(new JScrollPane(listOfPlayers), BorderLayout.CENTER);
+
+		JButton startGameButton = new JButton("Start Game");
+		startGameButton.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				gameServer.sendBoardToEachClient();
+			}
+		});
+
+		panel.add(startGameButton, BorderLayout.SOUTH);
+
+		lobbyFrame.add(panel);
 		lobbyFrame.setVisible(true);
 
-		lblInfo.setText(lblInfo.getText() + "Host: " + hostName + "\n");
+		listModel.addElement("Host and Player " + activePlayers + ": " + hostName + "\n");
 
-        try {
-            startServerAndConnectAsHost(hostName);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+		try {
+			startServerAndConnectAsHost(hostName);
+		} catch (IOException e) {
+			throw new RuntimeException(e);
+		}
+	}
 
-    }
+	public void startUpLANGame() {
+		createLANPlayers();
+		mainWindow.addPlayer(playerList);
+		mainWindow.startboard();
+		dispose();
+	}
+
+	public void createLANPlayers(){
+		for (int i = 0; i < activePlayers; i++) {
+			String element = listModel.getElementAt(i);
+			String[] parts = element.split(":");
+			if (parts.length > 1) {
+				String username = parts[1].trim();
+				playerList.addNewPlayer(username, "RED");
+				System.out.println("Created " + username);
+			}
+		}
+	}
+
 
 	public void startServerAndConnectAsHost(String hostName) throws IOException {
-        GameServer gameServer = new GameServer(9090);
+        gameServer = new GameServer(this, 9090);
 		Thread gameServerThread = new Thread(gameServer);
 		gameServerThread.start();
 
-		GameClient gameClient = new GameClient(hostName, "0.0.0.0", 9090);
+		GameClient gameClient = new GameClient(this, hostName, "0.0.0.0", 9090);
 		gameClient.run();
 	}
 
@@ -296,6 +336,7 @@ public class StartingScreen extends JFrame implements Runnable {
 		btnJoinGame.setBounds(350, 530, 200, 40);
 		btnJoinGame.addActionListener(e -> joinLobby(playerTf[activePlayers].getText()));
 
+
 		pnlPlayerInfo.add(btnJoinGame);
 		pnlPlayerInfo.add(playerLabels[activePlayers]);
 		pnlPlayerInfo.add(playerTf[activePlayers]);
@@ -305,8 +346,16 @@ public class StartingScreen extends JFrame implements Runnable {
 	}
 
 	public void joinLobby(String playerName) {
-		GameClient gameClient = new GameClient(playerName, "0.0.0.0", 9090);
+		GameClient gameClient = new GameClient(this, playerName, "0.0.0.0", 9090);
 		gameClient.run();
+	}
+
+	public void appendLobby(String playerName) {
+
+		if (!Objects.equals(playerName, playerTf[0].getText())){
+			listModel.addElement("Player " + activePlayers +  ": " + playerName + "\n");
+		}
+		activePlayers++;
 	}
 
 
@@ -495,6 +544,9 @@ public class StartingScreen extends JFrame implements Runnable {
 							if(!isNetwork) {
 								startUpLocalGame();
 							}
+							else {
+								maxLANPlayers = amountOfPlayers;
+							}
 						}
 						break;
 
@@ -505,6 +557,9 @@ public class StartingScreen extends JFrame implements Runnable {
 						} else {
 							if(!isNetwork) {
 								startUpLocalGame();
+							}
+							else {
+								maxLANPlayers = amountOfPlayers;
 							}
 						}
 						break;
@@ -517,6 +572,9 @@ public class StartingScreen extends JFrame implements Runnable {
 						} else {
 							if(!isNetwork) {
 								startUpLocalGame();
+							}
+							else {
+								maxLANPlayers = amountOfPlayers;
 							}
 						}
 						break;
@@ -536,13 +594,6 @@ public class StartingScreen extends JFrame implements Runnable {
 			Introduction intro = new Introduction();
 		}
 
-		public void startUpLANGame() {
-			createNewUsers();
-			mainWindow.addPlayer(playerList);
-			mainWindow.startboard();
-			dispose();
-			Introduction intro = new Introduction();
-		}
 		
 		/**
 		 * Creates the right amount of players.
