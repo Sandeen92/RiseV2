@@ -46,6 +46,9 @@ public class ManageEvents {
 	private int taxCounter = 0;
 	private WestSidePanel westPanel;
 
+	public ManageEvents(){
+
+	}
 	/**
 	 * Constructor initializes objects in the parameter. Creates Death -and MessageGUI.
 	 * @param board
@@ -64,6 +67,7 @@ public class ManageEvents {
 		msgGUI = new FortuneTellerGUI();
 		westPanel.setEventManager(this);
 	}
+
 	/**
 	 * Method checks what type of tile the player has landed on.
 	 * @param tile the player landed on.
