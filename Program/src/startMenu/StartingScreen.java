@@ -274,6 +274,7 @@ public class StartingScreen extends JFrame implements Runnable {
 		startGameButton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				createLANPlayers();
 				gameServer.sendBoardToEachClient();
 			}
 		});
@@ -293,14 +294,13 @@ public class StartingScreen extends JFrame implements Runnable {
 	}
 
 	public void startUpLANGame() {
-		createLANPlayers();
 		mainWindow.addPlayer(playerList);
 		mainWindow.startboard();
 		dispose();
 	}
 
 	public void createLANPlayers(){
-		for (int i = 0; i < activePlayers; i++) {
+		for (int i = 0; i < listModel.size(); i++) {
 			String element = listModel.getElementAt(i);
 			String[] parts = element.split(":");
 			if (parts.length > 1) {
