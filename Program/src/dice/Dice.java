@@ -7,6 +7,7 @@ import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.Serializable;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -24,7 +25,7 @@ import westSidePanel.WestSidePanel;
  * @author Muhammad Abdulkhuder, Aevan Dino, Sebastian Viro, Seth Oberg
  *
  */
-public class Dice extends JPanel implements ActionListener {
+public class Dice extends JPanel implements ActionListener, Serializable {
 	
 	private static final long serialVersionUID = 1L;
 	private ShowPlayersTurn showPlayersTurn;

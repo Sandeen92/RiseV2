@@ -1,6 +1,7 @@
 package tiles;
 
 import java.awt.Color;
+import java.io.Serializable;
 
 import javax.swing.ImageIcon;
 /**
@@ -8,7 +9,7 @@ import javax.swing.ImageIcon;
  * @author Sebastian Viro, Aevan Dino, MUHAMMAD ABDULKHUDER
  *
  */
-public class GoToJail implements Tile {
+public class GoToJail implements Tile, Serializable {
 
 	private ImageIcon img = new ImageIcon("Program/tilePics/gojail.png");
 

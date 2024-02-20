@@ -253,8 +253,21 @@ public class StartingScreen extends JFrame implements Runnable {
 		lblBackground.add(btnStartGame);
 	}
 
+	public void assignAmountOfPlayers(){
+		if (radioButtons[0].isSelected()){
+			maxLANPlayers = 2;
+		}
+		if (radioButtons[1].isSelected()){
+            maxLANPlayers = 3;
+        }
+		if (radioButtons[2].isSelected()){
+            maxLANPlayers = 4;
+        }
+	}
+
 	public void startLobby() {
 		String hostName = playerTf[0].getText();
+		assignAmountOfPlayers();
 
 		lobbyFrame = new JFrame("Lobby");
 		lobbyFrame.setSize(400, 200);
@@ -275,7 +288,10 @@ public class StartingScreen extends JFrame implements Runnable {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				createLANPlayers();
+				gameServer.setMainWindow(mainWindow);
+				gameServer.assignPlayerListToEachClient(playerList);
 				gameServer.sendBoardToEachClient();
+				lobbyFrame.dispose();
 			}
 		});
 
@@ -299,6 +315,10 @@ public class StartingScreen extends JFrame implements Runnable {
 		dispose();
 	}
 
+	public void setPlayerList(PlayerList playerList) {
+		this.playerList = playerList;
+	}
+
 	public void createLANPlayers(){
 		for (int i = 0; i < listModel.size(); i++) {
 			String element = listModel.getElementAt(i);
@@ -306,7 +326,6 @@ public class StartingScreen extends JFrame implements Runnable {
 			if (parts.length > 1) {
 				String username = parts[1].trim();
 				playerList.addNewPlayer(username, "RED");
-				System.out.println("Created " + username);
 			}
 		}
 	}
@@ -546,6 +565,7 @@ public class StartingScreen extends JFrame implements Runnable {
 							}
 							else {
 								maxLANPlayers = amountOfPlayers;
+								System.out.println(maxLANPlayers);
 							}
 						}
 						break;

@@ -1,12 +1,13 @@
 package tiles;
 
 import java.awt.Color;
+import java.io.Serializable;
 
 import javax.swing.ImageIcon;
 
 import player.Player;
 
-public class Tavern implements Tile{
+public class Tavern implements Tile, Serializable {
 	
 	private final static String TAVERN = "Tavern";
 	private String info = "";

@@ -1,6 +1,7 @@
 package tiles;
 
 import java.awt.Color;
+import java.io.Serializable;
 
 import javax.swing.ImageIcon;
 
@@ -8,7 +9,7 @@ import javax.swing.ImageIcon;
  * Player does not have to pay anything and doesn't get paid for it. // But the player gets all the collected church taxes.
  * @author AevanDino, SebastianViro
  */
-public class SundayChurch implements Tile {
+public class SundayChurch implements Tile, Serializable {
 	private ImageIcon img = new ImageIcon("Program/tilePics/church.png");
 	String info;
 

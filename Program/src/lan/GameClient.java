@@ -1,5 +1,7 @@
 package lan;
 
+import combinedPanels.GamePanels;
+import player.PlayerList;
 import startMenu.StartingScreen;
 
 import javax.swing.*;
@@ -74,6 +76,8 @@ public class GameClient extends Thread {
         }
 
 
+        //TODO Måste skicka playerlist till alla clients på ngt sätt
+
         private class Listener extends Thread {
 
             public void run() {
@@ -81,18 +85,18 @@ public class GameClient extends Thread {
                     while (true) {
                         Object o = ois.readObject();
 
-                        if (o instanceof String && ((String) o).equals("Board")) {
-                            startingScreen.startUpLANGame();
-                        }
-
-                        if (o instanceof String && ((String) o).equals("Lobby")) {
-                            sendUserName();
-                        }
 
                         if (o instanceof String) {
-                            System.out.println(o);
+                            if (String.valueOf(o).equals("Board")) {
+                                startingScreen.startUpLANGame();
+                            }
+                            if (String.valueOf(o).equals("Lobby")) {
+                                sendUserName();
+                            }
                         }
-
+                        if (o instanceof PlayerList playerList) {
+                            startingScreen.setPlayerList(playerList);
+                        }
                         }
                     } catch (IOException | ClassNotFoundException e) {
                     System.out.println(userName + " disconnected");

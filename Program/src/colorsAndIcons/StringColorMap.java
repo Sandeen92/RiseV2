@@ -1,6 +1,7 @@
 package colorsAndIcons;
 
 import java.awt.Color;
+import java.io.Serializable;
 import java.util.HashMap;
 
 
@@ -9,7 +10,7 @@ import java.util.HashMap;
  * @author Seth Oberg
  *
  */
-public class StringColorMap {
+public class StringColorMap implements Serializable {
 	private HashMap<String, Color> colorMap = new HashMap<String, Color>();
 	
 	

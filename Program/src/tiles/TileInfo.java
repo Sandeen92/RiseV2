@@ -1,6 +1,7 @@
 package tiles;
 
 import java.awt.Color;
+import java.io.Serializable;
 
 import events.ManageEvents;
 
@@ -9,7 +10,7 @@ import events.ManageEvents;
  * @author Rohan Samandari
  *
  */
-public class TileInfo {
+public class TileInfo implements Serializable {
 	private String[] info;
 	private String[] title;	
 	

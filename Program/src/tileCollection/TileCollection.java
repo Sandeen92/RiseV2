@@ -1,6 +1,7 @@
 package tileCollection;
 
 import java.awt.Color;
+import java.io.Serializable;
 
 import javax.swing.ImageIcon;
 
@@ -22,7 +23,7 @@ import tiles.Work;
  * @author Rohan, Sebastian, Muhammad Abdulkhuder
  */
 
-public class TileCollection {
+public class TileCollection implements Serializable {
 
 	private Tile[] tileArray = new Tile[40];
 

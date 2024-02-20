@@ -2,6 +2,7 @@ package player;
 
 import java.awt.Color;
 import java.awt.Image;
+import java.io.Serializable;
 import java.util.ArrayList;
 
 import javax.swing.ImageIcon;
@@ -19,7 +20,7 @@ import tiles.Tile;
  * 
  * @author AevanDino, Seth �berg, Muhammad Hasan, Sebastian Viro
  */
-public class Player {
+public class Player implements Serializable {
 
 	private String name;
 	private Boolean isAlive;

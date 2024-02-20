@@ -1,5 +1,7 @@
 package lan;
 
+import combinedPanels.GamePanels;
+import player.PlayerList;
 import startMenu.StartingScreen;
 
 import javax.swing.*;
@@ -14,6 +16,7 @@ public class GameServer implements Runnable {
     private ArrayList<ClientHandler> clientHandlerPool;
     private int i = 0;
     private StartingScreen startingScreen;
+    private GamePanels mainWindow;
 
 
     public GameServer(StartingScreen startingScreen, int port) throws IOException {
@@ -43,6 +46,10 @@ public class GameServer implements Runnable {
         }
     }
 
+    public void setMainWindow(GamePanels mainWindow) {
+        this.mainWindow = mainWindow;
+    }
+
     public ArrayList<ClientHandler> getClientHandlerPool() {
         return clientHandlerPool;
     }
@@ -58,6 +65,18 @@ public class GameServer implements Runnable {
             }
         }
     }
+
+    public void assignPlayerListToEachClient(PlayerList playerList){
+        for (int i = 0; i < clientHandlerPool.size(); i++) {
+            clientHandlerPool.get(i).sendPlayerList(playerList);
+            try {
+                sleep(200);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+        }
+    }
+
 
     /**
      * This inner class is responsible for handeling communication with one client
@@ -95,6 +114,14 @@ public class GameServer implements Runnable {
             }
         }
 
+        public void sendPlayerList(PlayerList playerList){
+            try {
+                oos.writeObject(playerList);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
+
 
         public void run() {
             try {
@@ -105,15 +132,15 @@ public class GameServer implements Runnable {
                 while (true) {
                     input = ois.readObject();
 
-                    if (input instanceof String && ((String) input).startsWith("UN")) {
-                        String userName = ((String) input).substring(2);
-                        System.out.println(userName + " connected to lobby");
-                        sendClientNameToLobby(userName);
-
-                    }
-                    if (input instanceof String && ((String) input).equals("connect")) {
-                        System.out.println(clientNumber + " connected");
-                        sendLobby();
+                    if (input instanceof String) {
+                        if (String.valueOf(input).startsWith("UN")) {
+                            String userName = ((String) input).substring(2);
+                            System.out.println(userName + " connected to lobby");
+                            sendClientNameToLobby(userName);
+                        }
+                        if (String.valueOf(input).equals("connect")) {
+                            sendLobby();
+                        }
                     }
                 }
 

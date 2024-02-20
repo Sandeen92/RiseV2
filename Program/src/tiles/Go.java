@@ -1,6 +1,7 @@
 package tiles;
 
 import java.awt.Color;
+import java.io.Serializable;
 
 import javax.swing.ImageIcon;
 
@@ -10,7 +11,7 @@ import player.Player;
  * Simple Go tile class. 
  * @author AevanDino, SebastianViro
  */
-public class Go implements Tile {
+public class Go implements Tile, Serializable {
 
 	private String info;
 	private String name = "GO";

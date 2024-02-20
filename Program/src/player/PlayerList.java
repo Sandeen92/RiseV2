@@ -2,6 +2,7 @@ package player;
 
 import java.awt.Color;
 import java.awt.Image;
+import java.io.Serializable;
 import java.util.LinkedList;
 
 import javax.swing.ImageIcon;
@@ -16,7 +17,7 @@ import eastSidePanels.EastSidePanel;
  *
  */
 
-public class PlayerList {
+public class PlayerList implements Serializable {
 	private LinkedList<Player> activePlayers = new LinkedList<Player>();
 	private ColorIconMap colorIcons = new ColorIconMap();
 	private StringColorMap colorMap = new StringColorMap();

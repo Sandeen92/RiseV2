@@ -1,6 +1,7 @@
 package tiles;
 
 import java.awt.Color;
+import java.io.Serializable;
 import java.util.Random;
 
 import javax.swing.ImageIcon;
@@ -11,7 +12,7 @@ import javax.swing.ImageIcon;
  * @author SebastianViro, AevanDino, MuhammadAbdulkhuder
  *
  */
-public class FortuneTeller implements Tile{
+public class FortuneTeller implements Tile, Serializable {
 	
 	private Color color = Color.WHITE;
 	private static final String NAME = "Fortune Teller";

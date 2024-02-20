@@ -1,6 +1,7 @@
 package startMenu;
 
 import java.io.File;
+import java.io.Serializable;
 
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
@@ -13,7 +14,7 @@ import javax.sound.sampled.FloatControl;
  * 
  * @author AevanDino
  */
-public class BackgroundMusic extends Thread {
+public class BackgroundMusic extends Thread implements Serializable {
 
 	private static final long serialVersionUID = 5162710183389028792L;
 	private Clip clip;

@@ -5,6 +5,7 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.io.Serializable;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
@@ -24,7 +25,7 @@ import westSidePanel.WestSidePanel;
  * @author Muhammad Abdulkhuder, Seth �berg, Rohan Samandari
  *
  */
-public class Board extends JPanel {
+public class Board extends JPanel implements Serializable {
 	
 	private WestSidePanel pnlWest;
 	private TileInfo info = new TileInfo();
@@ -408,7 +409,7 @@ public class Board extends JPanel {
 	/**
 	 * Listener class for interactive tiles 
 	 */
-	public class Listener implements MouseListener {
+	public class Listener implements MouseListener, Serializable {
 
 		/**
 		 * Nothing happens when clicking

@@ -1,6 +1,7 @@
 package tiles;
 
 import java.awt.Color;
+import java.io.Serializable;
 
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
@@ -11,7 +12,7 @@ import player.Player;
  * Class for property.
  * @author Sebastian Viro, Aevan Dino, Muhammad Abdulkhuder
  */
-public class Property implements Tile {
+public class Property implements Tile, Serializable {
 
 	private String name, info;
 	private int price, rentPerLevel, defaultRent, levels;

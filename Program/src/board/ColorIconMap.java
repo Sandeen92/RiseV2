@@ -1,5 +1,6 @@
 package board;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
@@ -14,7 +15,7 @@ import java.awt.Image;
  * @author Seth Oberg 
  * Get a image icon object from a string value
  */
-public class ColorIconMap {
+public class ColorIconMap implements Serializable {
 	private static HashMap<String, ImageIcon> colorMap = new HashMap<String, ImageIcon>();
 
 	/**

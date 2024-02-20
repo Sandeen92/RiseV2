@@ -8,6 +8,7 @@ import java.awt.Toolkit;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.io.Serializable;
 
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
@@ -32,20 +33,20 @@ import westSidePanel.WestSidePanel;
  * @author Abdulkhuder Muhammad
  *
  */
-public class GamePanels extends JPanel {
+public class GamePanels extends JPanel implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	private EastSidePanel tPanel = new EastSidePanel();
 	private WestSidePanel westPanel = new WestSidePanel();
 	private Board board = new Board(westPanel);
-	private Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+	private Dimension screenSize;
 	private PlayerList playerList;
 	private Dice dice = new Dice(board, playerList, westPanel, tPanel);
 	private JFrame frame = new JFrame();
 	private JLabel lblPic = new JLabel();
 	private Menu m;
-	private int width = (int) screenSize.getWidth();
-	private int height = (int) screenSize.getHeight();
+	private int width;
+	private int height;
 	private CheatGui cheatGui;
 
 	/**
@@ -55,7 +56,6 @@ public class GamePanels extends JPanel {
 		setBorder(new MatteBorder(2, 2, 2, 2, (Color) Color.BLACK));
 
 		setBackground(Color.DARK_GRAY);
-		setPreferredSize(new Dimension(width, height));
 
 		setLayout(null);
 		tPanel.setOpaque(false);
@@ -70,6 +70,15 @@ public class GamePanels extends JPanel {
 		m = new Menu(music);
 		m.setBounds(0, 0, 50, 18);
 		add(m);
+		setScreenSize(Toolkit.getDefaultToolkit().getScreenSize());
+		repaint();
+	}
+
+	public void setScreenSize(Dimension screenSize) {
+		this.screenSize = screenSize;
+		width = screenSize.width;
+		height = screenSize.height;
+		setPreferredSize(new Dimension(width, height));
 
 		BufferedImage img = null;
 		try {

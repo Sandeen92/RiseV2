@@ -1,12 +1,13 @@
 package tiles;
 
 import java.awt.Color;
+import java.io.Serializable;
 
 import javax.swing.ImageIcon;
 
 import player.Player;
 
-public class Tax implements Tile {
+public class Tax implements Tile, Serializable {
 
 	private final static String NAME = "Kings tax";
 	private final static Boolean PURCHASABLE = false;
