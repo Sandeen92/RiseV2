@@ -31,7 +31,7 @@ public class DeathGUI extends JPanel implements ActionListener{
 		setLayout(null);
 
 		lblPic.setBounds(0, 0, 1200, 675);
-		lblPic.setIcon(new ImageIcon("Program/images/plague_doctors_1200.jpg"));
+		lblPic.setIcon(new ImageIcon("images/plague_doctors_1200.jpg"));
 		btnExit.setBounds(300, 575, 600, 100);
 		add(lblPic);
 		btnExit.setFont(font);

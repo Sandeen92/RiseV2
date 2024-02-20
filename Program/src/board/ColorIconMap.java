@@ -28,15 +28,15 @@ public class ColorIconMap {
 	 * The method that adds all the colors to a hashmap
 	 */
 	public static void addColorsToMap() {
-		colorMap.put("MAGENTA", new ImageIcon("Program/images/playerMagenta.jpg"));
-		colorMap.put("PURPLE", new ImageIcon("Program/images/playerPurple.jpg"));
+		colorMap.put("MAGENTA", new ImageIcon("images/playerMagenta.jpg"));
+		colorMap.put("PURPLE", new ImageIcon("images/playerPurple.jpg"));
 		colorMap.put("ORANGE", new ImageIcon("Program/images/playerOrange.jpg"));
 
 
-		colorMap.put("RED", resizeImage(new ImageIcon("Program/images/Red_pawn.svg.png")));
-		colorMap.put("YELLOW", resizeImage(new ImageIcon("Program/images/Yellow_pawn.svg.png")));
-		colorMap.put("GREEN", resizeImage(new ImageIcon("Program/images/Green_pawn.svg.png")));
-		colorMap.put("CYAN", resizeImage(new ImageIcon("Program/images/Blue_pawn.svg.png")));
+		colorMap.put("RED", resizeImage(new ImageIcon("images/Red_pawn.svg.png")));
+		colorMap.put("YELLOW", resizeImage(new ImageIcon("images/Yellow_pawn.svg.png")));
+		colorMap.put("GREEN", resizeImage(new ImageIcon("images/Green_pawn.svg.png")));
+		colorMap.put("CYAN", resizeImage(new ImageIcon("images/Blue_pawn.svg.png")));
 
 	}
 

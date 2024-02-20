@@ -36,8 +36,8 @@ public class Dice extends JPanel implements ActionListener {
 	private Thread movePlayerThread;
 	private ManageEvents manageEvents;
 
-	private JButton btnEndTurn = new JButton("End Turn");
-	private JButton btnRollDice = new JButton("Roll Dice");
+	public JButton btnEndTurn = new JButton("End Turn");
+	public JButton btnRollDice = new JButton("Roll Dice");
 
 	private JLabel lblDice1 = new JLabel();
 	private JLabel lblDice2 = new JLabel();
@@ -56,7 +56,6 @@ public class Dice extends JPanel implements ActionListener {
 	 * @param playerList method used for updating the list of players 
 	 */
 	public void addPlayerList(PlayerList playerList) {
-
 		this.playerList = playerList;
 		
 		showPlayersTurn.uppdateGUI(playerList.getActivePlayer().getName(),
@@ -87,9 +86,7 @@ public class Dice extends JPanel implements ActionListener {
 	 * calls the method that initializes the panel
 	 */
 	public Dice() {
-
 		initializePanel();
-		
 	}
 
 	/**
@@ -114,7 +111,7 @@ public class Dice extends JPanel implements ActionListener {
 
 		btnRollDice.addActionListener(this);
 
-		faceToShow = new ImageIcon("Program/DicePictures/faceValue1White.png");
+		faceToShow = new ImageIcon("DicePictures/faceValue1White.png");
 		resizedImage = faceToShow.getImage().getScaledInstance(diceWidth, diceHeight, Image.SCALE_SMOOTH);
 		showDice = new ImageIcon(resizedImage);
 		lblDice2.setIcon(showDice);
@@ -127,134 +124,133 @@ public class Dice extends JPanel implements ActionListener {
 		add(cheat); //Enable for testing with cheater.
 		btnEndTurn.setEnabled(false);
 	}
-
-	
-
 	/**
 	 * Action Listener that handles what happens if the buttons are pressed
 	 */
 	public void actionPerformed(ActionEvent e) {
-
 		if (e.getSource() == btnRollDice) {
-			int faceValueDiceOne = (int) (Math.random() * (7 - 1) + 1);
-			int faceValueDiceTwo = (int) (Math.random() * (7 - 1) + 1);
-
-			switch (faceValueDiceOne) {
-			case 1:
-				faceToShow = new ImageIcon("Program/DicePictures/faceValue1White.png");
-				break;
-
-			case 2:
-				faceToShow = new ImageIcon("Program/DicePictures/faceValue2White.png");
-				break;
-
-			case 3:
-				faceToShow = new ImageIcon("Program/DicePictures/faceValue3White.png");
-				break;
-
-			case 4:
-				faceToShow = new ImageIcon("Program/DicePictures/faceValue4White.png");
-				break;
-
-			case 5:
-				faceToShow = new ImageIcon("Program/DicePictures/faceValue5White.png");
-				break;
-
-			case 6:
-				faceToShow = new ImageIcon("Program/DicePictures/faceValue6White.png");
-				break;
-			}
-
-			resizedImage = faceToShow.getImage().getScaledInstance(diceWidth, diceHeight, Image.SCALE_SMOOTH);
-			showDice = new ImageIcon(resizedImage);
-			lblDice1.setIcon(showDice);
-
-			switch (faceValueDiceTwo) {
-			case 1:
-				faceToShow = new ImageIcon("Program/DicePictures/faceValue1White.png");
-				break;
-
-			case 2:
-				faceToShow = new ImageIcon("Program/DicePictures/faceValue2White.png");
-				break;
-
-			case 3:
-				faceToShow = new ImageIcon("Program/DicePictures/faceValue3White.png");
-				break;
-
-			case 4:
-				faceToShow = new ImageIcon("Program/DicePictures/faceValue4White.png");
-				break;
-
-			case 5:
-				faceToShow = new ImageIcon("Program/DicePictures/faceValue5White.png");
-				break;
-
-			case 6:
-				faceToShow = new ImageIcon("Program/DicePictures/faceValue6White.png");
-				break;
-			}
-
-			if (faceValueDiceOne == faceValueDiceTwo) {
-				setRoll(((faceValueDiceOne + faceValueDiceTwo) * 2));
-				westSidePnl.append(playerList.getActivePlayer().getName() + " Rolled a dubble: " + getRoll() + "\n");
-			} else {
-				setRoll(((faceValueDiceOne + faceValueDiceTwo)));
-				westSidePnl.append(playerList.getActivePlayer().getName() + " Rolled a: " + getRoll() + "\n");
-			}
-			resizedImage = faceToShow.getImage().getScaledInstance(diceWidth, diceHeight, Image.SCALE_SMOOTH);
-			showDice = new ImageIcon(resizedImage);
-			lblDice2.setIcon(showDice);
-
-			playerList.getActivePlayer().checkPlayerRank();
-			manageEvents.setRoll(this);
-		
-			movePlayerThread = new Thread(new LoopThread(getRoll()));
-			movePlayerThread.start();
-
-			goEvent();
-
-			eastSidePnl.addPlayerList(playerList);
-
-			btnRollDice.setEnabled(false);
-
+			rollDice();
 		}
-
-		
-		/**
-		 * When a player ends their turn 
-		 * If the next player is in jail they will not have the ability to roll the 
-		 * dice and will only have the ability to end their turn if they have not paid the bail
-		 * If the player is not in jail they can roll the dice 
-		 */
 		if (e.getSource() == btnEndTurn) {
+			endTurn();
+		}
+	}
+	/**
+	 * Rolls the dice and sets the face value of the dice to a random number between 1 and 6
+	 */
+	public void rollDice(){
+		int faceValueDiceOne = roll();
+		int faceValueDiceTwo = roll();
 
-			playerList.switchToNextPlayer();
-			
-			showPlayersTurn.uppdateGUI(playerList.getActivePlayer().getName(),
-					playerList.getActivePlayer().getPlayerColor());
-			
-			if (playerList.getActivePlayer().isPlayerInJail() == true) {
-				btnRollDice.setEnabled(false);
-				btnEndTurn.setEnabled(true);
-				manageEvents.newEvent(board.getDestinationTile(playerList.getActivePlayer().getPosition()),
-						playerList.getActivePlayer());
-			} 
-			
-			else if (playerList.getActivePlayer().isPlayerInJail() == false) {
-				btnRollDice.setEnabled(true);
-				btnEndTurn.setEnabled(false);
-			}
-			
-			eastSidePnl.addPlayerList(playerList);
-			eastSidePnl.setTab();
-			westSidePnl.getEventPanel().resetEventPanel();
+		switch (faceValueDiceOne) {
+			case 1:
+				faceToShow = new ImageIcon("DicePictures/faceValue1White.png");
+				break;
+
+			case 2:
+				faceToShow = new ImageIcon("DicePictures/faceValue2White.png");
+				break;
+
+			case 3:
+				faceToShow = new ImageIcon("DicePictures/faceValue3White.png");
+				break;
+
+			case 4:
+				faceToShow = new ImageIcon("DicePictures/faceValue4White.png");
+				break;
+
+			case 5:
+				faceToShow = new ImageIcon("DicePictures/faceValue5White.png");
+				break;
+
+			case 6:
+				faceToShow = new ImageIcon("DicePictures/faceValue6White.png");
+				break;
 		}
 
-	}
+		resizedImage = faceToShow.getImage().getScaledInstance(diceWidth, diceHeight, Image.SCALE_SMOOTH);
+		showDice = new ImageIcon(resizedImage);
+		lblDice1.setIcon(showDice);
 
+		switch (faceValueDiceTwo) {
+			case 1:
+				faceToShow = new ImageIcon("DicePictures/faceValue1White.png");
+				break;
+
+			case 2:
+				faceToShow = new ImageIcon("DicePictures/faceValue2White.png");
+				break;
+
+			case 3:
+				faceToShow = new ImageIcon("DicePictures/faceValue3White.png");
+				break;
+
+			case 4:
+				faceToShow = new ImageIcon("DicePictures/faceValue4White.png");
+				break;
+
+			case 5:
+				faceToShow = new ImageIcon("DicePictures/faceValue5White.png");
+				break;
+
+			case 6:
+				faceToShow = new ImageIcon("DicePictures/faceValue6White.png");
+				break;
+		}
+
+		if (faceValueDiceOne == faceValueDiceTwo) {
+			setRoll(((faceValueDiceOne + faceValueDiceTwo) * 2)); //TODO: Weird logic, check if it's correct
+			//westSidePnl.append(playerList.getActivePlayer().getName() + " Rolled a dubble: " + getRoll() + "\n"); //TODO NOT IN USE
+		} else {
+			setRoll(((faceValueDiceOne + faceValueDiceTwo)));
+			//westSidePnl.append(playerList.getActivePlayer().getName() + " Rolled a: " + getRoll() + "\n"); //TODO NOT IN USE
+		}
+		resizedImage = faceToShow.getImage().getScaledInstance(diceWidth, diceHeight, Image.SCALE_SMOOTH);
+		showDice = new ImageIcon(resizedImage);
+		lblDice2.setIcon(showDice);
+
+		playerList.getActivePlayer().checkPlayerRank();
+		manageEvents.setRoll(this);
+
+		movePlayerThread = new Thread(new LoopThread(getRoll()));
+		movePlayerThread.start();
+
+		goEvent();
+
+		eastSidePnl.addPlayerList(playerList);
+
+		btnRollDice.setEnabled(false);
+	}
 	/**
-	 * @param Cheat method used for Testing
+	 * When a player ends their turn
+	 * If the next player is in jail they will not have the ability to roll the
+	 * dice and will only have the ability to end their turn if they have not paid the bail
+	 * If the player is not in jail they can roll the dice
+	 */
+	public void endTurn(){
+		playerList.switchToNextPlayer();
+
+		showPlayersTurn.uppdateGUI(playerList.getActivePlayer().getName(),
+				playerList.getActivePlayer().getPlayerColor());
+
+		if (playerList.getActivePlayer().isPlayerInJail() == true) {
+			btnRollDice.setEnabled(false);
+			btnEndTurn.setEnabled(true);
+			manageEvents.newEvent(board.getDestinationTile(playerList.getActivePlayer().getPosition()),
+					playerList.getActivePlayer());
+		}
+
+		else if (playerList.getActivePlayer().isPlayerInJail() == false) {
+			btnRollDice.setEnabled(true);
+			btnEndTurn.setEnabled(false);
+		}
+
+		eastSidePnl.addPlayerList(playerList);
+		eastSidePnl.setTab();
+		westSidePnl.getEventPanel().resetEventPanel();
+	}
+	/**
+	 * @param i method used for Testing
 	 * it moves the player to a specific index
 	 */
 	public void moveWCheat(int i) {
@@ -305,7 +301,14 @@ public class Dice extends JPanel implements ActionListener {
 	}
 
 	/**
-	 * @param  sets number of total roll
+	 * Rolls the dice
+	 * @return
+	 */
+	public int roll(){
+		return (int) (Math.random() * (7 - 1) + 1);
+	}
+	/**
+	 * @param  roll number of total roll
 	 */
 	public void setRoll(int roll) {
 		this.roll = roll;
@@ -356,7 +359,7 @@ public class Dice extends JPanel implements ActionListener {
 			playerList.getActivePlayer().increaseBalance(200);
 			playerList.getActivePlayer().increaseNetWorth(200);
 
-			westSidePnl.append("Passed Go and received 200 GC\n");
+			//westSidePnl.append("Passed Go and received 200 GC\n"); //TODO NOT IN USE
 			playerList.getActivePlayer().resetPassedGo();
 		}
 	}

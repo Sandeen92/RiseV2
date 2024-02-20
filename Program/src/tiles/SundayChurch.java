@@ -9,7 +9,7 @@ import javax.swing.ImageIcon;
  * @author AevanDino, SebastianViro
  */
 public class SundayChurch implements Tile {
-	private ImageIcon img = new ImageIcon("Program/tilePics/church.png");
+	private ImageIcon img = new ImageIcon("tilePics/church.png");
 	String info;
 
 	public void onLanding() {

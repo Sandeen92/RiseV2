@@ -64,7 +64,7 @@ public class Introduction extends JPanel {
 
 		BufferedImage img = null;
 		try {
-			img = ImageIO.read(new File("Program/images/backpaper.jpg"));
+			img = ImageIO.read(new File("images/backpaper.jpg"));
 
 		} catch (IOException e) {
 			e.printStackTrace();
