@@ -33,7 +33,6 @@ public class DiceTest {
     public void testDiceRollButton() {
         int initialRoll = dice.getRoll();
         dice.actionPerformed(new ActionEvent(dice.btnRollDice, 0, "Roll Dice"));
-
         assertNotEquals(initialRoll, dice.getRoll(), "Dice roll value should change after button click");
     }
     @Test

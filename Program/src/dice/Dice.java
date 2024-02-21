@@ -25,7 +25,6 @@ import westSidePanel.WestSidePanel;
  *
  */
 public class Dice extends JPanel implements ActionListener {
-	
 	private static final long serialVersionUID = 1L;
 	private ShowPlayersTurn showPlayersTurn;
 	private Board board;
@@ -51,7 +50,6 @@ public class Dice extends JPanel implements ActionListener {
 	private int roll;
 	private CheatGui cheat = new CheatGui(this);
 	
-	
 	/**
 	 * @param playerList method used for updating the list of players 
 	 */
@@ -62,7 +60,6 @@ public class Dice extends JPanel implements ActionListener {
 				playerList.getActivePlayer().getPlayerColor());
 		
 		manageEvents = new ManageEvents(board, playerList, westSidePnl, this, eastSidePnl);
-		
 	}
 	
 	
@@ -77,9 +74,7 @@ public class Dice extends JPanel implements ActionListener {
 		this.playerList = playerList;
 		this.westSidePnl = westSidePanel;
 		this.eastSidePnl = eastSidePnl;
-
 		initializePanel();
-
 	}
 
 	/**
@@ -93,17 +88,13 @@ public class Dice extends JPanel implements ActionListener {
 	 * initializes Panel
 	 */
 	public void initializePanel() {
-		
 		setPreferredSize(new Dimension(650, 120));
 		setLayout(new FlowLayout());
 		setOpaque(false);
 		
 		showPlayersTurn = new ShowPlayersTurn("Player");
 		add(showPlayersTurn);
-		
-		
 		add(lblDice1);
-
 		add(lblDice2);
 
 		btnRollDice.setFont(new Font("Algerian", Font.PLAIN, 14));
@@ -136,67 +127,38 @@ public class Dice extends JPanel implements ActionListener {
 		}
 	}
 	/**
+	 * @param roll the number of the dice
+	 * @return the image of the dice
+	 */
+	public ImageIcon setDiceImage(int roll){
+		return switch (roll) {
+            case 1 -> new ImageIcon("DicePictures/faceValue1White.png");
+            case 2 -> new ImageIcon("DicePictures/faceValue2White.png");
+            case 3 -> new ImageIcon("DicePictures/faceValue3White.png");
+            case 4 -> new ImageIcon("DicePictures/faceValue4White.png");
+            case 5 -> new ImageIcon("DicePictures/faceValue5White.png");
+            case 6 -> new ImageIcon("DicePictures/faceValue6White.png");
+            default -> null;
+        };
+	}
+	/**
 	 * Rolls the dice and sets the face value of the dice to a random number between 1 and 6
 	 */
 	public void rollDice(){
 		int faceValueDiceOne = roll();
 		int faceValueDiceTwo = roll();
 
-		switch (faceValueDiceOne) {
-			case 1:
-				faceToShow = new ImageIcon("DicePictures/faceValue1White.png");
-				break;
-
-			case 2:
-				faceToShow = new ImageIcon("DicePictures/faceValue2White.png");
-				break;
-
-			case 3:
-				faceToShow = new ImageIcon("DicePictures/faceValue3White.png");
-				break;
-
-			case 4:
-				faceToShow = new ImageIcon("DicePictures/faceValue4White.png");
-				break;
-
-			case 5:
-				faceToShow = new ImageIcon("DicePictures/faceValue5White.png");
-				break;
-
-			case 6:
-				faceToShow = new ImageIcon("DicePictures/faceValue6White.png");
-				break;
-		}
+		faceToShow = setDiceImage(faceValueDiceOne);
 
 		resizedImage = faceToShow.getImage().getScaledInstance(diceWidth, diceHeight, Image.SCALE_SMOOTH);
 		showDice = new ImageIcon(resizedImage);
 		lblDice1.setIcon(showDice);
 
-		switch (faceValueDiceTwo) {
-			case 1:
-				faceToShow = new ImageIcon("DicePictures/faceValue1White.png");
-				break;
+		faceToShow = setDiceImage(faceValueDiceTwo);
 
-			case 2:
-				faceToShow = new ImageIcon("DicePictures/faceValue2White.png");
-				break;
-
-			case 3:
-				faceToShow = new ImageIcon("DicePictures/faceValue3White.png");
-				break;
-
-			case 4:
-				faceToShow = new ImageIcon("DicePictures/faceValue4White.png");
-				break;
-
-			case 5:
-				faceToShow = new ImageIcon("DicePictures/faceValue5White.png");
-				break;
-
-			case 6:
-				faceToShow = new ImageIcon("DicePictures/faceValue6White.png");
-				break;
-		}
+		resizedImage = faceToShow.getImage().getScaledInstance(diceWidth, diceHeight, Image.SCALE_SMOOTH);
+		showDice = new ImageIcon(resizedImage);
+		lblDice2.setIcon(showDice);
 
 		if (faceValueDiceOne == faceValueDiceTwo) {
 			setRoll(((faceValueDiceOne + faceValueDiceTwo) * 2)); //TODO: Weird logic, check if it's correct
@@ -205,9 +167,6 @@ public class Dice extends JPanel implements ActionListener {
 			setRoll(((faceValueDiceOne + faceValueDiceTwo)));
 			//westSidePnl.append(playerList.getActivePlayer().getName() + " Rolled a: " + getRoll() + "\n"); //TODO NOT IN USE
 		}
-		resizedImage = faceToShow.getImage().getScaledInstance(diceWidth, diceHeight, Image.SCALE_SMOOTH);
-		showDice = new ImageIcon(resizedImage);
-		lblDice2.setIcon(showDice);
 
 		playerList.getActivePlayer().checkPlayerRank();
 		manageEvents.setRoll(this);
@@ -233,14 +192,14 @@ public class Dice extends JPanel implements ActionListener {
 		showPlayersTurn.uppdateGUI(playerList.getActivePlayer().getName(),
 				playerList.getActivePlayer().getPlayerColor());
 
-		if (playerList.getActivePlayer().isPlayerInJail() == true) {
+		if (playerList.getActivePlayer().isPlayerInJail()) {
 			btnRollDice.setEnabled(false);
 			btnEndTurn.setEnabled(true);
 			manageEvents.newEvent(board.getDestinationTile(playerList.getActivePlayer().getPosition()),
 					playerList.getActivePlayer());
 		}
 
-		else if (playerList.getActivePlayer().isPlayerInJail() == false) {
+		else if (!playerList.getActivePlayer().isPlayerInJail()) {
 			btnRollDice.setEnabled(true);
 			btnEndTurn.setEnabled(false);
 		}
@@ -254,13 +213,11 @@ public class Dice extends JPanel implements ActionListener {
 	 * it moves the player to a specific index
 	 */
 	public void moveWCheat(int i) {
-		
 		setRoll(i);
 		playerList.getActivePlayer().checkPlayerRank();
 		board.removePlayer(playerList.getActivePlayer());
 		playerList.getActivePlayer().setPosition(getRoll());
 		board.setPlayer(playerList.getActivePlayer());
-
 		
 		manageEvents.setRoll(this);
 		goEvent();
