@@ -4,7 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="369cbea7-d726-43f1-931c-763e77531bfd" name="Changes" comment="" />
+    <list default="true" id="369cbea7-d726-43f1-931c-763e77531bfd" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program/src/startMenu/StartingScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/startMenu/StartingScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/lan/GameClient$Connection$Listener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/lan/GameClient$Connection$Listener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/lan/GameClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/lan/GameClient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/lan/GameServer$ClientHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/lan/GameServer$ClientHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/lan/GameServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/lan/GameServer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/startMenu/StartingScreen$ButtonListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/startMenu/StartingScreen$ButtonListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/startMenu/StartingScreen$MouseAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/startMenu/StartingScreen$MouseAction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/startMenu/StartingScreen.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/startMenu/StartingScreen.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -27,7 +37,9 @@
   &quot;associatedIndex&quot;: 6
 }</component>
   <component name="ProjectId" id="2bONPJi5LgXRO73mHH0fj9W9sRP" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -96,8 +108,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.GameServer" />
         <item itemvalue="Application.StartingScreen" />
+        <item itemvalue="Application.GameServer" />
         <item itemvalue="Application.GameClient" />
       </list>
     </recent_temporary>

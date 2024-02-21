@@ -367,6 +367,22 @@ public class StartingScreen extends JFrame implements Runnable {
 	public void joinLobby(String playerName) {
 		GameClient gameClient = new GameClient(this, playerName, "0.0.0.0", 9090);
 		gameClient.run();
+
+		pnlPlayerInfo.removeAll();
+
+		JLabel lblConnected = new JLabel("Connection successful!");
+		lblConnected.setFont(new Font("Arial", Font.BOLD, 20));
+		lblConnected.setBounds(335, 315, 250, 30);
+		JLabel lblWaiting = new JLabel("Waiting for host to start game...");
+		lblWaiting.setFont(new Font("Arial", Font.BOLD, 20));
+		lblWaiting.setBounds(335, 345, 250, 30);
+
+		pnlPlayerInfo.add(lblConnected);
+		pnlPlayerInfo.add(lblWaiting);
+
+		lblBackground.add(pnlPlayerInfo);
+		lblBackground.revalidate();
+		lblBackground.repaint();
 	}
 
 	public void appendLobby(String playerName) {
