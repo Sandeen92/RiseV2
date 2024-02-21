@@ -66,6 +66,14 @@ public class DiceTest {
                 () -> {
                     int roll = dice.getRoll();
                     assertTrue(roll >= 2 && roll <= 12, "Roll value should be between 2 and 12");
+                },
+                () -> dice.activateRollDice(),
+                () -> assertTrue(dice.btnRollDice.isEnabled(), "Should be true after called"),
+                () -> assertFalse(dice.btnEndTurn.isEnabled(), "Should be false after called"),
+                () -> {
+                    PlayerList testList = new PlayerList();
+                    testList.addNewPlayer("Test Player", new ImageIcon());
+                    assertEquals(testList, dice.setPlayerList(testList), "PlayerList should be set to testList");
                 }
         );
     }

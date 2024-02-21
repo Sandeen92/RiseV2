@@ -243,8 +243,9 @@ public class Dice extends JPanel implements ActionListener {
 	/**
 	 * @param playerList
 	 */
-	public void setPlayerList(PlayerList playerList) {
+	public PlayerList setPlayerList(PlayerList playerList) {
 		this.playerList = playerList;
+		return playerList;
 	}
 	
 	/**

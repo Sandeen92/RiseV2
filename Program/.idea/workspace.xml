@@ -5,34 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="33559794-9b7a-40dd-a66c-06fb2250909a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/alex_tests/DiceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/alex_tests/PlayerTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Project-Rise-V2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Project-Rise-V2.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/board/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/board/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/board/ColorIconMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/board/ColorIconMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/board/Rules.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/board/Rules.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/combinedPanels/GamePanels.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/combinedPanels/GamePanels.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/alex_tests/DiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/alex_tests/DiceTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dice/Dice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dice/Dice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/endGame/WinMusic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/endGame/WinMusic.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/endGame/WinPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/endGame/WinPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/events/ManageEvents.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/events/ManageEvents.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/messageGui/DeathGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/messageGui/DeathGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/messageGui/SecretGui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/messageGui/SecretGui.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/messageGui/WinGui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/messageGui/WinGui.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/player/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/player/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/startMenu/BackgroundMusic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/startMenu/BackgroundMusic.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/startMenu/Introduction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/startMenu/Introduction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/startMenu/StartingScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/startMenu/StartingScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tileCollection/TileCollection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tileCollection/TileCollection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tiles/FortuneTeller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tiles/FortuneTeller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tiles/Go.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tiles/Go.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tiles/GoToJail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tiles/GoToJail.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tiles/Jail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tiles/Jail.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tiles/SundayChurch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tiles/SundayChurch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tiles/Tavern.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tiles/Tavern.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tiles/Tax.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tiles/Tax.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tiles/Work.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tiles/Work.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +46,7 @@
   "keyToString": {
     "Application.StartingScreen.executor": "Run",
     "Downloaded.Files.Path.Enabled": "false",
-    "JUnit.All tests.executor": "Coverage",
+    "JUnit.All tests.executor": "Run",
     "JUnit.DiceTest.executor": "Run",
     "JUnit.PlayerTests.executor": "Coverage",
     "Repository.Attach.Annotations": "false",
@@ -82,7 +57,7 @@
     "git-widget-placeholder": "alex-testing"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.PlayerTests">
+  <component name="RunManager" selected="JUnit.All tests">
     <configuration name="All tests" type="JUnit" factoryName="JUnit">
       <module name="Project-Rise-V2" />
       <extension name="coverage" sample_coverage="false" />
