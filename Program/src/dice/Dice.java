@@ -117,6 +117,7 @@ public class Dice extends JPanel implements ActionListener {
 	}
 	/**
 	 * Action Listener that handles what happens if the buttons are pressed
+	 * @param e the action event
 	 */
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == btnRollDice) {
@@ -129,6 +130,8 @@ public class Dice extends JPanel implements ActionListener {
 	/**
 	 * @param roll the number of the dice
 	 * @return the image of the dice
+	 * sets the image of the dice to the face value of the dice corresponding to the number rolled
+	 * Broke out this method to make it easier to read because it looked like donkey poop before :)
 	 */
 	public ImageIcon setDiceImage(int roll){
 		return switch (roll) {
@@ -188,22 +191,17 @@ public class Dice extends JPanel implements ActionListener {
 	 */
 	public void endTurn(){
 		playerList.switchToNextPlayer();
-
-		showPlayersTurn.uppdateGUI(playerList.getActivePlayer().getName(),
-				playerList.getActivePlayer().getPlayerColor());
+		showPlayersTurn.uppdateGUI(playerList.getActivePlayer().getName(), playerList.getActivePlayer().getPlayerColor());
 
 		if (playerList.getActivePlayer().isPlayerInJail()) {
 			btnRollDice.setEnabled(false);
 			btnEndTurn.setEnabled(true);
-			manageEvents.newEvent(board.getDestinationTile(playerList.getActivePlayer().getPosition()),
-					playerList.getActivePlayer());
+			manageEvents.newEvent(board.getDestinationTile(playerList.getActivePlayer().getPosition()), playerList.getActivePlayer());
 		}
-
 		else if (!playerList.getActivePlayer().isPlayerInJail()) {
 			btnRollDice.setEnabled(true);
 			btnEndTurn.setEnabled(false);
 		}
-
 		eastSidePnl.addPlayerList(playerList);
 		eastSidePnl.setTab();
 		westSidePnl.getEventPanel().resetEventPanel();
@@ -225,7 +223,6 @@ public class Dice extends JPanel implements ActionListener {
 				playerList.getActivePlayer());
 		eastSidePnl.addPlayerList(playerList);
 	}
-
 
 	/**
 	 * To free the prisoner
@@ -274,7 +271,6 @@ public class Dice extends JPanel implements ActionListener {
 	/**
 	 * @author Seth �berg, Muhammad Abdulkhuder
 	 * Moves the player with a thread.
-	 *
 	 */
 	private class LoopThread implements Runnable {
 		public LoopThread(int index) {
