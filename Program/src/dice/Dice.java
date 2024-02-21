@@ -19,7 +19,7 @@ import cheat.CheatGui; //May be needed for testing in future
 import eastSidePanels.EastSidePanel;
 import events.ManageEvents;
 import player.PlayerList;
-import westSidePanel.WestSidePanel;
+import view.WestSidePanel;
 
 /**
  * @author Muhammad Abdulkhuder, Aevan Dino, Sebastian Viro, Seth Oberg

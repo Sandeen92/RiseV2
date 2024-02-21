@@ -1,7 +1,8 @@
-package westSidePanel;
+package view;
 
 import player.Player;
 import tiles.*;
+import view.WestSidePanel;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;

@@ -27,7 +27,7 @@ import tiles.Tavern;
 import tiles.Tax;
 import tiles.Tile;
 import tiles.Work;
-import westSidePanel.WestSidePanel;
+import view.WestSidePanel;
 
 /**
  * The class handles all the events that occur when a player lands on a tile.

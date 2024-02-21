@@ -24,7 +24,7 @@ import eastSidePanels.EastSidePanel;
 import menu.Menu;
 import player.PlayerList;
 import startMenu.BackgroundMusic;
-import westSidePanel.WestSidePanel;
+import view.WestSidePanel;
 
 /**
  * This class combines most of the panels in the game and adds appropriate

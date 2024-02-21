@@ -1,15 +1,9 @@
-package westSidePanel;
+package view;
 
 import events.ManageEvents;
-import player.PlayerList;
-import tiles.Property;
 
 import java.awt.BorderLayout;
 import java.awt.*;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
-import javax.imageio.ImageIO;
 import javax.swing.BorderFactory;
 import javax.swing.*;
 import javax.swing.border.Border;

@@ -8,7 +8,6 @@ import java.awt.event.MouseListener;
 import java.io.Serializable;
 
 import javax.swing.ImageIcon;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
@@ -17,7 +16,7 @@ import player.PlayerList;
 import tiles.Tile;
 import tileCollection.TileCollection;
 import tiles.TileInfo;
-import westSidePanel.WestSidePanel;
+import view.WestSidePanel;
 
 
 
