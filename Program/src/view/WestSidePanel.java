@@ -1,6 +1,6 @@
 package view;
 
-import events.ManageEvents;
+import controller.ManageEvents;
 
 import java.awt.BorderLayout;
 import java.awt.*;

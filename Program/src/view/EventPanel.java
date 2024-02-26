@@ -1,8 +1,7 @@
 package view;
 
-import player.Player;
-import tiles.*;
-import view.WestSidePanel;
+import entity.player.Player;
+import entity.tiles.*;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -38,7 +37,7 @@ public class EventPanel extends JPanel{
     /**
      * This method is used to display the missing funds event.
      * @param property The property tile
-     * @param player The player currently on the tile
+     * @param player The entity.player currently on the tile
      */
     public void setMissingFundsEvent(Property property, Player player){
         setEventPicture(property);
@@ -47,7 +46,7 @@ public class EventPanel extends JPanel{
     /**
      * This method is used to display the rent paid event.
      * @param property The property tile
-     * @param player The player currently on the tile paying the rent
+     * @param player The entity.player currently on the tile paying the rent
      */
     public void setPayRentEvent(Property property, Player player){
         setEventPicture(property);
@@ -56,7 +55,7 @@ public class EventPanel extends JPanel{
     /**
      * This method is used to set the event for the property tile.
      * @param property the property tile
-     * @param player the player currently on the tile
+     * @param player the entity.player currently on the tile
      */
     public void setPropertyEvent(Property property, Player player){
         setEventPicture(property); //Sets the image
@@ -74,7 +73,7 @@ public class EventPanel extends JPanel{
     /**
      * This method is used to set the event for the tavern tile.
      * @param tavern The tavern tile
-     * @param player The player currently on the tile
+     * @param player The entity.player currently on the tile
      */
     public void setTavernEvent(Tavern tavern, Player player){
         setEventPicture(tavern);
@@ -91,7 +90,7 @@ public class EventPanel extends JPanel{
     /**
      * This method is used to set the event for the tax tile.
      * @param tax The tax tile
-     * @param player The player
+     * @param player The entity.player
      */
     public void setTaxEvent(Tax tax, Player player){
         setEventPicture(tax);
@@ -102,7 +101,7 @@ public class EventPanel extends JPanel{
     /**
      * This method is used to set the event for the work tile.
      * @param work The work tile
-     * @param player The player
+     * @param player The entity.player
      */
     public void setWorkEvent(Work work, Player player){
         setEventPicture(work);
@@ -113,7 +112,7 @@ public class EventPanel extends JPanel{
     /**
      * This method is used to set the event for the GoToJail tile.
      * @param jail The GoToJail tile
-     * @param player The player
+     * @param player The entity.player
      */
     public void setGotoJailEvent(GoToJail jail, Player player){
         setEventPicture(jail);
