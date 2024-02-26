@@ -494,7 +494,7 @@ public class ManageEvents {
 		public void run() {
 			try {
 				for (int i = 0; i < 5; i++) {
-					File musicPath = new File("Program/music/duraw.wav");				
+					File musicPath = new File("music/duraw.wav");
 					AudioInputStream ais = AudioSystem.getAudioInputStream(musicPath);
 					clip = AudioSystem.getClip();
 					clip.open(ais);

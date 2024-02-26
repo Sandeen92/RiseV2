@@ -1,7 +1,6 @@
 package tiles;
 
 import java.awt.Color;
-import java.io.Serializable;
 
 import javax.swing.ImageIcon;
 
@@ -11,8 +10,8 @@ import player.Player;
 /**
  * @author Muhammad abdulkhuder, AevanDino, Sebastian Viro, .
  */
-public class Work implements Tile, Serializable {
-	private ImageIcon img = new ImageIcon("Program/tilePics/Work.png");
+public class Work implements Tile {
+	private ImageIcon img = new ImageIcon("tilePics/Work.png");
 	private Player player;
 	private String info;
 	private int roll;

@@ -11,7 +11,7 @@ import javax.swing.ImageIcon;
  */
 public class GoToJail implements Tile, Serializable {
 
-	private ImageIcon img = new ImageIcon("Program/tilePics/gojail.png");
+	private ImageIcon img = new ImageIcon("tilePics/gojail.png");
 
 	/**
 	 * returns null

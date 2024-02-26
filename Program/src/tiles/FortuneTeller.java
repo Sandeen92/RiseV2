@@ -24,7 +24,7 @@ public class FortuneTeller implements Tile, Serializable {
 	private String description = "";
 	private int amount; 
 	
-	private ImageIcon img = new ImageIcon("Program/tilePics/fortune.png");
+	private ImageIcon img = new ImageIcon("tilePics/fortune.png");
 	
 	/**
 	 * Empty constructor

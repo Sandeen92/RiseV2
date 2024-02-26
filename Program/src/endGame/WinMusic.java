@@ -54,7 +54,7 @@ public class WinMusic extends Thread {
 		AudioInputStream ais;
 		while(isPlaying && clip == null) {
 			try {
-				musicPath = new File("Program/music/victory.wav");				
+				musicPath = new File("music/victory.wav");
 				ais = AudioSystem.getAudioInputStream(musicPath);
 				clip = AudioSystem.getClip();
 				clip.open(ais);

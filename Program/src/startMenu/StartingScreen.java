@@ -113,6 +113,11 @@ public class StartingScreen extends JFrame implements Runnable {
 		repaint();
 	}
 
+	public PlayerList setUpTest(){
+		playerList.addNewPlayer("Test1", (String) playerColors[0].getSelectedItem());
+		playerList.addNewPlayer("Test2", (String) playerColors[1].getSelectedItem());
+		return playerList;
+	}
 	/**
 	 * Method to check if the OS is MacOS
 	 * Note: Temporary solution to fix the font size on MacOS, should be moved to UTIL class.

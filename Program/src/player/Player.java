@@ -407,16 +407,16 @@ public void checkPlayerRank() {
 	if (getNetWorth() <= 1499) {
 
 		if (this.getPlayerColor().equals(RED)) {
-            this.playerIcon = resizeImage(new ImageIcon("Program/images/Red_pawn.svg.png"));
+            this.playerIcon = resizeImage(new ImageIcon("images/Red_pawn.svg.png"));
         }
         else if (this.getPlayerColor().equals(GREEN)) {
-            this.playerIcon = resizeImage(new ImageIcon("Program/images/Green_pawn.svg.png"));
+            this.playerIcon = resizeImage(new ImageIcon("images/Green_pawn.svg.png"));
         }
         else if (this.getPlayerColor().equals(CYAN)) {
-            this.playerIcon = resizeImage(new ImageIcon("Program/images/Blue_pawn.svg.png"));
+            this.playerIcon = resizeImage(new ImageIcon("images/Blue_pawn.svg.png"));
         }
         else if (this.getPlayerColor().equals(YELLOW)) {
-            this.playerIcon = resizeImage(new ImageIcon("Program/images/Yellow_pawn.svg.png"));
+            this.playerIcon = resizeImage(new ImageIcon("images/Yellow_pawn.svg.png"));
         }
 
 		setPlayerRank(PlayerRanks.PEASANT);
@@ -425,16 +425,16 @@ public void checkPlayerRank() {
     if (getNetWorth() >= 1510 && getNetWorth() <= 4000) {
         
         if (this.getPlayerColor().equals(RED)) {
-            this.playerIcon = resizeImage(new ImageIcon("Program/images/Red_knight.svg.png"));
+            this.playerIcon = resizeImage(new ImageIcon("images/Red_knight.svg.png"));
         }
         else if (this.getPlayerColor().equals(GREEN)) {
-            this.playerIcon = resizeImage(new ImageIcon("Program/images/Green_knight.svg.png"));
+            this.playerIcon = resizeImage(new ImageIcon("images/Green_knight.svg.png"));
         }
         else if (this.getPlayerColor().equals(CYAN)) {
-            this.playerIcon = resizeImage(new ImageIcon("Program/images/Blue_knight.svg.png"));
+            this.playerIcon = resizeImage(new ImageIcon("images/Blue_knight.svg.png"));
         }
         else if (this.getPlayerColor().equals(YELLOW)) {
-            this.playerIcon = resizeImage(new ImageIcon("Program/images/Yellow_knight.svg.png"));
+            this.playerIcon = resizeImage(new ImageIcon("images/Yellow_knight.svg.png"));
         }
 
         setPlayerRank(PlayerRanks.KNIGHT);
@@ -443,16 +443,16 @@ public void checkPlayerRank() {
     if (getNetWorth() >= 4000 && getNetWorth() <= 7500) {
 
         if (this.getPlayerColor().equals(RED)) {
-            this.playerIcon = resizeImage(new ImageIcon("Program/images/Red_rook.svg.png"));
+            this.playerIcon = resizeImage(new ImageIcon("images/Red_rook.svg.png"));
         }
         else if (this.getPlayerColor().equals(GREEN)) {
-            this.playerIcon = resizeImage(new ImageIcon("Program/images/Green_rook.svg.png"));
+            this.playerIcon = resizeImage(new ImageIcon("images/Green_rook.svg.png"));
         }
         else if (this.getPlayerColor().equals(CYAN)) {
-            this.playerIcon = resizeImage(new ImageIcon("Program/images/Blue_rook.svg.png"));
+            this.playerIcon = resizeImage(new ImageIcon("images/Blue_rook.svg.png"));
         }
         else if (this.getPlayerColor().equals(YELLOW)) {
-            this.playerIcon = resizeImage(new ImageIcon("Program/images/Yellow_rook.svg.png"));
+            this.playerIcon = resizeImage(new ImageIcon("images/Yellow_rook.svg.png"));
         }
 
         setPlayerRank(PlayerRanks.LORD);
@@ -462,16 +462,16 @@ public void checkPlayerRank() {
     if (getNetWorth() >= 7500) {
 
         if (this.getPlayerColor().equals(RED)) {
-            this.playerIcon = resizeImage(new ImageIcon("Program/images/Red_king.svg.png"));
+            this.playerIcon = resizeImage(new ImageIcon("images/Red_king.svg.png"));
         }
         else if (this.getPlayerColor().equals(GREEN)) {
-            this.playerIcon = resizeImage(new ImageIcon("Program/images/Green_king.svg.png"));
+            this.playerIcon = resizeImage(new ImageIcon("images/Green_king.svg.png"));
         }
         else if (this.getPlayerColor().equals(CYAN)) {
-            this.playerIcon = resizeImage(new ImageIcon("Program/images/Blue_king.svg.png"));
+            this.playerIcon = resizeImage(new ImageIcon("images/Blue_king.svg.png"));
         }
         else if (this.getPlayerColor().equals(YELLOW)) {
-            this.playerIcon = resizeImage(new ImageIcon("Program/images/Yellow_king.svg.png"));
+            this.playerIcon = resizeImage(new ImageIcon("images/Yellow_king.svg.png"));
         }
 
         setPlayerRank(PlayerRanks.KINGS);

@@ -16,7 +16,7 @@ public class Tavern implements Tile, Serializable {
 	private Color color; 
 	private int price;
 	private String name;
-	private ImageIcon img = new ImageIcon("Program/tilePics/tavern.png");
+	private ImageIcon img = new ImageIcon("tilePics/tavern.png");
 
 	public Tavern( String namn, int price) {
 		this.name = namn;

@@ -12,7 +12,7 @@ import javax.swing.JLabel;
 public class WinPanel extends JFrame {
 
 	private static final long serialVersionUID = 1L;
-	private ImageIcon imgBackground = new ImageIcon("Program/images/win.png");
+	private ImageIcon imgBackground = new ImageIcon("images/win.png");
 	private JLabel lblBackground = new JLabel("", imgBackground, JLabel.CENTER);
 
 	/**

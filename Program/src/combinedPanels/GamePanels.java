@@ -82,7 +82,7 @@ public class GamePanels extends JPanel implements Serializable {
 
 		BufferedImage img = null;
 		try {
-			img = ImageIO.read(new File("Program/images/back2jpg.jpg"));
+			img = ImageIO.read(new File("images/back2jpg.jpg"));
 
 		} catch (IOException e) {
 

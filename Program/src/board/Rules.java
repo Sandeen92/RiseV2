@@ -24,34 +24,34 @@ public class Rules extends JPanel {
 
 		JTabbedPane tabbedPane = new JTabbedPane();
 
-		JComponent panel1 = makeTextPanel("Program/images/Introduction.jpg");
+		JComponent panel1 = makeTextPanel("images/Introduction.jpg");
 		tabbedPane.addTab("Intro", panel1);
 
-		JComponent panel2 = makeTextPanel("Program/images/WinCondition.jpg");
+		JComponent panel2 = makeTextPanel("images/WinCondition.jpg");
 		tabbedPane.addTab("Win", panel2);
 
-		JComponent panel3 = makeTextPanel("Program/images/Movement.jpg");
+		JComponent panel3 = makeTextPanel("images/Movement.jpg");
 		tabbedPane.addTab("Move", panel3);
 
-		JComponent panel4 = makeTextPanel("Program/images/Properties.jpg");
+		JComponent panel4 = makeTextPanel("images/Properties.jpg");
 		tabbedPane.addTab("Property", panel4);
 		
-		JComponent panel5 = makeTextPanel("Program/images/Work.jpg");
+		JComponent panel5 = makeTextPanel("images/Work.jpg");
 		tabbedPane.addTab("Work", panel5);
 		
-		JComponent panel6 = makeTextPanel("Program/images/Tavern.jpg");
+		JComponent panel6 = makeTextPanel("images/Tavern.jpg");
 		tabbedPane.addTab("Tavern", panel6);
 		
-		JComponent panel7 = makeTextPanel("Program/images/FortuneTeller.jpg");
+		JComponent panel7 = makeTextPanel("images/FortuneTeller.jpg");
 		tabbedPane.addTab("Fortune", panel7);
 		
-		JComponent panel8 = makeTextPanel("Program/images/SundayChurch.jpg");
+		JComponent panel8 = makeTextPanel("images/SundayChurch.jpg");
 		tabbedPane.addTab("Tax", panel8);
 		
-		JComponent panel9 = makeTextPanel("Program/images/Jail.jpg");
+		JComponent panel9 = makeTextPanel("images/Jail.jpg");
 		tabbedPane.addTab("Jail", panel9);
 		
-		JComponent panel10 = makeTextPanel("Program/images/Sell.jpg");
+		JComponent panel10 = makeTextPanel("images/Sell.jpg");
 		tabbedPane.addTab("Sell", panel10);
 
 		add(tabbedPane); 		
