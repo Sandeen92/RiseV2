@@ -44,7 +44,6 @@ public class Dice extends JPanel implements ActionListener {
 
 	private JLabel lblDice1 = new JLabel();
 	private JLabel lblDice2 = new JLabel();
-	private ImageIcon faceToShow = WHITE_1;
 
 	private int roll;
 	private CheatGui cheat = new CheatGui(this);
@@ -101,8 +100,8 @@ public class Dice extends JPanel implements ActionListener {
 
 		btnRollDice.addActionListener(this);
 
-		lblDice2.setIcon(faceToShow);
-		lblDice1.setIcon(faceToShow);
+		lblDice2.setIcon(WHITE_1);
+		lblDice1.setIcon(WHITE_1);
 
 		btnEndTurn.setFont(new Font("Algerian", Font.PLAIN, 14));
 		btnEndTurn.addActionListener(this);

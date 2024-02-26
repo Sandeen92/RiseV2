@@ -5,11 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="369cbea7-d726-43f1-931c-763e77531bfd" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program/src/entity/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/entity/Board.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Program/src/entity/Dice.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/entity/Dice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program/src/entity/player/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/entity/player/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Program/src/utilities/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/utilities/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program/src/view/GamePanels.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/view/GamePanels.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program/src/view/eastSidePanels/PlayerProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/view/eastSidePanels/PlayerProperties.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program/src/view/eastSidePanels/PropertyWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/view/eastSidePanels/PropertyWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/utilities/Constants$AudioFiles.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/utilities/Constants$AudioFiles.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/RiseV2/utilities/Constants$BoardImages.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/utilities/Constants$BoardImages.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/utilities/Constants$DiceImages.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/utilities/Constants$DiceImages.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/utilities/Constants$PlayerTokenImages.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/utilities/Constants$PlayerTokenImages.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/utilities/Constants$TileImages.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/utilities/Constants$TileImages.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

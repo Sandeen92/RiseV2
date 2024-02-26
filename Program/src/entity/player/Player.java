@@ -11,6 +11,7 @@ import javax.swing.JOptionPane;
 import entity.tiles.Property;
 import entity.tiles.Tavern;
 import entity.tiles.Tile;
+import static utilities.Constants.PlayerTokenImages.*;
 
 /**
  * Player class deals with everything that has to do with a entity.player.
@@ -394,86 +395,65 @@ public class Player implements Serializable {
  * 
  * @return nothing
  */
-public void checkPlayerRank() {
+	public void checkPlayerRank() {
 
-    Color RED = new Color(255, 0, 10, 255);
-    Color GREEN = new Color(35, 254, 14, 255);
-    Color CYAN = new Color(93, 188, 210, 255);
-    Color YELLOW = new Color(206, 183, 51, 255);
-	
-	if (getNetWorth() <= 1499) {
+		Color RED = new Color(255, 0, 10, 255);
+		Color GREEN = new Color(35, 254, 14, 255);
+		Color CYAN = new Color(93, 188, 210, 255);
+		Color YELLOW = new Color(206, 183, 51, 255);
 
-		if (this.getPlayerColor().equals(RED)) {
-            this.playerIcon = resizeImage(new ImageIcon("images/Red_pawn.svg.png"));
-        }
-        else if (this.getPlayerColor().equals(GREEN)) {
-            this.playerIcon = resizeImage(new ImageIcon("images/Green_pawn.svg.png"));
-        }
-        else if (this.getPlayerColor().equals(CYAN)) {
-            this.playerIcon = resizeImage(new ImageIcon("images/Blue_pawn.svg.png"));
-        }
-        else if (this.getPlayerColor().equals(YELLOW)) {
-            this.playerIcon = resizeImage(new ImageIcon("images/Yellow_pawn.svg.png"));
-        }
+		if (getNetWorth() <= 1499) {
+			if (this.getPlayerColor().equals(RED)) {
+				this.playerIcon = RED_PAWN;
+			} else if (this.getPlayerColor().equals(GREEN)) {
+				this.playerIcon = GREEN_PAWN;
+			} else if (this.getPlayerColor().equals(CYAN)) {
+				this.playerIcon = CYAN_PAWN;
+			} else if (this.getPlayerColor().equals(YELLOW)) {
+				this.playerIcon = YELLOW_PAWN;
+			}
+			setPlayerRank(PlayerRanks.PEASANT);
+		}
 
-		setPlayerRank(PlayerRanks.PEASANT);
+		if (getNetWorth() >= 1510 && getNetWorth() <= 4000) {
+			if (this.getPlayerColor().equals(RED)) {
+				this.playerIcon = RED_KNIGHT;
+			} else if (this.getPlayerColor().equals(GREEN)) {
+				this.playerIcon = GREEN_KNIGHT;
+			} else if (this.getPlayerColor().equals(CYAN)) {
+				this.playerIcon = CYAN_KNIGHT;
+			} else if (this.getPlayerColor().equals(YELLOW)) {
+				this.playerIcon = YELLOW_KNIGHT;
+			}
+			setPlayerRank(PlayerRanks.KNIGHT);
+		}
+
+		if (getNetWorth() >= 4000 && getNetWorth() <= 7500) {
+			if (this.getPlayerColor().equals(RED)) {
+				this.playerIcon = RED_ROOK;
+			} else if (this.getPlayerColor().equals(GREEN)) {
+				this.playerIcon = GREEN_ROOK;
+			} else if (this.getPlayerColor().equals(CYAN)) {
+				this.playerIcon = CYAN_ROOK;
+			} else if (this.getPlayerColor().equals(YELLOW)) {
+				this.playerIcon = YELLOW_ROOK;
+			}
+			setPlayerRank(PlayerRanks.LORD);
+		}
+
+		if (getNetWorth() >= 7500) {
+			if (this.getPlayerColor().equals(RED)) {
+				this.playerIcon = RED_KING;
+			} else if (this.getPlayerColor().equals(GREEN)) {
+				this.playerIcon = GREEN_KING;
+			} else if (this.getPlayerColor().equals(CYAN)) {
+				this.playerIcon = CYAN_KING;
+			} else if (this.getPlayerColor().equals(YELLOW)) {
+				this.playerIcon = YELLOW_KING;
+			}
+			setPlayerRank(PlayerRanks.KINGS);
+		}
 	}
-
-    if (getNetWorth() >= 1510 && getNetWorth() <= 4000) {
-        
-        if (this.getPlayerColor().equals(RED)) {
-            this.playerIcon = resizeImage(new ImageIcon("images/Red_knight.svg.png"));
-        }
-        else if (this.getPlayerColor().equals(GREEN)) {
-            this.playerIcon = resizeImage(new ImageIcon("images/Green_knight.svg.png"));
-        }
-        else if (this.getPlayerColor().equals(CYAN)) {
-            this.playerIcon = resizeImage(new ImageIcon("images/Blue_knight.svg.png"));
-        }
-        else if (this.getPlayerColor().equals(YELLOW)) {
-            this.playerIcon = resizeImage(new ImageIcon("images/Yellow_knight.svg.png"));
-        }
-
-        setPlayerRank(PlayerRanks.KNIGHT);
-    }
-
-    if (getNetWorth() >= 4000 && getNetWorth() <= 7500) {
-
-        if (this.getPlayerColor().equals(RED)) {
-            this.playerIcon = resizeImage(new ImageIcon("images/Red_rook.svg.png"));
-        }
-        else if (this.getPlayerColor().equals(GREEN)) {
-            this.playerIcon = resizeImage(new ImageIcon("images/Green_rook.svg.png"));
-        }
-        else if (this.getPlayerColor().equals(CYAN)) {
-            this.playerIcon = resizeImage(new ImageIcon("images/Blue_rook.svg.png"));
-        }
-        else if (this.getPlayerColor().equals(YELLOW)) {
-            this.playerIcon = resizeImage(new ImageIcon("images/Yellow_rook.svg.png"));
-        }
-
-        setPlayerRank(PlayerRanks.LORD);
-
-    }
-
-    if (getNetWorth() >= 7500) {
-
-        if (this.getPlayerColor().equals(RED)) {
-            this.playerIcon = resizeImage(new ImageIcon("images/Red_king.svg.png"));
-        }
-        else if (this.getPlayerColor().equals(GREEN)) {
-            this.playerIcon = resizeImage(new ImageIcon("images/Green_king.svg.png"));
-        }
-        else if (this.getPlayerColor().equals(CYAN)) {
-            this.playerIcon = resizeImage(new ImageIcon("images/Blue_king.svg.png"));
-        }
-        else if (this.getPlayerColor().equals(YELLOW)) {
-            this.playerIcon = resizeImage(new ImageIcon("images/Yellow_king.svg.png"));
-        }
-
-        setPlayerRank(PlayerRanks.KINGS);
-    }
-}
 
 	/**
 	 * @return propertiesOwned, returns entire ArrayList of properties owned.

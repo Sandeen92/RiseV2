@@ -31,7 +31,18 @@ public class Constants {
         public static final ImageIcon YELLOW_PAWN = resizeImage(new ImageIcon(tokenPath + "Yellow_pawn.svg.png"));
         public static final ImageIcon GREEN_PAWN = resizeImage(new ImageIcon(tokenPath + "Green_pawn.svg.png"));
         public static final ImageIcon CYAN_PAWN = resizeImage(new ImageIcon(tokenPath + "Blue_pawn.svg.png"));
-
+        public static final ImageIcon RED_KNIGHT = resizeImage(new ImageIcon(tokenPath + "Red_knight.svg.png"));
+        public static final ImageIcon YELLOW_KNIGHT = resizeImage(new ImageIcon(tokenPath + "Yellow_knight.svg.png"));
+        public static final ImageIcon GREEN_KNIGHT = resizeImage(new ImageIcon(tokenPath + "Green_knight.svg.png"));
+        public static final ImageIcon CYAN_KNIGHT = resizeImage(new ImageIcon(tokenPath + "Blue_knight.svg.png"));
+        public static final ImageIcon RED_ROOK = resizeImage(new ImageIcon(tokenPath + "Red_rook.svg.png"));
+        public static final ImageIcon YELLOW_ROOK = resizeImage(new ImageIcon(tokenPath + "Yellow_rook.svg.png"));
+        public static final ImageIcon GREEN_ROOK = resizeImage(new ImageIcon(tokenPath + "Green_rook.svg.png"));
+        public static final ImageIcon CYAN_ROOK = resizeImage(new ImageIcon(tokenPath + "Blue_rook.svg.png"));
+        public static final ImageIcon RED_KING = resizeImage(new ImageIcon(tokenPath + "Red_king.svg.png"));
+        public static final ImageIcon YELLOW_KING = resizeImage(new ImageIcon(tokenPath + "Yellow_king.svg.png"));
+        public static final ImageIcon GREEN_KING = resizeImage(new ImageIcon(tokenPath + "Green_king.svg.png"));
+        public static final ImageIcon CYAN_KING = resizeImage(new ImageIcon(tokenPath + "Blue_king.svg.png"));
 
         private static ImageIcon resizeImage(ImageIcon originalIcon) {
             Image originalImage = originalIcon.getImage();

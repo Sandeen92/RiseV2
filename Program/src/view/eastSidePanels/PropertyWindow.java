@@ -13,8 +13,6 @@ import entity.player.PlayerList;
  */
 public class PropertyWindow extends JPanel {
 
-	
-	private static final long serialVersionUID = 1L;
 	private PlayerList playerList;
 	private JTabbedPane tab;
 	private PlayerProperties playerProperties;

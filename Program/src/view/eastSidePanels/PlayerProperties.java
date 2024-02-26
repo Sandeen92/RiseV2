@@ -30,7 +30,6 @@ import entity.tiles.Property;
  */
 public class PlayerProperties extends JPanel implements ActionListener {
 
-	private static final long serialVersionUID = 1L;
 	private JLabel lblName = new JLabel("Name");
 	private JLabel lblPicture = new JLabel("");
 	private JLabel lblRent = new JLabel("Rent");

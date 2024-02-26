@@ -3,15 +3,10 @@ package view;
 import java.awt.Color;
 
 import java.awt.Dimension;
-import java.awt.Image;
 import java.awt.Toolkit;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
 import java.io.Serializable;
 
-import javax.imageio.ImageIO;
-import javax.swing.ImageIcon;
+
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -68,7 +63,7 @@ public class GamePanels extends JPanel implements Serializable {
 		m = new Menu(music);
 		m.setBounds(0, 0, 50, 18);
 		add(m);
-		setScreenSize(Toolkit.getDefaultToolkit().getScreenSize());
+		setScreenSize(Constants.GameWindow.screenSize);
 		repaint();
 	}
 
