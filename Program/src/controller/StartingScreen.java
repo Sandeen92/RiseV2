@@ -11,12 +11,12 @@ import java.util.Objects;
 import javax.swing.*;
 
 import utilities.Constants;
-import view.GamePanels;
+import view.MainFrame;
 import controller.lan.GameClient;
 import controller.lan.GameServer;
 import entity.player.PlayerList;
 import utilities.BackgroundMusic;
-import view.Introduction;
+import view.messageGui.Introduction;
 
 /**
  * First screen which entity.player sees, here he is able to choose the amount of players and
@@ -30,7 +30,7 @@ public class StartingScreen extends JFrame implements Runnable {
 
 	private BackgroundMusic bgm = new BackgroundMusic();
 	private PlayerList playerList = new PlayerList();
-	private GamePanels mainWindow = new GamePanels();
+	private MainFrame mainWindow = new MainFrame();
 
 	private JButton btnConfirm = new JButton("Confirm");
 	private JButton btnStartGame = new JButton("Start Game");

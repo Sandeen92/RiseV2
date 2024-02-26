@@ -1,4 +1,4 @@
-package view;
+package view.messageGui;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -11,10 +11,10 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 
-import view.Rules;
-import view.GamePanels;
 import utilities.BackgroundMusic;
 import controller.StartingScreen;
+import view.MainFrame;
+import view.messageGui.Rules;
 
 /**
  * This class displays the game board as well as what the players are called and
@@ -86,7 +86,7 @@ public class Menu extends JPanel {
 			} else if (e.getSource()==jmRestart) {
 				StartingScreen ss = new StartingScreen();
 				ss.initializeGUI();
-				GamePanels gp = new GamePanels();
+				MainFrame gp = new MainFrame();
 				gp.Dispose();
 			} else if (e.getSource()==jmExit) {
 				System.exit(0);

@@ -15,6 +15,7 @@ import entity.player.PlayerList;
 import utilities.Constants;
 import view.eastSidePanels.EastSidePanel;
 import utilities.BackgroundMusic;
+import view.messageGui.Menu;
 
 /**
  * This class combines most of the panels in the game and adds appropriate
@@ -23,7 +24,7 @@ import utilities.BackgroundMusic;
  * @author Abdulkhuder Muhammad
  *
  */
-public class GamePanels extends JPanel implements Serializable {
+public class MainFrame extends JPanel implements Serializable {
 
 	private BoardController boardController;
 	private EastSidePanel eastPanel;
@@ -40,7 +41,7 @@ public class GamePanels extends JPanel implements Serializable {
 	/**
 	 * adds the panels and sets the bounds
 	 */
-	public GamePanels() {
+	public MainFrame() {
 		boardController = new BoardController(this);
 		eastPanel = new EastSidePanel();
 		westPanel = new WestSidePanel();
@@ -106,6 +107,10 @@ public class GamePanels extends JPanel implements Serializable {
 	public void removePlayer(int position) {
         boardPanel.removePlayer(position);
     }
+
+	public void updateTurnLabel(String playerName, Color color) {
+		boardPanel.updateTurnLabel(playerName, color);
+	}
 
 	public void setTitleText(String info, String lblTitle, Color titleColor, Color titleTxtColor) {
 		westPanel.setTitleText(info, lblTitle, titleColor, titleTxtColor);

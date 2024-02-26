@@ -1,4 +1,4 @@
-package view;
+package view.messageGui;
 
 import utilities.Constants;
 

@@ -29,9 +29,6 @@ public class DicePanel extends JPanel implements ActionListener {
         setOpaque(false);
 
 
-        showPlayersTurn = new ShowPlayersTurn("Player");
-        add(showPlayersTurn);
-
         lblDice1 = new JLabel();
         lblDice2 = new JLabel();
         add(lblDice1);

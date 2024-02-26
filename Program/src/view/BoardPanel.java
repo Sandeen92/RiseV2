@@ -17,8 +17,10 @@ public class BoardPanel extends JPanel {
     private TileInfo info;
     private GUITile[] guiTiles;
     private JPanel[] panelarray = new JPanel[40];
-
     private JLabel lblNewLabel = new JLabel();
+    private JLabel lblPlayer;
+    private Color players;
+    private String playerName = "Player";
 
     public BoardPanel(BoardController boardController) {
         info = new TileInfo();
@@ -26,6 +28,7 @@ public class BoardPanel extends JPanel {
         this.boardController = boardController;
         initAllPanels();
         initGUITiles();
+        initTurnLabel();
     }
 
     public void initAllPanels(){
@@ -60,6 +63,25 @@ public class BoardPanel extends JPanel {
         for(int i = 0; i < panelarray.length; i ++) {
             panelarray[i].add(guiTiles[i]);
         }
+    }
+
+    private void initTurnLabel() {
+        setPreferredSize(new Dimension(250,50));
+        setBackground(players);
+
+        lblPlayer = new JLabel(playerName);
+        lblPlayer.setHorizontalAlignment(SwingConstants.CENTER);
+        lblPlayer.setForeground(Color.white);
+        lblPlayer.setPreferredSize(new Dimension(240,45));
+        lblPlayer.setFont(new Font("ALGERIAN", Font.BOLD, 14 ));
+        lblPlayer.setBorder(BorderFactory.createLineBorder(Color.white));
+        add(lblPlayer);
+    }
+
+    public void updateTurnLabel(String playerName, Color color) {
+        lblPlayer.setOpaque(true);
+        lblPlayer.setBackground(color);
+        lblPlayer.setText(playerName+"'s turn");
     }
 
     public void removePlayer(int position) {

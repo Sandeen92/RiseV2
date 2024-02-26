@@ -12,10 +12,10 @@ public class BoardController {
     private Dice dice1;
     private Dice dice2;
     private Board board;
-    private GamePanels mainFrame;
+    private MainFrame mainFrame;
     private PlayerList playerList;
 
-    public BoardController(GamePanels mainFrame) {
+    public BoardController(MainFrame mainFrame) {
         this.dice1 = new Dice();
         this.dice2 = new Dice();
         this.board = new Board();
@@ -48,6 +48,11 @@ public class BoardController {
         playerList.eliminatePlayer(player);
         playerList.updatePlayerList();
         addPlayerTabs();
+    }
+
+    public void movePlayer(Player player){
+        mainFrame.setPlayerToTile(player.getPosition(), player);
+        mainFrame.updateTurnLabel(player.getName(), player.getPlayerColor());
     }
 
     public void endTurn(){

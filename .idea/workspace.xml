@@ -7,18 +7,11 @@
     <list default="true" id="369cbea7-d726-43f1-931c-763e77531bfd" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Program/src/controller/BoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/controller/BoardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program/src/controller/ManageEvents.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/controller/ManageEvents.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program/src/controller/StartingScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/controller/StartingScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program/src/entity/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/entity/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program/src/entity/player/PlayerList.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/entity/player/PlayerList.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Program/src/view/BoardPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/view/BoardPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program/src/view/CheatGui.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/view/CheatGui.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Program/src/view/DicePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/view/DicePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program/src/view/GUITile.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/view/GUITile.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Program/src/view/GamePanels.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/view/GamePanels.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program/src/view/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/view/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program/src/view/WestSidePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/view/WestSidePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program/src/view/eastSidePanels/EastSidePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/view/eastSidePanels/EastSidePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program/src/view/ShowPlayersTurn.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/view/ShowPlayersTurn.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program/src/view/eastSidePanels/PropertyWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/view/eastSidePanels/PropertyWindow.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,22 +42,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.GameClient.executor": "Run",
-    "Application.GameServer.executor": "Run",
-    "Application.StartingScreen.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/simon/Desktop/RiseV2hgjhg",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2091954",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.GameClient.executor&quot;: &quot;Run&quot;,
+    &quot;Application.GameServer.executor&quot;: &quot;Run&quot;,
+    &quot;Application.StartingScreen.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/simon/Desktop/RiseV2hgjhg&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2091954&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\simon\Desktop\RiseV2\Program" />
