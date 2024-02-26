@@ -11,6 +11,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import utilities.Constants;
 import view.GUITile;
 import entity.player.Player;
 import entity.player.PlayerList;
@@ -34,13 +35,10 @@ public class Board extends JPanel implements Serializable {
 	private Listener listener = new Listener();
 	
 	private TileCollection tileCollection = new TileCollection();
-		
-	private static final long serialVersionUID = 1L;
-
 
 	private JPanel[] panelarray = new JPanel[40];
 
-	JLabel lblNewLabel = new JLabel();
+	private JLabel lblNewLabel = new JLabel();
 
 	/**
 	 * 
@@ -114,7 +112,7 @@ public class Board extends JPanel implements Serializable {
 		}
 
 		lblNewLabel.setBounds(0, -136, 1050, 1022);
-		lblNewLabel.setIcon(new ImageIcon("images/RiseBoard750.png"));
+		lblNewLabel.setIcon(Constants.BoardImages.BOARD_IMAGE);
 		add(lblNewLabel);
 	}
 	

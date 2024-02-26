@@ -107,7 +107,7 @@ public class Constants {
 
     public class BoardImages {
 
-
+        public static final ImageIcon BOARD_IMAGE = new ImageIcon(imagePath + "RiseBoard750.png");
 
         public static ImageIcon getPaperBackgroundImage() {
             BufferedImage tempImg = null;

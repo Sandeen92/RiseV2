@@ -44,7 +44,7 @@ public class Dice extends JPanel implements ActionListener {
 
 	private JLabel lblDice1 = new JLabel();
 	private JLabel lblDice2 = new JLabel();
-	private ImageIcon faceToShow;
+	private ImageIcon faceToShow = WHITE_1;
 
 	private int roll;
 	private CheatGui cheat = new CheatGui(this);
