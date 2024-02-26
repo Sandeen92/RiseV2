@@ -33,8 +33,6 @@ public class GamePanels extends JPanel implements Serializable {
 	private WestSidePanel westPanel = new WestSidePanel();
 	private Board board = new Board(westPanel);
 	private Dimension screenSize;
-	private PlayerList playerList;
-	private Dice dice = new Dice(board, playerList, westPanel, tPanel);
 	private JFrame frame = new JFrame();
 	private JLabel lblPic = new JLabel();
 	private Menu m;
