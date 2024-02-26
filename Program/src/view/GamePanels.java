@@ -25,7 +25,6 @@ import utilities.BackgroundMusic;
  */
 public class GamePanels extends JPanel implements Serializable {
 
-
 	private BoardController boardController;
 	private EastSidePanel eastPanel;
 	private WestSidePanel westPanel;

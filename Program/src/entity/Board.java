@@ -1,7 +1,6 @@
 package entity;
 
 import entity.tiles.Tile;
-import view.WestSidePanel;
 
 
 public class Board {

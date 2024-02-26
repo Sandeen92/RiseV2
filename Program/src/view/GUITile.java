@@ -31,28 +31,6 @@ public class GUITile extends JLabel {
 	private int alignment = 1;
 	private Border tileBorder = BorderFactory.createLineBorder(Color.decode("#ff7723"));
 
-	/**
-	 * Initializes the gui
-	 */
-	public GUITile() {
-		setPreferredSize(new Dimension(200, 300));
-		setLayout(new BorderLayout());
-		setBorder(tileBorder);
-
-		labelArray.setLayout(new GridLayout(2, 2));
-		labelArray.setOpaque(true);
-		labelArray.setBackground(Color.decode("#ffe9c6"));
-
-		styleAndAddInfoLabel();
-		addLabelsToArray();
-		addLabelsToGrid();
-	}
-
-	/**
-	 * Constructor receiving an int gets the location of the info JLabel object
-	 * 
-	 * @param SouthWestNorthEast either 1, 2, 3, 4
-	 */
 	public GUITile(int SouthWestNorthEast) {
 		alignment = SouthWestNorthEast;
 
@@ -68,9 +46,6 @@ public class GUITile extends JLabel {
 		addLabelsToGrid();
 	}
 
-	/**
-	 * JLabel object gets each Tile showing which level a property is in
-	 */
 	public void styleAndAddInfoLabel() {
 		infoLabel.setPreferredSize(new Dimension(200, 20));
 		infoLabel.setOpaque(false);

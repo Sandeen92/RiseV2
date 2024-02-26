@@ -1,7 +1,6 @@
 package view;
 
 import controller.BoardController;
-import entity.TileCollection;
 import entity.player.Player;
 import entity.tiles.TileInfo;
 import utilities.Constants;
