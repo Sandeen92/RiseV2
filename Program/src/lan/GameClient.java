@@ -105,6 +105,7 @@ public class GameClient extends Thread {
                     try {
                         ois.close();
                         oos.close();
+                        socket.close();
                     } catch (IOException e) {
                         throw new RuntimeException(e);
                     }

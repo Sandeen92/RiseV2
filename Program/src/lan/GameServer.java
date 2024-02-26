@@ -135,7 +135,6 @@ public class GameServer implements Runnable {
                     if (input instanceof String) {
                         if (String.valueOf(input).startsWith("UN")) {
                             String userName = ((String) input).substring(2);
-                            System.out.println(userName + " connected to lobby");
                             sendClientNameToLobby(userName);
                         }
                         if (String.valueOf(input).equals("connect")) {
