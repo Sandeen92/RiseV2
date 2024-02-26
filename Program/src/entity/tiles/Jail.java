@@ -1,5 +1,7 @@
 package entity.tiles;
 
+import utilities.Constants;
+
 import java.awt.Color;
 
 import javax.swing.ImageIcon;
@@ -9,7 +11,7 @@ import javax.swing.ImageIcon;
  * @author Sebastian Viro, Aevan Dino	
  */
 public class Jail implements Tile {
-	private ImageIcon img = new ImageIcon("tilePics/jail.png");
+	private ImageIcon img = Constants.TileImages.JAIL_TILE;
 	
 	/**
 	 * Returns name of tile

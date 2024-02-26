@@ -36,50 +36,9 @@ public class Board extends JPanel implements Serializable {
 	private TileCollection tileCollection = new TileCollection();
 		
 	private static final long serialVersionUID = 1L;
-	
-	private JPanel p1 = new JPanel();
-	private JPanel p2 = new JPanel();
-	private JPanel p3 = new JPanel();
-	private JPanel p4 = new JPanel();
-	private JPanel p5 = new JPanel();
-	private JPanel p6 = new JPanel();
-	private JPanel p7 = new JPanel();
-	private JPanel p8 = new JPanel();
-	private JPanel p9 = new JPanel();
-	private JPanel p10 = new JPanel();
-	private JPanel p11 = new JPanel();
-	private JPanel p12 = new JPanel();
-	private JPanel p13 = new JPanel();
-	private JPanel p14 = new JPanel();
-	private JPanel p15 = new JPanel();
-	private JPanel p16 = new JPanel();
-	private JPanel p17 = new JPanel();
-	private JPanel p18 = new JPanel();
-	private JPanel p19 = new JPanel();
-	private JPanel p20 = new JPanel();
-	private JPanel p21 = new JPanel();
-	private JPanel p22 = new JPanel();
-	private JPanel p23 = new JPanel();
-	private JPanel p24 = new JPanel();
-	private JPanel p25 = new JPanel();
-	private JPanel p26 = new JPanel();
-	private JPanel p27 = new JPanel();
-	private JPanel p28 = new JPanel();
-	private JPanel p29 = new JPanel();
-	private JPanel p30 = new JPanel();
-	private JPanel p31 = new JPanel();
-	private JPanel p32 = new JPanel();
-	private JPanel p33 = new JPanel();
-	private JPanel p34 = new JPanel();
-	private JPanel p35 = new JPanel();
-	private JPanel p36 = new JPanel();
-	private JPanel p37 = new JPanel();
-	private JPanel p38 = new JPanel();
-	private JPanel p39 = new JPanel();
-	private JPanel p40 = new JPanel();
 
-	private JPanel[] panelarray = { p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20,
-			p21, p22, p23, p24, p25, p26, p27, p28, p29, p30, p31, p32, p33, p34, p35, p36, p37, p38, p39, p40 };
+
+	private JPanel[] panelarray = new JPanel[40];
 
 	JLabel lblNewLabel = new JLabel();
 
@@ -138,180 +97,25 @@ public class Board extends JPanel implements Serializable {
 		setPreferredSize(new Dimension(750, 750));
 		setLayout(null);
 
-		p1.setOpaque(false);
-		p1.setBounds(649, 650, 101, 100);
-		add(p1);
+		int initialX = 649;
+		int initialY = 650;
+		int width = 101;
+		int height = 100;
+		int stepX = -62;
+		int stepY = -62;
 
-		p2.setOpaque(false);
-		p2.setBounds(587, 651, 60, 99);
-		add(p2);
-
-		p3.setOpaque(false);
-		p3.setBounds(525, 650, 60, 100);
-		add(p3);
-
-		p4.setOpaque(false);
-		p4.setBounds(467, 650, 60, 100);
-		add(p4);
-
-		p5.setOpaque(false);
-		p5.setBounds(412, 650, 53, 100);
-		add(p5);
-
-		p6.setOpaque(false);
-		p6.setBounds(346, 650, 66, 100);
-		add(p6);
-
-		p7.setOpaque(false);
-		p7.setBounds(283, 650, 66, 100);
-		add(p7);
-
-		p8.setOpaque(false);
-		p8.setBounds(225, 651, 60, 99);
-		add(p8);
-
-		p9.setOpaque(false);
-		p9.setBounds(163, 651, 66, 99);
-		add(p9);
-
-		p10.setOpaque(false);
-		p10.setBounds(103, 650, 60, 100);
-		add(p10);
-
-		p11.setOpaque(false);
-		p11.setBounds(0, 650, 101, 100);
-		add(p11);
-
-		p12.setOpaque(false);
-		p12.setBounds(0, 587, 101, 62);
-		add(p12);
-
-		p13.setOpaque(false);
-		p13.setBounds(0, 527, 101, 62);
-		add(p13);
-
-		p14.setOpaque(false);
-		p14.setBounds(0, 465, 101, 62);
-		add(p14);
-
-		p15.setOpaque(false);
-		p15.setBounds(0, 407, 101, 62);
-		add(p15);
-
-		p16.setOpaque(false);
-		p16.setBounds(0, 345, 101, 62);
-		add(p16);
-
-		p17.setOpaque(false);
-		p17.setBounds(0, 281, 101, 62);
-		add(p17);  
-
-		p18.setOpaque(false);
-		p18.setBounds(0, 218, 101, 62);
-		add(p18);
-
-		p19.setOpaque(false);
-		p19.setBounds(0, 162, 101, 62);
-		add(p19);
-
-		p20.setOpaque(false);
-		p20.setBounds(0, 103, 101, 62);
-		add(p20);
-
-		p21.setOpaque(false);
-		p21.setBounds(0, 0, 101, 100);
-		add(p21);
-
-		p22.setOpaque(false);
-		p22.setBounds(103, 0, 60, 100);
-		add(p22);
-
-		p23.setOpaque(false);
-		p23.setBounds(163, 0, 60, 100);
-		add(p23);
-
-		p24.setOpaque(false);
-		p24.setBounds(225, 0, 60, 100);
-		add(p24);
-
-		p25.setOpaque(false);
-		p25.setBounds(283, 0, 66, 100);
-		add(p25);
-
-		p26.setOpaque(false);
-		p26.setBounds(346, 0, 60, 100);
-		add(p26);
-
-		p27.setOpaque(false);
-		p27.setBounds(407, 0, 60, 100);
-		add(p27);
-
-		p28.setOpaque(false);
-		p28.setBounds(467, 0, 60, 100);
-		add(p28);
-
-		p29.setOpaque(false);
-		p29.setBounds(525, 0, 60, 100);
-		add(p29);
-
-		p30.setOpaque(false);
-		p30.setBounds(587, 0, 60, 100);
-		add(p30);
-
-		p31.setOpaque(false);
-		p31.setBounds(649, 0, 101, 100);
-		add(p31);
-
-		p32.setOpaque(false);
-		p32.setBounds(649, 103, 101, 62);
-		add(p32);
-
-		p33.setOpaque(false);
-		p33.setBounds(649, 162, 101, 62);
-		add(p33);
-
-		p34.setOpaque(false);
-		p34.setBounds(649, 228, 101, 62);
-		add(p34);
-
-		p35.setOpaque(false);
-		p35.setBounds(649, 281, 101, 62);
-		add(p35);
-
-		p36.setOpaque(false);
-		p36.setBounds(649, 345, 101, 62);
-		add(p36);
-
-		p37.setOpaque(false);
-		p37.setBounds(649, 407, 101, 62);
-		add(p37);
-
-		p38.setOpaque(false);
-		p38.setBounds(649, 465, 101, 62);
-		add(p38);
-
-		p39.setOpaque(false); 
-		p39.setBounds(649, 527, 101, 62);
-		add(p39);
-
-		p40.setOpaque(false);
-		p40.setBounds(649, 587, 101, 62);
-		add(p40);
-		
-		/**
-		 * Adds mouselistener
-		 */
-		for (int i=0; i<panelarray.length; i++) {
+		for (int i = 0; i < panelarray.length; i++) {
+			panelarray[i] = new JPanel();
+			panelarray[i].setOpaque(false);
+			panelarray[i].setBounds(initialX + (i % 11) * stepX, initialY + (i / 11) * stepY, width, height);
+			add(panelarray[i]);
 			panelarray[i].addMouseListener(listener);
+			panelarray[i].setLayout(new BorderLayout());
 		}
 
 		lblNewLabel.setBounds(0, -136, 1050, 1022);
 		lblNewLabel.setIcon(new ImageIcon("images/RiseBoard750.png"));
 		add(lblNewLabel);
-		
-		for (int i = 0; i < panelarray.length; i++) {
-			panelarray[i].setLayout(new BorderLayout());
-		}
 	}
 	
 	/**

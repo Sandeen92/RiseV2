@@ -1,5 +1,7 @@
 package entity.tiles;
 
+import utilities.Constants;
+
 import java.awt.Color;
 import java.io.Serializable;
 
@@ -11,7 +13,7 @@ import javax.swing.ImageIcon;
  */
 public class GoToJail implements Tile, Serializable {
 
-	private ImageIcon img = new ImageIcon("tilePics/gojail.png");
+	private ImageIcon img = Constants.TileImages.GOTOJAIL_TILE;
 
 	/**
 	 * returns null

@@ -1,5 +1,7 @@
 package entity.tiles;
 
+import utilities.Constants;
+
 import java.awt.Color;
 import java.io.Serializable;
 
@@ -14,7 +16,7 @@ public class Go implements Tile, Serializable {
 	private String info;
 	private String name = "GO";
 	
-	private ImageIcon img = new ImageIcon("tilePics/Go.png");
+	private ImageIcon img = Constants.TileImages.GO_TILE;
 	
 	/**
 	 * Constructor with name

@@ -5,56 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="369cbea7-d726-43f1-931c-763e77531bfd" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/RiseV2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/RiseV2.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program/src/controller/StartingScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/controller/StartingScreen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Program/src/entity/Dice.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/entity/Dice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program/src/entity/StringColorMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/entity/StringColorMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program/src/entity/TileCollection.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/entity/TileCollection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program/src/entity/tiles/FortuneTeller.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/entity/tiles/FortuneTeller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program/src/entity/tiles/Go.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/entity/tiles/Go.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program/src/entity/tiles/GoToJail.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/entity/tiles/GoToJail.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program/src/entity/tiles/Jail.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/entity/tiles/Jail.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program/src/entity/tiles/SundayChurch.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/entity/tiles/SundayChurch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program/src/entity/tiles/Tavern.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/entity/tiles/Tavern.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program/src/entity/tiles/Tax.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/entity/tiles/Tax.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program/src/entity/tiles/Work.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/entity/tiles/Work.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Program/src/utilities/BackgroundMusic.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/utilities/BackgroundMusic.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Program/src/utilities/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/utilities/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program/src/view/GamePanels.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/view/GamePanels.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/board/ColorIconMap.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/board/GUITile.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/board/Rules.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/cheat/CheatGui.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/colorsAndIcons/StringColorMap.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/combinedPanels/GamePanels.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/dice/ShowPlayersTurn.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/eastSidePanels/EastSidePanel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/eastSidePanels/PlayerInfoPanel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/eastSidePanels/PlayerProperties.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/eastSidePanels/PropertyWindow.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/endGame/WinMusic.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/endGame/WinPanel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/events/EventCases.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/events/ManageEvents$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/events/ManageEvents$SecretSleeper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/events/ManageEvents.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/lan/GameClient$Connection$Listener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/lan/GameClient$Connection.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/lan/GameClient.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/lan/GameServer$ClientHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/lan/GameServer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/menu/Menu$ButtonListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/menu/Menu.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/messageGui/DeathGUI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/messageGui/FortuneTellerGUI$Sleeper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/messageGui/FortuneTellerGUI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/messageGui/SecretGui$Sleeper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/messageGui/SecretGui.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/messageGui/WinGui.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/player/Player.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/player/PlayerList.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/player/PlayerRanks$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/player/PlayerRanks$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/player/PlayerRanks$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/player/PlayerRanks$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/player/PlayerRanks.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/startMenu/BackgroundMusic.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/startMenu/Introduction.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/tileCollection/ChanceCard.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/tileCollection/ChanceCardTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/view/EventPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/view/EventPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/view/WestSidePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/view/WestSidePanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program/src/view/Introduction.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/view/Introduction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/utilities/BackgroundMusic.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/utilities/BackgroundMusic.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/utilities/Constants$AudioFiles.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/utilities/Constants$AudioFiles.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/utilities/Constants$BoardImages.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/utilities/Constants$BoardImages.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/utilities/Constants$DiceImages.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/utilities/Constants$DiceImages.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/utilities/Constants.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/utilities/Constants.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

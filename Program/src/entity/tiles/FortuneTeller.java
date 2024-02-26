@@ -1,5 +1,7 @@
 package entity.tiles;
 
+import utilities.Constants;
+
 import java.awt.Color;
 import java.io.Serializable;
 
@@ -23,7 +25,7 @@ public class FortuneTeller implements Tile, Serializable {
 	private String description = "";
 	private int amount; 
 	
-	private ImageIcon img = new ImageIcon("tilePics/fortune.png");
+	private ImageIcon img = Constants.TileImages.FORTUNE_TILE;
 	
 	/**
 	 * Empty constructor

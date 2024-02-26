@@ -43,25 +43,102 @@ public class Constants {
     }
 
 
+    public class TileImages {
+        public static final ImageIcon FORTUNE_TILE = new ImageIcon(tilePath + "fortune.png");
+        public static final ImageIcon GO_TILE = new ImageIcon(tilePath + "Go.png");
+        public static final ImageIcon GOTOJAIL_TILE = new ImageIcon(tilePath + "gojail.png");
+        public static final ImageIcon JAIL_TILE = new ImageIcon(tilePath + "jail.png");
+        public static final ImageIcon TAX_TILE = new ImageIcon(tilePath + "tax.png");
+        public static final ImageIcon WORK_TILE = new ImageIcon(tilePath + "Work.png");
+        public static final ImageIcon BANK_TILE = new ImageIcon(tilePath + "bank.png");
+        public static final ImageIcon PROPERTY_WOOD_TILE = new ImageIcon(tilePath + "Wood.png");
+        public static final ImageIcon PROPERTY_STONE_TILE = new ImageIcon(tilePath + "stone.png");
+        public static final ImageIcon PROPERTY_FISHSTALL_TILE = new ImageIcon(tilePath + "fish.png");
+        public static final ImageIcon PROPERTY_VEGGIESTALL_TILE = new ImageIcon(tilePath + "veggieStall.png");
+        public static final ImageIcon PROPERTY_BAKERSTALL_TILE = new ImageIcon(tilePath + "bakerStall.png");
+        public static final ImageIcon PROPERTY_TANNER_TILE = new ImageIcon(tilePath + "tanner.png");
+        public static final ImageIcon PROPERTY_MILL_TILE = new ImageIcon(tilePath + "mill.png");
+        public static final ImageIcon PROPERTY_SMITH_TILE = new ImageIcon(tilePath + "smith.png");
+        public static final ImageIcon PROPERTY_BATH_TILE = new ImageIcon(tilePath + "bath.png");
+        public static final ImageIcon PROPERTY_BAKERY_TILE = new ImageIcon(tilePath + "bakery.png");
+        public static final ImageIcon PROPERTY_BUTCHER_TILE = new ImageIcon(tilePath + "butcher.png");
+        public static final ImageIcon SUNDAY_CHURCH_TILE = new ImageIcon(tilePath + "sundaychurch.png");
+        public static final ImageIcon PROPERTY_WAREHOUSE_TILE = new ImageIcon(tilePath + "warehouse.png");
+        public static final ImageIcon PROPERTY_ALCHEMY_TILE = new ImageIcon(tilePath + "alch.png");
+        public static final ImageIcon PROPERTY_STABLE_TILE = new ImageIcon(tilePath + "stable.png");
+        public static final ImageIcon PROPERTY_COBBLER_TILE = new ImageIcon(tilePath + "cobbler.png");
+        public static final ImageIcon PROPERTY_GENERALSTORE_TILE = new ImageIcon(tilePath + "general.png");
+        public static final ImageIcon PROPERTY_SILVERSMITH_TILE = new ImageIcon(tilePath + "silver.png");
+        public static final ImageIcon PROPERTY_ARMORER_TILE = new ImageIcon(tilePath + "armor.png");
+        public static final ImageIcon PROPERTY_TAILOR_TILE = new ImageIcon(tilePath + "tailor.png");
+        public static final ImageIcon PROPERTY_WEAPONSMITH_TILE = new ImageIcon(tilePath + "weapon.png");
+        public static final ImageIcon PROPERTY_CHURCH_TILE = new ImageIcon(tilePath + "churchp.png");
+        public static final ImageIcon PROPERTY_CASTLE_TILE = new ImageIcon(tilePath + "castle.png");
+        public static final ImageIcon TAVERN_TILE = new ImageIcon(tilePath + "tavern.png");
+    }
+
 
     public class DiceImages {
-        public static final ImageIcon WHITE_1 = new ImageIcon(dicePath + "faceValue1White.png");
-        public static final ImageIcon WHITE_2 = new ImageIcon(dicePath + "faceValue2White.png");
-        public static final ImageIcon WHITE_3 = new ImageIcon(dicePath + "faceValue3White.png");
-        public static final ImageIcon WHITE_4 = new ImageIcon(dicePath + "faceValue4White.png");
-        public static final ImageIcon WHITE_5 = new ImageIcon(dicePath + "faceValue5White.png");
-        public static final ImageIcon WHITE_6 = new ImageIcon(dicePath + "faceValue6White.png");
+        public static final ImageIcon WHITE_1 = resizeImg(new ImageIcon(dicePath + "faceValue1White.png"));
+        public static final ImageIcon WHITE_2 = resizeImg(new ImageIcon(dicePath + "faceValue2White.png"));
+        public static final ImageIcon WHITE_3 = resizeImg(new ImageIcon(dicePath + "faceValue3White.png"));
+        public static final ImageIcon WHITE_4 = resizeImg(new ImageIcon(dicePath + "faceValue4White.png"));
+        public static final ImageIcon WHITE_5 = resizeImg(new ImageIcon(dicePath + "faceValue5White.png"));
+        public static final ImageIcon WHITE_6 = resizeImg(new ImageIcon(dicePath + "faceValue6White.png"));
 
-        public static final ImageIcon RED_1 = new ImageIcon(dicePath + "faceValue1.png");
-        public static final ImageIcon RED_2 = new ImageIcon(dicePath + "faceValue2.png");
-        public static final ImageIcon RED_3 = new ImageIcon(dicePath + "faceValue3.png");
-        public static final ImageIcon RED_4 = new ImageIcon(dicePath + "faceValue4.png");
-        public static final ImageIcon RED_5 = new ImageIcon(dicePath + "faceValue5.png");
-        public static final ImageIcon RED_6 = new ImageIcon(dicePath + "faceValue6.png");
+        public static final ImageIcon RED_1 = resizeImg(new ImageIcon(dicePath + "faceValue1.png"));
+        public static final ImageIcon RED_2 = resizeImg(new ImageIcon(dicePath + "faceValue2.png"));
+        public static final ImageIcon RED_3 = resizeImg(new ImageIcon(dicePath + "faceValue3.png"));
+        public static final ImageIcon RED_4 = resizeImg(new ImageIcon(dicePath + "faceValue4.png"));
+        public static final ImageIcon RED_5 = resizeImg(new ImageIcon(dicePath + "faceValue5.png"));
+        public static final ImageIcon RED_6 = resizeImg(new ImageIcon(dicePath + "faceValue6.png"));
+
+
+
+        public static ImageIcon resizeImg(ImageIcon icon){
+            int diceWidth = GameWindow.screenSize.width / 20;
+            int diceHeight = GameWindow.screenSize.height / 10;
+
+            Image resizedImage = icon.getImage().getScaledInstance(diceWidth, diceHeight, Image.SCALE_SMOOTH);
+            return new ImageIcon(resizedImage);
+        }
     }
 
 
     public class BoardImages {
+
+
+
+        public static ImageIcon getPaperBackgroundImage() {
+            BufferedImage tempImg = null;
+            try {
+                tempImg = ImageIO.read(new File(imagePath + "backpaper.jpg"));
+
+            } catch (IOException e) {
+
+                e.printStackTrace();
+            }
+
+            Image img = tempImg.getScaledInstance(600, 350, Image.SCALE_SMOOTH);
+
+            return new ImageIcon(img);
+        }
+
+        public static ImageIcon getStartMenuImage(){
+            BufferedImage tempImg = null;
+            try {
+                tempImg = ImageIO.read(new File(imagePath + "fancyRoll.jpg"));
+
+            } catch (IOException e) {
+
+                e.printStackTrace();
+            }
+
+            Image img = tempImg.getScaledInstance(900,860, Image.SCALE_SMOOTH);
+
+            return new ImageIcon(img);
+        }
+
 
         public static ImageIcon getBackgroundImage() {
             BufferedImage tempImg = null;
@@ -82,6 +159,10 @@ public class Constants {
 
     public class AudioFiles{
 
-        public static File musicFile = new File(musicPath + "bgMusic.wav");
+        public static File bgMusic = new File(musicPath + "bgMusic.wav");
+        public static File duraw = new File(musicPath + "duraw.wav");
+        public static File victory = new File(musicPath + "victory.wav");
+        public static File hips = new File(musicPath + "Hips Don't Lie.wav");
+        public static File yeah = new File(musicPath + "Yeah!.wav");
     }
 }

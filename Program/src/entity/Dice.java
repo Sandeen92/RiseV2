@@ -21,6 +21,9 @@ import controller.ManageEvents;
 import entity.player.PlayerList;
 import view.*;
 
+import static utilities.Constants.DiceImages.*;
+
+
 /**
  * @author Muhammad Abdulkhuder, Aevan Dino, Sebastian Viro, Seth Oberg
  *
@@ -41,13 +44,8 @@ public class Dice extends JPanel implements ActionListener {
 
 	private JLabel lblDice1 = new JLabel();
 	private JLabel lblDice2 = new JLabel();
+	private ImageIcon faceToShow;
 
-	private Dimension screenSize = Constants.GameWindow.screenSize;
-	private ImageIcon faceToShow, showDice;
-	private Image resizedImage;
-
-	private int diceWidth = (screenSize.width) / 20;
-	private int diceHeight = (screenSize.height) / 10;
 	private int roll;
 	private CheatGui cheat = new CheatGui(this);
 	
@@ -103,11 +101,8 @@ public class Dice extends JPanel implements ActionListener {
 
 		btnRollDice.addActionListener(this);
 
-		faceToShow = new ImageIcon("DicePictures/faceValue1White.png");
-		resizedImage = faceToShow.getImage().getScaledInstance(diceWidth, diceHeight, Image.SCALE_SMOOTH);
-		showDice = new ImageIcon(resizedImage);
-		lblDice2.setIcon(showDice);
-		lblDice1.setIcon(showDice);
+		lblDice2.setIcon(faceToShow);
+		lblDice1.setIcon(faceToShow);
 
 		btnEndTurn.setFont(new Font("Algerian", Font.PLAIN, 14));
 		btnEndTurn.addActionListener(this);
@@ -136,12 +131,12 @@ public class Dice extends JPanel implements ActionListener {
 	 */
 	public ImageIcon setDiceImage(int roll){
 		return switch (roll) {
-            case 1 -> Constants.DiceImages.WHITE_1;
-            case 2 -> Constants.DiceImages.WHITE_2;
-            case 3 -> Constants.DiceImages.WHITE_3;
-            case 4 -> Constants.DiceImages.WHITE_4;
-            case 5 -> Constants.DiceImages.WHITE_5;
-            case 6 -> Constants.DiceImages.WHITE_6;
+            case 1 -> WHITE_1;
+            case 2 -> WHITE_2;
+            case 3 -> WHITE_3;
+            case 4 -> WHITE_4;
+            case 5 -> WHITE_5;
+            case 6 -> WHITE_6;
             default -> null;
         };
 	}
@@ -152,17 +147,8 @@ public class Dice extends JPanel implements ActionListener {
 		int faceValueDiceOne = roll();
 		int faceValueDiceTwo = roll();
 
-		faceToShow = setDiceImage(faceValueDiceOne);
-
-		resizedImage = faceToShow.getImage().getScaledInstance(diceWidth, diceHeight, Image.SCALE_SMOOTH);
-		showDice = new ImageIcon(resizedImage);
-		lblDice1.setIcon(showDice);
-
-		faceToShow = setDiceImage(faceValueDiceTwo);
-
-		resizedImage = faceToShow.getImage().getScaledInstance(diceWidth, diceHeight, Image.SCALE_SMOOTH);
-		showDice = new ImageIcon(resizedImage);
-		lblDice2.setIcon(showDice);
+		lblDice1.setIcon(setDiceImage(faceValueDiceOne));
+		lblDice2.setIcon(setDiceImage(faceValueDiceTwo));
 
 		if (faceValueDiceOne == faceValueDiceTwo) {
 			setRoll(((faceValueDiceOne + faceValueDiceTwo) * 2)); //TODO: Weird logic, check if it's correct

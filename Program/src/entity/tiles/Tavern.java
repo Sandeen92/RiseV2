@@ -6,6 +6,7 @@ import java.io.Serializable;
 import javax.swing.ImageIcon;
 
 import entity.player.Player;
+import utilities.Constants;
 
 public class Tavern implements Tile, Serializable {
 	
@@ -16,7 +17,7 @@ public class Tavern implements Tile, Serializable {
 	private Color color; 
 	private int price;
 	private String name;
-	private ImageIcon img = new ImageIcon("tilePics/tavern.png");
+	private ImageIcon img = Constants.TileImages.TAVERN_TILE;
 
 	public Tavern( String namn, int price) {
 		this.name = namn;

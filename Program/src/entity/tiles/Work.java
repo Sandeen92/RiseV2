@@ -5,12 +5,13 @@ import java.awt.Color;
 import javax.swing.ImageIcon;
 
 import entity.player.Player;
+import utilities.Constants;
 
 /**
  * @author Muhammad abdulkhuder, AevanDino, Sebastian Viro, .
  */
 public class Work implements Tile {
-	private ImageIcon img = new ImageIcon("tilePics/Work.png");
+	private ImageIcon img = Constants.TileImages.WORK_TILE;
 	private Player player;
 	private String info;
 	private int roll;

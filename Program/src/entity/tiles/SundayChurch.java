@@ -1,5 +1,7 @@
 package entity.tiles;
 
+import utilities.Constants;
+
 import java.awt.Color;
 
 import javax.swing.ImageIcon;
@@ -9,7 +11,7 @@ import javax.swing.ImageIcon;
  * @author AevanDino, SebastianViro
  */
 public class SundayChurch implements Tile {
-	private ImageIcon img = new ImageIcon("tilePics/church.png");
+	private ImageIcon img = Constants.TileImages.SUNDAY_CHURCH_TILE;
 	String info;
 
 	public void onLanding() {

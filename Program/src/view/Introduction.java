@@ -1,5 +1,7 @@
 package view;
 
+import utilities.Constants;
+
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Dimension;
@@ -62,17 +64,8 @@ public class Introduction extends JPanel {
 		taText.setOpaque(false);
 		lblPic.setBounds(0, 0, 600, 350);
 
-		BufferedImage img = null;
-		try {
-			img = ImageIO.read(new File("images/backpaper.jpg"));
 
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-
-		Image resizedImg = img.getScaledInstance(lblPic.getWidth(), lblPic.getHeight(), Image.SCALE_SMOOTH);
-
-		lblPic.setIcon(new ImageIcon(resizedImg));
+		lblPic.setIcon(Constants.BoardImages.getPaperBackgroundImage());
 		
 		add(lblTitel);
 		add(taText);

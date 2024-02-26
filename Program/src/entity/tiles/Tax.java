@@ -6,6 +6,7 @@ import java.io.Serializable;
 import javax.swing.ImageIcon;
 
 import entity.player.Player;
+import utilities.Constants;
 
 public class Tax implements Tile, Serializable {
 
@@ -15,7 +16,7 @@ public class Tax implements Tile, Serializable {
 	private String info, tileName;
 	private static Player player;
 	private int taxToPay = 200;
-	private ImageIcon img = new ImageIcon("tilePics/tax.png");
+	private ImageIcon img = Constants.TileImages.TAX_TILE;
 	
 	public Tax() {
 		

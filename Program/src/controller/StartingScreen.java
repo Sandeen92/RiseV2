@@ -10,6 +10,7 @@ import java.util.Objects;
 
 import javax.swing.*;
 
+import utilities.Constants;
 import view.GamePanels;
 import controller.lan.GameClient;
 import controller.lan.GameServer;
@@ -35,9 +36,7 @@ public class StartingScreen extends JFrame implements Runnable {
 	private JButton btnStartGame = new JButton("Start Game");
 	private JButton btnReset = new JButton("Reset");
 
-	private ImageIcon imgBackground = new ImageIcon(
-			new ImageIcon("Program/images/fancyRoll.jpg").getImage().getScaledInstance(900, 860, Image.SCALE_SMOOTH));
-
+	private ImageIcon imgBackground = Constants.BoardImages.getStartMenuImage();
 	private Font fontRadioButtons = new Font("Gabriola", Font.PLAIN, 24);
 	private Font fontHeader = new Font("Gabriola", Font.BOLD, 92); 
 	private Font fontLabel = new Font("Gabriola", Font.BOLD, 42);
