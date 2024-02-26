@@ -6,6 +6,7 @@ import java.util.LinkedList;
 import javax.swing.ImageIcon;
 
 import entity.StringColorMap;
+import utilities.Constants;
 import view.eastSidePanels.EastSidePanel;
 
 /**
