@@ -17,7 +17,6 @@ import javax.swing.JTabbedPane;
  */
 public class Rules extends JPanel {
 
-	private static final long serialVersionUID = 1L;
 
 	public Rules() {
 		new GridLayout(1, 1);

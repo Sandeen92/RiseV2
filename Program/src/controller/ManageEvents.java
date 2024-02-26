@@ -74,7 +74,7 @@ public class ManageEvents {
 	public void newEvent(Tile tile, Player player) {
 		player.checkPlayerRank();
 
-		if (player.getPlayerRank() == PlayerRanks.KINGS) {
+		if (player.getPlayerRank() == PlayerRanks.KING) {
 			new WinGui();
 		}
 

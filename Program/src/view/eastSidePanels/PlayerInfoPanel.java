@@ -20,8 +20,6 @@ import entity.player.PlayerList;
  */
 public class PlayerInfoPanel extends JPanel {
 
-	private static final long serialVersionUID = 1L;
-
 	private JLabel lblName = new JLabel("");
 	private JLabel lblRank = new JLabel("");
 	private JLabel lblGold = new JLabel("");

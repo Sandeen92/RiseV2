@@ -11,6 +11,8 @@ import javax.swing.JOptionPane;
 import entity.tiles.Property;
 import entity.tiles.Tavern;
 import entity.tiles.Tile;
+
+import static entity.player.PlayerRanks.*;
 import static utilities.Constants.PlayerTokenImages.*;
 
 /**
@@ -61,7 +63,7 @@ public class Player implements Serializable {
 
 		setBalance(1500);
 		setNetWorth(1500);
-		setPlayerRank(playerRank.PEASANT);
+		setPlayerRank(PEASANT);
 		this.playerIndex = playerIndex;
 		this.tavernsOwned = new ArrayList<>();
 		this.propertiesOwned = new ArrayList<>();
@@ -78,7 +80,7 @@ public class Player implements Serializable {
 
 		setBalance(1500);
 		setNetWorth(1500);
-		setPlayerRank(playerRank.PEASANT);
+		setPlayerRank(PEASANT);
 		this.playerIndex = playerIndex;
 		this.tavernsOwned = new ArrayList<>();
 		this.propertiesOwned = new ArrayList<>();
@@ -395,7 +397,9 @@ public class Player implements Serializable {
  * 
  * @return nothing
  */
-	public void checkPlayerRank() {
+	public PlayerRanks checkPlayerRank() {
+
+		PlayerRanks rank = null;
 
 		Color RED = new Color(255, 0, 10, 255);
 		Color GREEN = new Color(35, 254, 14, 255);
@@ -412,7 +416,8 @@ public class Player implements Serializable {
 			} else if (this.getPlayerColor().equals(YELLOW)) {
 				this.playerIcon = YELLOW_PAWN;
 			}
-			setPlayerRank(PlayerRanks.PEASANT);
+			rank = PEASANT;
+			setPlayerRank(PEASANT);
 		}
 
 		if (getNetWorth() >= 1510 && getNetWorth() <= 4000) {
@@ -425,7 +430,8 @@ public class Player implements Serializable {
 			} else if (this.getPlayerColor().equals(YELLOW)) {
 				this.playerIcon = YELLOW_KNIGHT;
 			}
-			setPlayerRank(PlayerRanks.KNIGHT);
+			rank = KNIGHT;
+			setPlayerRank(KNIGHT);
 		}
 
 		if (getNetWorth() >= 4000 && getNetWorth() <= 7500) {
@@ -438,7 +444,8 @@ public class Player implements Serializable {
 			} else if (this.getPlayerColor().equals(YELLOW)) {
 				this.playerIcon = YELLOW_ROOK;
 			}
-			setPlayerRank(PlayerRanks.LORD);
+			rank = LORD;
+			setPlayerRank(LORD);
 		}
 
 		if (getNetWorth() >= 7500) {
@@ -451,8 +458,11 @@ public class Player implements Serializable {
 			} else if (this.getPlayerColor().equals(YELLOW)) {
 				this.playerIcon = YELLOW_KING;
 			}
-			setPlayerRank(PlayerRanks.KINGS);
+			rank = KING;
+			setPlayerRank(KING);
 		}
+
+		return rank;
 	}
 
 	/**

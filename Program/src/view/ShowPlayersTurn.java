@@ -10,9 +10,7 @@ import javax.swing.*;
  * @author Rohan Samandari
  */
 public class ShowPlayersTurn extends JPanel{
-	
-	private static final long serialVersionUID = 1L;
-	
+
 	private JLabel lblPlayer;
 	private Color players;
 	private String playerName = "Player";
