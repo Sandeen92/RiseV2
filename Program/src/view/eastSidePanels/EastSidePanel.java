@@ -17,11 +17,9 @@ import entity.player.PlayerList;
  */
 public class EastSidePanel extends JPanel {
 
-	private static final long serialVersionUID = 3397908521882247649L;
 	private PlayerList playerList;
 	private JTabbedPane tab;
 	private PlayerInfoPanel playerInfoPnl;
-
 	private int currentPlayer = 0;
 
 	/**
@@ -73,36 +71,7 @@ public class EastSidePanel extends JPanel {
 		tab.setForeground(Color.white);
 		tab.setBackground(new Color(157, 0, 0));
 		tab.setBackgroundAt(currentPlayer, new Color(0, 157, 0));
-
+		revalidate();
+		repaint();
 	}
-
-	/**
-	 * this method is used to display the correct color
-	 * the active players turn should be green and the others should be red.
-	 */
-	public void setTab() {
-		tab.setBackgroundAt(currentPlayer, null);
-
-		currentPlayer++;
-		if (currentPlayer > playerList.getLength() - 1) {
-			currentPlayer = 0;
-
-			tab.setSelectedIndex(currentPlayer);
-			tab.setForeground(Color.white);
-			tab.setBackground(new Color(157, 0, 0));
-			tab.setBackgroundAt(currentPlayer, new Color(0, 157, 0));
-
-		} else
-
-			tab.setSelectedIndex(currentPlayer);
-		tab.setForeground(Color.white);
-		tab.setBackground(new Color(157, 0, 0));
-		tab.setBackgroundAt(currentPlayer, new Color(0, 157, 0));
-	}
-	
-
-	public int getTab() {
-		return currentPlayer;
-	}
-
 }

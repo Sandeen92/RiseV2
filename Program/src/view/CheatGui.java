@@ -23,12 +23,6 @@ public class CheatGui extends JPanel implements ActionListener {
 	private Dice betterDice;
 	private int index;
 
-	/**
-	 * @param betterDice
-	 * 
-	 *                   Calls the method that starts the gui and gets a reference
-	 *                   from dice
-	 */
 	public CheatGui(Dice dice) {
 		this.betterDice = dice;
 		startGUI();
@@ -55,8 +49,6 @@ public class CheatGui extends JPanel implements ActionListener {
 		if (e.getSource() == btnTeleport) {
 			try {
 				setIndex(Integer.parseInt(inputTF.getText()));
-				betterDice.moveWCheat(getIndex());
-
 			} catch (NumberFormatException ex) {
 				ex.printStackTrace();
 			}

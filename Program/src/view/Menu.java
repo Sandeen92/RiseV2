@@ -86,7 +86,7 @@ public class Menu extends JPanel {
 			} else if (e.getSource()==jmRestart) {
 				StartingScreen ss = new StartingScreen();
 				ss.initializeGUI();
-				GamePanels gp = new GamePanels(music);
+				GamePanels gp = new GamePanels();
 				gp.Dispose();
 			} else if (e.getSource()==jmExit) {
 				System.exit(0);

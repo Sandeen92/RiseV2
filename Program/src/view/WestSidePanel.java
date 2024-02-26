@@ -20,7 +20,6 @@ public class WestSidePanel extends JPanel {
 	 * 
 	 * @author RohanSamandari
 	 */
-	private static final long serialVersionUID = 1L;
 	private JLabel lblInfoTitle, lblHistoryTitle;
 	private JPanel pnlSpace, pnlHeading, pnlInfo, pnlHistory;
 	private EventPanel pnlEvent;

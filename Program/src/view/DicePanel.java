@@ -20,7 +20,7 @@ public class DicePanel extends JPanel implements ActionListener {
 
     public DicePanel(BoardController board) {
         this.board = board;
-
+        initPanel();
     }
 
     public void initPanel(){

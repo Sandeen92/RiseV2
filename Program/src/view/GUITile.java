@@ -28,10 +28,6 @@ public class GUITile extends JLabel {
 	private JLabel infoLabel = new JLabel("", SwingConstants.CENTER);
 	private JLabel labelArray = new JLabel();
 	private JLabel[] labels = new JLabel[4];
-	private JLabel label1 = new JLabel();
-	private JLabel label2 = new JLabel();
-	private JLabel label3 = new JLabel();
-	private JLabel label4 = new JLabel();
 	private int alignment = 1;
 	private Border tileBorder = BorderFactory.createLineBorder(Color.decode("#ff7723"));
 
@@ -97,14 +93,10 @@ public class GUITile extends JLabel {
 
 	}
 
-	/**
-	 * Varje grid ruta läggs till, 4st
-	 */
 	public void addLabelsToArray() {
-		labels[0] = label1;
-		labels[1] = label2;
-		labels[2] = label3;
-		labels[3] = label4;
+		for (int i = 0; i < labels.length; i++) {
+			labels[i] = new JLabel();
+		}
 	}
 
 	// Adds 4 j label
@@ -116,25 +108,15 @@ public class GUITile extends JLabel {
 		add(labelArray, BorderLayout.CENTER);
 	}
 
-	// update level on property
-	public void changeLevel(String level) {
-		infoLabel.setText(level);
-	}
-
-	/**
-	 * Each gui tile has 4 places where a entity.player can be placed
-	 * 
-	 * @param index
-	 */
 
 	public void setPlayer(Player player) {
 		labels[player.getPlayerIndex()].setIcon(player.getImage());
 		labels[player.getPlayerIndex()].setHorizontalAlignment(CENTER);
 	}
 
-	public void removePlayer(Player player) {
-		labels[player.getPlayerIndex()].setIcon(null);
-		labels[player.getPlayerIndex()].setHorizontalAlignment(CENTER);
+	public void removePlayer(int position) {
+		labels[position].setIcon(null);
+		labels[position].setHorizontalAlignment(CENTER);
 	}
 
 }

@@ -30,7 +30,7 @@ public class StartingScreen extends JFrame implements Runnable {
 
 	private BackgroundMusic bgm = new BackgroundMusic();
 	private PlayerList playerList = new PlayerList();
-	private GamePanels mainWindow = new GamePanels(bgm);
+	private GamePanels mainWindow = new GamePanels();
 
 	private JButton btnConfirm = new JButton("Confirm");
 	private JButton btnStartGame = new JButton("Start Game");
@@ -311,7 +311,7 @@ public class StartingScreen extends JFrame implements Runnable {
 	}
 
 	public void startUpLANGame() {
-		mainWindow.addPlayer(playerList);
+		mainWindow.addPlayerTabs(playerList);
 		mainWindow.startboard();
 		dispose();
 	}
@@ -625,7 +625,7 @@ public class StartingScreen extends JFrame implements Runnable {
 		 */
 		public void startUpLocalGame() {
 			createNewUsers();
-			mainWindow.addPlayer(playerList);
+			mainWindow.addPlayerTabs(playerList);
 			mainWindow.startboard();
 			dispose();
 			Introduction intro = new Introduction();
