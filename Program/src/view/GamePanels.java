@@ -28,7 +28,7 @@ import utilities.BackgroundMusic;
  */
 public class GamePanels extends JPanel implements Serializable {
 
-	private static final long serialVersionUID = 1L;
+
 	private EastSidePanel tPanel = new EastSidePanel();
 	private WestSidePanel westPanel = new WestSidePanel();
 	private Board board = new Board(westPanel);

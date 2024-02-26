@@ -29,7 +29,6 @@ import static utilities.Constants.DiceImages.*;
  *
  */
 public class Dice extends JPanel implements ActionListener {
-	private static final long serialVersionUID = 1L;
 	private ShowPlayersTurn showPlayersTurn;
 	private Board board;
 	private PlayerList playerList;
