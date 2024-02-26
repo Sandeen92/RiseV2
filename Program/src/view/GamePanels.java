@@ -19,6 +19,7 @@ import javax.swing.border.MatteBorder;
 
 import entity.Board;
 import entity.Dice;
+import utilities.Constants;
 import view.eastSidePanels.EastSidePanel;
 import entity.player.PlayerList;
 import utilities.BackgroundMusic;
@@ -77,19 +78,9 @@ public class GamePanels extends JPanel implements Serializable {
 		height = screenSize.height;
 		setPreferredSize(new Dimension(width, height));
 
-		BufferedImage img = null;
-		try {
-			img = ImageIO.read(new File("back2jpg.jpg"));
-
-		} catch (IOException e) {
-
-			e.printStackTrace();
-		}
-
-		Image bimg = img.getScaledInstance(width, height, Image.SCALE_SMOOTH);
 		lblPic.setBounds(0, 0, width, height);
 
-		lblPic.setIcon(new ImageIcon(bimg));
+		lblPic.setIcon(Constants.BoardImages.getBackgroundImage());
 		add(lblPic);
 		repaint();
 	}

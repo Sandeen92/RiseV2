@@ -13,6 +13,7 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import utilities.Constants;
 import view.ShowPlayersTurn;
 import view.CheatGui; //May be needed for testing in future
 import view.eastSidePanels.EastSidePanel;
@@ -41,7 +42,7 @@ public class Dice extends JPanel implements ActionListener {
 	private JLabel lblDice1 = new JLabel();
 	private JLabel lblDice2 = new JLabel();
 
-	private Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+	private Dimension screenSize = Constants.GameWindow.screenSize;
 	private ImageIcon faceToShow, showDice;
 	private Image resizedImage;
 
@@ -135,12 +136,12 @@ public class Dice extends JPanel implements ActionListener {
 	 */
 	public ImageIcon setDiceImage(int roll){
 		return switch (roll) {
-            case 1 -> new ImageIcon("DicePictures/faceValue1White.png");
-            case 2 -> new ImageIcon("DicePictures/faceValue2White.png");
-            case 3 -> new ImageIcon("DicePictures/faceValue3White.png");
-            case 4 -> new ImageIcon("DicePictures/faceValue4White.png");
-            case 5 -> new ImageIcon("DicePictures/faceValue5White.png");
-            case 6 -> new ImageIcon("DicePictures/faceValue6White.png");
+            case 1 -> Constants.DiceImages.WHITE_1;
+            case 2 -> Constants.DiceImages.WHITE_2;
+            case 3 -> Constants.DiceImages.WHITE_3;
+            case 4 -> Constants.DiceImages.WHITE_4;
+            case 5 -> Constants.DiceImages.WHITE_5;
+            case 6 -> Constants.DiceImages.WHITE_6;
             default -> null;
         };
 	}

@@ -74,8 +74,7 @@ public class BackgroundMusic extends Thread implements Serializable {
 	public void run() {
 		while(isPlaying && clip == null) {
 			try {
-				File musicPath = new File("music/bgMusic.wav");
-				AudioInputStream ais = AudioSystem.getAudioInputStream(musicPath);
+				AudioInputStream ais = AudioSystem.getAudioInputStream(Constants.AudioFiles.musicFile);
 				clip = AudioSystem.getClip();
 				clip.open(ais);
 				//clip.loop(Clip.LOOP_CONTINUOUSLY);

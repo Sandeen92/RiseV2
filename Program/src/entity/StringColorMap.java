@@ -1,5 +1,7 @@
 package entity;
 
+import utilities.Constants;
+
 import javax.swing.*;
 import java.awt.*;
 import java.io.Serializable;
@@ -37,21 +39,13 @@ public class StringColorMap implements Serializable {
 
 
 	private void addImageIcons(){
-		colorIconMap.put("MAGENTA", new ImageIcon("playerMagenta.jpg"));
-		colorIconMap.put("PURPLE", new ImageIcon("playerPurple.jpg"));
-		colorIconMap.put("ORANGE", new ImageIcon("playerOrange.jpg"));
-		colorIconMap.put("RED", resizeImage(new ImageIcon("Red_pawn.svg.png")));
-		colorIconMap.put("YELLOW", resizeImage(new ImageIcon("Yellow_pawn.svg.png")));
-		colorIconMap.put("GREEN", resizeImage(new ImageIcon("Green_pawn.svg.png")));
-		colorIconMap.put("CYAN", resizeImage(new ImageIcon("Blue_pawn.svg.png")));
-	}
-
-	private static ImageIcon resizeImage(ImageIcon originalIcon) {
-		Image originalImage = originalIcon.getImage();
-		int width = 40;
-		int height = 40;
-		Image resizedImage = originalImage.getScaledInstance(width, height, Image.SCALE_SMOOTH);
-		return new ImageIcon(resizedImage);
+		colorIconMap.put("MAGENTA", Constants.PlayerTokenImages.MAGENTA);
+		colorIconMap.put("PURPLE", Constants.PlayerTokenImages.PURPLE);
+		colorIconMap.put("ORANGE", Constants.PlayerTokenImages.ORANGE);
+		colorIconMap.put("RED", Constants.PlayerTokenImages.RED_PAWN);
+		colorIconMap.put("YELLOW", Constants.PlayerTokenImages.YELLOW_PAWN);
+		colorIconMap.put("GREEN", Constants.PlayerTokenImages.GREEN_PAWN);
+		colorIconMap.put("CYAN", Constants.PlayerTokenImages.CYAN_PAWN);
 	}
 	 
 	
