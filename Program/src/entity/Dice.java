@@ -157,7 +157,7 @@ public class Dice extends JPanel implements ActionListener {
 			//westSidePnl.append(playerList.getActivePlayer().getName() + " Rolled a: " + getRoll() + "\n"); //TODO NOT IN USE
 		}
 
-		playerList.getActivePlayer().checkPlayerRank();
+		//playerList.getActivePlayer().checkPlayerRank();
 		manageEvents.setRoll(this);
 
 		movePlayerThread = new Thread(new LoopThread(getRoll()));

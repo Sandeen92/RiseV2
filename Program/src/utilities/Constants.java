@@ -37,7 +37,7 @@ public class Constants {
         if(isMacOS()){
             return getImagePath() +  "playerToken/";
         }
-        return getImagePath() +  "playerToken\\";
+        return getImagePath() + "playerToken\\";
     }
 
     private static String getDicePath(){

@@ -224,7 +224,9 @@ public class Player implements Serializable {
 	public ImageIcon getImage() {
 		return playerIcon;
 	}
-
+	public void setImage(ImageIcon playerIcon){
+		this.playerIcon = playerIcon;
+	}
 	/**
 	 * @param playerBalance the playerBalance to set
 	 */
@@ -399,8 +401,6 @@ public class Player implements Serializable {
  */
 	public PlayerRanks checkPlayerRank() {
 
-		PlayerRanks rank = null;
-
 		Color RED = new Color(255, 0, 10, 255);
 		Color GREEN = new Color(35, 254, 14, 255);
 		Color CYAN = new Color(93, 188, 210, 255);
@@ -408,61 +408,63 @@ public class Player implements Serializable {
 
 		if (getNetWorth() <= 1499) {
 			if (this.getPlayerColor().equals(RED)) {
-				this.playerIcon = RED_PAWN;
+				setImage(RED_PAWN);
 			} else if (this.getPlayerColor().equals(GREEN)) {
-				this.playerIcon = GREEN_PAWN;
+				setImage(GREEN_PAWN);
 			} else if (this.getPlayerColor().equals(CYAN)) {
-				this.playerIcon = CYAN_PAWN;
+				setImage(CYAN_PAWN);
 			} else if (this.getPlayerColor().equals(YELLOW)) {
-				this.playerIcon = YELLOW_PAWN;
+				setImage(YELLOW_PAWN);
 			}
-			rank = PEASANT;
+			playerRank = PEASANT;
 			setPlayerRank(PEASANT);
 		}
 
 		if (getNetWorth() >= 1510 && getNetWorth() <= 4000) {
 			if (this.getPlayerColor().equals(RED)) {
-				this.playerIcon = RED_KNIGHT;
+				setImage(RED_KNIGHT);
 			} else if (this.getPlayerColor().equals(GREEN)) {
-				this.playerIcon = GREEN_KNIGHT;
+				setImage(GREEN_KNIGHT);
 			} else if (this.getPlayerColor().equals(CYAN)) {
-				this.playerIcon = CYAN_KNIGHT;
+				setImage(CYAN_KNIGHT);
 			} else if (this.getPlayerColor().equals(YELLOW)) {
-				this.playerIcon = YELLOW_KNIGHT;
+				setImage(YELLOW_KNIGHT);
 			}
-			rank = KNIGHT;
+			playerRank = KNIGHT;
 			setPlayerRank(KNIGHT);
 		}
 
 		if (getNetWorth() >= 4000 && getNetWorth() <= 7500) {
 			if (this.getPlayerColor().equals(RED)) {
-				this.playerIcon = RED_ROOK;
+				setImage(RED_ROOK);
 			} else if (this.getPlayerColor().equals(GREEN)) {
-				this.playerIcon = GREEN_ROOK;
+				setImage(GREEN_ROOK);
 			} else if (this.getPlayerColor().equals(CYAN)) {
-				this.playerIcon = CYAN_ROOK;
+				setImage(CYAN_ROOK);
 			} else if (this.getPlayerColor().equals(YELLOW)) {
-				this.playerIcon = YELLOW_ROOK;
+				setImage(YELLOW_ROOK);
 			}
-			rank = LORD;
+			playerRank = LORD;
 			setPlayerRank(LORD);
 		}
 
 		if (getNetWorth() >= 7500) {
 			if (this.getPlayerColor().equals(RED)) {
-				this.playerIcon = RED_KING;
+				setImage(RED_KING);
 			} else if (this.getPlayerColor().equals(GREEN)) {
-				this.playerIcon = GREEN_KING;
+				setImage(GREEN_KING);
 			} else if (this.getPlayerColor().equals(CYAN)) {
-				this.playerIcon = CYAN_KING;
+				setImage(CYAN_KING);
 			} else if (this.getPlayerColor().equals(YELLOW)) {
-				this.playerIcon = YELLOW_KING;
+				setImage(YELLOW_KING);
 			}
-			rank = KING;
+			playerRank = KING;
 			setPlayerRank(KING);
 		}
 
-		return rank;
+
+
+		return playerRank;
 	}
 
 	/**
