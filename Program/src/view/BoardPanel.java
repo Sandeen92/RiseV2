@@ -72,6 +72,7 @@ public class BoardPanel extends JPanel {
         lblPlayer = new JLabel(playerName);
         lblPlayer.setHorizontalAlignment(SwingConstants.CENTER);
         lblPlayer.setForeground(Color.white);
+        lblPlayer.setVisible(true);
         lblPlayer.setPreferredSize(new Dimension(240,45));
         lblPlayer.setFont(new Font("ALGERIAN", Font.BOLD, 14 ));
         lblPlayer.setBorder(BorderFactory.createLineBorder(Color.white));

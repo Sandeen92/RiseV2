@@ -1,11 +1,7 @@
 package entity;
 
-
-
 import javax.swing.ImageIcon;
 import static utilities.Constants.DiceImages.*;
-
-
 
 public class Dice {
 
@@ -30,4 +26,6 @@ public class Dice {
 	public ImageIcon getCurrentValueImage() {
         return currentValueImage;
     }
+
+
 }

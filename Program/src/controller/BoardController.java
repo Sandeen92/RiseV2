@@ -12,15 +12,15 @@ public class BoardController {
     private Dice dice1;
     private Dice dice2;
     private Board board;
-    private MainFrame mainFrame;
+    private MainPanel mainPanel;
     private PlayerList playerList;
 
-    public BoardController(MainFrame mainFrame) {
+    public BoardController(MainPanel mainPanel) {
         this.dice1 = new Dice();
         this.dice2 = new Dice();
         this.board = new Board();
         this.playerList = new PlayerList();
-        this.mainFrame = mainFrame;
+        this.mainPanel = mainPanel;
     }
 
 
@@ -28,6 +28,10 @@ public class BoardController {
         int roll1 = dice1.roll();
         int roll2 = dice2.roll();
         setDiceImages();
+
+        if (roll1 == roll2) {
+            return (roll1 + roll2) * 2;
+        }
         return roll1 + roll2;
     }
 
@@ -36,11 +40,11 @@ public class BoardController {
     }
 
     public void setDiceImages(){
-        mainFrame.setDiceImages(dice1.getCurrentValueImage(), dice2.getCurrentValueImage());
+        mainPanel.setDiceImages(dice1.getCurrentValueImage(), dice2.getCurrentValueImage());
     }
 
     public void removePlayer(Player player){
-        mainFrame.removePlayer(player.getPosition());
+        mainPanel.removePlayer(player.getPosition());
     }
 
     public void eliminatePlayer(Player player){
@@ -51,8 +55,8 @@ public class BoardController {
     }
 
     public void movePlayer(Player player){
-        mainFrame.setPlayerToTile(player.getPosition(), player);
-        mainFrame.updateTurnLabel(player.getName(), player.getPlayerColor());
+        mainPanel.setPlayerToTile(player.getPosition(), player);
+        mainPanel.updateTurnLabel(player.getName(), player.getPlayerColor());
     }
 
     public void endTurn(){
@@ -60,22 +64,22 @@ public class BoardController {
     }
 
     public void setPlayerToTile(Player player){
-        mainFrame.setPlayerToTile(player.getPosition(), player);
+        mainPanel.setPlayerToTile(player.getPosition(), player);
     }
     public Tile getTileAtIndex(int index){
         return board.getTileInfoAtIndex(index);
     }
 
     public void setTitleText(String info, String lblTitle, Color titleColor, Color titleTxtColor) {
-        mainFrame.setTitleText(info, lblTitle, titleColor, titleTxtColor);
+        mainPanel.setTitleText(info, lblTitle, titleColor, titleTxtColor);
     }
 
     public void setTextDefault() {
-        mainFrame.setTextDefault();
+        mainPanel.setTextDefault();
     }
 
     public void addPlayerTabs(){
-        mainFrame.addPlayerTabs(playerList);
+        mainPanel.addPlayerTabs(playerList);
     }
 
 }

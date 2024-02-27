@@ -13,8 +13,7 @@ import javax.swing.JPanel;
 
 import utilities.BackgroundMusic;
 import controller.StartingScreen;
-import view.MainFrame;
-import view.messageGui.Rules;
+import view.MainPanel;
 
 /**
  * This class displays the game board as well as what the players are called and
@@ -86,7 +85,7 @@ public class Menu extends JPanel {
 			} else if (e.getSource()==jmRestart) {
 				StartingScreen ss = new StartingScreen();
 				ss.initializeGUI();
-				MainFrame gp = new MainFrame();
+				MainPanel gp = new MainPanel();
 				gp.Dispose();
 			} else if (e.getSource()==jmExit) {
 				System.exit(0);

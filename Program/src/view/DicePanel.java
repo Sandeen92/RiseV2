@@ -15,7 +15,6 @@ public class DicePanel extends JPanel implements ActionListener {
     private JButton btnRollDice = new JButton("Roll Dice");
     private JLabel lblDice1;
     private JLabel lblDice2;
-    private ShowPlayersTurn showPlayersTurn;
 
 
     public DicePanel(BoardController board) {

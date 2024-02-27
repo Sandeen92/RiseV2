@@ -24,7 +24,7 @@ import view.messageGui.Menu;
  * @author Abdulkhuder Muhammad
  *
  */
-public class MainFrame extends JPanel implements Serializable {
+public class MainPanel extends JPanel implements Serializable {
 
 	private BoardController boardController;
 	private EastSidePanel eastPanel;
@@ -41,7 +41,7 @@ public class MainFrame extends JPanel implements Serializable {
 	/**
 	 * adds the panels and sets the bounds
 	 */
-	public MainFrame() {
+	public MainPanel() {
 		boardController = new BoardController(this);
 		eastPanel = new EastSidePanel();
 		westPanel = new WestSidePanel();
@@ -51,7 +51,6 @@ public class MainFrame extends JPanel implements Serializable {
 	}
 
 	public void setUpMainFrame(){
-		startboard();
 		lblPic = new JLabel();
 		setBorder(new MatteBorder(2, 2, 2, 2, (Color) Color.BLACK));
 

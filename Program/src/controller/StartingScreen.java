@@ -11,7 +11,7 @@ import java.util.Objects;
 import javax.swing.*;
 
 import utilities.Constants;
-import view.MainFrame;
+import view.MainPanel;
 import controller.lan.GameClient;
 import controller.lan.GameServer;
 import entity.player.PlayerList;
@@ -30,7 +30,7 @@ public class StartingScreen extends JFrame implements Runnable {
 
 	private BackgroundMusic bgm = new BackgroundMusic();
 	private PlayerList playerList = new PlayerList();
-	private MainFrame mainWindow = new MainFrame();
+	private MainPanel mainWindow = new MainPanel();
 
 	private JButton btnConfirm = new JButton("Confirm");
 	private JButton btnStartGame = new JButton("Start Game");
@@ -463,7 +463,7 @@ public class StartingScreen extends JFrame implements Runnable {
 		setVisible(true);
 		setResizable(false);
 		setLocationRelativeTo(null);
-		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		/**
 		 * JPanel for information about players

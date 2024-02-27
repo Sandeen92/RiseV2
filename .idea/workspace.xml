@@ -7,11 +7,17 @@
     <list default="true" id="369cbea7-d726-43f1-931c-763e77531bfd" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Program/src/controller/BoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/controller/BoardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program/src/view/BoardPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/view/BoardPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program/src/controller/StartingScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/controller/StartingScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program/src/controller/lan/GameServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/controller/lan/GameServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program/src/entity/Dice.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/entity/Dice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program/src/entity/player/PlayerList.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/entity/player/PlayerList.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Program/src/view/DicePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/view/DicePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program/src/view/GamePanels.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/view/GamePanels.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program/src/view/ShowPlayersTurn.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/view/ShowPlayersTurn.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program/src/view/eastSidePanels/PropertyWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/view/eastSidePanels/PropertyWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program/src/view/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/view/MainPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program/src/view/messageGui/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/view/messageGui/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/controller/BoardController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/controller/BoardController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/view/DicePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/view/DicePanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/view/GamePanels.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/view/ShowPlayersTurn.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
