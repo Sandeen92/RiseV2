@@ -26,7 +26,7 @@ public class PlayerTests {
       assertAll(
               () -> assertEquals("Test Player", player.getName(), ""),
               () -> assertTrue(player.isAlive()),
-              () -> assertEquals(1500, player.getBalance()),
+              () -> assertEquals(1500, player.getBalance(), "Testing that the balance is correct"),
               () -> assertEquals(0, player.getJailCounter()),
               () -> assertFalse(player.isPlayerInJail()),
               () -> assertEquals(0, player.getPosition()),
