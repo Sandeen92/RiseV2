@@ -5,19 +5,88 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="369cbea7-d726-43f1-931c-763e77531bfd" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Program/src/controller/lan/StartingLan.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program/src/entity/Dice.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/entity/Dice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program/src/entity/player/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/entity/player/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program/src/utilities/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/utilities/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program/src/view/GamePanels.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/view/GamePanels.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program/src/view/eastSidePanels/PlayerProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/view/eastSidePanels/PlayerProperties.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program/src/view/eastSidePanels/PropertyWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/view/eastSidePanels/PropertyWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/utilities/Constants$AudioFiles.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/utilities/Constants$AudioFiles.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/utilities/Constants$BoardImages.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/utilities/Constants$BoardImages.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/utilities/Constants$DiceImages.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/utilities/Constants$DiceImages.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/utilities/Constants$PlayerTokenImages.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/utilities/Constants$PlayerTokenImages.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/utilities/Constants$TileImages.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/utilities/Constants$TileImages.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program/src/controller/StartingScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/controller/StartingScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/$$$.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/Blue_king.svg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/Blue_knight.svg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/Blue_pawn.svg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/Blue_rook.svg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/FortuneTeller.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/Green_king.svg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/Green_knight.svg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/Green_pawn.svg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/Green_rook.svg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/Hips Don't Lie.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/Introduction.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/Jail.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/Movement.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/Properties.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/Red_king.svg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/Red_knight.svg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/Red_pawn.svg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/Red_rook.svg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/Rise Winner.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/RiseBoard750.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/Sell.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/SundayChurch.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/Tavern.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/WinCondition.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/Work.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/Yeah!.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/Yellow_king.svg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/Yellow_knight.svg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/Yellow_pawn.svg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/Yellow_rook.svg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/back2jpg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/backpaper.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/bgMusic.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/controller/ManageEvents.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/controller/ManageEvents.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/controller/StartingScreen$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/controller/StartingScreen$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/controller/StartingScreen$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/controller/StartingScreen$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/controller/StartingScreen$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/controller/StartingScreen$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/controller/StartingScreen$ButtonListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/controller/StartingScreen$ButtonListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/controller/StartingScreen$MouseAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/controller/StartingScreen$MouseAction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/controller/StartingScreen.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/controller/StartingScreen.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/duraw.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/entity/Dice.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/entity/Dice.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/entity/player/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/entity/player/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/entity/player/PlayerList.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/entity/player/PlayerList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/entity/player/PlayerRanks.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/entity/player/PlayerRanks.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/faceValue1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/faceValue1White.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/faceValue2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/faceValue2White.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/faceValue3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/faceValue3White.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/faceValue4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/faceValue4White.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/faceValue5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/faceValue5White.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/faceValue6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/faceValue6White.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/fancyRoll.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/monopoly 750.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/musicOff.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/paperbg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/plague_doctors_1200.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/playerBlue.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/playerCyan.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/playerGreen.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/playerMagenta.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/playerOrange.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/playerPurple.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/playerRed.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/playerYellow.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/tile.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/victory.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/view/Rules.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/view/Rules.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/view/ShowPlayersTurn.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/view/ShowPlayersTurn.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/view/eastSidePanels/PlayerInfoPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/view/eastSidePanels/PlayerInfoPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/westSidePanel/EventPanel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/westSidePanel/WestSidePanel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/win.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,22 +117,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.GameClient.executor": "Run",
-    "Application.GameServer.executor": "Run",
-    "Application.StartingScreen.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/simon/Desktop/RiseV2",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2091954",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.GameClient.executor&quot;: &quot;Run&quot;,
+    &quot;Application.GameServer.executor&quot;: &quot;Run&quot;,
+    &quot;Application.StartingScreen.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/simon/Desktop/RiseV2&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2091954&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\simon\Desktop\RiseV2\Program" />
@@ -133,7 +208,23 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1706082139843</updated>
+      <workItem from="1708951422832" duration="2540000" />
+      <workItem from="1709021845077" duration="9444000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
