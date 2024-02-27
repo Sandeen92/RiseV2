@@ -8,16 +8,12 @@ import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 import javax.swing.*;
 
-import entity.Board;
-import entity.Dice;
-import view.eastSidePanels.EastSidePanel;
 import entity.EventCases;
 import view.messageGui.DeathGUI;
 import view.messageGui.FortuneTellerGUI;
 import view.messageGui.SecretGui;
 import view.messageGui.WinGui;
 import entity.player.Player;
-import entity.player.PlayerList;
 import entity.player.PlayerRanks;
 import entity.tiles.FortuneTeller;
 import entity.tiles.GoToJail;
@@ -28,28 +24,31 @@ import entity.tiles.Tavern;
 import entity.tiles.Tax;
 import entity.tiles.Tile;
 import entity.tiles.Work;
-import view.WestSidePanel;
+import view.WestPanel;
 
 /**
  * The class handles all the events that occur when a entity.player lands on a tile.
  * @author Seth Oberg, Rohan Samandari,Muhammad Abdulkhuder ,Sebastian Viro, Aevan Dino, Alexander Fleming.
  */
 
-public class ManageEvents {
+public class EventManager {
 
 	private BoardController boardController;
 	private DeathGUI deathGUI;
 	private FortuneTellerGUI msgGUI;
 	private Random rand = new Random();
 	private int taxCounter = 0;
-	private WestSidePanel westPanel;
+	private WestPanel westPanel;
 
 
-	public ManageEvents(BoardController boardController) {
+	public EventManager(BoardController boardController) {
 		this.boardController = boardController;
 		deathGUI = new DeathGUI();
 		msgGUI = new FortuneTellerGUI();
-		westPanel.setEventManager(this);
+	}
+
+	public void setWestPanel(WestPanel westPanel) {
+		this.westPanel = westPanel;
 	}
 
 

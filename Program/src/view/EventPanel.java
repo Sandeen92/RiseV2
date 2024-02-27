@@ -20,13 +20,13 @@ import java.io.IOException;
     //TODO: Manage the different outcomes of the events
 
 public class EventPanel extends JPanel{
-    private WestSidePanel westPanel;
+    private WestPanel westPanel;
     private Border border = BorderFactory.createLineBorder(Color.DARK_GRAY);
     private JLabel title;
     private Font titleFont = new Font("ALGERIAN", Font.BOLD, 18);
     private Font font;
 
-    public EventPanel(WestSidePanel westPanel, Font font){
+    public EventPanel(WestPanel westPanel, Font font){
         this.westPanel = westPanel;
         this.font = font;
         title = createTitle("Game Event");

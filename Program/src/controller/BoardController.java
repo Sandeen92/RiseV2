@@ -7,6 +7,8 @@ import view.*;
 
 import java.awt.*;
 
+import static java.lang.Thread.sleep;
+
 public class BoardController {
 
     private Dice dice1;
@@ -14,6 +16,7 @@ public class BoardController {
     private Board board;
     private MainPanel mainPanel;
     private PlayerList playerList;
+    private EventManager eventManager;
 
     public BoardController(MainPanel mainPanel) {
         this.dice1 = new Dice();
@@ -21,6 +24,8 @@ public class BoardController {
         this.board = new Board();
         this.playerList = new PlayerList();
         this.mainPanel = mainPanel;
+        this.eventManager = new EventManager(this);
+        eventManager.setWestPanel(mainPanel.getWestPanel());
     }
 
 
@@ -43,6 +48,15 @@ public class BoardController {
         mainPanel.setDiceImages(dice1.getCurrentValueImage(), dice2.getCurrentValueImage());
     }
 
+    public String addPlayerToList(String name, String icon){
+        playerList.addNewPlayer(name, icon);
+        return name;
+    }
+
+    public PlayerList getPlayerList(){
+        return playerList;
+    }
+
     public void removePlayer(Player player){
         mainPanel.removePlayer(player.getPosition());
     }
@@ -54,13 +68,22 @@ public class BoardController {
         addPlayerTabs();
     }
 
-    public void movePlayer(Player player){
-        mainPanel.setPlayerToTile(player.getPosition(), player);
-        mainPanel.updateTurnLabel(player.getName(), player.getPlayerColor());
+    public void movePlayer(int diceRoll){
+        Player activePlayer = playerList.getActivePlayer();
+
+
+        MoveThread moveThread = new MoveThread(diceRoll);
+        moveThread.start();
+
+
+        playerList.switchToNextPlayer();
+        mainPanel.updateTurnLabel(activePlayer.getName(), activePlayer.getPlayerColor());
     }
 
     public void endTurn(){
 
+        Player activePlayer = playerList.getActivePlayer();
+        mainPanel.updateTurnLabel(activePlayer.getName(), activePlayer.getPlayerColor());
     }
 
     public void setPlayerToTile(Player player){
@@ -79,7 +102,34 @@ public class BoardController {
     }
 
     public void addPlayerTabs(){
-        mainPanel.addPlayerTabs(playerList);
+        mainPanel.addPlayerTabs();
+    }
+
+    private class MoveThread extends Thread {
+        int diceRoll;
+        int flag = 0;
+        Player activePlayer = playerList.getActivePlayer();
+        int playerIndex = playerList.getActivePlayerIndex(activePlayer);
+        int prevPosition;
+
+        public MoveThread(int diceRoll) {
+            this.diceRoll = diceRoll;
+        }
+        @Override
+        public void run() {
+            while (flag < diceRoll) {
+                prevPosition = activePlayer.getPosition();
+                activePlayer.setPosition(1);
+                mainPanel.movePlayerOnBoard(activePlayer);
+                mainPanel.removePlayer(prevPosition);
+                flag++;
+                try {
+                    sleep(500);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        }
     }
 
 }

@@ -3,10 +3,7 @@ package entity.player;
 import java.io.Serializable;
 import java.util.LinkedList;
 
-import javax.swing.ImageIcon;
-
 import entity.StringColorMap;
-import view.eastSidePanels.EastSidePanel;
 
 /**
  * A class that holds all active players 
@@ -54,6 +51,10 @@ public class PlayerList implements Serializable {
 		for(int i = 0; i < players.size(); i++) {
 			players.get(i).setPlayerIndex(i);
 		}	
+	}
+
+	public int getActivePlayerIndex(Player player) {
+		return players.indexOf(player);
 	}
 
 	public void switchToNextPlayer() {

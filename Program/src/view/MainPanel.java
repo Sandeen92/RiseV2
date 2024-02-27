@@ -13,7 +13,7 @@ import controller.BoardController;
 import entity.player.Player;
 import entity.player.PlayerList;
 import utilities.Constants;
-import view.eastSidePanels.EastSidePanel;
+import view.eastSidePanels.EastPanel;
 import utilities.BackgroundMusic;
 import view.messageGui.Menu;
 
@@ -27,8 +27,8 @@ import view.messageGui.Menu;
 public class MainPanel extends JPanel implements Serializable {
 
 	private BoardController boardController;
-	private EastSidePanel eastPanel;
-	private WestSidePanel westPanel;
+	private EastPanel eastPanel;
+	private WestPanel westPanel;
 	private BoardPanel boardPanel;
 	private DicePanel dicePanel;
 	private Dimension screenSize;
@@ -43,8 +43,8 @@ public class MainPanel extends JPanel implements Serializable {
 	 */
 	public MainPanel() {
 		boardController = new BoardController(this);
-		eastPanel = new EastSidePanel();
-		westPanel = new WestSidePanel();
+		eastPanel = new EastPanel();
+		westPanel = new WestPanel();
 		boardPanel = new BoardPanel(boardController);
 		dicePanel = new DicePanel(boardController);
 		setUpMainFrame();
@@ -115,6 +115,15 @@ public class MainPanel extends JPanel implements Serializable {
 		westPanel.setTitleText(info, lblTitle, titleColor, titleTxtColor);
 	}
 
+	public String addPlayerToList(String name, String icon) {
+		boardController.addPlayerToList(name, icon);
+		return name;
+	}
+
+	public void movePlayerOnBoard(Player player) {
+		boardPanel.movePlayerOnBoard(player);
+	}
+
 	public void setPlayerToTile(int position, Player player) {
 		boardPanel.setPlayerToTile(position, player);
 	}
@@ -123,12 +132,16 @@ public class MainPanel extends JPanel implements Serializable {
         westPanel.setTextDefault();
     }
 
-	public void addPlayerTabs(PlayerList playerList) {
-		eastPanel.addPlayerList(playerList);
+	public void addPlayerTabs() {
+		eastPanel.addPlayerList(boardController.getPlayerList());
+		boardPanel.setPlayerIndexes(boardController.getPlayerList());
 	}
 
 	public void Dispose() {
 		frame.dispose();
 	}
 
+	public WestPanel getWestPanel(){
+		return westPanel;
+	}
 }

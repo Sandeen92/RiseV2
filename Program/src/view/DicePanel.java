@@ -55,7 +55,8 @@ public class DicePanel extends JPanel implements ActionListener {
 
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == btnRollDice) {
-            board.rollDices();
+            int diceRoll = board.rollDices();
+            board.movePlayer(diceRoll);
         }
         if (e.getSource() == btnEndTurn) {
             board.endTurn();

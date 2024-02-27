@@ -71,7 +71,7 @@ public class Constants {
         public static final ImageIcon PROPERTY_MILL_TILE = new ImageIcon(tilePath + "mill.png");
         public static final ImageIcon PROPERTY_SMITH_TILE = new ImageIcon(tilePath + "smith.png");
         public static final ImageIcon PROPERTY_BATH_TILE = new ImageIcon(tilePath + "bath.png");
-        public static final ImageIcon PROPERTY_BAKERY_TILE = new ImageIcon(tilePath + "bakery.png");
+        public static final ImageIcon PROPERTY_BAKERY_TILE = new ImageIcon(tilePath + "bakerStore.png");
         public static final ImageIcon PROPERTY_BUTCHER_TILE = new ImageIcon(tilePath + "butcher.png");
         public static final ImageIcon SUNDAY_CHURCH_TILE = new ImageIcon(tilePath + "sundaychurch.png");
         public static final ImageIcon PROPERTY_WAREHOUSE_TILE = new ImageIcon(tilePath + "warehouse.png");

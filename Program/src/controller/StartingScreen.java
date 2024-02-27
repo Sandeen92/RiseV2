@@ -311,7 +311,7 @@ public class StartingScreen extends JFrame implements Runnable {
 	}
 
 	public void startUpLANGame() {
-		mainWindow.addPlayerTabs(playerList);
+		mainWindow.addPlayerTabs();
 		mainWindow.startboard();
 		dispose();
 	}
@@ -582,7 +582,6 @@ public class StartingScreen extends JFrame implements Runnable {
 							}
 							else {
 								maxLANPlayers = amountOfPlayers;
-								System.out.println(maxLANPlayers);
 							}
 						}
 						break;
@@ -625,7 +624,7 @@ public class StartingScreen extends JFrame implements Runnable {
 		 */
 		public void startUpLocalGame() {
 			createNewUsers();
-			mainWindow.addPlayerTabs(playerList);
+			mainWindow.addPlayerTabs();
 			mainWindow.startboard();
 			dispose();
 			Introduction intro = new Introduction();
@@ -642,7 +641,8 @@ public class StartingScreen extends JFrame implements Runnable {
 				if (playerTf[i].getText().length()>=10) {
 					playerTf[i].setText(playerTf[i].getText().substring(0, 10));
 				}
-				playerList.addNewPlayer(playerTf[i].getText(), (String) playerColors[i].getSelectedItem());
+				mainWindow.addPlayerToList(playerTf[i].getText(), (String) playerColors[i].getSelectedItem());
+				//playerList.addNewPlayer(playerTf[i].getText(), (String) playerColors[i].getSelectedItem());
 			}
 
 		}

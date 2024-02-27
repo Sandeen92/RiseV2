@@ -1,6 +1,6 @@
 package view;
 
-import controller.ManageEvents;
+import controller.EventManager;
 
 import java.awt.BorderLayout;
 import java.awt.*;
@@ -13,7 +13,7 @@ import javax.swing.text.DefaultCaret;
  * @author RohanSamandari, AevanDino
  *
  */
-public class WestSidePanel extends JPanel {
+public class WestPanel extends JPanel {
 
 	/**
 	 * WestPanel which shows Info about each Boxes.
@@ -35,10 +35,10 @@ public class WestSidePanel extends JPanel {
 			+ "      information about!";
 	private String title = "Information";
 	private Color titleColor = Color.DARK_GRAY;
-	private ManageEvents eventManager;
+	private EventManager eventManager;
 	//private EventPanel eventPanel;
 
-	public WestSidePanel() {
+	public WestPanel() {
 		  
 		caret.setUpdatePolicy(DefaultCaret.ALWAYS_UPDATE); 
 
@@ -154,10 +154,10 @@ public class WestSidePanel extends JPanel {
 	 * The method below are used to access the instances of the ManageEvents class as well as the EventPanel class
 	 * @param eventManager
 	 */
-	public void setEventManager(ManageEvents eventManager) {
+	public void setEventManager(EventManager eventManager) {
 		this.eventManager = eventManager;
 	}
-	public ManageEvents getEventManager() {
+	public EventManager getEventManager() {
 		return eventManager;
 	}
 	public EventPanel getEventPanel(){

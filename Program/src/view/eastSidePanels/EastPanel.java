@@ -15,7 +15,7 @@ import entity.player.PlayerList;
  * @author Abdulkhuder Muhammad, Sebastian Viro.
  *
  */
-public class EastSidePanel extends JPanel {
+public class EastPanel extends JPanel {
 
 	private PlayerList playerList;
 	private JTabbedPane tab;
@@ -34,7 +34,7 @@ public class EastSidePanel extends JPanel {
 	/**
 	 * Draws the GUI
 	 */
-	public EastSidePanel() {
+	public EastPanel() {
 
 		setPreferredSize(new Dimension(365, 860));
 		setOpaque(false);
@@ -59,7 +59,7 @@ public class EastSidePanel extends JPanel {
 		tab.removeAll();
 
 		for (int i = 0; i < playerList.getLength(); i++) {
-			new EastSidePanel();
+			new EastPanel();
 			playerInfoPnl = new PlayerInfoPanel(playerList, i);
 			playerInfoPnl.setOpaque(false);
 			tab.addTab("Player " + (i + 1), playerInfoPnl);

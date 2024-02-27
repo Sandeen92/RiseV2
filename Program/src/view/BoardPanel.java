@@ -2,6 +2,7 @@ package view;
 
 import controller.BoardController;
 import entity.player.Player;
+import entity.player.PlayerList;
 import entity.tiles.TileInfo;
 import utilities.Constants;
 
@@ -91,6 +92,17 @@ public class BoardPanel extends JPanel {
 
     public void setPlayerToTile(int position, Player player) {
         guiTiles[position].setPlayer(player);
+    }
+
+    public void movePlayerOnBoard(Player player) {
+        guiTiles[player.getPosition()].setPlayer(player);
+    }
+
+    public void setPlayerIndexes(PlayerList playerList) {
+        for (int i = 0; i < playerList.getLength(); i++) {
+            Player p = playerList.getPlayerFromIndex(i);
+            guiTiles[p.getPosition()].setPlayer(p);
+        }
     }
 
     public void addEmptyGridPanels() {
