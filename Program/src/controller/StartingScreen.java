@@ -6,6 +6,8 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Objects;
 
 import javax.swing.*;
@@ -25,8 +27,6 @@ import view.messageGui.Introduction;
  *
  */
 public class StartingScreen extends JFrame implements Runnable {
-
-	private static final long serialVersionUID = 1L;
 
 	private BackgroundMusic bgm = new BackgroundMusic();
 	private PlayerList playerList = new PlayerList();
@@ -51,29 +51,13 @@ public class StartingScreen extends JFrame implements Runnable {
 	private JLabel lblBackground = new JLabel("", imgBackground, JLabel.CENTER);
 	private JLabel lblRise = new JLabel("RISE");
 
-	private JLabel lblPlayerIndex1 = new JLabel("Player 1:");
-	private JLabel lblPlayerIndex2 = new JLabel("Player 2:");
-	private JLabel lblPlayerIndex3 = new JLabel("Player 3:");
-	private JLabel lblPlayerIndex4 = new JLabel("Player 4:");
-	private JLabel[] playerLabels = new JLabel[] { lblPlayerIndex1, lblPlayerIndex2, lblPlayerIndex3, lblPlayerIndex4 };
+	private JLabel[] playerLabels = new JLabel[4];
 
-	private JTextField tfPlayer1 = new JTextField("Name1...");
-	private JTextField tfPlayer2 = new JTextField("Name2...");
-	private JTextField tfPlayer3 = new JTextField("Name3...");
-	private JTextField tfPlayer4 = new JTextField("Name4...");
-	private JTextField[] playerTf = new JTextField[] { tfPlayer1, tfPlayer2, tfPlayer3, tfPlayer4 };
+	private JTextField[] playerTf = new JTextField[4];
 
 	private String[] colors = new String[]  { "RED", "GREEN", "ORANGE", "YELLOW", "CYAN", "MAGENTA" };
-	private String[] colors1 = new String[] { "GREEN", "ORANGE", "YELLOW", "CYAN", "MAGENTA", "RED" };
-	private String[] colors2 = new String[] { "ORANGE", "YELLOW", "CYAN", "MAGENTA", "RED", "GREEN" };
-	private String[] colors3 = new String[] { "YELLOW", "CYAN", "MAGENTA", "RED", "GREEN", "ORANGE" };
-
-	private JComboBox<String> playerColors1 = new JComboBox<String>(colors);
-	private JComboBox<String> playerColors2 = new JComboBox<String>(colors1);
-	private JComboBox<String> playerColors3 = new JComboBox<String>(colors2);
-	private JComboBox<String> playerColors4 = new JComboBox<String>(colors3);
-	private JComboBox[] playerColors = new JComboBox[] { playerColors1, playerColors2, playerColors3, playerColors4 };
-
+	private JComboBox<String> availablePlayerColors = new JComboBox<>(colors);
+	private JComboBox[] playerColors = new JComboBox[4];
 
 	/**
 	 * Mute button
@@ -85,8 +69,7 @@ public class StartingScreen extends JFrame implements Runnable {
 	 */
 	private int amountOfPlayers;
 	private boolean isNetwork;
-	private int activePlayers = 0;
-	private int maxLANPlayers = 0;
+	private int activePlayers = 1;
 
 	private JFrame lobbyFrame;
 	private JList listOfPlayers;
@@ -138,11 +121,21 @@ public class StartingScreen extends JFrame implements Runnable {
 
 		createFrame();
 
+		instantiateLabels();
+
+		bgm.startMusic();
 		chooseLocalOrNetwork();
-
 	}
-
-
+	public void instantiateLabels(){
+		for(int i = 0;i < 4;i++){
+			JLabel lblPlayerIndex = new JLabel("Player" + (i+1) + ":");
+			JTextField tfPlayer = new JTextField("Name" + (i+1) + "...");
+			availablePlayerColors = new JComboBox<String>(colors);
+			playerLabels[i] = lblPlayerIndex;
+			playerTf[i] = tfPlayer;
+			playerColors[i] = availablePlayerColors;
+		}
+	}
 	public void chooseLocalOrNetwork() {
 
 		JLabel lblPickLANOrLocal = new JLabel("LAN or Local?");
@@ -179,11 +172,9 @@ public class StartingScreen extends JFrame implements Runnable {
                 }
 			}
 		};
-
 		btnLAN.addActionListener(buttonActionListener);
 		btnLocal.addActionListener(buttonActionListener);
 	}
-
 
 	public void setUpLAN() {
 
@@ -214,7 +205,6 @@ public class StartingScreen extends JFrame implements Runnable {
                 }
 			}
 		};
-
 		btnCreateGame.addActionListener(buttonActionListener);
 		btnJoinGame.addActionListener(buttonActionListener);
 	}
@@ -240,42 +230,25 @@ public class StartingScreen extends JFrame implements Runnable {
 		pnlPlayerInfo.add(playerTf[i]);
 		pnlPlayerInfo.add(playerColors[i]);
 
-		activePlayers++;
-
 		JButton btnHostGame = new JButton("Host Game");
 		btnHostGame.setOpaque(false);
 		btnHostGame.setBounds(350, 530, 200, 40);
 		btnHostGame.addActionListener(e -> startLobby());
-
 
 		lblBackground.add(btnHostGame);
 		lblBackground.add(pnlPlayerInfo);
 		lblBackground.add(btnStartGame);
 	}
 
-	public void assignAmountOfPlayers(){
-		if (radioButtons[0].isSelected()){
-			maxLANPlayers = 2;
-		}
-		if (radioButtons[1].isSelected()){
-            maxLANPlayers = 3;
-        }
-		if (radioButtons[2].isSelected()){
-            maxLANPlayers = 4;
-        }
-	}
-
 	public void startLobby() {
 		String hostName = playerTf[0].getText();
-		assignAmountOfPlayers();
+		//assignAmountOfPlayers();
 
 		lobbyFrame = new JFrame("Lobby");
 		lobbyFrame.setSize(400, 200);
 		lobbyFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-
 		JPanel panel = new JPanel(new BorderLayout());
-
 
 		listModel = new DefaultListModel<>();
 		listOfPlayers = new JList<>(listModel);
@@ -330,7 +303,6 @@ public class StartingScreen extends JFrame implements Runnable {
 		}
 	}
 
-
 	public void startServerAndConnectAsHost(String hostName) throws IOException {
         gameServer = new GameServer(this, 9090);
 		Thread gameServerThread = new Thread(gameServer);
@@ -354,7 +326,6 @@ public class StartingScreen extends JFrame implements Runnable {
 		btnJoinGame.setOpaque(false);
 		btnJoinGame.setBounds(350, 530, 200, 40);
 		btnJoinGame.addActionListener(e -> joinLobby(playerTf[activePlayers].getText()));
-
 
 		pnlPlayerInfo.add(btnJoinGame);
 		pnlPlayerInfo.add(playerLabels[activePlayers]);
@@ -392,7 +363,6 @@ public class StartingScreen extends JFrame implements Runnable {
 		}
 		activePlayers++;
 	}
-
 
 	public void setUpLocal() {
 
@@ -444,7 +414,6 @@ public class StartingScreen extends JFrame implements Runnable {
 		/**
 		 * Adding stuff to background label
 		 */
-
 		lblBackground.add(btnConfirm);
 		lblBackground.add(pnlPlayerInfo);
 		lblBackground.add(btnReset);
@@ -523,10 +492,10 @@ public class StartingScreen extends JFrame implements Runnable {
 
 			pnlPlayerInfo.add(playerLabels[i]);
 			pnlPlayerInfo.add(playerTf[i]);
+			playerColors[i].setSelectedIndex(i);
 			pnlPlayerInfo.add(playerColors[i]);
 		}
 	}
-
 
 	/**
 	 * Buttonlistener class, listens for clicks.
@@ -566,7 +535,7 @@ public class StartingScreen extends JFrame implements Runnable {
 
 			if (e.getSource() == btnStartGame) {
 
-				if(tfPlayer1.getText().length()==0 || tfPlayer2.getText().length()==0 || tfPlayer3.getText().length()==0 || tfPlayer4.getText().length()==0) {
+				if(playerTf[0].getText().length()==0 || playerTf[1].getText().length()==0 || playerTf[2].getText().length()==0 || playerTf[3].getText().length()==0) {
 					JOptionPane.showMessageDialog(null, "All players must have a name");
 				} else {
 
@@ -579,9 +548,6 @@ public class StartingScreen extends JFrame implements Runnable {
 							if(!isNetwork) {
 								startUpLocalGame();
 							}
-							else {
-								maxLANPlayers = amountOfPlayers;
-							}
 						}
 						break;
 
@@ -592,9 +558,6 @@ public class StartingScreen extends JFrame implements Runnable {
 						} else {
 							if(!isNetwork) {
 								startUpLocalGame();
-							}
-							else {
-								maxLANPlayers = amountOfPlayers;
 							}
 						}
 						break;
@@ -607,9 +570,6 @@ public class StartingScreen extends JFrame implements Runnable {
 						} else {
 							if(!isNetwork) {
 								startUpLocalGame();
-							}
-							else {
-								maxLANPlayers = amountOfPlayers;
 							}
 						}
 						break;
@@ -628,7 +588,6 @@ public class StartingScreen extends JFrame implements Runnable {
 			dispose();
 			Introduction intro = new Introduction();
 		}
-
 		
 		/**
 		 * Creates the right amount of players.
@@ -646,7 +605,6 @@ public class StartingScreen extends JFrame implements Runnable {
 
 		}
 
-		
 		/**
 		 * Whenever entity.player chooses to reset the start screen
 		 * @param amountOfPlayers, how many players to draw
@@ -671,28 +629,28 @@ public class StartingScreen extends JFrame implements Runnable {
 	private class MouseAction implements MouseListener{
 		int counter1 = 0, counter2 = 0, counter3 =0, counter4=0;
 		public void mouseClicked(MouseEvent e) {
-			if(e.getSource() == tfPlayer1) {
+			if(e.getSource() == playerTf[0]) {
 				if(counter1<1) {
 					counter1++;
-					tfPlayer1.setText(null);
+					playerTf[0].setText(null);
 				}
 			}
-			if(e.getSource() == tfPlayer2) {
+			if(e.getSource() == playerTf[1]) {
 				if(counter2<1) {
 					counter2++;
-					tfPlayer2.setText(null);
+					playerTf[1].setText(null);
 				}
 			}
-			if(e.getSource() == tfPlayer3) {
+			if(e.getSource() == playerTf[2]) {
 				if(counter3<1) {
 					counter3++;
-					tfPlayer3.setText(null);
+					playerTf[2].setText(null);
 				}
 			}
-			if(e.getSource() == tfPlayer4) {
+			if(e.getSource() == playerTf[3]) {
 				if(counter4<1) {
 					counter4++;
-					tfPlayer4.setText(null);
+					playerTf[3].setText(null);
 				}
 			}
 		}
