@@ -29,6 +29,8 @@ public class Menu extends JPanel {
 	private JMenuItem jmMusic = new JMenuItem("Pause Music");
 	private JMenuItem jmRestart = new JMenuItem("Restart Game");
 	private JMenuItem jmRules = new JMenuItem("Read Rules");
+	private JMenuItem jmChangeVolume = new JMenuItem("Adjust Volume");
+	private JMenuItem jmChangebgMusic = new JMenuItem("Change Music");
 	private Rules rules = new Rules();
 	private boolean paused = false;
 	
@@ -45,6 +47,10 @@ public class Menu extends JPanel {
 		jmMusic.addActionListener(new ButtonListener());
 		jmRules.addActionListener(new ButtonListener());
 		jmRestart.addActionListener(new ButtonListener());
+		jmChangeVolume.addActionListener(new ButtonListener());
+		jmChangebgMusic.addActionListener(new ButtonListener());
+		jmMenu.add(jmChangebgMusic);
+		jmMenu.add(jmChangeVolume);
 		jmMenu.add(jmMusic);
 		jmMenu.add(jmRules);
 		jmMenu.add(jmRestart);
@@ -87,6 +93,12 @@ public class Menu extends JPanel {
 				ss.initializeGUI();
 				MainPanel gp = new MainPanel();
 				gp.Dispose();
+
+
+			} else if(e.getSource()==jmChangeVolume){
+				music.changeVolume();
+			} else if (e.getSource()==jmChangebgMusic){;
+				music.changeBackgroundMusic(music.createFrameForChangeMusic());
 			} else if (e.getSource()==jmExit) {
 				System.exit(0);
 			} else if (e.getSource()==jmRules) {

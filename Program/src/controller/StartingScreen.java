@@ -98,6 +98,8 @@ public class StartingScreen extends JFrame implements Runnable {
 	 * @param args
 	 */
 	public static void main(String[] args) {
+		BackgroundMusic bgm = new BackgroundMusic();
+		bgm.startMusic();
 		StartingScreen su = new StartingScreen();
 		 Thread t = new Thread(su);
 		 t.start();
