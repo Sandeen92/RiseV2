@@ -75,14 +75,12 @@ public class BoardController {
         MoveThread moveThread = new MoveThread(diceRoll);
         moveThread.start();
 
-
-        playerList.switchToNextPlayer();
         mainPanel.updateTurnLabel(activePlayer.getName(), activePlayer.getPlayerColor());
     }
 
     public void endTurn(){
-
         Player activePlayer = playerList.getActivePlayer();
+        playerList.switchToNextPlayer();
         mainPanel.updateTurnLabel(activePlayer.getName(), activePlayer.getPlayerColor());
     }
 
@@ -109,7 +107,6 @@ public class BoardController {
         int diceRoll;
         int flag = 0;
         Player activePlayer = playerList.getActivePlayer();
-        int playerIndex = playerList.getActivePlayerIndex(activePlayer);
         int prevPosition;
 
         public MoveThread(int diceRoll) {
@@ -123,12 +120,12 @@ public class BoardController {
                 mainPanel.movePlayerOnBoard(activePlayer);
                 flag++;
                 try {
-                    sleep(300);
+                    sleep(50);
                 } catch (InterruptedException e) {
                     throw new RuntimeException(e);
                 }
             }
+            mainPanel.enableEndTurnBtn();
         }
     }
-
 }

@@ -146,7 +146,12 @@ public class BoardPanel extends JPanel {
 
     public void movePlayerOnBoard(Player player) {
         guiTiles[player.getPosition()].setPlayer(player);
-        guiTiles[player.getPosition()-1].removePlayer(player);
+        if ((player.getPosition() - 1) != -1) {
+            guiTiles[player.getPosition()-1].removePlayer(player);
+        }
+        else {
+            guiTiles[guiTiles.length-1].removePlayer(player);
+        }
     }
 
     public void setPlayerIndexes(PlayerList playerList) {

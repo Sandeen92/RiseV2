@@ -102,6 +102,9 @@ public class MainPanel extends JPanel implements Serializable {
 		dicePanel.setDiceImages(dice1, dice2);
 	}
 
+	public void enableEndTurnBtn() {
+		dicePanel.enableEndTurnBtn();
+	}
 
 	public void removePlayer(Player player) {
         boardPanel.removePlayer(player);
