@@ -81,8 +81,6 @@ public class StartingScreen extends JFrame implements Runnable {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		BackgroundMusic bgm = new BackgroundMusic();
-		bgm.startMusic();
 		StartingScreen su = new StartingScreen();
 		 Thread t = new Thread(su);
 		 t.start();
@@ -119,13 +117,9 @@ public class StartingScreen extends JFrame implements Runnable {
 			fontLabel = new Font("Arial", Font.BOLD, 30);
 			fontLabelPlayer = new Font("Arial", Font.BOLD, 20);
 		}
-		//bgm.startMusic();
-
 		createFrame();
 
 		instantiateLabels();
-
-		bgm.startMusic();
 		chooseLocalOrNetwork();
 	}
 	public void instantiateLabels(){
