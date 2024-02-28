@@ -47,7 +47,7 @@ public class EventManager {
 		msgGUI = new FortuneTellerGUI();
 	}
 
-	public void setWestPanel(WestPanel westPanel) {
+	public void setWestPanel(WestPanel westPanel) { 
 		this.westPanel = westPanel;
 	}
 

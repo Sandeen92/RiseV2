@@ -69,18 +69,21 @@ public class BoardController {
     }
 
     public void movePlayer(int diceRoll){
+        Movement movement = new Movement(diceRoll);
+        movement.start();
+    }
+
+    public void handleEventLandedOn(){
         Player activePlayer = playerList.getActivePlayer();
-
-
-        MoveThread moveThread = new MoveThread(diceRoll);
-        moveThread.start();
-
-        mainPanel.updateTurnLabel(activePlayer.getName(), activePlayer.getPlayerColor());
+        Tile tile = board.getTiletIndex(activePlayer.getPosition());
+        System.out.println(tile.getName());
+        System.out.println(activePlayer.getName() + " at " + activePlayer.getPosition());
+        eventManager.newEvent(tile, activePlayer);
     }
 
     public void endTurn(){
-        Player activePlayer = playerList.getActivePlayer();
         playerList.switchToNextPlayer();
+        Player activePlayer = playerList.getActivePlayer();
         mainPanel.updateTurnLabel(activePlayer.getName(), activePlayer.getPlayerColor());
     }
 
@@ -88,7 +91,7 @@ public class BoardController {
         mainPanel.setPlayerToTile(player);
     }
     public Tile getTileAtIndex(int index){
-        return board.getTileInfoAtIndex(index);
+        return board.getTiletIndex(index);
     }
 
     public void setTitleText(String info, String lblTitle, Color titleColor, Color titleTxtColor) {
@@ -103,13 +106,13 @@ public class BoardController {
         mainPanel.addPlayerTabs();
     }
 
-    private class MoveThread extends Thread {
+    private class Movement extends Thread {
         int diceRoll;
         int flag = 0;
         Player activePlayer = playerList.getActivePlayer();
         int prevPosition;
 
-        public MoveThread(int diceRoll) {
+        public Movement(int diceRoll) {
             this.diceRoll = diceRoll;
         }
         @Override
@@ -126,6 +129,7 @@ public class BoardController {
                 }
             }
             mainPanel.enableEndTurnBtn();
+            handleEventLandedOn();
         }
     }
 }

@@ -134,10 +134,9 @@ public class StartingScreen extends JFrame implements Runnable {
 			fontLabel = new Font("Arial", Font.BOLD, 30);
 			fontLabelPlayer = new Font("Arial", Font.BOLD, 20);
 		}
-		bgm.startMusic();
+		//bgm.startMusic();
 
 		createFrame();
-		bgm.startMusic();
 
 		chooseLocalOrNetwork();
 

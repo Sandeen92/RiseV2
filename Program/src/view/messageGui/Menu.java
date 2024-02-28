@@ -23,6 +23,7 @@ import view.MainPanel;
  */
 public class Menu extends JPanel {
 	private BackgroundMusic music;
+	private MainPanel mainPanel;
 	private JMenu jmMenu = new JMenu("Menu");
 	private JMenuBar jmMenuBar = new JMenuBar();
 	private JMenuItem jmExit = new JMenuItem("Exit");
@@ -35,8 +36,9 @@ public class Menu extends JPanel {
 	/**
 	 * Constructor which draws the gui
 	 */
-	public Menu(BackgroundMusic music) {
+	public Menu(BackgroundMusic music, MainPanel mainPanel) {
 		this.music = music;
+		this.mainPanel = mainPanel;
 		setOpaque(false);
 		setPreferredSize(new Dimension(400, 40));
 		setLayout(new BorderLayout());
@@ -83,10 +85,10 @@ public class Menu extends JPanel {
 					paused = false;
 				}
 			} else if (e.getSource()==jmRestart) {
+				mainPanel.Dispose();
 				StartingScreen ss = new StartingScreen();
-				ss.initializeGUI();
-				MainPanel gp = new MainPanel();
-				gp.Dispose();
+				Thread thread = new Thread(ss);
+				thread.start();
 			} else if (e.getSource()==jmExit) {
 				System.exit(0);
 			} else if (e.getSource()==jmRules) {

@@ -297,7 +297,7 @@ public class Player implements Serializable {
 			} else if (this.getPlayerColor().equals(GREEN)) {
 				this.playerIcon = GREEN_PAWN;
 			} else if (this.getPlayerColor().equals(CYAN)) {
-				this.playerIcon = CYAN_PAWN;
+				this.playerIcon = BLUE_PAWN;
 			} else if (this.getPlayerColor().equals(YELLOW)) {
 				this.playerIcon = YELLOW_PAWN;
 			}
@@ -311,7 +311,7 @@ public class Player implements Serializable {
 			} else if (this.getPlayerColor().equals(GREEN)) {
 				this.playerIcon = GREEN_KNIGHT;
 			} else if (this.getPlayerColor().equals(CYAN)) {
-				this.playerIcon = CYAN_KNIGHT;
+				this.playerIcon = BLUE_KNIGHT;
 			} else if (this.getPlayerColor().equals(YELLOW)) {
 				this.playerIcon = YELLOW_KNIGHT;
 			}
@@ -325,7 +325,7 @@ public class Player implements Serializable {
 			} else if (this.getPlayerColor().equals(GREEN)) {
 				this.playerIcon = GREEN_ROOK;
 			} else if (this.getPlayerColor().equals(CYAN)) {
-				this.playerIcon = CYAN_ROOK;
+				this.playerIcon = BLUE_ROOK;
 			} else if (this.getPlayerColor().equals(YELLOW)) {
 				this.playerIcon = YELLOW_ROOK;
 			}
@@ -339,7 +339,7 @@ public class Player implements Serializable {
 			} else if (this.getPlayerColor().equals(GREEN)) {
 				this.playerIcon = GREEN_KING;
 			} else if (this.getPlayerColor().equals(CYAN)) {
-				this.playerIcon = CYAN_KING;
+				this.playerIcon = BLUE_KING;
 			} else if (this.getPlayerColor().equals(YELLOW)) {
 				this.playerIcon = YELLOW_KING;
 			}
