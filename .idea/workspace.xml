@@ -5,81 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="369cbea7-d726-43f1-931c-763e77531bfd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Program/src/resources/images/playerToken/Cyan_king.svg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Program/src/resources/images/playerToken/Cyan_knight.svg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Program/src/resources/images/playerToken/Cyan_pawn.svg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Program/src/resources/images/playerToken/Cyan_rook.svg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Program/src/resources/images/playerToken/Magenta_king.svg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Program/src/resources/images/playerToken/Magenta_knight.svg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Program/src/resources/images/playerToken/Magenta_pawn.svg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Program/src/resources/images/playerToken/Magenta_rook.svg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Program/src/resources/images/playerToken/Orage_king.svg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Program/src/resources/images/playerToken/Orange_knight.svg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Program/src/resources/images/playerToken/Orange_pawn.svg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Program/src/resources/images/playerToken/Orange_rook.svg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Program/src/resources/images/playerToken/Purple.pawn.svg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Program/src/resources/images/playerToken/Purple_king.svg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Program/src/resources/images/playerToken/Purple_knight.svg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Program/src/resources/images/playerToken/Purple_rook.svg.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Program/src/controller/BoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/controller/BoardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program/src/controller/StartingScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/controller/StartingScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program/src/entity/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/entity/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program/src/entity/StringColorMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/entity/StringColorMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program/src/entity/player/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/entity/player/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program/src/entity/player/PlayerList.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/entity/player/PlayerList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program/src/resources/images/playerToken/playerBlue.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program/src/resources/images/playerToken/playerCyan.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program/src/resources/images/playerToken/playerGreen.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program/src/resources/images/playerToken/playerMagenta.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program/src/resources/images/playerToken/playerOrange.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program/src/resources/images/playerToken/playerPurple.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program/src/resources/images/playerToken/playerRed.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program/src/resources/images/playerToken/playerYellow.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program/src/utilities/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/utilities/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program/src/view/BoardPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/view/BoardPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program/src/view/DicePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/view/DicePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program/src/controller/EventManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/controller/EventManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program/src/entity/Dice.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/entity/Dice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program/src/view/EventPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/view/EventPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Program/src/view/MainPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/view/MainPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program/src/view/messageGui/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/view/messageGui/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/controller/BoardController$MoveThread.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/controller/BoardController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/controller/BoardController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/controller/StartingScreen$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/controller/StartingScreen$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/controller/StartingScreen$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/controller/StartingScreen$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/controller/StartingScreen$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/controller/StartingScreen$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/controller/StartingScreen$ButtonListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/controller/StartingScreen$ButtonListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/controller/StartingScreen$MouseAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/controller/StartingScreen$MouseAction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/controller/StartingScreen.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/controller/StartingScreen.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/entity/Board.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/entity/Board.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/entity/StringColorMap.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/entity/StringColorMap.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/entity/player/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/entity/player/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/entity/player/PlayerList.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/entity/player/PlayerList.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/images/playerToken/playerBlue.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/images/playerToken/playerCyan.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/images/playerToken/playerGreen.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/images/playerToken/playerMagenta.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/images/playerToken/playerOrange.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/images/playerToken/playerPurple.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/images/playerToken/playerRed.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/images/playerToken/playerYellow.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/resources/images/playerToken/playerBlue.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/resources/images/playerToken/playerCyan.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/resources/images/playerToken/playerGreen.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/resources/images/playerToken/playerMagenta.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/resources/images/playerToken/playerOrange.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/resources/images/playerToken/playerPurple.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/resources/images/playerToken/playerRed.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/resources/images/playerToken/playerYellow.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/utilities/Constants$AudioFiles.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/utilities/Constants$AudioFiles.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/utilities/Constants$BoardImages.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/utilities/Constants$BoardImages.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/utilities/Constants$DiceImages.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/utilities/Constants$DiceImages.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/utilities/Constants$PlayerTokenImages.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/utilities/Constants$PlayerTokenImages.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/utilities/Constants$TileImages.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/utilities/Constants$TileImages.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/view/BoardPanel$Listener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/view/BoardPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/view/BoardPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/view/DicePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/view/DicePanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program/src/view/WestPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/view/WestPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/controller/BoardController$Movement.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/controller/BoardController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/controller/EventManager$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/controller/EventManager$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/controller/EventManager$SecretSleeper.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/controller/EventManager$SecretSleeper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/controller/EventManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/controller/EventManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/view/EventPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/view/EventPanel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/RiseV2/view/MainPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/view/MainPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/view/messageGui/Menu$ButtonListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/view/messageGui/Menu$ButtonListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/view/messageGui/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/view/messageGui/Menu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/view/WestPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/view/WestPanel.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -1,5 +1,6 @@
 package view;
 
+import controller.BoardController;
 import controller.EventManager;
 
 import java.awt.BorderLayout;
@@ -20,6 +21,8 @@ public class WestPanel extends JPanel {
 	 * 
 	 * @author RohanSamandari
 	 */
+
+	private BoardController boardController;
 	private JLabel lblInfoTitle, lblHistoryTitle;
 	private JPanel pnlSpace, pnlHeading, pnlInfo, pnlHistory;
 	private EventPanel pnlEvent;
@@ -35,12 +38,16 @@ public class WestPanel extends JPanel {
 			+ "      information about!";
 	private String title = "Information";
 	private Color titleColor = Color.DARK_GRAY;
-	private EventManager eventManager;
 	//private EventPanel eventPanel;
 
-	public WestPanel() {
-		  
-		caret.setUpdatePolicy(DefaultCaret.ALWAYS_UPDATE); 
+	public WestPanel(BoardController boardController) {
+		this.boardController = boardController;
+		initWestPanel();
+	}
+
+
+	public void initWestPanel(){
+		caret.setUpdatePolicy(DefaultCaret.ALWAYS_UPDATE);
 
 		/**
 		 * HeadPanel with Information Label
@@ -99,7 +106,7 @@ public class WestPanel extends JPanel {
 		//scroller.setPreferredSize(new Dimension(320, 405));
 		//scroller.setAutoscrolls(true);
 
-		pnlEvent = new EventPanel(this, font);
+		pnlEvent = new EventPanel(boardController, font);
 
 		/**
 		 * The main Panel
@@ -139,6 +146,10 @@ public class WestPanel extends JPanel {
 		lblInfoTitle.setForeground(Color.white);
 	}
 
+	public void resetEventPanel(){
+		pnlEvent.resetEventPanel();
+	}
+
 	/**
 	 * Adds the history of the game and updates it.
 	 * NOT IN USE AT THIS POINT
@@ -146,19 +157,6 @@ public class WestPanel extends JPanel {
 	 */
 	public void append(String res) {
 		//txtMessage.append(res);
-	}
-
-
-	/**
-	 * Allows access to the event manager.
-	 * The method below are used to access the instances of the ManageEvents class as well as the EventPanel class
-	 * @param eventManager
-	 */
-	public void setEventManager(EventManager eventManager) {
-		this.eventManager = eventManager;
-	}
-	public EventManager getEventManager() {
-		return eventManager;
 	}
 	public EventPanel getEventPanel(){
 		return pnlEvent;

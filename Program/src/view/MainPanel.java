@@ -44,7 +44,7 @@ public class MainPanel extends JPanel implements Serializable {
 	public MainPanel() {
 		boardController = new BoardController(this);
 		eastPanel = new EastPanel();
-		westPanel = new WestPanel();
+		westPanel = new WestPanel(boardController);
 		boardPanel = new BoardPanel(boardController);
 		dicePanel = new DicePanel(boardController);
 		setUpMainFrame();
@@ -141,6 +141,23 @@ public class MainPanel extends JPanel implements Serializable {
 		boardPanel.setPlayerIndexes(playerList);
 		updateTurnLabel(playerList.getPlayerFromIndex(0).getName(), playerList.getPlayerFromIndex(0).getPlayerColor());
 	}
+
+	public void updatePlayerTabs(){
+		PlayerList playerList = boardController.getPlayerList();
+		eastPanel.addPlayerList(playerList);
+		boardPanel.setPlayerIndexes(playerList);
+	}
+
+	public void removeEventFromPanel(){
+		westPanel.resetEventPanel();
+	}
+
+	public void appendWestPanel(String text) {
+        westPanel.append(text);
+    }
+	public EventPanel getEventPanel(){
+        return westPanel.getEventPanel();
+    }
 
 	public void Dispose() {
 		frame.dispose();

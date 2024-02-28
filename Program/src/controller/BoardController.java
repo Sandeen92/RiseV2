@@ -2,6 +2,8 @@ package controller;
 
 import entity.*;
 import entity.player.*;
+import entity.tiles.Property;
+import entity.tiles.Tavern;
 import entity.tiles.Tile;
 import view.*;
 
@@ -25,7 +27,6 @@ public class BoardController {
         this.playerList = new PlayerList();
         this.mainPanel = mainPanel;
         this.eventManager = new EventManager(this);
-        eventManager.setWestPanel(mainPanel.getWestPanel());
     }
 
 
@@ -76,15 +77,22 @@ public class BoardController {
     public void handleEventLandedOn(){
         Player activePlayer = playerList.getActivePlayer();
         Tile tile = board.getTiletIndex(activePlayer.getPosition());
-        System.out.println(tile.getName());
-        System.out.println(activePlayer.getName() + " at " + activePlayer.getPosition());
         eventManager.newEvent(tile, activePlayer);
+    }
+
+    public void purchaseTavern(String text, Tavern tavern, Player player) {
+        eventManager.purchaseTavern(text, tavern, player);
+    }
+
+    public void purchaseProperty(String text, Property property, Player player){
+        eventManager.purchaseProperty(text, property, player);
     }
 
     public void endTurn(){
         playerList.switchToNextPlayer();
         Player activePlayer = playerList.getActivePlayer();
         mainPanel.updateTurnLabel(activePlayer.getName(), activePlayer.getPlayerColor());
+        mainPanel.removeEventFromPanel();
     }
 
     public void setPlayerToTile(Player player){
@@ -106,6 +114,17 @@ public class BoardController {
         mainPanel.addPlayerTabs();
     }
 
+    public void updatePlayerTabs(){
+        mainPanel.updatePlayerTabs();
+    }
+
+    public void appendWestPanel(String text){
+        mainPanel.appendWestPanel(text);
+    }
+    public EventPanel getEventPanel(){
+        return mainPanel.getEventPanel();
+    }
+
     private class Movement extends Thread {
         int diceRoll;
         int flag = 0;
@@ -123,7 +142,7 @@ public class BoardController {
                 mainPanel.movePlayerOnBoard(activePlayer);
                 flag++;
                 try {
-                    sleep(50);
+                    sleep(100);
                 } catch (InterruptedException e) {
                     throw new RuntimeException(e);
                 }

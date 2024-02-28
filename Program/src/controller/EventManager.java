@@ -24,7 +24,6 @@ import entity.tiles.Tavern;
 import entity.tiles.Tax;
 import entity.tiles.Tile;
 import entity.tiles.Work;
-import view.WestPanel;
 
 /**
  * The class handles all the events that occur when a entity.player lands on a tile.
@@ -38,7 +37,6 @@ public class EventManager {
 	private FortuneTellerGUI msgGUI;
 	private Random rand = new Random();
 	private int taxCounter = 0;
-	private WestPanel westPanel;
 
 
 	public EventManager(BoardController boardController) {
@@ -47,9 +45,6 @@ public class EventManager {
 		msgGUI = new FortuneTellerGUI();
 	}
 
-	public void setWestPanel(WestPanel westPanel) { 
-		this.westPanel = westPanel;
-	}
 
 
 	public void newEvent(Tile tile, Player player) {
@@ -90,18 +85,18 @@ public class EventManager {
 		if (tile instanceof FortuneTeller) {
 			fortuneTellerEvent(tile, player);
 		}
-		boardController.addPlayerTabs();
+		boardController.updatePlayerTabs();
 	}
 
 	private void dialogHandler(EventCases event, Tile tile, Player player){ //TODO: Handle missing events.
 		switch (event){
 			case Property -> {
 				Property tempProperty = (Property) tile;
-				westPanel.getEventPanel().setPropertyEvent(tempProperty, player);
+				boardController.getEventPanel().setPropertyEvent(tempProperty, player);
 			}
 			case Tavern -> {
 				Tavern tempTavern = (Tavern) tile;
-				westPanel.getEventPanel().setTavernEvent(tempTavern, player);
+				boardController.getEventPanel().setTavernEvent(tempTavern, player);
 			}
 			case Fortune -> {
 				//TODO: Implement fortune dialog
@@ -111,23 +106,23 @@ public class EventManager {
 			}
 			case GoToJail -> {
 				GoToJail tempJail = (GoToJail) tile;
-				westPanel.getEventPanel().setGotoJailEvent(tempJail, player);
+				boardController.getEventPanel().setGotoJailEvent(tempJail, player);
 			}
 			case Work -> {
 				Work tempWork = (Work) tile;
-				westPanel.getEventPanel().setWorkEvent(tempWork, player);
+				boardController.getEventPanel().setWorkEvent(tempWork, player);
 			}
 			case Tax -> {
 				Tax tempTax = (Tax) tile;
-				westPanel.getEventPanel().setTaxEvent(tempTax, player);
+				boardController.getEventPanel().setTaxEvent(tempTax, player);
 			}
 			case MissingFunds -> {
 				Property tempProperty = (Property) tile;
-				westPanel.getEventPanel().setMissingFundsEvent(tempProperty, player);
+				boardController.getEventPanel().setMissingFundsEvent(tempProperty, player);
 			}
 			case PayRent -> {
 				Property tempProperty = (Property) tile;
-				westPanel.getEventPanel().setPayRentEvent(tempProperty, player);
+				boardController.getEventPanel().setPayRentEvent(tempProperty, player);
 			}
 		}
 	}
@@ -204,7 +199,7 @@ public class EventManager {
 			taxCounter++;
 			dialogHandler(EventCases.Tax, tile, player);
 		}
-		boardController.addPlayerTabs();
+		boardController.updatePlayerTabs();
 
 	}
 
@@ -235,7 +230,7 @@ public class EventManager {
 			if (player.isAlive()) { //TODO: Implement using the new dialog UI, handle the randomValue variable within in some smart way
 				JOptionPane.showMessageDialog(null, player.getName() + " paid " + randomValue + " GC to " 
 						+ tempTavernObj.getOwner().getName());
-				westPanel.append(player.getName() + " paid " + randomValue + " GC to "
+				boardController.appendWestPanel(player.getName() + " paid " + randomValue + " GC to "
 						+ tempTavernObj.getOwner().getName() + "\n");
 				tempTavernObj.getOwner().increaseBalance(randomValue);
 				tempTavernObj.getOwner().increaseNetWorth(randomValue);
@@ -272,11 +267,11 @@ public class EventManager {
 	public void churchEvent(Player player) {
 		player.increaseBalance(200 * taxCounter);
 		player.increaseNetWorth(200 * taxCounter);
-		westPanel.append(player.getName() + " got " + taxCounter * 200 + " GC from the church\n");
+		boardController.appendWestPanel(player.getName() + " got " + taxCounter * 200 + " GC from the church\n");
 		taxCounter = 0;
 	}
 
-	public void purchaseTile(String source, Property property, Player player) {
+	public void purchaseProperty(String source, Property property, Player player) {
 		System.out.println(source);
 		if (source.equals("YES") && (property.getPrice() <= player.getBalance())) {
 			property.setOwner(player);
@@ -288,8 +283,8 @@ public class EventManager {
 		else {
 			//westPanel.append(entity.player.getName() + " did not purchase " + property.getName() + "\n");
 		}
-		westPanel.getEventPanel().resetEventPanel();
-		boardController.addPlayerTabs();
+		boardController.getEventPanel().resetEventPanel();
+		boardController.updatePlayerTabs();
 	}
 
 	public void purchaseTavern(String source, Tavern tavern, Player player) {
@@ -298,12 +293,12 @@ public class EventManager {
 			player.addNewTavern(tavern);
 			tavern.setPurchaseable(false);
 			player.decreaseBalace(tavern.getPrice());
-			westPanel.append(player.getName() + " purchased " + tavern.getName() + "\n");
+			boardController.appendWestPanel(player.getName() + " purchased " + tavern.getName() + "\n");
 		} else {
-			westPanel.append(player.getName() + " did not purchase " + tavern.getName() + "\n");
+			boardController.appendWestPanel(player.getName() + " did not purchase " + tavern.getName() + "\n");
 		}
-		westPanel.getEventPanel().resetEventPanel();
-		boardController.addPlayerTabs();
+		boardController.getEventPanel().resetEventPanel();
+		boardController.updatePlayerTabs();
 	}
 
 
@@ -315,9 +310,9 @@ public class EventManager {
 		if (yesOrNo == 0 && (totalBail <= player.getBalance())) {
 			player.setJailCounter(0);
 			player.setPlayerIsInJail(false);
-			westPanel.append(player.getName() + " paid the bail and\ngot free from jail\n");
+			boardController.appendWestPanel(player.getName() + " paid the bail and\ngot free from jail\n");
 		} else {
-			westPanel.append(player.getName() + " did not pay tha bail\n and is still in jail\n");
+			boardController.appendWestPanel(player.getName() + " did not pay tha bail\n and is still in jail\n");
 		}
 	}
 
@@ -326,7 +321,7 @@ public class EventManager {
 		if (rand.nextInt(10) == 0) {
 			new SecretGui();
 			new Thread(new SecretSleeper(tempCard, player));
-			boardController.addPlayerTabs();
+			boardController.updatePlayerTabs();
 
 		} else {
 			fortune(tempCard, player);
@@ -341,7 +336,7 @@ public class EventManager {
 			tempCard.setFortune("CURSE");
 			control(player, pay);
 			if (player.isAlive() == true) {
-				westPanel.append(player.getName() + " paid " + pay + " GC\n");
+				boardController.appendWestPanel(player.getName() + " paid " + pay + " GC\n");
 				player.decreaseBalace(pay);
 				player.decreaseNetWorth(pay);
 				msgGUI.newFortune(false, pay);
@@ -352,7 +347,7 @@ public class EventManager {
 			tempCard.setFortune("BLESSING");
 			player.increaseBalance(tempCard.getAmount());
 			player.increaseNetWorth(tempCard.getAmount());
-			westPanel.append(player.getName() + " received " + tempCard.getAmount() + " CG\n");
+			boardController.appendWestPanel(player.getName() + " received " + tempCard.getAmount() + " CG\n");
 			msgGUI.newFortune(true, tempCard.getAmount());
 		}
 	}	
