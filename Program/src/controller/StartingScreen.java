@@ -28,7 +28,6 @@ import view.messageGui.Introduction;
  */
 public class StartingScreen extends JFrame implements Runnable {
 
-	private BackgroundMusic bgm = new BackgroundMusic();
 	private PlayerList playerList = new PlayerList();
 	private MainPanel mainWindow = new MainPanel();
 
@@ -117,13 +116,10 @@ public class StartingScreen extends JFrame implements Runnable {
 			fontLabel = new Font("Arial", Font.BOLD, 30);
 			fontLabelPlayer = new Font("Arial", Font.BOLD, 20);
 		}
-		//bgm.startMusic();
+
 
 		createFrame();
-
 		instantiateLabels();
-
-		bgm.startMusic();
 		chooseLocalOrNetwork();
 	}
 	public void instantiateLabels(){
@@ -511,10 +507,8 @@ public class StartingScreen extends JFrame implements Runnable {
 			if (e.getSource() == mute) {
 				if (mute.getText().contains("n")) {
 					mute.setText("Music Off");
-					bgm.pauseMusic();
 				} else {
 					mute.setText("Music On");
-					bgm.startMusic();
 				}
 			}
 
