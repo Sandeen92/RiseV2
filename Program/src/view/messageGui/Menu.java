@@ -6,10 +6,7 @@ import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.JMenu;
-import javax.swing.JMenuBar;
-import javax.swing.JMenuItem;
-import javax.swing.JPanel;
+import javax.swing.*;
 
 import utilities.BackgroundMusic;
 import controller.StartingScreen;
@@ -90,7 +87,11 @@ public class Menu extends JPanel {
 					jmMusic.setText("Pause Music");
 					paused = false;
 				}
-			} else if (e.getSource()==jmRestart) {
+			}else if (e.getSource() == jmChangebgMusic){
+				music.changeBackgroundMusic(music.createFrameForChangeMusic());
+			} else if (e.getSource() == jmChangeVolume){
+				music.changeVolume();
+			}else if (e.getSource()==jmRestart) {
 				mainPanel.Dispose();
 				StartingScreen ss = new StartingScreen();
 				Thread thread = new Thread(ss);

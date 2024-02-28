@@ -6,20 +6,39 @@
   <component name="ChangeListManager">
     <list default="true" id="369cbea7-d726-43f1-931c-763e77531bfd" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program/src/controller/BoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/controller/BoardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program/src/controller/EventManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/controller/EventManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program/src/entity/Dice.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/entity/Dice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program/src/view/EventPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/view/EventPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program/src/view/MainPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/view/MainPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program/src/view/WestPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/view/WestPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/controller/BoardController$Movement.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/controller/BoardController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program/src/controller/StartingScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/controller/StartingScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program/src/utilities/BackgroundMusic.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/utilities/BackgroundMusic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program/src/view/messageGui/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/view/messageGui/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/controller/BoardController$Movement.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/controller/BoardController$Movement.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/controller/BoardController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/controller/BoardController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/RiseV2/controller/EventManager$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/controller/EventManager$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/RiseV2/controller/EventManager$SecretSleeper.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/controller/EventManager$SecretSleeper.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/RiseV2/controller/EventManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/controller/EventManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/controller/StartingScreen$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/controller/StartingScreen$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/controller/StartingScreen$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/controller/StartingScreen$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/controller/StartingScreen$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/controller/StartingScreen$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/controller/StartingScreen$ButtonListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/controller/StartingScreen$ButtonListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/controller/StartingScreen$MouseAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/controller/StartingScreen$MouseAction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/controller/StartingScreen.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/controller/StartingScreen.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/entity/Board.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/entity/Board.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/entity/StringColorMap.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/entity/StringColorMap.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/entity/player/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/entity/player/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/entity/player/PlayerList.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/entity/player/PlayerList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/utilities/BackgroundMusic$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/utilities/BackgroundMusic$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/utilities/BackgroundMusic.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/utilities/BackgroundMusic.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/utilities/Constants$AudioFiles.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/utilities/Constants$AudioFiles.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/utilities/Constants$BoardImages.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/utilities/Constants$BoardImages.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/utilities/Constants$DiceImages.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/utilities/Constants$DiceImages.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/utilities/Constants$PlayerTokenImages.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/utilities/Constants$PlayerTokenImages.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/utilities/Constants$TileImages.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/utilities/Constants$TileImages.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/view/BoardPanel$MouseListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/view/BoardPanel$MouseListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/view/BoardPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/view/BoardPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/view/DicePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/view/DicePanel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/RiseV2/view/EventPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/view/EventPanel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/RiseV2/view/MainPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/view/MainPanel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/RiseV2/view/WestPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/view/WestPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/view/messageGui/Menu$ButtonListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/view/messageGui/Menu$ButtonListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/view/messageGui/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/view/messageGui/Menu.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,9 +58,6 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 6
-}</component>
   <component name="ProjectId" id="2bONPJi5LgXRO73mHH0fj9W9sRP" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -50,23 +66,6 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Application.GameClient.executor": "Run",
-    "Application.GameServer.executor": "Run",
-    "Application.StartingScreen.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/simon/Desktop/RiseV2hgjhg",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2091954",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
-  }
-}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\simon\Desktop\RiseV2\Program" />
@@ -138,6 +137,18 @@
       <updated>1706082139843</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />

@@ -21,7 +21,7 @@ public class BackgroundMusic extends Thread implements Serializable {
 	private static final long serialVersionUID = 5162710183389028792L;
 	private Clip clip;
 	private Thread musicPlayer;
-	public Boolean isPlaying;
+	public Boolean isPlaying = true;
 	private int musicPausedAt = 0;
 	final JSlider volumeSlider = new JSlider(JSlider.HORIZONTAL,0,100,50);
 
@@ -82,15 +82,12 @@ public class BackgroundMusic extends Thread implements Serializable {
 	public void selectFile(String file){
 		try {
 			stopMusic();
-
 			File musicFile = new File(file);
 			AudioInputStream ais = AudioSystem.getAudioInputStream(musicFile);
-
 			if (clip != null){
 				clip.stop();
 				clip.close();
 			}
-
 			clip = AudioSystem.getClip();
 			clip.open(ais);
 			clip.start();
@@ -158,7 +155,7 @@ public class BackgroundMusic extends Thread implements Serializable {
 	public JFrame createFrameForChangeMusic(){
 		JFrame frame = new JFrame("Background Music Player");
 		frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-		frame.setSize(400,300);
+		frame.setSize(250,150);
 		frame.setVisible(true);
 		return frame;
 	}
