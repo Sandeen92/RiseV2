@@ -7,32 +7,17 @@
     <list default="true" id="369cbea7-d726-43f1-931c-763e77531bfd" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Program/src/controller/BoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/controller/BoardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program/src/controller/ManageEvents.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/controller/EventManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program/src/controller/StartingScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/controller/StartingScreen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Program/src/entity/player/PlayerList.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/entity/player/PlayerList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program/src/utilities/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/utilities/Constants.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Program/src/view/BoardPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/view/BoardPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program/src/view/DicePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/view/DicePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program/src/view/EventPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/view/EventPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program/src/view/GUITile.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/view/GUITile.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Program/src/view/MainPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/view/MainPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program/src/view/WestSidePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/view/WestPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program/src/view/eastSidePanels/EastSidePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/view/eastSidePanels/EastPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/controller/BoardController$MoveThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/controller/BoardController$MoveThread.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/RiseV2/controller/BoardController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/controller/BoardController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/controller/ManageEvents$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/controller/ManageEvents$SecretSleeper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/controller/ManageEvents.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/controller/StartingScreen$ButtonListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/controller/StartingScreen$ButtonListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/controller/StartingScreen.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/controller/StartingScreen.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/entity/player/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/entity/player/Player.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/RiseV2/entity/player/PlayerList.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/entity/player/PlayerList.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/utilities/Constants$TileImages.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/utilities/Constants$TileImages.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/RiseV2/view/BoardPanel$Listener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/view/BoardPanel$Listener.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/RiseV2/view/BoardPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/view/BoardPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/view/DicePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/view/DicePanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/view/EventPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/view/EventPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/view/GUITile.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/view/GUITile.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/RiseV2/view/MainPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/view/MainPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/view/WestSidePanel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/view/eastSidePanels/EastSidePanel.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

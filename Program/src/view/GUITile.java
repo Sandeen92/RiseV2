@@ -89,9 +89,9 @@ public class GUITile extends JLabel {
 		labels[player.getPlayerIndex()].setHorizontalAlignment(CENTER);
 	}
 
-	public void removePlayer(int position) {
-		labels[position].setIcon(null);
-		labels[position].setHorizontalAlignment(CENTER);
+	public void removePlayer(Player player) {
+		labels[player.getPlayerIndex()].setIcon(null);
+		labels[player.getPlayerIndex()].setHorizontalAlignment(CENTER);
 	}
 
 }

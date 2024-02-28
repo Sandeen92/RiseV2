@@ -54,7 +54,7 @@ public class PlayerList implements Serializable {
 	}
 
 	public int getActivePlayerIndex(Player player) {
-		return players.indexOf(player);
+		return player.getPlayerIndex();
 	}
 
 	public void switchToNextPlayer() {

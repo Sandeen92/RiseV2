@@ -37,18 +37,12 @@ public class BoardPanel extends JPanel {
         setLayout(null);
         Listener listener = new Listener();
 
-
-        int initialX = 649;
-        int initialY = 650;
-        int width = 101;
-        int height = 100;
-        int stepX = -62;
-        int stepY = -62;
+        initBottomRow();
+        initLeftRow();
+        initTopRow();
+        initRightRow();
 
         for (int i = 0; i < panelarray.length; i++) {
-            panelarray[i] = new JPanel();
-            panelarray[i].setOpaque(false);
-            panelarray[i].setBounds(initialX + (i % 11) * stepX, initialY + (i / 11) * stepY, width, height);
             add(panelarray[i]);
             panelarray[i].addMouseListener(listener);
             panelarray[i].setLayout(new BorderLayout());
@@ -57,6 +51,62 @@ public class BoardPanel extends JPanel {
         lblNewLabel.setBounds(0, -136, 1050, 1022);
         lblNewLabel.setIcon(Constants.BoardImages.BOARD_IMAGE);
         add(lblNewLabel);
+    }
+
+    public void initBottomRow(){
+        int[] boundsX = {649, 587, 525, 467, 412, 346, 283, 225, 163, 103};
+        int[] boundsY = {650, 651, 650, 650, 650, 650, 650, 651, 651, 650};
+        int[] boundsWidth = {101, 60, 60, 60, 53, 66, 66, 60, 66, 60};
+        int[] boundsHeight = {100, 99, 100, 100, 100, 100, 100, 99, 99, 100};
+
+        for (int i = 0; i < 10; i++) {
+            panelarray[i] = new JPanel();
+            panelarray[i].setOpaque(false);
+            panelarray[i].setBounds(boundsX[i], boundsY[i], boundsWidth[i], boundsHeight[i]);
+            add(panelarray[i]);
+        }
+    }
+
+    public void initLeftRow(){
+        int[] boundsX = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+        int[] boundsY = {650, 587, 527, 465, 407, 345, 281, 218, 162, 103};
+        int[] boundsWidth = {101, 101, 101, 101, 101, 101, 101, 101, 101, 101};
+        int[] boundsHeight = {100, 62, 62, 62, 62, 62, 62, 62, 62, 62};
+
+        for (int i = 10; i < 20; i++) {
+            panelarray[i] = new JPanel();
+            panelarray[i].setOpaque(false);
+            panelarray[i].setBounds(boundsX[i+-10], boundsY[i-10], boundsWidth[i-10], boundsHeight[i-10]);
+            add(panelarray[i]);
+        }
+    }
+
+    public void initTopRow(){
+        int[] boundsX = {0, 103, 163, 225, 283, 346, 407, 467, 525, 587};
+        int[] boundsY = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+        int[] boundsWidth = {101, 60, 60, 60, 66, 60, 60, 60, 60, 60};
+        int[] boundsHeight = {100, 100, 100, 100, 100, 100, 100, 100, 100, 100};
+
+        for (int i = 20; i < 30; i++) {
+            panelarray[i] = new JPanel();
+            panelarray[i].setOpaque(false);
+            panelarray[i].setBounds(boundsX[i-20], boundsY[i-20], boundsWidth[i-20], boundsHeight[i-20]);
+            add(panelarray[i]);
+        }
+    }
+
+    public void initRightRow(){
+        int[] boundsX = {649, 649, 649, 649, 649, 649, 649, 649, 649, 649};
+        int[] boundsY = {0, 103, 162, 228, 281, 345, 407, 465, 527, 587};
+        int[] boundsWidth = {101, 101, 101, 101, 101, 101, 101, 101, 101, 101};
+        int[] boundsHeight = {100, 62, 62, 62, 62, 62, 62, 62, 62, 62};
+
+        for (int i = 30; i < 40; i++) {
+            panelarray[i] = new JPanel();
+            panelarray[i].setOpaque(false);
+            panelarray[i].setBounds(boundsX[i-30], boundsY[i-30], boundsWidth[i-30], boundsHeight[i-30]);
+            add(panelarray[i]);
+        }
     }
 
     public void initGUITiles(){
@@ -86,16 +136,17 @@ public class BoardPanel extends JPanel {
         lblPlayer.setText(playerName+"'s turn");
     }
 
-    public void removePlayer(int position) {
-        guiTiles[position].removePlayer(position);
+    public void removePlayer(Player player) {
+        guiTiles[player.getPosition()].removePlayer(player);
     }
 
-    public void setPlayerToTile(int position, Player player) {
-        guiTiles[position].setPlayer(player);
+    public void setPlayerToTile(Player player) {
+        guiTiles[player.getPosition()].setPlayer(player);
     }
 
     public void movePlayerOnBoard(Player player) {
         guiTiles[player.getPosition()].setPlayer(player);
+        guiTiles[player.getPosition()-1].removePlayer(player);
     }
 
     public void setPlayerIndexes(PlayerList playerList) {

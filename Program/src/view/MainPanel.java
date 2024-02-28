@@ -103,8 +103,8 @@ public class MainPanel extends JPanel implements Serializable {
 	}
 
 
-	public void removePlayer(int position) {
-        boardPanel.removePlayer(position);
+	public void removePlayer(Player player) {
+        boardPanel.removePlayer(player);
     }
 
 	public void updateTurnLabel(String playerName, Color color) {
@@ -124,8 +124,8 @@ public class MainPanel extends JPanel implements Serializable {
 		boardPanel.movePlayerOnBoard(player);
 	}
 
-	public void setPlayerToTile(int position, Player player) {
-		boardPanel.setPlayerToTile(position, player);
+	public void setPlayerToTile(Player player) {
+		boardPanel.setPlayerToTile(player);
 	}
 
 	public void setTextDefault() {

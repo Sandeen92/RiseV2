@@ -58,7 +58,7 @@ public class BoardController {
     }
 
     public void removePlayer(Player player){
-        mainPanel.removePlayer(player.getPosition());
+        mainPanel.removePlayer(player);
     }
 
     public void eliminatePlayer(Player player){
@@ -87,7 +87,7 @@ public class BoardController {
     }
 
     public void setPlayerToTile(Player player){
-        mainPanel.setPlayerToTile(player.getPosition(), player);
+        mainPanel.setPlayerToTile(player);
     }
     public Tile getTileAtIndex(int index){
         return board.getTileInfoAtIndex(index);
@@ -121,10 +121,9 @@ public class BoardController {
                 prevPosition = activePlayer.getPosition();
                 activePlayer.setPosition(1);
                 mainPanel.movePlayerOnBoard(activePlayer);
-                mainPanel.removePlayer(prevPosition);
                 flag++;
                 try {
-                    sleep(500);
+                    sleep(300);
                 } catch (InterruptedException e) {
                     throw new RuntimeException(e);
                 }
