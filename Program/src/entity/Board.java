@@ -11,7 +11,7 @@ public class Board {
         tileCollection = new TileCollection();
     }
 
-	public Tile getTileInfoAtIndex(int index) {
+	public Tile getTiletIndex(int index) {
         return tileCollection.getTileAtIndex(index);
     }
 }

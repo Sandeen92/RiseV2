@@ -15,10 +15,12 @@ public class DicePanel extends JPanel implements ActionListener {
     private JButton btnRollDice = new JButton("Roll Dice");
     private JLabel lblDice1;
     private JLabel lblDice2;
+    private JLabel lblPlayer;
 
 
     public DicePanel(BoardController board) {
         this.board = board;
+        initTurnLabel();
         initPanel();
     }
 
@@ -46,6 +48,27 @@ public class DicePanel extends JPanel implements ActionListener {
 
         add(btnEndTurn);
         btnEndTurn.setEnabled(false);
+    }
+
+    public void initTurnLabel() {
+        setPreferredSize(new Dimension(250,50));
+        setBackground(Color.DARK_GRAY);
+
+
+        lblPlayer = new JLabel("");
+        lblPlayer.setHorizontalAlignment(SwingConstants.CENTER);
+        lblPlayer.setForeground(Color.white);
+        lblPlayer.setVisible(true);
+        lblPlayer.setPreferredSize(new Dimension(240,45));
+        lblPlayer.setFont(new Font("ALGERIAN", Font.BOLD, 14 ));
+        lblPlayer.setBorder(BorderFactory.createLineBorder(Color.white));
+        add(lblPlayer);
+    }
+
+    public void updateTurnLabel(String playerName, Color color) {
+        lblPlayer.setOpaque(true);
+        lblPlayer.setBackground(color);
+        lblPlayer.setText(playerName+"'s turn");
     }
 
     public void setDiceImages(ImageIcon dice1, ImageIcon dice2) {

@@ -2,6 +2,8 @@ package controller;
 
 import entity.*;
 import entity.player.*;
+import entity.tiles.Property;
+import entity.tiles.Tavern;
 import entity.tiles.Tile;
 import view.*;
 
@@ -25,7 +27,6 @@ public class BoardController {
         this.playerList = new PlayerList();
         this.mainPanel = mainPanel;
         this.eventManager = new EventManager(this);
-        eventManager.setWestPanel(mainPanel.getWestPanel());
     }
 
 
@@ -69,26 +70,36 @@ public class BoardController {
     }
 
     public void movePlayer(int diceRoll){
+        Movement movement = new Movement(diceRoll);
+        movement.start();
+    }
+
+    public void handleEventLandedOn(){
         Player activePlayer = playerList.getActivePlayer();
+        Tile tile = board.getTiletIndex(activePlayer.getPosition());
+        eventManager.newEvent(tile, activePlayer);
+    }
 
+    public void purchaseTavern(String text, Tavern tavern, Player player) {
+        eventManager.purchaseTavern(text, tavern, player);
+    }
 
-        MoveThread moveThread = new MoveThread(diceRoll);
-        moveThread.start();
-
-        mainPanel.updateTurnLabel(activePlayer.getName(), activePlayer.getPlayerColor());
+    public void purchaseProperty(String text, Property property, Player player){
+        eventManager.purchaseProperty(text, property, player);
     }
 
     public void endTurn(){
-        Player activePlayer = playerList.getActivePlayer();
         playerList.switchToNextPlayer();
+        Player activePlayer = playerList.getActivePlayer();
         mainPanel.updateTurnLabel(activePlayer.getName(), activePlayer.getPlayerColor());
+        mainPanel.removeEventFromPanel();
     }
 
     public void setPlayerToTile(Player player){
         mainPanel.setPlayerToTile(player);
     }
     public Tile getTileAtIndex(int index){
-        return board.getTileInfoAtIndex(index);
+        return board.getTiletIndex(index);
     }
 
     public void setTitleText(String info, String lblTitle, Color titleColor, Color titleTxtColor) {
@@ -103,13 +114,24 @@ public class BoardController {
         mainPanel.addPlayerTabs();
     }
 
-    private class MoveThread extends Thread {
+    public void updatePlayerTabs(){
+        mainPanel.updatePlayerTabs();
+    }
+
+    public void appendWestPanel(String text){
+        mainPanel.appendWestPanel(text);
+    }
+    public EventPanel getEventPanel(){
+        return mainPanel.getEventPanel();
+    }
+
+    private class Movement extends Thread {
         int diceRoll;
         int flag = 0;
         Player activePlayer = playerList.getActivePlayer();
         int prevPosition;
 
-        public MoveThread(int diceRoll) {
+        public Movement(int diceRoll) {
             this.diceRoll = diceRoll;
         }
         @Override
@@ -120,12 +142,13 @@ public class BoardController {
                 mainPanel.movePlayerOnBoard(activePlayer);
                 flag++;
                 try {
-                    sleep(50);
+                    sleep(100);
                 } catch (InterruptedException e) {
                     throw new RuntimeException(e);
                 }
             }
             mainPanel.enableEndTurnBtn();
+            handleEventLandedOn();
         }
     }
 }

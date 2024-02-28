@@ -18,11 +18,12 @@ import view.MainPanel;
 /**
  * This class displays the game board as well as what the players are called and
  * how much they own.
- * 
+ *
  * @autho Muhammad Hasan, Rohan Samandari
  */
 public class Menu extends JPanel {
 	private BackgroundMusic music;
+	private MainPanel mainPanel;
 	private JMenu jmMenu = new JMenu("Menu");
 	private JMenuBar jmMenuBar = new JMenuBar();
 	private JMenuItem jmExit = new JMenuItem("Exit");
@@ -33,17 +34,18 @@ public class Menu extends JPanel {
 	private JMenuItem jmChangebgMusic = new JMenuItem("Change Music");
 	private Rules rules = new Rules();
 	private boolean paused = false;
-	
+
 	/**
 	 * Constructor which draws the gui
 	 */
-	public Menu(BackgroundMusic music) {
+	public Menu(BackgroundMusic music, MainPanel mainPanel) {
 		this.music = music;
+		this.mainPanel = mainPanel;
 		setOpaque(false);
 		setPreferredSize(new Dimension(400, 40));
 		setLayout(new BorderLayout());
 		jmMenuBar.setPreferredSize(new Dimension(100,5));
-		jmExit.addActionListener(new ButtonListener()); 
+		jmExit.addActionListener(new ButtonListener());
 		jmMusic.addActionListener(new ButtonListener());
 		jmRules.addActionListener(new ButtonListener());
 		jmRestart.addActionListener(new ButtonListener());
@@ -56,11 +58,11 @@ public class Menu extends JPanel {
 		jmMenu.add(jmRestart);
 		jmMenu.add(jmExit);
 		jmMenuBar.add(jmMenu);
-		
+
 		add(jmMenuBar, BorderLayout.WEST);
 		setBackground(Color.black);
 	}
-	
+
 	/**
 	 * Sets music reference
 	 * @param music
@@ -68,7 +70,7 @@ public class Menu extends JPanel {
 	//public Menu(BackgroundMusic music) {
 	//	this.music = music;
 	//}
-	
+
 	/**
 	 * Button listener class used to listen for actions
 	 * @author Rohan Samandari
@@ -89,22 +91,16 @@ public class Menu extends JPanel {
 					paused = false;
 				}
 			} else if (e.getSource()==jmRestart) {
+				mainPanel.Dispose();
 				StartingScreen ss = new StartingScreen();
-				ss.initializeGUI();
-				MainPanel gp = new MainPanel();
-				gp.Dispose();
-
-
-			} else if(e.getSource()==jmChangeVolume){
-				music.changeVolume();
-			} else if (e.getSource()==jmChangebgMusic){;
-				music.changeBackgroundMusic(music.createFrameForChangeMusic());
+				Thread thread = new Thread(ss);
+				thread.start();
 			} else if (e.getSource()==jmExit) {
 				System.exit(0);
 			} else if (e.getSource()==jmRules) {
 				rules.showRules();
 			}
 		}
-		
+
 	}
 }

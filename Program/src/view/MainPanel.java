@@ -44,7 +44,7 @@ public class MainPanel extends JPanel implements Serializable {
 	public MainPanel() {
 		boardController = new BoardController(this);
 		eastPanel = new EastPanel();
-		westPanel = new WestPanel();
+		westPanel = new WestPanel(boardController);
 		boardPanel = new BoardPanel(boardController);
 		dicePanel = new DicePanel(boardController);
 		setUpMainFrame();
@@ -66,7 +66,7 @@ public class MainPanel extends JPanel implements Serializable {
 		add(boardPanel);
 		dicePanel.setBounds(346, 751, 750, 109);
 		add(dicePanel);
-		menu = new Menu(new BackgroundMusic());
+		menu = new Menu(new BackgroundMusic(), this);
 		menu.setBounds(0, 0, 50, 18);
 		add(menu);
 		setScreenSize(Constants.GameWindow.screenSize);
@@ -111,7 +111,7 @@ public class MainPanel extends JPanel implements Serializable {
     }
 
 	public void updateTurnLabel(String playerName, Color color) {
-		boardPanel.updateTurnLabel(playerName, color);
+		dicePanel.updateTurnLabel(playerName, color);
 	}
 
 	public void setTitleText(String info, String lblTitle, Color titleColor, Color titleTxtColor) {
@@ -136,9 +136,28 @@ public class MainPanel extends JPanel implements Serializable {
     }
 
 	public void addPlayerTabs() {
-		eastPanel.addPlayerList(boardController.getPlayerList());
-		boardPanel.setPlayerIndexes(boardController.getPlayerList());
+		PlayerList playerList = boardController.getPlayerList();
+		eastPanel.addPlayerList(playerList);
+		boardPanel.setPlayerIndexes(playerList);
+		updateTurnLabel(playerList.getPlayerFromIndex(0).getName(), playerList.getPlayerFromIndex(0).getPlayerColor());
 	}
+
+	public void updatePlayerTabs(){
+		PlayerList playerList = boardController.getPlayerList();
+		eastPanel.addPlayerList(playerList);
+		boardPanel.setPlayerIndexes(playerList);
+	}
+
+	public void removeEventFromPanel(){
+		westPanel.resetEventPanel();
+	}
+
+	public void appendWestPanel(String text) {
+        westPanel.append(text);
+    }
+	public EventPanel getEventPanel(){
+        return westPanel.getEventPanel();
+    }
 
 	public void Dispose() {
 		frame.dispose();

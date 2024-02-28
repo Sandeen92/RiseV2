@@ -9,7 +9,6 @@ import utilities.Constants;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 import java.io.Serializable;
 
 public class BoardPanel extends JPanel {
@@ -19,9 +18,6 @@ public class BoardPanel extends JPanel {
     private GUITile[] guiTiles;
     private JPanel[] panelarray = new JPanel[40];
     private JLabel lblNewLabel = new JLabel();
-    private JLabel lblPlayer;
-    private Color players;
-    private String playerName = "Player";
 
     public BoardPanel(BoardController boardController) {
         info = new TileInfo();
@@ -29,13 +25,12 @@ public class BoardPanel extends JPanel {
         this.boardController = boardController;
         initAllPanels();
         initGUITiles();
-        initTurnLabel();
     }
 
     public void initAllPanels(){
         setPreferredSize(new Dimension(750, 750));
         setLayout(null);
-        Listener listener = new Listener();
+        MouseListener mouseListener = new MouseListener();
 
         initBottomRow();
         initLeftRow();
@@ -44,7 +39,7 @@ public class BoardPanel extends JPanel {
 
         for (int i = 0; i < panelarray.length; i++) {
             add(panelarray[i]);
-            panelarray[i].addMouseListener(listener);
+            panelarray[i].addMouseListener(mouseListener);
             panelarray[i].setLayout(new BorderLayout());
         }
 
@@ -116,26 +111,6 @@ public class BoardPanel extends JPanel {
         }
     }
 
-    private void initTurnLabel() {
-        setPreferredSize(new Dimension(250,50));
-        setBackground(players);
-
-        lblPlayer = new JLabel(playerName);
-        lblPlayer.setHorizontalAlignment(SwingConstants.CENTER);
-        lblPlayer.setForeground(Color.white);
-        lblPlayer.setVisible(true);
-        lblPlayer.setPreferredSize(new Dimension(240,45));
-        lblPlayer.setFont(new Font("ALGERIAN", Font.BOLD, 14 ));
-        lblPlayer.setBorder(BorderFactory.createLineBorder(Color.white));
-        add(lblPlayer);
-    }
-
-    public void updateTurnLabel(String playerName, Color color) {
-        lblPlayer.setOpaque(true);
-        lblPlayer.setBackground(color);
-        lblPlayer.setText(playerName+"'s turn");
-    }
-
     public void removePlayer(Player player) {
         guiTiles[player.getPosition()].removePlayer(player);
     }
@@ -198,26 +173,7 @@ public class BoardPanel extends JPanel {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    public class Listener implements MouseListener, Serializable {
+    public class MouseListener implements java.awt.event.MouseListener, Serializable {
 
         /**
          * Nothing happens when clicking

@@ -24,25 +24,38 @@ public class Constants {
 
 
     public class PlayerTokenImages {
-        public static final ImageIcon MAGENTA = new ImageIcon(tokenPath + "playerMagenta.jpg");
-        public static final ImageIcon PURPLE = new ImageIcon(tokenPath + "playerPurple.jpg");
-        public static final ImageIcon ORANGE = new ImageIcon(tokenPath + "playerOrange.jpg");
         public static final ImageIcon RED_PAWN = resizeImage(new ImageIcon(tokenPath + "Red_pawn.svg.png"));
         public static final ImageIcon YELLOW_PAWN = resizeImage(new ImageIcon(tokenPath + "Yellow_pawn.svg.png"));
         public static final ImageIcon GREEN_PAWN = resizeImage(new ImageIcon(tokenPath + "Green_pawn.svg.png"));
-        public static final ImageIcon CYAN_PAWN = resizeImage(new ImageIcon(tokenPath + "Blue_pawn.svg.png"));
+        public static final ImageIcon BLUE_PAWN = resizeImage(new ImageIcon(tokenPath + "Blue_pawn.svg.png"));
+        public static final ImageIcon PURPLE_PAWN = resizeImage(new ImageIcon(tokenPath + "Purple_pawn.svg.png"));
+        public static final ImageIcon ORANGE_PAWN = resizeImage(new ImageIcon(tokenPath + "Orange_pawn.svg.png"));
+        public static final ImageIcon CYAN_PAWN = resizeImage(new ImageIcon(tokenPath + "Cyan_pawn.svg.png"));
+        public static final ImageIcon MAGENTA_PAWN = resizeImage(new ImageIcon(tokenPath + "Magenta_pawn.svg.png"));
         public static final ImageIcon RED_KNIGHT = resizeImage(new ImageIcon(tokenPath + "Red_knight.svg.png"));
         public static final ImageIcon YELLOW_KNIGHT = resizeImage(new ImageIcon(tokenPath + "Yellow_knight.svg.png"));
         public static final ImageIcon GREEN_KNIGHT = resizeImage(new ImageIcon(tokenPath + "Green_knight.svg.png"));
-        public static final ImageIcon CYAN_KNIGHT = resizeImage(new ImageIcon(tokenPath + "Blue_knight.svg.png"));
+        public static final ImageIcon BLUE_KNIGHT = resizeImage(new ImageIcon(tokenPath + "Blue_knight.svg.png"));
+        public static final ImageIcon PURPLE_KNIGHT = resizeImage(new ImageIcon(tokenPath + "Purple_knight.svg.png"));
+        public static final ImageIcon ORANGE_KNIGHT = resizeImage(new ImageIcon(tokenPath + "Orange_knight.svg.png"));
+        public static final ImageIcon CYAN_KNIGHT = resizeImage(new ImageIcon(tokenPath + "Cyan_knight.svg.png"));
+        public static final ImageIcon MAGENTA_KNIGHT = resizeImage(new ImageIcon(tokenPath + "Magenta_knight.svg.png"));
         public static final ImageIcon RED_ROOK = resizeImage(new ImageIcon(tokenPath + "Red_rook.svg.png"));
         public static final ImageIcon YELLOW_ROOK = resizeImage(new ImageIcon(tokenPath + "Yellow_rook.svg.png"));
         public static final ImageIcon GREEN_ROOK = resizeImage(new ImageIcon(tokenPath + "Green_rook.svg.png"));
-        public static final ImageIcon CYAN_ROOK = resizeImage(new ImageIcon(tokenPath + "Blue_rook.svg.png"));
+        public static final ImageIcon BLUE_ROOK = resizeImage(new ImageIcon(tokenPath + "Blue_rook.svg.png"));
+        public static final ImageIcon PURPLE_ROOK = resizeImage(new ImageIcon(tokenPath + "Purple_rook.svg.png"));
+        public static final ImageIcon ORANGE_ROOK = resizeImage(new ImageIcon(tokenPath + "Orange_rook.svg.png"));
+        public static final ImageIcon CYAN_ROOK = resizeImage(new ImageIcon(tokenPath + "Cyan_rook.svg.png"));
+        public static final ImageIcon MAGENTA_ROOK = resizeImage(new ImageIcon(tokenPath + "Magenta_rook.svg.png"));
         public static final ImageIcon RED_KING = resizeImage(new ImageIcon(tokenPath + "Red_king.svg.png"));
         public static final ImageIcon YELLOW_KING = resizeImage(new ImageIcon(tokenPath + "Yellow_king.svg.png"));
         public static final ImageIcon GREEN_KING = resizeImage(new ImageIcon(tokenPath + "Green_king.svg.png"));
-        public static final ImageIcon CYAN_KING = resizeImage(new ImageIcon(tokenPath + "Blue_king.svg.png"));
+        public static final ImageIcon BLUE_KING = resizeImage(new ImageIcon(tokenPath + "Blue_king.svg.png"));
+        public static final ImageIcon PURPLE_KING = resizeImage(new ImageIcon(tokenPath + "Purple_king.svg.png"));
+        public static final ImageIcon ORANGE_KING = resizeImage(new ImageIcon(tokenPath + "Orange_king.svg.png"));
+        public static final ImageIcon CYAN_KING = resizeImage(new ImageIcon(tokenPath + "Cyan_king.svg.png"));
+        public static final ImageIcon MAGENTA_KING = resizeImage(new ImageIcon(tokenPath + "Magenta_king.svg.png"));
 
         private static ImageIcon resizeImage(ImageIcon originalIcon) {
             Image originalImage = originalIcon.getImage();

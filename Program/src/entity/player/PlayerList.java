@@ -1,5 +1,6 @@
 package entity.player;
 
+import java.awt.*;
 import java.io.Serializable;
 import java.util.LinkedList;
 
@@ -58,7 +59,6 @@ public class PlayerList implements Serializable {
 	}
 
 	public void switchToNextPlayer() {
-		
 		if(currentPlayer < (players.size() - 1) ) {
 			currentPlayer = currentPlayer + 1;
 		}
