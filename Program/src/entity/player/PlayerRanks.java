@@ -88,8 +88,6 @@ public enum PlayerRanks {
 			return 200;
 		}
 	},
-	
-	
 	KING {
 		
 		/**
