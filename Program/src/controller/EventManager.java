@@ -296,6 +296,7 @@ public class EventManager {
 			player.addNewTavern(tavern);
 			tavern.setPurchaseable(false);
 			player.decreaseBalace(tavern.getPrice());
+			boardController.setMarker(player,tileCollection.getATilesIndex(tavern));
 			boardController.appendWestPanel(player.getName() + " purchased " + tavern.getName() + "\n");
 		} else {
 			boardController.appendWestPanel(player.getName() + " did not purchase " + tavern.getName() + "\n");

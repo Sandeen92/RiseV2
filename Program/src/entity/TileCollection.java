@@ -79,10 +79,10 @@ public class TileCollection implements Serializable {
 	public Tile getTileAtIndex(int index) {
 		return tileArray[index];
 	}
-	public int getATilesIndex(Property property){
+	public int getATilesIndex(Tile tile){
 		for(int i = 0; i < tileArray.length;i++){
-			if(tileArray[i] instanceof Property){
-				if(tileArray[i].getName().equals(property.getName())){
+			if(tileArray[i] instanceof Property|| tileArray[i] instanceof Tavern){
+				if(tileArray[i].getName().equals(tile.getName())){
 					return i;
 				}
 			}
