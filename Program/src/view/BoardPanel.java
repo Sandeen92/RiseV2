@@ -112,12 +112,8 @@ public class BoardPanel extends JPanel {
             add(panelarray[i]);
         }
     }
-    public void setMarker(Player player, int i){
-        JLabel label = (JLabel) panelarray[i].getComponent(0);
-        label.setSize(10,10);
-        label.setBackground(player.getPlayerColor());
-        label.setOpaque(true);
-        label.setVisible(true);
+    public void setBorder(Player player, int i){
+        panelarray[i].setBorder(BorderFactory.createLineBorder(player.getPlayerColor(),2));
         //Make sure maker gets updated with every buy of propery
         //Also make sure you make a label for each property and property only, meaning if statement to check tile info.
     }

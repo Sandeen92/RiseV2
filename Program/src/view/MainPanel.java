@@ -119,7 +119,7 @@ public class MainPanel extends JPanel implements Serializable {
 	}
 
 	public void setMarker(Player player,int i){
-		boardPanel.setMarker(player,i);
+		boardPanel.setBorder(player,i);
 	}
 
 
