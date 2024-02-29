@@ -21,11 +21,6 @@ public class PropertyWindow extends JPanel {
 
 	private int[] size;
 
-	/**
-	 * @param playerList
-	 * 
-	 *this method is used to update the panel
-	 */
 	
 	public PropertyWindow() {
 
@@ -49,11 +44,6 @@ public class PropertyWindow extends JPanel {
 
 	}
 
-
-	/**
-	 * this method loops the amount of players and adds tabs according to the number of 
-	 * properties
-	 */
 	public void addtabs() {
 
 		tab.removeAll();
@@ -73,16 +63,12 @@ public class PropertyWindow extends JPanel {
 		tab.setSelectedIndex(-1);
 	}
 
-	/**
-	 * @return playerAT
-	 */
+
 	public int getPlayerAt() {
 		return playerAt;
 	} 
 
-	/**
-	 * @param playerAt
-	 */
+
 	public void setPlayerAt(int playerAt) {
 		this.playerAt = playerAt;
 	}

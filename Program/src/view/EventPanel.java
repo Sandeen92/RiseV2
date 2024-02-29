@@ -1,5 +1,6 @@
 package view;
 
+import controller.BoardController;
 import entity.player.Player;
 import entity.tiles.*;
 
@@ -20,14 +21,15 @@ import java.io.IOException;
     //TODO: Manage the different outcomes of the events
 
 public class EventPanel extends JPanel{
-    private WestSidePanel westPanel;
+
+    private BoardController boardController;
     private Border border = BorderFactory.createLineBorder(Color.DARK_GRAY);
     private JLabel title;
     private Font titleFont = new Font("ALGERIAN", Font.BOLD, 18);
     private Font font;
 
-    public EventPanel(WestSidePanel westPanel, Font font){
-        this.westPanel = westPanel;
+    public EventPanel(BoardController boardController, Font font){
+        this.boardController = boardController;
         this.font = font;
         title = createTitle("Game Event");
 
@@ -62,9 +64,9 @@ public class EventPanel extends JPanel{
         addLabels(property.getName(), "Do you want to purchase this property for " + property.getPrice() + " GC");
 
         JButton yesButton = new JButton("YES");
-        yesButton.addActionListener(e -> westPanel.getEventManager().purchaseTile(yesButton.getText(), property, player));
+        yesButton.addActionListener(e -> boardController.purchaseProperty(yesButton.getText(), property, player));
         JButton noButton = new JButton("NO");
-        noButton.addActionListener(e -> westPanel.getEventManager().purchaseTile(noButton.getText(), property, player));
+        noButton.addActionListener(e -> boardController.purchaseProperty(noButton.getText(), property, player));
 
         add(yesButton);
         add(noButton);
@@ -80,9 +82,9 @@ public class EventPanel extends JPanel{
         addLabels(tavern.getName(), "Do you want to purchase this property for " + tavern.getPrice() + " GC");
 
         JButton yesButton = new JButton("YES");
-        yesButton.addActionListener(e -> westPanel.getEventManager().purchaseTavern(yesButton.getText(), tavern, player));
+        yesButton.addActionListener(e -> boardController.purchaseTavern(yesButton.getText(), tavern, player));
         JButton noButton = new JButton("NO");
-        noButton.addActionListener(e -> westPanel.getEventManager().purchaseTavern(noButton.getText(), tavern, player));
+        noButton.addActionListener(e -> boardController.purchaseTavern(noButton.getText(), tavern, player));
 
         add(yesButton);
         add(noButton);

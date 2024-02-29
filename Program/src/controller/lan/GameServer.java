@@ -1,6 +1,6 @@
 package controller.lan;
 
-import view.GamePanels;
+import view.MainPanel;
 import entity.player.PlayerList;
 import controller.StartingScreen;
 
@@ -15,7 +15,7 @@ public class GameServer implements Runnable {
     private ArrayList<ClientHandler> clientHandlerPool;
     private int i = 0;
     private StartingScreen startingScreen;
-    private GamePanels mainWindow;
+    private MainPanel mainWindow;
 
 
     public GameServer(StartingScreen startingScreen, int port) throws IOException {
@@ -45,7 +45,7 @@ public class GameServer implements Runnable {
         }
     }
 
-    public void setMainWindow(GamePanels mainWindow) {
+    public void setMainWindow(MainPanel mainWindow) {
         this.mainWindow = mainWindow;
     }
 

@@ -28,35 +28,9 @@ public class GUITile extends JLabel {
 	private JLabel infoLabel = new JLabel("", SwingConstants.CENTER);
 	private JLabel labelArray = new JLabel();
 	private JLabel[] labels = new JLabel[4];
-	private JLabel label1 = new JLabel();
-	private JLabel label2 = new JLabel();
-	private JLabel label3 = new JLabel();
-	private JLabel label4 = new JLabel();
 	private int alignment = 1;
 	private Border tileBorder = BorderFactory.createLineBorder(Color.decode("#ff7723"));
 
-	/**
-	 * Initializes the gui
-	 */
-	public GUITile() {
-		setPreferredSize(new Dimension(200, 300));
-		setLayout(new BorderLayout());
-		setBorder(tileBorder);
-
-		labelArray.setLayout(new GridLayout(2, 2));
-		labelArray.setOpaque(true);
-		labelArray.setBackground(Color.decode("#ffe9c6"));
-
-		styleAndAddInfoLabel();
-		addLabelsToArray();
-		addLabelsToGrid();
-	}
-
-	/**
-	 * Constructor receiving an int gets the location of the info JLabel object
-	 * 
-	 * @param SouthWestNorthEast either 1, 2, 3, 4
-	 */
 	public GUITile(int SouthWestNorthEast) {
 		alignment = SouthWestNorthEast;
 
@@ -72,9 +46,6 @@ public class GUITile extends JLabel {
 		addLabelsToGrid();
 	}
 
-	/**
-	 * JLabel object gets each Tile showing which level a property is in
-	 */
 	public void styleAndAddInfoLabel() {
 		infoLabel.setPreferredSize(new Dimension(200, 20));
 		infoLabel.setOpaque(false);
@@ -97,14 +68,10 @@ public class GUITile extends JLabel {
 
 	}
 
-	/**
-	 * Varje grid ruta läggs till, 4st
-	 */
 	public void addLabelsToArray() {
-		labels[0] = label1;
-		labels[1] = label2;
-		labels[2] = label3;
-		labels[3] = label4;
+		for (int i = 0; i < labels.length; i++) {
+			labels[i] = new JLabel();
+		}
 	}
 
 	// Adds 4 j label
@@ -116,16 +83,6 @@ public class GUITile extends JLabel {
 		add(labelArray, BorderLayout.CENTER);
 	}
 
-	// update level on property
-	public void changeLevel(String level) {
-		infoLabel.setText(level);
-	}
-
-	/**
-	 * Each gui tile has 4 places where a entity.player can be placed
-	 * 
-	 * @param index
-	 */
 
 	public void setPlayer(Player player) {
 		labels[player.getPlayerIndex()].setIcon(player.getImage());

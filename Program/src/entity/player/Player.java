@@ -40,19 +40,9 @@ public class Player implements Serializable {
 
 	private ArrayList<Property> propertiesOwned;
 	private ArrayList<Tile> tilesOwned;
-
 	private ArrayList<Tavern> tavernsOwned;
 
-	/**
-	 * Constructor for adding a new entity.player, new players are created by the
-	 * playerList class and are automatically set at index 0 on the board with the
-	 * counter variable set to 0
-	 * 
-	 * @param inPlayerName chosen Name
-	 * @param playerIcon   imageIcon from ColorIconMap
-	 * @param playerIndex  index of entity.player (for example if second entity.player the
-	 *                     playerIndex is 1)
-	 */
+
 
 	public Player(String inPlayerName, ImageIcon playerIcon, int playerIndex) {
 
@@ -61,8 +51,7 @@ public class Player implements Serializable {
 		setIsAlive(true);
 		this.playerIndex = playerIndex;
 
-		setBalance(1500);
-		setNetWorth(1500);
+
 		setPlayerRank(PEASANT);
 		this.playerIndex = playerIndex;
 		this.tavernsOwned = new ArrayList<>();
@@ -144,46 +133,21 @@ public class Player implements Serializable {
 		this.name = playerName;
 	}
 
-	/**
-	 * Set the playerIndex of the entity.player (the index the user has in the playerList
-	 * array)
-	 * 
-	 * @param index
-	 */
 	public void setPlayerIndex(int index) {
 		this.playerIndex = index;
 	}
 
-	/**
-	 * @return the playerIndex of a entity.player
-	 */
 	public int getPlayerIndex() {
 		return playerIndex;
 	}
 
-	/**
-	 * Get the position a entity.player has on the board from 0-39
-	 * 
-	 * @return counter
-	 */
 	public int getPosition() {
 		return counter;
 	}
-
-	/**
-	 * Move entity.player to a specific index on the board
-	 * 
-	 * @param newPosition
-	 */
 	public void setPositionInSpecificIndex(int newPosition) {
 		this.counter = newPosition;
 	}
 
-	/**
-	 * method used to move the entity.player by either one or many steps
-	 * 
-	 * @param amountOfStepsToMove
-	 */
 	public void setPosition(int amountOfStepsToMove) {
 
 		for (int i = 0; i < amountOfStepsToMove; i++) {
@@ -197,65 +161,38 @@ public class Player implements Serializable {
 		}
 	}
 
-	/**
-	 * @return playerPassedgo, boolean to keep track if user has passed go
-	 */
 	public boolean passedGo() {
 		return playerPassedgo;
 	}
 
-	/**
-	 * reset has passedGo variable to false
-	 */
 	public void resetPassedGo() {
 		playerPassedgo = false;
 	}
 
-	/**
-	 * @return balance, the entity.player balance
-	 */
 	public int getBalance() {
 		return this.balance;
 	}
 
-	/**
-	 * @return playerIcon, the image of a entity.player
-	 */
 	public ImageIcon getImage() {
 		return playerIcon;
 	}
 
-	/**
-	 * @param playerBalance the playerBalance to set
-	 */
 	public void setBalance(int playerBalance) {
 		this.balance = playerBalance;
 	}
 
-	/**
-	 * @param decrease amount to decrease players balance by
-	 */
 	public void decreaseBalace(int decrease) {
 		this.balance -= decrease;
 	}
 
-	/**
-	 * @param income increase players balance by an amount
-	 */
 	public void increaseBalance(int income) {
 		this.balance += income;
 	}
 
-	/**
-	 * @return the playerIsAlive
-	 */
 	public Boolean isAlive() {
 		return isAlive;
 	}
 
-	/**
-	 * @param playerIsAlive the playerIsAlive to set
-	 */
 	public void setIsAlive(Boolean playerIsAlive) {
 		this.isAlive = playerIsAlive;
 	}
@@ -268,53 +205,30 @@ public class Player implements Serializable {
 			return "The plauge has taken another soul";
 	}
 
-	/**
-	 * @return playerRank the rank of the entity.player
-	 */
 	public PlayerRanks getPlayerRank() {
 		return this.playerRank;
 	}
 
-	/**
-	 * @param playerRank set the rank of this entity.player
-	 */
 	public void setPlayerRank(PlayerRanks playerRank) {
 		this.playerRank = playerRank;
 	}
 
-	/**
-	 * @return the netWorth
-	 */
 	public int getNetWorth() {
 		return this.netWorth;
 	}
 
-	/**
-	 * @param netWorth the netWorth to set
-	 */
 	public void setNetWorth(int netWorth) {
 		this.netWorth = netWorth;
 	}
 
-	/**
-	 * @param decrease
-	 */
 	public void decreaseNetWorth(int decrease) {
 		this.netWorth -= decrease;
 	}
 
-	/**
-	 * @param income
-	 */
 	public void increaseNetWorth(int income) {
 		this.netWorth += income;
 	}
 
-	/**
-	 * Adds newly purchased property to ownedProperties array
-	 * 
-	 * @param newProperty, the newly bought property.
-	 */
 	public void addNewProperty(Property newProperty) {
 		this.propertiesOwned.add(newProperty);
 	}
@@ -341,26 +255,14 @@ public class Player implements Serializable {
 
 	}
 
-	/**
-	 * @param newTavern add a new Tavern to a user
-	 */
 	public void addNewTavern(Tavern newTavern) {
 		this.tavernsOwned.add(newTavern);
 	}
 
-	/**
-	 * If user has two taverns the event will differ
-	 * 
-	 * @return amount of taverns
-	 */
 	public int getAmountOfTaverns() {
 		return tavernsOwned.size();
 	}
 
-	/**
-	 * If user is eliminated reset all users properties and taverns by setting the
-	 * amount of houses to 0 and remove the owner
-	 */
 	public void clearPlayer() {
 		for (int i = 0; i < propertiesOwned.size(); i++) {
 			propertiesOwned.get(i).clearProperty();
@@ -376,27 +278,10 @@ public class Player implements Serializable {
 		return this.propertiesOwned.get(pos);
 	}
 
-	/**
-	 * Gets property at specified position
-	 * 
-	 * @param pos
-	 * @return
-	 */
 	public Tile getProperty(int pos) {
 		return this.propertiesOwned.get(pos);
 	}
 
-	/**
- * This method is used to check the entity.player's rank and update the entity.player icon accordingly.
- * 
- * The method checks the entity.player's net worth and sets the entity.player icon to a peasant, knight, rook, lord, or king icon depending on the net worth.
- * 
- * The method uses four colors (red, green, cyan, and yellow) to represent the different entity.player ranks. The color of the entity.player is used to determine which rank icon to display.
- * 
- * The method uses the resizeImage method to resize the entity.player icon to a specified width and height.
- * 
- * @return nothing
- */
 	public PlayerRanks checkPlayerRank() {
 
 		PlayerRanks rank = null;
@@ -412,7 +297,7 @@ public class Player implements Serializable {
 			} else if (this.getPlayerColor().equals(GREEN)) {
 				this.playerIcon = GREEN_PAWN;
 			} else if (this.getPlayerColor().equals(CYAN)) {
-				this.playerIcon = CYAN_PAWN;
+				this.playerIcon = BLUE_PAWN;
 			} else if (this.getPlayerColor().equals(YELLOW)) {
 				this.playerIcon = YELLOW_PAWN;
 			}
@@ -426,7 +311,7 @@ public class Player implements Serializable {
 			} else if (this.getPlayerColor().equals(GREEN)) {
 				this.playerIcon = GREEN_KNIGHT;
 			} else if (this.getPlayerColor().equals(CYAN)) {
-				this.playerIcon = CYAN_KNIGHT;
+				this.playerIcon = BLUE_KNIGHT;
 			} else if (this.getPlayerColor().equals(YELLOW)) {
 				this.playerIcon = YELLOW_KNIGHT;
 			}
@@ -440,7 +325,7 @@ public class Player implements Serializable {
 			} else if (this.getPlayerColor().equals(GREEN)) {
 				this.playerIcon = GREEN_ROOK;
 			} else if (this.getPlayerColor().equals(CYAN)) {
-				this.playerIcon = CYAN_ROOK;
+				this.playerIcon = BLUE_ROOK;
 			} else if (this.getPlayerColor().equals(YELLOW)) {
 				this.playerIcon = YELLOW_ROOK;
 			}
@@ -454,7 +339,7 @@ public class Player implements Serializable {
 			} else if (this.getPlayerColor().equals(GREEN)) {
 				this.playerIcon = GREEN_KING;
 			} else if (this.getPlayerColor().equals(CYAN)) {
-				this.playerIcon = CYAN_KING;
+				this.playerIcon = BLUE_KING;
 			} else if (this.getPlayerColor().equals(YELLOW)) {
 				this.playerIcon = YELLOW_KING;
 			}
@@ -465,35 +350,18 @@ public class Player implements Serializable {
 		return rank;
 	}
 
-	/**
-	 * @return propertiesOwned, returns entire ArrayList of properties owned.
-	 */
 	public ArrayList<Property> getProperties() {
 		return this.propertiesOwned;
 	}
 
-	/**
-	 * @return all taverns owned by entity.player
-	 */
 	public ArrayList<Tavern> getTaverns() {
 		return this.tavernsOwned;
 	}
 
-	/**
-	 * Returns the players color
-	 * 
-	 * @return playerColor
-	 */
 	public Color getPlayerColor() {
 		return playerColor;
 	}
 
-	    /**
-     * Resizes an image icon to a specified width and height, using the specified scaling algorithm.
-     * 
-     * @param originalIcon the original image icon to be resized
-     * @return a new image icon with the specified dimensions and the same image as the original icon
-     */
     public static ImageIcon resizeImage(ImageIcon originalIcon) {
         Image originalImage = originalIcon.getImage();
         int width = 40; // specify the desired width and height

@@ -24,6 +24,7 @@ public class BackgroundMusic extends Thread implements Serializable {
 	
 	public BackgroundMusic() {
 		this.clip = null;
+		startMusic();
 	}
 
 	/**
@@ -35,7 +36,6 @@ public class BackgroundMusic extends Thread implements Serializable {
 		if(clip!=null && isPlaying) {
 			clip.setFramePosition(musicPausedAt);
 			clip.start();
-			
 		
 		} else if(musicPlayer==null) {
 			musicPlayer = new Thread(this);
@@ -77,8 +77,8 @@ public class BackgroundMusic extends Thread implements Serializable {
 				AudioInputStream ais = AudioSystem.getAudioInputStream(Constants.AudioFiles.bgMusic);
 				clip = AudioSystem.getClip();
 				clip.open(ais);
-				//clip.loop(Clip.LOOP_CONTINUOUSLY);
-				//clip.start();
+				clip.loop(Clip.LOOP_CONTINUOUSLY);
+				clip.start();
 			}
 			catch(Exception e)
 			{

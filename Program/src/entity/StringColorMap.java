@@ -6,6 +6,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.io.Serializable;
 import java.util.HashMap;
+import static utilities.Constants.PlayerTokenImages.*;
 
 
 /**
@@ -39,13 +40,13 @@ public class StringColorMap implements Serializable {
 
 
 	private void addImageIcons(){
-		colorIconMap.put("MAGENTA", Constants.PlayerTokenImages.MAGENTA);
-		colorIconMap.put("PURPLE", Constants.PlayerTokenImages.PURPLE);
-		colorIconMap.put("ORANGE", Constants.PlayerTokenImages.ORANGE);
-		colorIconMap.put("RED", Constants.PlayerTokenImages.RED_PAWN);
-		colorIconMap.put("YELLOW", Constants.PlayerTokenImages.YELLOW_PAWN);
-		colorIconMap.put("GREEN", Constants.PlayerTokenImages.GREEN_PAWN);
-		colorIconMap.put("CYAN", Constants.PlayerTokenImages.CYAN_PAWN);
+		colorIconMap.put("MAGENTA", MAGENTA_PAWN);
+		colorIconMap.put("PURPLE", PURPLE_PAWN);
+		colorIconMap.put("ORANGE", ORANGE_PAWN);
+		colorIconMap.put("RED", RED_PAWN);
+		colorIconMap.put("YELLOW", YELLOW_PAWN);
+		colorIconMap.put("GREEN", GREEN_PAWN);
+		colorIconMap.put("CYAN", CYAN_PAWN);
 	}
 	 
 	

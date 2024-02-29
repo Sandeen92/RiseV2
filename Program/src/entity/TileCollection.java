@@ -16,6 +16,7 @@ import entity.tiles.Tax;
 import entity.tiles.Tile;
 import entity.tiles.Work;
 
+import static utilities.Constants.PlayerTokenImages.*;
 import static utilities.Constants.TileImages.*;
 
 
@@ -78,6 +79,15 @@ public class TileCollection implements Serializable {
 	public Tile getTileAtIndex(int index) {
 		return tileArray[index];
 	}
-	
+	public int getATilesIndex(Tile tile){
+		for(int i = 0; i < tileArray.length;i++){
+			if(tileArray[i] instanceof Property|| tileArray[i] instanceof Tavern){
+				if(tileArray[i].getName().equals(tile.getName())){
+					return i;
+				}
+			}
+		}
+		return 0;
+	}
 	
 }
