@@ -9,6 +9,7 @@ import javax.sound.sampled.Clip;
 import javax.swing.*;
 
 import entity.EventCases;
+import entity.TileCollection;
 import view.messageGui.DeathGUI;
 import view.messageGui.FortuneTellerGUI;
 import view.messageGui.SecretGui;
@@ -36,6 +37,7 @@ public class EventManager {
 	private DeathGUI deathGUI;
 	private FortuneTellerGUI msgGUI;
 	private Random rand = new Random();
+	private TileCollection tileCollection = new TileCollection();
 	private int taxCounter = 0;
 
 
@@ -278,6 +280,7 @@ public class EventManager {
 			player.addNewProperty(property);
 			property.setPurchaseable(false);
 			player.decreaseBalace(property.getPrice());
+			boardController.setMarker(player,tileCollection.getATilesIndex(property));
 			//westPanel.append(entity.player.getName() + " purchased " + property.getName() + "\n");
 		}
 		else {
