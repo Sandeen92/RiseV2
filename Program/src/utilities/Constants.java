@@ -10,11 +10,11 @@ import java.io.IOException;
 public class Constants {
 
     private static String systemPath = System.getProperty("user.dir");
-    private static String imagePath = systemPath + "\\Program\\src\\resources\\images\\";
-    private static String tokenPath = imagePath + "playerToken\\";
-    private static String dicePath = imagePath + "dice\\";
-    private static String tilePath = imagePath + "tiles\\";
-    private static String musicPath = systemPath + "\\Program\\src\\resources\\music\\";
+    private static String imagePath = systemPath + "/Program/src/resources/images/";
+    private static String tokenPath = imagePath + "playerToken/";
+    private static String dicePath = imagePath + "dice/";
+    private static String tilePath = imagePath + "tiles/";
+    private static String musicPath = systemPath + "/Program/src/resources/music/";
 
     public class GameWindow {
         public static final Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
