@@ -18,6 +18,7 @@ public class BoardPanel extends JPanel {
     private GUITile[] guiTiles;
     private JPanel[] panelarray = new JPanel[40];
     private JLabel lblNewLabel = new JLabel();
+    private JLabel markering;
 
     public BoardPanel(BoardController boardController) {
         info = new TileInfo();
@@ -55,7 +56,9 @@ public class BoardPanel extends JPanel {
         int[] boundsHeight = {100, 99, 100, 100, 100, 100, 100, 99, 99, 100};
 
         for (int i = 0; i < 10; i++) {
+            markering = new JLabel();
             panelarray[i] = new JPanel();
+            panelarray[i].add(markering);
             panelarray[i].setOpaque(false);
             panelarray[i].setBounds(boundsX[i], boundsY[i], boundsWidth[i], boundsHeight[i]);
             add(panelarray[i]);
@@ -69,7 +72,9 @@ public class BoardPanel extends JPanel {
         int[] boundsHeight = {100, 62, 62, 62, 62, 62, 62, 62, 62, 62};
 
         for (int i = 10; i < 20; i++) {
+            markering = new JLabel();
             panelarray[i] = new JPanel();
+            panelarray[i].add(markering);
             panelarray[i].setOpaque(false);
             panelarray[i].setBounds(boundsX[i+-10], boundsY[i-10], boundsWidth[i-10], boundsHeight[i-10]);
             add(panelarray[i]);
@@ -83,7 +88,9 @@ public class BoardPanel extends JPanel {
         int[] boundsHeight = {100, 100, 100, 100, 100, 100, 100, 100, 100, 100};
 
         for (int i = 20; i < 30; i++) {
+            markering = new JLabel();
             panelarray[i] = new JPanel();
+            panelarray[i].add(markering);
             panelarray[i].setOpaque(false);
             panelarray[i].setBounds(boundsX[i-20], boundsY[i-20], boundsWidth[i-20], boundsHeight[i-20]);
             add(panelarray[i]);
@@ -97,11 +104,22 @@ public class BoardPanel extends JPanel {
         int[] boundsHeight = {100, 62, 62, 62, 62, 62, 62, 62, 62, 62};
 
         for (int i = 30; i < 40; i++) {
+            markering = new JLabel();
             panelarray[i] = new JPanel();
+            panelarray[i].add(markering);
             panelarray[i].setOpaque(false);
             panelarray[i].setBounds(boundsX[i-30], boundsY[i-30], boundsWidth[i-30], boundsHeight[i-30]);
             add(panelarray[i]);
         }
+    }
+    public void setMarker(Player player, int i){
+        JLabel label = (JLabel) panelarray[i].getComponent(0);
+        label.setSize(10,10);
+        label.setBackground(player.getPlayerColor());
+        label.setOpaque(true);
+        label.setVisible(true);
+        //Make sure maker gets updated with every buy of propery
+        //Also make sure you make a label for each property and property only, meaning if statement to check tile info.
     }
 
     public void initGUITiles(){
