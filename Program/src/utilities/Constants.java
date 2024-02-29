@@ -157,8 +157,8 @@ public class Constants {
 
 
         public static ImageIcon resizeImg(ImageIcon icon){
-            int diceWidth = GameWindow.screenSize.width / 20;
-            int diceHeight = GameWindow.screenSize.height / 10;
+            int diceWidth = GameWindow.screenSize.width / 40;
+            int diceHeight = GameWindow.screenSize.height / 20;
 
             Image resizedImage = icon.getImage().getScaledInstance(diceWidth, diceHeight, Image.SCALE_SMOOTH);
             return new ImageIcon(resizedImage);
