@@ -149,6 +149,8 @@ public class BackgroundMusic extends Thread implements Serializable {
 			selectFile("Program/src/resources/music/" + selectedMusic + ".wav");
 			startMusic();
 			frame.dispose();
+		} else {
+			frame.dispose();
 		}
 	}
 
