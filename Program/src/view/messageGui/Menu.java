@@ -37,6 +37,7 @@ public class Menu extends JPanel {
 	 */
 	public Menu(BackgroundMusic music, MainPanel mainPanel) {
 		this.music = music;
+		music.startMusic();
 		this.mainPanel = mainPanel;
 		setOpaque(false);
 		setPreferredSize(new Dimension(400, 40));
