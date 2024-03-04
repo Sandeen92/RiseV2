@@ -118,6 +118,12 @@ public class MainPanel extends JPanel implements Serializable {
 		westPanel.setTitleText(info, lblTitle, titleColor, titleTxtColor);
 	}
 
+	public void setMarker(Player player,int i){
+		boardPanel.setBorder(player,i);
+	}
+
+
+
 	public String addPlayerToList(String name, String icon) {
 		boardController.addPlayerToList(name, icon);
 		return name;

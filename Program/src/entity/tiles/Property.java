@@ -3,8 +3,7 @@ package entity.tiles;
 import java.awt.Color;
 import java.io.Serializable;
 
-import javax.swing.ImageIcon;
-import javax.swing.JOptionPane;
+import javax.swing.*;
 
 import entity.player.Player;
 
@@ -20,6 +19,8 @@ public class Property implements Tile, Serializable {
 	private Color color;
 	private Player player ;
 	private ImageIcon img;
+	private JLabel ownMarker = new JLabel();
+	private JFrame whatever = new JFrame();
 	private int levelPrice;
 
 	/**
@@ -43,7 +44,6 @@ public class Property implements Tile, Serializable {
 		this.img=img;
 		this.levelPrice= levelPrice;
 	}
-	
 	/**
 	 * Returns information about tile
 	 */

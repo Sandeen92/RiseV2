@@ -106,6 +106,9 @@ public class BoardController {
         mainPanel.setTitleText(info, lblTitle, titleColor, titleTxtColor);
     }
 
+    public void setMarker(Player player,int i) {
+        mainPanel.setMarker(player, i);
+    }
     public void setTextDefault() {
         mainPanel.setTextDefault();
     }

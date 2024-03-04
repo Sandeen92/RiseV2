@@ -21,36 +21,73 @@ public class Constants {
         public static final int screenWidth = (int) screenSize.getWidth();
         public static final int screenHeight = (int) screenSize.getHeight();
     }
+    public static boolean isMacOS() {
+        String os = System.getProperty("os.name");
+        return os.contains("Mac");
+    }
 
+    private static String getImagePath(){
+        if(isMacOS()){
+            return systemPath + "/Program/src/resources/images/";
+        }
+        return systemPath + "\\Program\\src\\resources\\images\\";
+    }
+
+    private static String getTokenPath(){
+        if(isMacOS()){
+            return getImagePath() +  "playerToken/";
+        }
+        return getImagePath() + "playerToken\\";
+    }
+
+    private static String getDicePath(){
+        if(isMacOS()){
+            return getImagePath() + "dice/";
+        }
+        return getImagePath() + "dice\\";
+    }
+    private static String getTilePath(){
+        if(isMacOS()){
+            return getImagePath() + "tiles/";
+        }
+        return getImagePath() + "tiles\\";
+    }
+
+    private static String getMusicPath(){
+        if(isMacOS()){
+            return systemPath + "/Program/src/resources/music/";
+        }
+        return systemPath + "\\Program\\src\\resources\\music\\";
+    }
 
     public class PlayerTokenImages {
-        public static final ImageIcon RED_PAWN = resizeImage(new ImageIcon(tokenPath + "Red_pawn.svg.png"));
-        public static final ImageIcon YELLOW_PAWN = resizeImage(new ImageIcon(tokenPath + "Yellow_pawn.svg.png"));
-        public static final ImageIcon GREEN_PAWN = resizeImage(new ImageIcon(tokenPath + "Green_pawn.svg.png"));
+        public static final ImageIcon RED_PAWN = resizeImage(new ImageIcon(getTokenPath() + "Red_pawn.svg.png"));
+        public static final ImageIcon YELLOW_PAWN = resizeImage(new ImageIcon(getTokenPath() + "Yellow_pawn.svg.png"));
+        public static final ImageIcon GREEN_PAWN = resizeImage(new ImageIcon(getTokenPath() + "Green_pawn.svg.png"));
         public static final ImageIcon BLUE_PAWN = resizeImage(new ImageIcon(tokenPath + "Blue_pawn.svg.png"));
         public static final ImageIcon PURPLE_PAWN = resizeImage(new ImageIcon(tokenPath + "Purple_pawn.svg.png"));
         public static final ImageIcon ORANGE_PAWN = resizeImage(new ImageIcon(tokenPath + "Orange_pawn.svg.png"));
         public static final ImageIcon CYAN_PAWN = resizeImage(new ImageIcon(tokenPath + "Cyan_pawn.svg.png"));
         public static final ImageIcon MAGENTA_PAWN = resizeImage(new ImageIcon(tokenPath + "Magenta_pawn.svg.png"));
-        public static final ImageIcon RED_KNIGHT = resizeImage(new ImageIcon(tokenPath + "Red_knight.svg.png"));
-        public static final ImageIcon YELLOW_KNIGHT = resizeImage(new ImageIcon(tokenPath + "Yellow_knight.svg.png"));
-        public static final ImageIcon GREEN_KNIGHT = resizeImage(new ImageIcon(tokenPath + "Green_knight.svg.png"));
+        public static final ImageIcon RED_KNIGHT = resizeImage(new ImageIcon(getTokenPath() + "Red_knight.svg.png"));
+        public static final ImageIcon YELLOW_KNIGHT = resizeImage(new ImageIcon(getTokenPath() + "Yellow_knight.svg.png"));
+        public static final ImageIcon GREEN_KNIGHT = resizeImage(new ImageIcon(getTokenPath() + "Green_knight.svg.png"));
         public static final ImageIcon BLUE_KNIGHT = resizeImage(new ImageIcon(tokenPath + "Blue_knight.svg.png"));
         public static final ImageIcon PURPLE_KNIGHT = resizeImage(new ImageIcon(tokenPath + "Purple_knight.svg.png"));
         public static final ImageIcon ORANGE_KNIGHT = resizeImage(new ImageIcon(tokenPath + "Orange_knight.svg.png"));
         public static final ImageIcon CYAN_KNIGHT = resizeImage(new ImageIcon(tokenPath + "Cyan_knight.svg.png"));
         public static final ImageIcon MAGENTA_KNIGHT = resizeImage(new ImageIcon(tokenPath + "Magenta_knight.svg.png"));
-        public static final ImageIcon RED_ROOK = resizeImage(new ImageIcon(tokenPath + "Red_rook.svg.png"));
-        public static final ImageIcon YELLOW_ROOK = resizeImage(new ImageIcon(tokenPath + "Yellow_rook.svg.png"));
-        public static final ImageIcon GREEN_ROOK = resizeImage(new ImageIcon(tokenPath + "Green_rook.svg.png"));
+        public static final ImageIcon RED_ROOK = resizeImage(new ImageIcon(getTokenPath() + "Red_rook.svg.png"));
+        public static final ImageIcon YELLOW_ROOK = resizeImage(new ImageIcon(getTokenPath() + "Yellow_rook.svg.png"));
+        public static final ImageIcon GREEN_ROOK = resizeImage(new ImageIcon(getTokenPath() + "Green_rook.svg.png"));
         public static final ImageIcon BLUE_ROOK = resizeImage(new ImageIcon(tokenPath + "Blue_rook.svg.png"));
         public static final ImageIcon PURPLE_ROOK = resizeImage(new ImageIcon(tokenPath + "Purple_rook.svg.png"));
         public static final ImageIcon ORANGE_ROOK = resizeImage(new ImageIcon(tokenPath + "Orange_rook.svg.png"));
         public static final ImageIcon CYAN_ROOK = resizeImage(new ImageIcon(tokenPath + "Cyan_rook.svg.png"));
         public static final ImageIcon MAGENTA_ROOK = resizeImage(new ImageIcon(tokenPath + "Magenta_rook.svg.png"));
-        public static final ImageIcon RED_KING = resizeImage(new ImageIcon(tokenPath + "Red_king.svg.png"));
-        public static final ImageIcon YELLOW_KING = resizeImage(new ImageIcon(tokenPath + "Yellow_king.svg.png"));
-        public static final ImageIcon GREEN_KING = resizeImage(new ImageIcon(tokenPath + "Green_king.svg.png"));
+        public static final ImageIcon RED_KING = resizeImage(new ImageIcon(getTokenPath() + "Red_king.svg.png"));
+        public static final ImageIcon YELLOW_KING = resizeImage(new ImageIcon(getTokenPath() + "Yellow_king.svg.png"));
+        public static final ImageIcon GREEN_KING = resizeImage(new ImageIcon(getTokenPath()+ "Green_king.svg.png"));
         public static final ImageIcon BLUE_KING = resizeImage(new ImageIcon(tokenPath + "Blue_king.svg.png"));
         public static final ImageIcon PURPLE_KING = resizeImage(new ImageIcon(tokenPath + "Purple_king.svg.png"));
         public static final ImageIcon ORANGE_KING = resizeImage(new ImageIcon(tokenPath + "Orange_king.svg.png"));
@@ -68,54 +105,54 @@ public class Constants {
 
 
     public class TileImages {
-        public static final ImageIcon FORTUNE_TILE = new ImageIcon(tilePath + "fortune.png");
-        public static final ImageIcon GO_TILE = new ImageIcon(tilePath + "Go.png");
-        public static final ImageIcon GOTOJAIL_TILE = new ImageIcon(tilePath + "gojail.png");
-        public static final ImageIcon JAIL_TILE = new ImageIcon(tilePath + "jail.png");
-        public static final ImageIcon TAX_TILE = new ImageIcon(tilePath + "tax.png");
-        public static final ImageIcon WORK_TILE = new ImageIcon(tilePath + "Work.png");
-        public static final ImageIcon BANK_TILE = new ImageIcon(tilePath + "bank.png");
-        public static final ImageIcon PROPERTY_WOOD_TILE = new ImageIcon(tilePath + "Wood.png");
-        public static final ImageIcon PROPERTY_STONE_TILE = new ImageIcon(tilePath + "stone.png");
-        public static final ImageIcon PROPERTY_FISHSTALL_TILE = new ImageIcon(tilePath + "fish.png");
-        public static final ImageIcon PROPERTY_VEGGIESTALL_TILE = new ImageIcon(tilePath + "veggieStall.png");
-        public static final ImageIcon PROPERTY_BAKERSTALL_TILE = new ImageIcon(tilePath + "bakerStall.png");
-        public static final ImageIcon PROPERTY_TANNER_TILE = new ImageIcon(tilePath + "tanner.png");
-        public static final ImageIcon PROPERTY_MILL_TILE = new ImageIcon(tilePath + "mill.png");
-        public static final ImageIcon PROPERTY_SMITH_TILE = new ImageIcon(tilePath + "smith.png");
-        public static final ImageIcon PROPERTY_BATH_TILE = new ImageIcon(tilePath + "bath.png");
-        public static final ImageIcon PROPERTY_BAKERY_TILE = new ImageIcon(tilePath + "bakerStore.png");
-        public static final ImageIcon PROPERTY_BUTCHER_TILE = new ImageIcon(tilePath + "butcher.png");
-        public static final ImageIcon SUNDAY_CHURCH_TILE = new ImageIcon(tilePath + "sundaychurch.png");
-        public static final ImageIcon PROPERTY_WAREHOUSE_TILE = new ImageIcon(tilePath + "warehouse.png");
-        public static final ImageIcon PROPERTY_ALCHEMY_TILE = new ImageIcon(tilePath + "alch.png");
-        public static final ImageIcon PROPERTY_STABLE_TILE = new ImageIcon(tilePath + "stable.png");
-        public static final ImageIcon PROPERTY_COBBLER_TILE = new ImageIcon(tilePath + "cobbler.png");
-        public static final ImageIcon PROPERTY_GENERALSTORE_TILE = new ImageIcon(tilePath + "general.png");
-        public static final ImageIcon PROPERTY_SILVERSMITH_TILE = new ImageIcon(tilePath + "silver.png");
-        public static final ImageIcon PROPERTY_ARMORER_TILE = new ImageIcon(tilePath + "armor.png");
-        public static final ImageIcon PROPERTY_TAILOR_TILE = new ImageIcon(tilePath + "tailor.png");
-        public static final ImageIcon PROPERTY_WEAPONSMITH_TILE = new ImageIcon(tilePath + "weapon.png");
-        public static final ImageIcon PROPERTY_CHURCH_TILE = new ImageIcon(tilePath + "churchp.png");
-        public static final ImageIcon PROPERTY_CASTLE_TILE = new ImageIcon(tilePath + "castle.png");
-        public static final ImageIcon TAVERN_TILE = new ImageIcon(tilePath + "tavern.png");
+        public static final ImageIcon FORTUNE_TILE = new ImageIcon(getTilePath() + "fortune.png");
+        public static final ImageIcon GO_TILE = new ImageIcon(getTilePath() + "Go.png");
+        public static final ImageIcon GOTOJAIL_TILE = new ImageIcon(getTilePath() + "gojail.png");
+        public static final ImageIcon JAIL_TILE = new ImageIcon(getTilePath() + "jail.png");
+        public static final ImageIcon TAX_TILE = new ImageIcon(getTilePath() + "tax.png");
+        public static final ImageIcon WORK_TILE = new ImageIcon(getTilePath() + "Work.png");
+        public static final ImageIcon BANK_TILE = new ImageIcon(getTilePath() + "bank.png");
+        public static final ImageIcon PROPERTY_WOOD_TILE = new ImageIcon(getTilePath() + "Wood.png");
+        public static final ImageIcon PROPERTY_STONE_TILE = new ImageIcon(getTilePath() + "stone.png");
+        public static final ImageIcon PROPERTY_FISHSTALL_TILE = new ImageIcon(getTilePath() + "fish.png");
+        public static final ImageIcon PROPERTY_VEGGIESTALL_TILE = new ImageIcon(getTilePath() + "veggieStall.png");
+        public static final ImageIcon PROPERTY_BAKERSTALL_TILE = new ImageIcon(getTilePath() + "bakerStall.png");
+        public static final ImageIcon PROPERTY_TANNER_TILE = new ImageIcon(getTilePath() + "tanner.png");
+        public static final ImageIcon PROPERTY_MILL_TILE = new ImageIcon(getTilePath() + "mill.png");
+        public static final ImageIcon PROPERTY_SMITH_TILE = new ImageIcon(getTilePath() + "smith.png");
+        public static final ImageIcon PROPERTY_BATH_TILE = new ImageIcon(getTilePath() + "bath.png");
+        public static final ImageIcon PROPERTY_BAKERY_TILE = new ImageIcon(getTilePath() + "bakery.png");
+        public static final ImageIcon PROPERTY_BUTCHER_TILE = new ImageIcon(getTilePath() + "butcher.png");
+        public static final ImageIcon SUNDAY_CHURCH_TILE = new ImageIcon(getTilePath() + "sundaychurch.png");
+        public static final ImageIcon PROPERTY_WAREHOUSE_TILE = new ImageIcon(getTilePath() + "warehouse.png");
+        public static final ImageIcon PROPERTY_ALCHEMY_TILE = new ImageIcon(getTilePath() + "alch.png");
+        public static final ImageIcon PROPERTY_STABLE_TILE = new ImageIcon(getTilePath() + "stable.png");
+        public static final ImageIcon PROPERTY_COBBLER_TILE = new ImageIcon(getTilePath() + "cobbler.png");
+        public static final ImageIcon PROPERTY_GENERALSTORE_TILE = new ImageIcon(getTilePath() + "general.png");
+        public static final ImageIcon PROPERTY_SILVERSMITH_TILE = new ImageIcon(getTilePath() + "silver.png");
+        public static final ImageIcon PROPERTY_ARMORER_TILE = new ImageIcon(getTilePath() + "armor.png");
+        public static final ImageIcon PROPERTY_TAILOR_TILE = new ImageIcon(getTilePath() + "tailor.png");
+        public static final ImageIcon PROPERTY_WEAPONSMITH_TILE = new ImageIcon(getTilePath() + "weapon.png");
+        public static final ImageIcon PROPERTY_CHURCH_TILE = new ImageIcon(getTilePath() + "churchp.png");
+        public static final ImageIcon PROPERTY_CASTLE_TILE = new ImageIcon(getTilePath() + "castle.png");
+        public static final ImageIcon TAVERN_TILE = new ImageIcon(getTilePath() + "tavern.png");
     }
 
 
     public class DiceImages {
-        public static final ImageIcon WHITE_1 = resizeImg(new ImageIcon(dicePath + "faceValue1White.png"));
-        public static final ImageIcon WHITE_2 = resizeImg(new ImageIcon(dicePath + "faceValue2White.png"));
-        public static final ImageIcon WHITE_3 = resizeImg(new ImageIcon(dicePath + "faceValue3White.png"));
-        public static final ImageIcon WHITE_4 = resizeImg(new ImageIcon(dicePath + "faceValue4White.png"));
-        public static final ImageIcon WHITE_5 = resizeImg(new ImageIcon(dicePath + "faceValue5White.png"));
-        public static final ImageIcon WHITE_6 = resizeImg(new ImageIcon(dicePath + "faceValue6White.png"));
+        public static final ImageIcon WHITE_1 = resizeImg(new ImageIcon(getDicePath() + "faceValue1White.png"));
+        public static final ImageIcon WHITE_2 = resizeImg(new ImageIcon(getDicePath() + "faceValue2White.png"));
+        public static final ImageIcon WHITE_3 = resizeImg(new ImageIcon(getDicePath() + "faceValue3White.png"));
+        public static final ImageIcon WHITE_4 = resizeImg(new ImageIcon(getDicePath() + "faceValue4White.png"));
+        public static final ImageIcon WHITE_5 = resizeImg(new ImageIcon(getDicePath() + "faceValue5White.png"));
+        public static final ImageIcon WHITE_6 = resizeImg(new ImageIcon(getDicePath() + "faceValue6White.png"));
 
-        public static final ImageIcon RED_1 = resizeImg(new ImageIcon(dicePath + "faceValue1.png"));
-        public static final ImageIcon RED_2 = resizeImg(new ImageIcon(dicePath + "faceValue2.png"));
-        public static final ImageIcon RED_3 = resizeImg(new ImageIcon(dicePath + "faceValue3.png"));
-        public static final ImageIcon RED_4 = resizeImg(new ImageIcon(dicePath + "faceValue4.png"));
-        public static final ImageIcon RED_5 = resizeImg(new ImageIcon(dicePath + "faceValue5.png"));
-        public static final ImageIcon RED_6 = resizeImg(new ImageIcon(dicePath + "faceValue6.png"));
+        public static final ImageIcon RED_1 = resizeImg(new ImageIcon(getDicePath() + "faceValue1.png"));
+        public static final ImageIcon RED_2 = resizeImg(new ImageIcon(getDicePath() + "faceValue2.png"));
+        public static final ImageIcon RED_3 = resizeImg(new ImageIcon(getDicePath() + "faceValue3.png"));
+        public static final ImageIcon RED_4 = resizeImg(new ImageIcon(getDicePath() + "faceValue4.png"));
+        public static final ImageIcon RED_5 = resizeImg(new ImageIcon(getDicePath() + "faceValue5.png"));
+        public static final ImageIcon RED_6 = resizeImg(new ImageIcon(getDicePath() + "faceValue6.png"));
 
 
 
@@ -131,12 +168,12 @@ public class Constants {
 
     public class BoardImages {
 
-        public static final ImageIcon BOARD_IMAGE = new ImageIcon(imagePath + "RiseBoard750.png");
+        public static final ImageIcon BOARD_IMAGE = new ImageIcon(getImagePath() + "RiseBoard750.png");
 
         public static ImageIcon getPaperBackgroundImage() {
             BufferedImage tempImg = null;
             try {
-                tempImg = ImageIO.read(new File(imagePath + "backpaper.jpg"));
+                tempImg = ImageIO.read(new File(getImagePath() + "backpaper.jpg"));
 
             } catch (IOException e) {
 
@@ -151,7 +188,7 @@ public class Constants {
         public static ImageIcon getStartMenuImage(){
             BufferedImage tempImg = null;
             try {
-                tempImg = ImageIO.read(new File(imagePath + "fancyRoll.jpg"));
+                tempImg = ImageIO.read(new File(getImagePath() + "fancyRoll.jpg"));
 
             } catch (IOException e) {
 
@@ -167,7 +204,7 @@ public class Constants {
         public static ImageIcon getBackgroundImage() {
             BufferedImage tempImg = null;
             try {
-                tempImg = ImageIO.read(new File(imagePath + "back2jpg.jpg"));
+                tempImg = ImageIO.read(new File(getImagePath() + "back2jpg.jpg"));
 
             } catch (IOException e) {
 
@@ -183,10 +220,10 @@ public class Constants {
 
     public class AudioFiles{
 
-        public static File bgMusic = new File(musicPath + "bgMusic.wav");
-        public static File duraw = new File(musicPath + "duraw.wav");
-        public static File victory = new File(musicPath + "victory.wav");
-        public static File hips = new File(musicPath + "Hips Don't Lie.wav");
-        public static File yeah = new File(musicPath + "Yeah!.wav");
+        public static File bgMusic = new File(getMusicPath() + "bgMusic.wav");
+        public static File duraw = new File(getMusicPath() + "duraw.wav");
+        public static File victory = new File(getMusicPath() + "victory.wav");
+        public static File hips = new File(getMusicPath() + "Hips Don't Lie.wav");
+        public static File yeah = new File(getMusicPath() + "Yeah!.wav");
     }
 }
