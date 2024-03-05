@@ -46,6 +46,14 @@ public class GameServer implements Runnable {
         }
     }
 
+    public void sendConnectedUserNamesAndColorsToAllClients(){
+        PlayerList playerList = lanController.getPlayerList();
+        for (int i = 0; i < clientHandlerPool.size(); i++) {
+            clientHandlerPool.get(i).sendConnectedUserNamesAndColors(playerList);
+            System.out.println(clientHandlerPool.size());
+        }
+    }
+
 
 
     /**
@@ -72,15 +80,15 @@ public class GameServer implements Runnable {
             }
         }
 
-        public void sendConnectedUserNamesAndColors(){
+        public void sendConnectedUserNamesAndColors(PlayerList playerList){
             try {
-                PlayerList playerList = lanController.getPlayerList();
                 ArrayList<String> playerNames = new ArrayList<String>();
                 for (int i = 0; i < playerList.getLength(); i++) {
                     playerNames.add(playerList.getPlayerFromIndex(i).getName() + " ---- Color: " +
                             playerList.getPlayerFromIndex(i).getPlayerColorText(playerList.getPlayerFromIndex(i).getPlayerColor()));
                 }
                 oos.writeObject(playerNames);
+                oos.flush();
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
@@ -94,6 +102,7 @@ public class GameServer implements Runnable {
                 this.ois = new ObjectInputStream(clientSocket.getInputStream());
 
                 while (true) {
+                    sleep(200);
                     input = ois.readObject();
 
                     if (input instanceof String) {
@@ -108,13 +117,13 @@ public class GameServer implements Runnable {
                             }
                         }
                         if (String.valueOf(input).equals("LobbyOK")) {
-                            sendConnectedUserNamesAndColors();
+                            sendConnectedUserNamesAndColorsToAllClients();
                         }
                     }
                     oos.flush();
                 }
 
-            } catch (IOException | ClassNotFoundException e) {
+            } catch (IOException | ClassNotFoundException | InterruptedException e) {
                 throw new RuntimeException(e);
             } finally {
                 try {

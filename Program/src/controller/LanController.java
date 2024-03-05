@@ -6,7 +6,6 @@ import entity.player.PlayerList;
 import view.LobbyFrame;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 public class LanController {
 
@@ -45,10 +44,14 @@ public class LanController {
 
     public void addPlayer(String name, String color) {
         playerList.addNewPlayer(name, color);
-        lobbyFrame.appendLobby(name + " ---- Color: " + color);
+        lobbyFrame.appendLobbyList(name + " ---- Color: " + color);
     }
 
     public PlayerList getPlayerList(){
         return playerList;
+    }
+
+    public static void main(String[] args) {
+        new StartingScreen();
     }
 }

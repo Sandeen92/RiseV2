@@ -90,15 +90,17 @@ public class GameClient extends Thread {
 
                         if (o instanceof ArrayList) {
                             for (int i = 0; i < ((ArrayList<String>) o).size(); i++){
-                                lobbyFrame.appendLobby(((ArrayList<String>) o).get(i));
+                                lobbyFrame.appendLobbyList(((ArrayList<String>) o).get(i));
+                                Thread.sleep(100);
                             }
                         }
                         oos.flush();
                         }
                     } catch (IOException | ClassNotFoundException e) {
                     System.out.println(userName + " disconnected");
-                }
-                 finally {
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                } finally {
                     try {
                         ois.close();
                         oos.close();

@@ -5,7 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="369cbea7-d726-43f1-931c-763e77531bfd" name="Changes" comment="..">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Program/src/controller/LanController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/controller/LanController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program/src/entity/lan/GameClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/entity/lan/GameClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program/src/entity/lan/GameServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/entity/lan/GameServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program/src/view/LobbyFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/view/LobbyFrame.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,20 +37,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.GameClient.executor&quot;: &quot;Run&quot;,
-    &quot;Application.GameServer.executor&quot;: &quot;Run&quot;,
-    &quot;Application.StartingScreen.executor&quot;: &quot;Run&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.GameClient.executor": "Run",
+    "Application.GameServer.executor": "Run",
+    "Application.LanController.executor": "Run",
+    "Application.StartingScreen.executor": "Run"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\simon\Desktop\RiseV2\Program" />
       <recent name="C:\Users\simon\Desktop\RiseV2" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.GameClient">
+  <component name="RunManager" selected="Application.LanController">
     <configuration name="GameClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="entity.lan.GameClient" />
       <module name="RiseV2" />
@@ -73,6 +78,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="LanController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="controller.LanController" />
+      <module name="RiseV2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="StartingScreen" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="controller.StartingScreen" />
       <module name="RiseV2" />
@@ -88,9 +106,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.GameServer" />
-        <item itemvalue="Application.GameClient" />
         <item itemvalue="Application.StartingScreen" />
+        <item itemvalue="Application.LanController" />
+        <item itemvalue="Application.GameClient" />
+        <item itemvalue="Application.GameServer" />
       </list>
     </recent_temporary>
   </component>

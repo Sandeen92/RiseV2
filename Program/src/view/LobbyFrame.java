@@ -6,7 +6,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.IOException;
 
 public class LobbyFrame extends JFrame {
 
@@ -57,8 +56,11 @@ public class LobbyFrame extends JFrame {
         setVisible(true);
     }
 
+    public void resetLobbyList(){
+        listModel.removeAllElements();
+    }
 
-    public void appendLobby(String userNameAndColor){
+    public void appendLobbyList(String userNameAndColor){
         if (flag == 0) {
             listModel.addElement("Host and Player:" + (flag + 1) + " ---- Name: "  + userNameAndColor + "\n");
         }
