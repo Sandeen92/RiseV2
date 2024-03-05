@@ -6,17 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="369cbea7-d726-43f1-931c-763e77531bfd" name="Changes" comment="..">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program/src/controller/LanController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/controller/LanController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program/src/controller/StartingScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/controller/StartingScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program/src/entity/StringColorMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/entity/StringColorMap.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Program/src/entity/lan/GameClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/entity/lan/GameClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Program/src/entity/lan/GameServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/entity/lan/GameServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program/src/entity/player/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/entity/player/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program/src/entity/player/PlayerList.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/entity/player/PlayerList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program/src/view/LobbyFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/view/LobbyFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/controller/StartingScreen$ButtonListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/controller/StartingScreen$ButtonListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/controller/StartingScreen$MouseAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/controller/StartingScreen$MouseAction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/controller/StartingScreen.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/controller/StartingScreen.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,8 +90,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.GameClient" />
         <item itemvalue="Application.GameServer" />
+        <item itemvalue="Application.GameClient" />
         <item itemvalue="Application.StartingScreen" />
       </list>
     </recent_temporary>

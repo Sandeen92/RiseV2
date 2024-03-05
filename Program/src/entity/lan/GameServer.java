@@ -95,7 +95,6 @@ public class GameServer implements Runnable {
 
                 while (true) {
                     input = ois.readObject();
-                    sleep(100);
 
                     if (input instanceof String) {
                         if (String.valueOf(input).startsWith("UN")){
@@ -116,8 +115,6 @@ public class GameServer implements Runnable {
                 }
 
             } catch (IOException | ClassNotFoundException e) {
-                throw new RuntimeException(e);
-            } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             } finally {
                 try {

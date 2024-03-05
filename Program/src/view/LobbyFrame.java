@@ -60,12 +60,10 @@ public class LobbyFrame extends JFrame {
 
     public void appendLobby(String userNameAndColor){
         if (flag == 0) {
-            listModel.addElement("Host and Player:" + (flag + 1));
-            listModel.addElement("Name - "  + userNameAndColor + "\n");
+            listModel.addElement("Host and Player:" + (flag + 1) + " ---- Name: "  + userNameAndColor + "\n");
         }
         else {
-            listModel.addElement("Player " + (flag + 1));
-            listModel.addElement("Name - "  + userNameAndColor + "\n");
+            listModel.addElement("Player " + (flag + 1) + " ---- Name: "  + userNameAndColor + "\n");
         }
         flag++;
     }

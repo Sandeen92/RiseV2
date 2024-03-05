@@ -76,7 +76,6 @@ public class GameClient extends Thread {
                 try {
                     while (true) {
                         Object o = ois.readObject();
-                        sleep(100);
 
                         if (o instanceof String) {
                             if (String.valueOf(o).startsWith("lobbyClient,")) {
@@ -98,9 +97,8 @@ public class GameClient extends Thread {
                         }
                     } catch (IOException | ClassNotFoundException e) {
                     System.out.println(userName + " disconnected");
-                } catch (InterruptedException e) {
-                    throw new RuntimeException(e);
-                } finally {
+                }
+                 finally {
                     try {
                         ois.close();
                         oos.close();
