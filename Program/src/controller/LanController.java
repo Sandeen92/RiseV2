@@ -12,7 +12,7 @@ public class LanController {
 
     private GameServer gameServer;
     private BoardController boardController;
-    private static PlayerList playerList;
+    private PlayerList playerList;
     private LobbyFrame lobbyFrame;
 
 
@@ -35,17 +35,17 @@ public class LanController {
         }
         Thread gameServerThread = new Thread(gameServer);
         gameServerThread.start();
-        new GameClient(hostName, hostColor, "0.0.0.0", 9090);
+        createAndConnectClient(hostName, hostColor);
     }
 
     public static void createAndConnectClient(String username, String color){
-        GameClient gc = new GameClient(username, color, "0.0.0.0", 9090);
+        new GameClient(username, color, "0.0.0.0", 9090);
     }
 
 
     public void addPlayer(String name, String color) {
         playerList.addNewPlayer(name, color);
-        lobbyFrame.appendLobby(name + ", Color: " + color);
+        lobbyFrame.appendLobby(name + " ---- Color: " + color);
     }
 
     public PlayerList getPlayerList(){

@@ -77,7 +77,7 @@ public class GameServer implements Runnable {
                 PlayerList playerList = lanController.getPlayerList();
                 ArrayList<String> playerNames = new ArrayList<String>();
                 for (int i = 0; i < playerList.getLength(); i++) {
-                    playerNames.add(playerList.getPlayerFromIndex(i).getName() + ", Color: " +
+                    playerNames.add(playerList.getPlayerFromIndex(i).getName() + " ---- Color: " +
                             playerList.getPlayerFromIndex(i).getPlayerColorText(playerList.getPlayerFromIndex(i).getPlayerColor()));
                 }
                 oos.writeObject(playerNames);
