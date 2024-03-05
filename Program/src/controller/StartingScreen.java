@@ -189,9 +189,8 @@ public class StartingScreen extends JFrame {
 
 
 	public void startUpLANGame() {
-		String playerName = "OlaConny";
+		String playerName = playerTf[0].getText();
 		String playerColor = (String) playerColors[0].getSelectedItem();
-		System.out.println(playerName + " " + playerColor);
 		lanController = new LanController();
 		lanController.startServerAndConnectAsHost(playerName, playerColor);
 		dispose();
@@ -199,23 +198,22 @@ public class StartingScreen extends JFrame {
 
 
 	public void joinLobby() {
-		String playerName = "OlaConny";
+		String playerName = playerTf[0].getText();
 		String playerColor = (String) playerColors[0].getSelectedItem();
-		System.out.println(playerName + " " + playerColor);
 		createAndConnectClient(playerName, playerColor);
 		dispose();
 	}
 
 
 	public void joinGame() {
-		playerLabels[activePlayers].setBounds(375, 330 + activePlayers * 40, 150, 50);
-		playerLabels[activePlayers].setFont(fontLabelPlayer);
-		playerLabels[activePlayers].setText("Enter name: ");
+		playerLabels[0].setBounds(375, 330, 150, 50);
+		playerLabels[0].setFont(fontLabelPlayer);
+		playerLabels[0].setText("Enter name: ");
 
-		playerTf[activePlayers].setBounds(375, 360 + activePlayers * 40, 150, 30);
-		playerTf[activePlayers].addMouseListener(new MouseAction());
+		playerTf[0].setBounds(375, 360, 150, 30);
+		playerTf[0].addMouseListener(new MouseAction());
 
-		playerColors[activePlayers].setBounds(530, 360 + activePlayers * 40, 100, 30);
+		playerColors[0].setBounds(530, 360, 100, 30);
 
 		JButton btnJoinGame = new JButton("Join Game");
 		btnJoinGame.setOpaque(false);
@@ -223,9 +221,9 @@ public class StartingScreen extends JFrame {
 		btnJoinGame.addActionListener(e -> joinLobby());
 
 		pnlPlayerInfo.add(btnJoinGame);
-		pnlPlayerInfo.add(playerLabels[activePlayers]);
-		pnlPlayerInfo.add(playerTf[activePlayers]);
-		pnlPlayerInfo.add(playerColors[activePlayers]);
+		pnlPlayerInfo.add(playerLabels[0]);
+		pnlPlayerInfo.add(playerTf[0]);
+		pnlPlayerInfo.add(playerColors[0]);
 
 		lblBackground.add(pnlPlayerInfo);
 	}

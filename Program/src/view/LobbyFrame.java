@@ -13,16 +13,18 @@ public class LobbyFrame extends JFrame {
     private LanController lanController;
     private JList listOfPlayers;
     private DefaultListModel<String> listModel;
+    int flag = 0;
 
+    public LobbyFrame() {
+    }
 
     public LobbyFrame(LanController lanController) {
         this.lanController = lanController;
-        initFrame();
     }
 
-    private void initFrame() {
+    public void initFrame(int amountOfConnectedClients) {
         setTitle("Lobby");
-        setSize(400, 200);
+        setSize(600, 400);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         JPanel panel = new JPanel(new BorderLayout());
@@ -34,12 +36,13 @@ public class LobbyFrame extends JFrame {
         panel.add(new JScrollPane(listOfPlayers), BorderLayout.CENTER);
 
         JButton startGameButton = new JButton();
-        if (lanController.getAmountOfConnectedClients() == 0) {
+        if (amountOfConnectedClients == 0) {
             startGameButton.setText("Start Game");
             startGameButton.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
                     lanController.startGame();
+                    dispose();
                 }
             });
         }
@@ -55,13 +58,15 @@ public class LobbyFrame extends JFrame {
     }
 
 
-    public void appendLobby(String userName){
-        int size = listModel.getSize();
-        if (size == 0) {
-            listModel.addElement("Host and Player " + (size + 1) + ": " + userName + "\n");
+    public void appendLobby(String userNameAndColor){
+        if (flag == 0) {
+            listModel.addElement("Host and Player:" + (flag + 1));
+            listModel.addElement("Name - "  + userNameAndColor + "\n");
         }
         else {
-            listModel.addElement("Player " + (size + 1) + ": " + userName + "\n");
+            listModel.addElement("Player " + (flag + 1));
+            listModel.addElement("Name - "  + userNameAndColor + "\n");
         }
+        flag++;
     }
 }

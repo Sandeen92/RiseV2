@@ -48,7 +48,6 @@ public class GameServer implements Runnable {
 
 
 
-
     /**
      * This inner class is responsible for handeling communication with one client
      */
@@ -65,6 +64,28 @@ public class GameServer implements Runnable {
             this.clientNumber = nr;
         }
 
+        public void initLobbyFrame(){
+            try {
+                oos.writeObject("lobbyClient,"+ clientNumber);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
+
+        public void sendConnectedUserNamesAndColors(){
+            try {
+                PlayerList playerList = lanController.getPlayerList();
+                ArrayList<String> playerNames = new ArrayList<String>();
+                for (int i = 0; i < playerList.getLength(); i++) {
+                    playerNames.add(playerList.getPlayerFromIndex(i).getName() + ", Color: " +
+                            playerList.getPlayerFromIndex(i).getPlayerColorText(playerList.getPlayerFromIndex(i).getPlayerColor()));
+                }
+                oos.writeObject(playerNames);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
+
 
         public void run() {
             try {
@@ -74,18 +95,31 @@ public class GameServer implements Runnable {
 
                 while (true) {
                     input = ois.readObject();
+                    sleep(100);
 
                     if (input instanceof String) {
-                        if (String.valueOf(input).equals("requestLanController")) {
-
+                        if (String.valueOf(input).startsWith("UN")){
+                            String temp = String.valueOf(input).substring(0);
+                            String[] playerParts = temp.substring(2).split(",");
+                            String userName = playerParts[0];
+                            String color = playerParts[1];
+                            lanController.addPlayer(userName, color);
+                            if (clientNumber != 0) {
+                                initLobbyFrame();
+                            }
+                        }
+                        if (String.valueOf(input).equals("LobbyOK")) {
+                            sendConnectedUserNamesAndColors();
                         }
                     }
+                    oos.flush();
                 }
 
             } catch (IOException | ClassNotFoundException e) {
                 throw new RuntimeException(e);
-            }
-            finally {
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            } finally {
                 try {
                     ois.close();
                     oos.close();

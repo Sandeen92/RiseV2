@@ -2,31 +2,29 @@ package controller;
 
 import entity.lan.GameClient;
 import entity.lan.GameServer;
-import entity.player.Player;
 import entity.player.PlayerList;
 import view.LobbyFrame;
 
 import java.io.IOException;
-import java.io.Serializable;
 import java.util.ArrayList;
 
 public class LanController {
 
     private GameServer gameServer;
     private BoardController boardController;
-    private static ArrayList<GameClient> clientList;
     private static PlayerList playerList;
-    private static LobbyFrame lobbyFrame;
+    private LobbyFrame lobbyFrame;
 
 
     public LanController(){
         playerList = new PlayerList();
-        clientList = new ArrayList<>();
         lobbyFrame = new LobbyFrame(this);
+        lobbyFrame.initFrame(playerList.getLength());
     }
 
     public void startGame(){
         boardController = new BoardController(playerList);
+        boardController.startBoard();
     }
 
     public void startServerAndConnectAsHost(String hostName, String hostColor) {
@@ -37,29 +35,20 @@ public class LanController {
         }
         Thread gameServerThread = new Thread(gameServer);
         gameServerThread.start();
-        createAndConnectClient(hostName, hostColor);
+        new GameClient(hostName, hostColor, "0.0.0.0", 9090);
     }
 
     public static void createAndConnectClient(String username, String color){
-        GameClient gameClient = new GameClient(username, "0.0.0.0", 9090);
-        playerList.addNewPlayer(username, color);
-        clientList.add(gameClient);
-        lobbyFrame.appendLobby(username);
+        GameClient gc = new GameClient(username, color, "0.0.0.0", 9090);
     }
 
-    public int getAmountOfConnectedClients(){
-        return clientList.size();
+
+    public void addPlayer(String name, String color) {
+        playerList.addNewPlayer(name, color);
+        lobbyFrame.appendLobby(name + ", Color: " + color);
     }
 
-    public String getPlayerNameAt(int index){
-        return playerList.getPlayerFromIndex(index).getName();
-    }
-
-    public void setPlayerList(PlayerList playerList) {
-        this.playerList = playerList;
-    }
-
-    public PlayerList getPlayerList() {
+    public PlayerList getPlayerList(){
         return playerList;
     }
 }
