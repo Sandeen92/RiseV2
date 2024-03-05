@@ -94,9 +94,7 @@ public class Menu extends JPanel {
 				music.changeVolume();
 			}else if (e.getSource()==jmRestart) {
 				mainPanel.Dispose();
-				StartingScreen ss = new StartingScreen();
-				Thread thread = new Thread(ss);
-				thread.start();
+				new StartingScreen();
 			} else if (e.getSource()==jmExit) {
 				System.exit(0);
 			} else if (e.getSource()==jmRules) {

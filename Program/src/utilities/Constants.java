@@ -20,6 +20,48 @@ public class Constants {
         public static final Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         public static final int screenWidth = (int) screenSize.getWidth();
         public static final int screenHeight = (int) screenSize.getHeight();
+        public static Font fontRadioButtons = getFontRadioButtons();
+        public static Font fontHeader = getFontHeader();
+        public static Font fontLabel = getFontLabel();
+        public static Font fontLabelPlayer = getFontLabelPlayer();
+
+
+
+        private static Font getFontRadioButtons(){
+            if (isMacOS()) {
+                return new Font("Arial", Font.PLAIN, 24);
+            }
+            else {
+                return new Font("Gabriola", Font.PLAIN, 20);
+            }
+        }
+
+        private static Font getFontHeader(){
+            if (isMacOS()) {
+                return new Font("Arial", Font.BOLD, 72);
+            }
+            else {
+                return new Font("Gabriola", Font.BOLD, 92);
+            }
+        }
+
+        private static Font getFontLabel(){
+            if (isMacOS()) {
+                return new Font("Arial", Font.BOLD, 30);
+            }
+            else {
+                return new Font("Gabriola", Font.BOLD, 42);
+            }
+        }
+
+        private static Font getFontLabelPlayer(){
+            if (isMacOS()) {
+                return new Font("Arial", Font.BOLD, 20);
+            }
+            else {
+                return new Font("Gabriola", Font.BOLD, 30);
+            }
+        }
     }
     public static boolean isMacOS() {
         String os = System.getProperty("os.name");
