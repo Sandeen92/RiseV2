@@ -1,6 +1,8 @@
 package entity.lan;
 
+import controller.BoardController;
 import controller.StartingScreen;
+import entity.player.PlayerList;
 import view.LobbyFrame;
 
 import java.io.*;
@@ -9,6 +11,7 @@ import java.util.ArrayList;
 
 public class GameClient extends Thread {
 
+    private BoardController boardController;
     private Socket socket;
     private Connection connection;
     private String userName;
@@ -86,6 +89,13 @@ public class GameClient extends Thread {
                                 lobbyFrame.initFrame(clientNr);
                                 oos.writeObject("LobbyOK");
                             }
+                        }
+
+                        if (o instanceof PlayerList playerList) {
+                            boardController = new BoardController(playerList);
+                            boardController.addPlayerTabs();
+                            boardController.startBoard();
+                            lobbyFrame.dispose();
                         }
 
                         if (o instanceof ArrayList) {

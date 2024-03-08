@@ -46,6 +46,12 @@ public class GameServer implements Runnable {
         }
     }
 
+    public void startGameForEachClient(PlayerList playerList) {
+        for (int i = 0; i < clientHandlerPool.size(); i++) {
+            clientHandlerPool.get(i).startGameForEachClient(playerList);
+        }
+    }
+
 
 
     /**
@@ -68,6 +74,15 @@ public class GameServer implements Runnable {
             try {
                 oos.writeObject("lobbyClient,"+ clientNumber);
             } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
+
+        public void startGameForEachClient(PlayerList playerList) {
+            try{
+                oos.writeObject(playerList);
+            }
+            catch (IOException e){
                 throw new RuntimeException(e);
             }
         }

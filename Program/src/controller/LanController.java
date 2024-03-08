@@ -23,8 +23,9 @@ public class LanController {
     }
 
     public void startGame(){
-        boardController = new BoardController(playerList);
-        boardController.startBoard();
+        gameServer.startGameForEachClient(playerList);
+      //  boardController = new BoardController(playerList);
+      //  boardController.startBoard();
     }
 
     public void startServerAndConnectAsHost(String hostName, String hostColor) {
