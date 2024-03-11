@@ -1,7 +1,6 @@
 package entity.lan;
 
 import controller.LanController;
-import view.MainPanel;
 import entity.player.PlayerList;
 import controller.StartingScreen;
 
@@ -24,6 +23,7 @@ public class GameServer implements Runnable {
         clientHandlerPool = new ArrayList<ClientHandler>();
         serverSocket = new ServerSocket(port);
     }
+
 
     public void run(){
         connection();
@@ -52,6 +52,25 @@ public class GameServer implements Runnable {
             clientHandlerPool.get(i).sendConnectedUserNamesAndColors(playerList);
             System.out.println(clientHandlerPool.size());
         }
+    }
+    public void openBoardForEachClient(PlayerList playerList){
+        System.out.println("Entering openBoardForEachClient method" + " clientHandlerPool size: " + clientHandlerPool.size());
+        for (ClientHandler c : clientHandlerPool){
+            System.out.println("Inside loop, sending playerList to client");
+            try {
+                if (!c.clientSocket.isClosed()) {
+                    c.oos.writeObject(playerList);
+                    c.oos.flush();
+
+                    System.out.println("Skickar iväg playerlist till client:" + c.clientNumber);
+                } else {
+                    System.out.println("Socket is closed for client: " + c.clientNumber);
+                }
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
+        System.out.println("Exiting openBoardForEachClient method");
     }
 
 

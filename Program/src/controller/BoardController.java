@@ -38,6 +38,10 @@ public class BoardController {
         this.eventManager = new EventManager(this);
     }
 
+    public void setPlayerList(PlayerList playerList) {
+        this.playerList = playerList;
+    }
+
     public void startBoard() {
         mainPanel.startBoard();
     }

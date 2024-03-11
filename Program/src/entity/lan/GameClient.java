@@ -1,6 +1,8 @@
 package entity.lan;
 
+import controller.BoardController;
 import controller.StartingScreen;
+import entity.player.PlayerList;
 import view.LobbyFrame;
 
 import java.io.*;
@@ -13,9 +15,12 @@ public class GameClient extends Thread {
     private Connection connection;
     private String userName;
     private String color;
+    private BoardController boardController;
+
 
 
     public GameClient(String userName, String color, String ip, int port) {
+        this.boardController = new BoardController();
         this.userName = userName;
         this.color = color;
         try {
@@ -44,7 +49,6 @@ public class GameClient extends Thread {
         private Socket clientSocket;
         private ObjectInputStream ois;
         private ObjectOutputStream oos;
-
 
         public Connection(Socket socket) throws IOException {
             clientSocket = socket;
@@ -93,6 +97,11 @@ public class GameClient extends Thread {
                                 lobbyFrame.appendLobbyList(((ArrayList<String>) o).get(i));
                                 Thread.sleep(100);
                             }
+
+                        }
+                        if (o instanceof PlayerList){
+                            boardController.setPlayerList((PlayerList) o);
+                            boardController.startBoard();
                         }
                         oos.flush();
                         }
