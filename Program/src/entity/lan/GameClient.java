@@ -20,6 +20,8 @@ public class GameClient extends Thread {
     private String userName;
     private String color;
 
+    private GameState gameState;
+
 
     public GameClient(String userName, String color, String ip, int port) {
         this.userName = userName;
@@ -93,6 +95,17 @@ public class GameClient extends Thread {
             }
         }
 
+        public void sendGameStateToServer() throws IOException {
+            gameState = new GameState(boardController.getDiceSum(), boardController.getPlayerList().getActivePlayer());
+            //lägg in  hela propertylistan från currentplayer i gamestate
+            gameState.setPropertyList(boardController.getPlayerList().getActivePlayer().getProperties());
+            //lägg in ranken i gamestate
+            gameState.setRank(boardController.getPlayerList().getActivePlayer().getPlayerRank());
+            //lägg in pengar i gamestate
+
+            oos.writeObject(gameState);
+        }
+
 
         private class Listener extends Thread {
 
@@ -111,6 +124,8 @@ public class GameClient extends Thread {
                                 lobbyFrame = new LobbyFrame();
                                 lobbyFrame.initFrame(clientNr);
                                 oos.writeObject("LobbyOK");
+                            }else if (String.valueOf(o).equals("Your Turn")){
+
                             }
                         }
 
@@ -150,7 +165,7 @@ public class GameClient extends Thread {
 
                     if(player.getName().equals(playerName) && player.getPlayerColor().equals(playerColor)){
                         //TODO enable the buttons only for this user. (i think)
-                        GameState state = new GameState()
+                        GameState state = new GameState();
 
                     }
                 }

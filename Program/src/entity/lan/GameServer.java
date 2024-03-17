@@ -126,7 +126,9 @@ public class GameServer implements Runnable {
                             sendConnectedUserNamesAndColors();
                         }
                     }  else if (input instanceof GameState) //and GameState identifier equals something
-                    {}
+                    {
+
+                    }
                     oos.flush();
                 }
 

@@ -2,6 +2,7 @@ package controller;
 
 import entity.*;
 import entity.lan.GameClient;
+import entity.lan.GameState;
 import entity.player.*;
 import entity.tiles.Property;
 import entity.tiles.Tavern;
@@ -20,6 +21,7 @@ public class BoardController {
     private MainPanel mainPanel;
     private PlayerList playerList;
     private EventManager eventManager;
+
 
     public BoardController() {
         this.dice1 = new Dice();

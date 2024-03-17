@@ -9,53 +9,40 @@ import entity.player.PlayerList;
 import java.util.List;
 
 public class GameState {
-
-    private PlayerList playerList;
     private Player activePlayer;
     private int stepsToTake;
-    private GameClient gameClient;
-    private List<GameClient> gameClientsList;
-    private GameServer gameServer;
-    private LanController lanController;
+
     private String identifier;
     //a problem right now can be that we can not be sure what the GameState object we're sending is for.
     //Maybe each GameState object can have an identifier like a String.
 
-    public GameState(PlayerList playerList
-            , Player activePlayer
-            , GameClient gameClient
-            , GameServer gameServer
-            , LanController lanController) {
+    public GameState(){
 
-        this.playerList = playerList;
-        this.activePlayer = activePlayer;
-        this.gameClient = gameClient;
-        this.gameServer = gameServer;
-        this.lanController = lanController;
-        identifier = "Initialization";
-        gameClientsList = lanController.getGameClients();
     }
+
 
     /**
      * GameState that can be used to update the Board pieces for the fellow Clients.
      * @param stepsToTake x
-     * @param gameClient x
+     * @param player x
      */
-    public GameState(int stepsToTake, GameClient gameClient){
+    public GameState(int stepsToTake, Player player){
         identifier = "Piece Movement";
-        //each GameClient has a BoardController instance, maybe make a getter that returns the BoardController instance
-        //And then it's used to update the board components for that specific client?
-
-        //in the Movement inner class, there's a PlayerList instance. However, maybe we can send the player for which the
-        //game piece will be moved through this method?
-        //The Movement inner class also updated the GUI.
-        gameClient.getBoardController().movePlayer(gameClient.getUserName(), stepsToTake);
-
+        setStepsToTake(stepsToTake);
+        this.activePlayer = player;
     }
 
+    public GameState(String NameOfProperty, Player player){
+        identifier = "Property ";
+        setStepsToTake(stepsToTake);
+        this.activePlayer = player;
+    }
     public GameState(boolean buttonValue, GameClient gameClient){
         identifier = "Button";
         gameClient.getBoardController().
+    }
 
+    public void setStepsToTake(int stepsToTake) {
+        this.stepsToTake = stepsToTake;
     }
 }
