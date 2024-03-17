@@ -125,7 +125,8 @@ public class GameServer implements Runnable {
                         if (String.valueOf(input).equals("LobbyOK")) {
                             sendConnectedUserNamesAndColors();
                         }
-                    }
+                    }  else if (input instanceof GameState) //and GameState identifier equals something
+                    {}
                     oos.flush();
                 }
 

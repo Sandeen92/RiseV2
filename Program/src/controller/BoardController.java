@@ -1,6 +1,7 @@
 package controller;
 
 import entity.*;
+import entity.lan.GameClient;
 import entity.player.*;
 import entity.tiles.Property;
 import entity.tiles.Tavern;
@@ -81,8 +82,8 @@ public class BoardController {
         addPlayerTabs();
     }
 
-    public void movePlayer(int diceRoll){
-        Movement movement = new Movement(diceRoll);
+    public void movePlayer(String client, int diceRoll){
+        Movement movement = new Movement(client, diceRoll);
         movement.start();
     }
 
@@ -105,6 +106,19 @@ public class BoardController {
         Player activePlayer = playerList.getActivePlayer();
         mainPanel.updateTurnLabel(activePlayer.getName(), activePlayer.getPlayerColor());
         mainPanel.removeEventFromPanel();
+    }
+
+    public void endAndChangeTurn(GameClient gameClient){
+
+
+        Player endTurnPlayer = playerList.getActivePlayer(); //current player
+        playerList.switchToNextPlayer();
+        Player newTurnPlayerPlayer = playerList.getActivePlayer(); //next player
+
+        gameClient.notifyEndTurnForPlayer(endTurnPlayer.getName(), endTurnPlayer.getPlayerColor());
+        gameClient.notifyNewTurnForPlayer(newTurnPlayerPlayer.getName(), newTurnPlayerPlayer.getPlayerColor());
+
+
     }
 
     public void setPlayerToTile(Player player){
@@ -146,7 +160,14 @@ public class BoardController {
         Player activePlayer = playerList.getActivePlayer();
         int prevPosition;
 
-        public Movement(int diceRoll) {
+        public Movement(String user, int diceRoll) {
+
+            for (Player player : playerList.getListOfPlayers()){
+
+                if (player.getName().equals(user)){
+                    activePlayer = player;
+                }
+            }
             this.diceRoll = diceRoll;
         }
         @Override

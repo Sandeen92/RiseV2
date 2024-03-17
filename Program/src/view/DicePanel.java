@@ -5,6 +5,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import controller.*;
+import entity.lan.GameClient;
 
 import static utilities.Constants.DiceImages.WHITE_1;
 
@@ -16,7 +17,6 @@ public class DicePanel extends JPanel implements ActionListener {
     private JLabel lblDice1;
     private JLabel lblDice2;
     private JLabel lblPlayer;
-
 
     public DicePanel(BoardController board) {
         this.board = board;
@@ -79,14 +79,30 @@ public class DicePanel extends JPanel implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == btnRollDice) {
             int diceRoll = board.rollDices();
-            board.movePlayer(diceRoll);
+            //TODO did some changes, not sure if it's the way to do it.
+            board.movePlayer(lblPlayer.getText(), diceRoll);
             btnRollDice.setEnabled(false);
         }
         if (e.getSource() == btnEndTurn) {
             board.endTurn();
             btnRollDice.setEnabled(true);
             btnEndTurn.setEnabled(false);
+
+            //if the user clicks on end turn button, then the client sends to the server that their turn is over.
+            //the server then sends the new player's turn to the client.
+            //this means that the endTurn method should be called from the server'
+            //the current user's buttons are disabled
+            //the next player's buttons are enabled
+            // everyone else's buttons are disabled
         }
+    }
+
+    public void setRollDiceBtn(boolean value){
+        btnRollDice.setEnabled(value);
+    }
+
+    public void setEndTurnBtn(boolean value){
+        btnEndTurn.setEnabled(value);
     }
 
     public void enableEndTurnBtn(){

@@ -184,9 +184,6 @@ public class BoardPanel extends JPanel {
     }
 
 
-
-
-
     public class MouseListener implements java.awt.event.MouseListener, Serializable {
 
         /**

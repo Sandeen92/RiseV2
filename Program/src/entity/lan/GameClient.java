@@ -1,10 +1,13 @@
 package entity.lan;
 
 import controller.BoardController;
+import controller.LanController;
 import controller.StartingScreen;
+import entity.player.Player;
 import entity.player.PlayerList;
 import view.LobbyFrame;
 
+import java.awt.*;
 import java.io.*;
 import java.net.*;
 import java.util.ArrayList;
@@ -29,6 +32,13 @@ public class GameClient extends Thread {
         }
     }
 
+    public String getUserName() {
+        return userName;
+    }
+
+    public BoardController getBoardController() {
+        return boardController;
+    }
 
     public void connect() {
         if (connection == null) {
@@ -41,12 +51,22 @@ public class GameClient extends Thread {
         }
     }
 
+    public void notifyNewTurnForPlayer(String playerName, Color playerColor) {
+        connection.getListener().notifyNewPlayerTurn(playerName, playerColor);
+    }
+
+    public void notifyEndTurnForPlayer(String playerName, Color playerColor) {
+        connection.getListener().notifyNewPlayerTurn(playerName, playerColor);
+    }
+
 
 
     public class Connection {
         private Socket clientSocket;
         private ObjectInputStream ois;
         private ObjectOutputStream oos;
+
+        private Listener listener;
 
 
         public Connection(Socket socket) throws IOException {
@@ -55,11 +75,14 @@ public class GameClient extends Thread {
                 ois = new ObjectInputStream(clientSocket.getInputStream());
                 oos = new ObjectOutputStream(clientSocket.getOutputStream());
             }
-            new Listener().start();
+            listener = new Listener();
+            listener.start();
             sendPlayerToServer();
         }
 
-
+        public Listener getListener() {
+            return listener;
+        }
 
         public void sendPlayerToServer() {
             try {
@@ -103,6 +126,8 @@ public class GameClient extends Thread {
                                 lobbyFrame.appendLobby(((ArrayList<String>) o).get(i));
                             }
                         }
+
+
                         oos.flush();
                         }
                     } catch (IOException | ClassNotFoundException e) {
@@ -118,8 +143,22 @@ public class GameClient extends Thread {
                     }
                 }
             }
+
+            public void notifyNewPlayerTurn(String playerName, Color playerColor) {
+
+                for(Player player : boardController.getPlayerList().getListOfPlayers()){
+
+                    if(player.getName().equals(playerName) && player.getPlayerColor().equals(playerColor)){
+                        //TODO enable the buttons only for this user. (i think)
+                        GameState state = new GameState()
+
+                    }
+                }
+
             }
+
         }
+    }
 
 
     public static void main(String[] args) {

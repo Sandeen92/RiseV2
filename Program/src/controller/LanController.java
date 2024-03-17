@@ -14,18 +14,23 @@ public class LanController {
     private BoardController boardController;
     private PlayerList playerList;
     private LobbyFrame lobbyFrame;
+    private static ArrayList<GameClient> gameClients = new ArrayList<>();
 
 
-    public LanController(){
+    public LanController() {
         playerList = new PlayerList();
         lobbyFrame = new LobbyFrame(this);
         lobbyFrame.initFrame(playerList.getLength());
     }
 
-    public void startGame(){
+    public ArrayList<GameClient> getGameClients() {
+        return gameClients;
+    }
+
+    public void startGame() {
         gameServer.startGameForEachClient(playerList);
-      //  boardController = new BoardController(playerList);
-      //  boardController.startBoard();
+        //  boardController = new BoardController(playerList);
+        //  boardController.startBoard();
     }
 
     public void startServerAndConnectAsHost(String hostName, String hostColor) {
@@ -39,8 +44,9 @@ public class LanController {
         createAndConnectClient(hostName, hostColor);
     }
 
-    public static void createAndConnectClient(String username, String color){
-        new GameClient(username, color, "0.0.0.0", 9090);
+    public static void createAndConnectClient(String username, String color) {
+        GameClient newGameClient = new GameClient(username, color, "0.0.0.0", 9090);
+        gameClients.add(newGameClient);
     }
 
 
@@ -49,7 +55,7 @@ public class LanController {
         lobbyFrame.appendLobby(name + " ---- Color: " + color);
     }
 
-    public PlayerList getPlayerList(){
+    public PlayerList getPlayerList() {
         return playerList;
     }
 }

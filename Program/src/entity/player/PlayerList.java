@@ -54,6 +54,9 @@ public class PlayerList implements Serializable {
 		}	
 	}
 
+	public LinkedList<Player> getListOfPlayers() {
+		return players;
+	}
 
 	public int getActivePlayerIndex(Player player) {
 		return player.getPlayerIndex();
