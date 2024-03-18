@@ -5,20 +5,15 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Objects;
 
 import javax.swing.*;
 
 import utilities.Constants;
-import view.MainPanel;
-import controller.lan.GameClient;
-import controller.lan.GameServer;
-import entity.player.PlayerList;
 import utilities.BackgroundMusic;
 import view.messageGui.Introduction;
+
+import static controller.LanController.createAndConnectClient;
+import static utilities.Constants.GameWindow.*;
 
 /**
  * First screen which entity.player sees, here he is able to choose the amount of players and
@@ -26,20 +21,15 @@ import view.messageGui.Introduction;
  * @author Aevan Dino
  *
  */
-public class StartingScreen extends JFrame implements Runnable {
+public class StartingScreen extends JFrame {
 
-	private PlayerList playerList = new PlayerList();
-	private MainPanel mainWindow = new MainPanel();
 
+	private BackgroundMusic bgm = new BackgroundMusic();
+	private LanController lanController;
+	private BoardController boardController;
 	private JButton btnConfirm = new JButton("Confirm");
 	private JButton btnStartGame = new JButton("Start Game");
 	private JButton btnReset = new JButton("Reset");
-
-	private ImageIcon imgBackground = Constants.BoardImages.getStartMenuImage();
-	private Font fontRadioButtons = new Font("Gabriola", Font.PLAIN, 24);
-	private Font fontHeader = new Font("Gabriola", Font.BOLD, 92); 
-	private Font fontLabel = new Font("Gabriola", Font.BOLD, 42);
-	private Font fontLabelPlayer = new Font("Gabriola", Font.BOLD, 30);
 
 	private JPanel pnlPlayerInfo = new JPanel();
 
@@ -47,7 +37,7 @@ public class StartingScreen extends JFrame implements Runnable {
 	private ButtonGroup btnGroup = new ButtonGroup();
 
 	private JLabel lblPlayer = new JLabel("How many players?");
-	private JLabel lblBackground = new JLabel("", imgBackground, JLabel.CENTER);
+	private JLabel lblBackground = new JLabel("", Constants.BoardImages.getStartMenuImage(), JLabel.CENTER);
 	private JLabel lblRise = new JLabel("RISE");
 
 	private JLabel[] playerLabels = new JLabel[4];
@@ -57,67 +47,30 @@ public class StartingScreen extends JFrame implements Runnable {
 	private String[] colors = new String[]  { "RED", "GREEN", "ORANGE", "YELLOW", "CYAN", "MAGENTA" };
 	private JComboBox<String> availablePlayerColors = new JComboBox<>(colors);
 	private JComboBox[] playerColors = new JComboBox[4];
-
-	/**
-	 * Mute button
-	 */
 	private JCheckBox mute = new JCheckBox("Music On");
 
-	/**
-	 * Integers
-	 */
-	private int amountOfPlayers;
-	private boolean isNetwork;
-	private int activePlayers = 1;
 
-	private JFrame lobbyFrame;
-	private JList listOfPlayers;
-	private DefaultListModel<String> listModel;
-	private GameServer gameServer;
+	private int amountOfPlayers;
+	private int activePlayers = 1;
 
 	/**
 	 * Used to start the program
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		StartingScreen su = new StartingScreen();
-		 Thread t = new Thread(su);
-		 t.start();
+		new StartingScreen();
 	}
 
-	@Override
-	public void run() {
+
+	public StartingScreen(){
 		initializeGUI();
 		repaint();
-	}
-
-	public PlayerList setUpTest(){
-		playerList.addNewPlayer("Test1", (String) playerColors[0].getSelectedItem());
-		playerList.addNewPlayer("Test2", (String) playerColors[1].getSelectedItem());
-		return playerList;
-	}
-	/**
-	 * Method to check if the OS is MacOS
-	 * Note: Temporary solution to fix the font size on MacOS, should be moved to UTIL class.
-	 * @return boolean
-	 */
-	private boolean isMacOS() {
-		String os = System.getProperty("os.name");
-		return os.contains("Mac");
 	}
 
 	/**
 	 * Method to initilize the GUI.
 	 */
 	public void initializeGUI() {
-		if (isMacOS()){ // Temporary solution to fix the font size on MacOS, should be moved to UTIL class.
-			fontRadioButtons = new Font("Arial", Font.PLAIN, 24);
-			fontHeader = new Font("Arial", Font.BOLD, 72);
-			fontLabel = new Font("Arial", Font.BOLD, 30);
-			fontLabelPlayer = new Font("Arial", Font.BOLD, 20);
-		}
-
-
 		createFrame();
 		instantiateLabels();
 		chooseLocalOrNetwork();
@@ -162,7 +115,6 @@ public class StartingScreen extends JFrame implements Runnable {
 
 				if (e.getSource() == btnLAN) {
                     setUpLAN();
-					isNetwork = true;
                 } else if (e.getSource() == btnLocal) {
                     setUpLocal();
                 }
@@ -211,153 +163,69 @@ public class StartingScreen extends JFrame implements Runnable {
 
 		createRadioButtons();
 
-		int i = 0;
 
-		playerLabels[i].setBounds(375, 330 + i * 40, 150, 50);
-		playerLabels[i].setFont(fontLabelPlayer);
-		playerLabels[i].setText("Enter name: ");
+		playerLabels[0].setBounds(375, 330, 150, 50);
+		playerLabels[0].setFont(fontLabelPlayer);
+		playerLabels[0].setText("Enter name: ");
 
-		playerTf[i].setBounds(375, 360 + i * 40, 150, 30);
-		playerTf[i].addMouseListener(new MouseAction());
+		playerTf[0].setBounds(375, 360, 150, 30);
+		playerTf[0].addMouseListener(new MouseAction());
 
-		playerColors[i].setBounds(530, 360 + i * 40, 100, 30);
+		playerColors[0].setBounds(530, 360, 100, 30);
 
-		pnlPlayerInfo.add(playerLabels[i]);
-		pnlPlayerInfo.add(playerTf[i]);
-		pnlPlayerInfo.add(playerColors[i]);
+		pnlPlayerInfo.add(playerLabels[0]);
+		pnlPlayerInfo.add(playerTf[0]);
+		pnlPlayerInfo.add(playerColors[0]);
 
 		JButton btnHostGame = new JButton("Host Game");
 		btnHostGame.setOpaque(false);
 		btnHostGame.setBounds(350, 530, 200, 40);
-		btnHostGame.addActionListener(e -> startLobby());
+		btnHostGame.addActionListener(e -> startUpLANGame());
 
 		lblBackground.add(btnHostGame);
 		lblBackground.add(pnlPlayerInfo);
 		lblBackground.add(btnStartGame);
 	}
 
-	public void startLobby() {
-		String hostName = playerTf[0].getText();
-		//assignAmountOfPlayers();
-
-		lobbyFrame = new JFrame("Lobby");
-		lobbyFrame.setSize(400, 200);
-		lobbyFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-		JPanel panel = new JPanel(new BorderLayout());
-
-		listModel = new DefaultListModel<>();
-		listOfPlayers = new JList<>(listModel);
-		listOfPlayers.setFont(new Font("Arial", Font.BOLD, 20));
-
-		panel.add(new JScrollPane(listOfPlayers), BorderLayout.CENTER);
-
-		JButton startGameButton = new JButton("Start Game");
-		startGameButton.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				createLANPlayers();
-				gameServer.setMainWindow(mainWindow);
-				gameServer.assignPlayerListToEachClient(playerList);
-				gameServer.sendBoardToEachClient();
-				lobbyFrame.dispose();
-			}
-		});
-
-		panel.add(startGameButton, BorderLayout.SOUTH);
-
-		lobbyFrame.add(panel);
-		lobbyFrame.setVisible(true);
-
-		listModel.addElement("Host and Player " + activePlayers + ": " + hostName + "\n");
-
-		try {
-			startServerAndConnectAsHost(hostName);
-		} catch (IOException e) {
-			throw new RuntimeException(e);
-		}
-	}
 
 	public void startUpLANGame() {
-		mainWindow.addPlayerTabs();
-		mainWindow.startboard();
+		String playerName = playerTf[0].getText();
+		String playerColor = (String) playerColors[0].getSelectedItem();
+		lanController = new LanController();
+		lanController.startServerAndConnectAsHost(playerName, playerColor);
 		dispose();
 	}
 
-	public void setPlayerList(PlayerList playerList) {
-		this.playerList = playerList;
+
+	public void joinLobby() {
+		String playerName = playerTf[0].getText();
+		String playerColor = (String) playerColors[0].getSelectedItem();
+		createAndConnectClient(playerName, playerColor);
+		dispose();
 	}
 
-	public void createLANPlayers(){
-		for (int i = 0; i < listModel.size(); i++) {
-			String element = listModel.getElementAt(i);
-			String[] parts = element.split(":");
-			if (parts.length > 1) {
-				String username = parts[1].trim();
-				playerList.addNewPlayer(username, "RED");
-			}
-		}
-	}
-
-	public void startServerAndConnectAsHost(String hostName) throws IOException {
-        gameServer = new GameServer(this, 9090);
-		Thread gameServerThread = new Thread(gameServer);
-		gameServerThread.start();
-
-		GameClient gameClient = new GameClient(this, hostName, "0.0.0.0", 9090);
-		gameClient.run();
-	}
 
 	public void joinGame() {
-		playerLabels[activePlayers].setBounds(375, 330 + activePlayers * 40, 150, 50);
-		playerLabels[activePlayers].setFont(fontLabelPlayer);
-		playerLabels[activePlayers].setText("Enter name: ");
+		playerLabels[0].setBounds(375, 330, 150, 50);
+		playerLabels[0].setFont(fontLabelPlayer);
+		playerLabels[0].setText("Enter name: ");
 
-		playerTf[activePlayers].setBounds(375, 360 + activePlayers * 40, 150, 30);
-		playerTf[activePlayers].addMouseListener(new MouseAction());
+		playerTf[0].setBounds(375, 360, 150, 30);
+		playerTf[0].addMouseListener(new MouseAction());
 
-		playerColors[activePlayers].setBounds(530, 360 + activePlayers * 40, 100, 30);
+		playerColors[0].setBounds(530, 360, 100, 30);
 
 		JButton btnJoinGame = new JButton("Join Game");
 		btnJoinGame.setOpaque(false);
 		btnJoinGame.setBounds(350, 530, 200, 40);
-		btnJoinGame.addActionListener(e -> joinLobby(playerTf[activePlayers].getText()));
+		btnJoinGame.addActionListener(e -> joinLobby());
 
 		pnlPlayerInfo.add(btnJoinGame);
-		pnlPlayerInfo.add(playerLabels[activePlayers]);
-		pnlPlayerInfo.add(playerTf[activePlayers]);
-		pnlPlayerInfo.add(playerColors[activePlayers]);
+		pnlPlayerInfo.add(playerLabels[0]);
+		pnlPlayerInfo.add(playerTf[0]);
+		pnlPlayerInfo.add(playerColors[0]);
 
 		lblBackground.add(pnlPlayerInfo);
-	}
-
-	public void joinLobby(String playerName) {
-		GameClient gameClient = new GameClient(this, playerName, "0.0.0.0", 9090);
-		gameClient.run();
-
-		pnlPlayerInfo.removeAll();
-
-		JLabel lblConnected = new JLabel("Connection successful!");
-		lblConnected.setFont(new Font("Arial", Font.BOLD, 20));
-		lblConnected.setBounds(335, 315, 250, 30);
-		JLabel lblWaiting = new JLabel("Waiting for host to start game...");
-		lblWaiting.setFont(new Font("Arial", Font.BOLD, 20));
-		lblWaiting.setBounds(335, 345, 250, 30);
-
-		pnlPlayerInfo.add(lblConnected);
-		pnlPlayerInfo.add(lblWaiting);
-
-		lblBackground.add(pnlPlayerInfo);
-		lblBackground.revalidate();
-		lblBackground.repaint();
-	}
-
-	public void appendLobby(String playerName) {
-
-		if (!Objects.equals(playerName, playerTf[0].getText())){
-			listModel.addElement("Player " + activePlayers +  ": " + playerName + "\n");
-		}
-		activePlayers++;
 	}
 
 	public void setUpLocal() {
@@ -440,7 +308,7 @@ public class StartingScreen extends JFrame implements Runnable {
 		 * Label used to create a background
 		 */
 		lblBackground.setBounds(0, 0, 900, 830);
-		lblBackground.setIcon(imgBackground);
+		lblBackground.setIcon(Constants.BoardImages.getStartMenuImage());
 		lblBackground.setLayout(null);
 
 		/**
@@ -499,86 +367,85 @@ public class StartingScreen extends JFrame implements Runnable {
 	 */
 	private class ButtonListener implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
-
 			if (e.getSource() == btnReset) {
 				btnPressed(3, false);
 			}
-
 			if (e.getSource() == mute) {
-				if (mute.getText().contains("n")) {
-					mute.setText("Music Off");
-				} else {
-					mute.setText("Music On");
-				}
+				toggleMusic();
 			}
-
 			if (e.getSource() == btnConfirm) {
+				processConfirmation();
+			}
+			if (e.getSource() == btnStartGame) {
+				startGame();
+			}
+		}
 
-				if (radioButtons[0].isSelected()) {
-					btnPressed(2, true);
-					amountOfPlayers = 2;
-				} else if (radioButtons[1].isSelected()) {
-					btnPressed(3, true);
-					amountOfPlayers = 3;
+		private void toggleMusic() {
+			if (mute.getText().contains("n")) {
+				mute.setText("Music Off");
+				bgm.pauseMusic();
+			} else {
+				mute.setText("Music On");
+				bgm.startMusic();
+			}
+		}
 
-				} else if (radioButtons[2].isSelected()) {
-					btnPressed(4, true);
-					amountOfPlayers = 4;
+		private void processConfirmation() {
+			if (radioButtons[0].isSelected()) {
+				setupPlayers(2);
+			} else if (radioButtons[1].isSelected()) {
+				setupPlayers(3);
+			} else if (radioButtons[2].isSelected()) {
+				setupPlayers(4);
+			}
+		}
+
+		private void setupPlayers(int numPlayers) {
+			btnPressed(numPlayers, true);
+			amountOfPlayers = numPlayers;
+		}
+
+		private void startGame() {
+			if (!allPlayersHaveNames()) {
+				JOptionPane.showMessageDialog(null, "All players must have a name");
+			} else {
+				if (!playerColorsAreUnique()) {
+					JOptionPane.showMessageDialog(null, "Two or more players are not allowed to have the same color");
+				} else {
+					startUpLocalGame();
 				}
 			}
+		}
 
-			if (e.getSource() == btnStartGame) {
+		private boolean allPlayersHaveNames() {
+			for (JTextField tf : playerTf) {
+				if (tf.getText().isEmpty()) {
+					return false;
+				}
+			}
+			return true;
+		}
 
-				if(playerTf[0].getText().length()==0 || playerTf[1].getText().length()==0 || playerTf[2].getText().length()==0 || playerTf[3].getText().length()==0) {
-					JOptionPane.showMessageDialog(null, "All players must have a name");
-				} else {
-
-					switch(amountOfPlayers) {
-
-					case 2:
-						if(playerColors[0].getSelectedItem().equals(playerColors[1].getSelectedItem())) {
-							JOptionPane.showMessageDialog(null, "Two players are not allowed to have the same color");
-						} else {
-							if(!isNetwork) {
-								startUpLocalGame();
-							}
-						}
-						break;
-
-					case 3:
-						if(playerColors[0].getSelectedItem().equals(playerColors[1].getSelectedItem()) 
-								|| playerColors[2].getSelectedItem().equals(playerColors[0].getSelectedItem())) {
-							JOptionPane.showMessageDialog(null, "Two or more players are not allowed to have the same color");
-						} else {
-							if(!isNetwork) {
-								startUpLocalGame();
-							}
-						}
-						break;
-
-					case 4:
-						if(playerColors[0].getSelectedItem().equals(playerColors[1].getSelectedItem()) 
-								|| playerColors[2].getSelectedItem().equals(playerColors[3].getSelectedItem())
-								|| playerColors[0].getSelectedItem().equals(playerColors[3].getSelectedItem())) {
-							JOptionPane.showMessageDialog(null, "Two or more players are not allowed to have the same color");
-						} else {
-							if(!isNetwork) {
-								startUpLocalGame();
-							}
-						}
-						break;
+		private boolean playerColorsAreUnique() {
+			for (int i = 0; i < amountOfPlayers; i++) {
+				for (int j = i + 1; j < amountOfPlayers; j++) {
+					if (playerColors[i].getSelectedItem().equals(playerColors[j].getSelectedItem())) {
+						return false;
 					}
 				}
 			}
+			return true;
 		}
 
 		/**
 		 * Method called when entity.player clicks start game
 		 */
 		public void startUpLocalGame() {
+			boardController = new BoardController();
 			createNewUsers();
-			mainWindow.addPlayerTabs();
-			mainWindow.startboard();
+			boardController.addPlayerTabs();
+			boardController.startBoard();
 			dispose();
 			Introduction intro = new Introduction();
 		}
@@ -593,8 +460,7 @@ public class StartingScreen extends JFrame implements Runnable {
 				if (playerTf[i].getText().length()>=10) {
 					playerTf[i].setText(playerTf[i].getText().substring(0, 10));
 				}
-				mainWindow.addPlayerToList(playerTf[i].getText(), (String) playerColors[i].getSelectedItem());
-				//playerList.addNewPlayer(playerTf[i].getText(), (String) playerColors[i].getSelectedItem());
+				boardController.addPlayerToList(playerTf[i].getText(), (String) playerColors[i].getSelectedItem());
 			}
 
 		}
@@ -621,30 +487,15 @@ public class StartingScreen extends JFrame implements Runnable {
 	 * MouseClickedListener for the name inserting so the text disappear when the entity.player clicks.
 	 */
 	private class MouseAction implements MouseListener{
-		int counter1 = 0, counter2 = 0, counter3 =0, counter4=0;
+		private int[] counters = new int[4];
+
 		public void mouseClicked(MouseEvent e) {
-			if(e.getSource() == playerTf[0]) {
-				if(counter1<1) {
-					counter1++;
-					playerTf[0].setText(null);
-				}
-			}
-			if(e.getSource() == playerTf[1]) {
-				if(counter2<1) {
-					counter2++;
-					playerTf[1].setText(null);
-				}
-			}
-			if(e.getSource() == playerTf[2]) {
-				if(counter3<1) {
-					counter3++;
-					playerTf[2].setText(null);
-				}
-			}
-			if(e.getSource() == playerTf[3]) {
-				if(counter4<1) {
-					counter4++;
-					playerTf[3].setText(null);
+			for (int i = 0; i < playerTf.length; i++) {
+				if (e.getSource() == playerTf[i]) {
+					if (counters[i] < 1) {
+						counters[i]++;
+						playerTf[i].setText(null);
+					}
 				}
 			}
 		}

@@ -6,10 +6,7 @@ import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.JMenu;
-import javax.swing.JMenuBar;
-import javax.swing.JMenuItem;
-import javax.swing.JPanel;
+import javax.swing.*;
 
 import utilities.BackgroundMusic;
 import controller.StartingScreen;
@@ -18,7 +15,7 @@ import view.MainPanel;
 /**
  * This class displays the game board as well as what the players are called and
  * how much they own.
- * 
+ *
  * @autho Muhammad Hasan, Rohan Samandari
  */
 public class Menu extends JPanel {
@@ -30,33 +27,40 @@ public class Menu extends JPanel {
 	private JMenuItem jmMusic = new JMenuItem("Pause Music");
 	private JMenuItem jmRestart = new JMenuItem("Restart Game");
 	private JMenuItem jmRules = new JMenuItem("Read Rules");
+	private JMenuItem jmChangeVolume = new JMenuItem("Adjust Volume");
+	private JMenuItem jmChangebgMusic = new JMenuItem("Change Music");
 	private Rules rules = new Rules();
 	private boolean paused = false;
-	
+
 	/**
 	 * Constructor which draws the gui
 	 */
 	public Menu(BackgroundMusic music, MainPanel mainPanel) {
 		this.music = music;
+		music.startMusic();
 		this.mainPanel = mainPanel;
 		setOpaque(false);
 		setPreferredSize(new Dimension(400, 40));
 		setLayout(new BorderLayout());
 		jmMenuBar.setPreferredSize(new Dimension(100,5));
-		jmExit.addActionListener(new ButtonListener()); 
+		jmExit.addActionListener(new ButtonListener());
 		jmMusic.addActionListener(new ButtonListener());
 		jmRules.addActionListener(new ButtonListener());
 		jmRestart.addActionListener(new ButtonListener());
+		jmChangeVolume.addActionListener(new ButtonListener());
+		jmChangebgMusic.addActionListener(new ButtonListener());
+		jmMenu.add(jmChangebgMusic);
+		jmMenu.add(jmChangeVolume);
 		jmMenu.add(jmMusic);
 		jmMenu.add(jmRules);
 		jmMenu.add(jmRestart);
 		jmMenu.add(jmExit);
 		jmMenuBar.add(jmMenu);
-		
+
 		add(jmMenuBar, BorderLayout.WEST);
 		setBackground(Color.black);
 	}
-	
+
 	/**
 	 * Sets music reference
 	 * @param music
@@ -64,7 +68,7 @@ public class Menu extends JPanel {
 	//public Menu(BackgroundMusic music) {
 	//	this.music = music;
 	//}
-	
+
 	/**
 	 * Button listener class used to listen for actions
 	 * @author Rohan Samandari
@@ -84,17 +88,19 @@ public class Menu extends JPanel {
 					jmMusic.setText("Pause Music");
 					paused = false;
 				}
-			} else if (e.getSource()==jmRestart) {
+			}else if (e.getSource() == jmChangebgMusic){
+				music.changeBackgroundMusic(music.createFrameForChangeMusic());
+			} else if (e.getSource() == jmChangeVolume){
+				music.changeVolume();
+			}else if (e.getSource()==jmRestart) {
 				mainPanel.Dispose();
-				StartingScreen ss = new StartingScreen();
-				Thread thread = new Thread(ss);
-				thread.start();
+				new StartingScreen();
 			} else if (e.getSource()==jmExit) {
 				System.exit(0);
 			} else if (e.getSource()==jmRules) {
 				rules.showRules();
 			}
 		}
-		
+
 	}
 }

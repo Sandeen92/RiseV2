@@ -41,8 +41,8 @@ public class MainPanel extends JPanel implements Serializable {
 	/**
 	 * adds the panels and sets the bounds
 	 */
-	public MainPanel() {
-		boardController = new BoardController(this);
+	public MainPanel(BoardController boardController) {
+		this.boardController = boardController;
 		eastPanel = new EastPanel();
 		westPanel = new WestPanel(boardController);
 		boardPanel = new BoardPanel(boardController);
@@ -87,7 +87,7 @@ public class MainPanel extends JPanel implements Serializable {
 	}
 
 
-	public void startboard() {
+	public void startBoard() {
 		frame = new JFrame("Change your fate");
 		frame.setPreferredSize(new Dimension(screenWidth + 18, screenHeight + 10));
 		frame.setLocation(-9, 0);

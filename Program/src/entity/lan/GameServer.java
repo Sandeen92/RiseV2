@@ -1,5 +1,6 @@
-package controller.lan;
+package entity.lan;
 
+import controller.LanController;
 import view.MainPanel;
 import entity.player.PlayerList;
 import controller.StartingScreen;
@@ -11,17 +12,17 @@ import java.util.ArrayList;
 import static java.lang.Thread.sleep;
 
 public class GameServer implements Runnable {
+
+    private LanController lanController;
     private ServerSocket serverSocket;
     private ArrayList<ClientHandler> clientHandlerPool;
     private int i = 0;
-    private StartingScreen startingScreen;
-    private MainPanel mainWindow;
 
 
-    public GameServer(StartingScreen startingScreen, int port) throws IOException {
+    public GameServer(int port, LanController lanController) throws IOException {
+        this.lanController = lanController;
         clientHandlerPool = new ArrayList<ClientHandler>();
         serverSocket = new ServerSocket(port);
-        this.startingScreen = startingScreen;
     }
 
     public void run(){
@@ -45,36 +46,12 @@ public class GameServer implements Runnable {
         }
     }
 
-    public void setMainWindow(MainPanel mainWindow) {
-        this.mainWindow = mainWindow;
-    }
-
-    public ArrayList<ClientHandler> getClientHandlerPool() {
-        return clientHandlerPool;
-    }
-
-
-    public void sendBoardToEachClient(){
+    public void startGameForEachClient(PlayerList playerList) {
         for (int i = 0; i < clientHandlerPool.size(); i++) {
-            clientHandlerPool.get(i).sendBoard();
-            try {
-                sleep(200);
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
+            clientHandlerPool.get(i).startGameForEachClient(playerList);
         }
     }
 
-    public void assignPlayerListToEachClient(PlayerList playerList){
-        for (int i = 0; i < clientHandlerPool.size(); i++) {
-            clientHandlerPool.get(i).sendPlayerList(playerList);
-            try {
-                sleep(200);
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
-        }
-    }
 
 
     /**
@@ -93,29 +70,32 @@ public class GameServer implements Runnable {
             this.clientNumber = nr;
         }
 
-        public void sendLobby() {
+        public void initLobbyFrame(){
             try {
-                oos.writeObject("Lobby");
+                oos.writeObject("lobbyClient,"+ clientNumber);
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
         }
 
-        public void sendClientNameToLobby(String userName) {
-            startingScreen.appendLobby(userName);
-        }
-
-        public void sendBoard(){
-            try {
-                oos.writeObject("Board");
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-        }
-
-        public void sendPlayerList(PlayerList playerList){
-            try {
+        public void startGameForEachClient(PlayerList playerList) {
+            try{
                 oos.writeObject(playerList);
+            }
+            catch (IOException e){
+                throw new RuntimeException(e);
+            }
+        }
+
+        public void sendConnectedUserNamesAndColors(){
+            try {
+                PlayerList playerList = lanController.getPlayerList();
+                ArrayList<String> playerNames = new ArrayList<String>();
+                for (int i = 0; i < playerList.getLength(); i++) {
+                    playerNames.add(playerList.getPlayerFromIndex(i).getName() + " ---- Color: " +
+                            playerList.getPlayerFromIndex(i).getPlayerColorText(playerList.getPlayerFromIndex(i).getPlayerColor()));
+                }
+                oos.writeObject(playerNames);
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
@@ -132,20 +112,26 @@ public class GameServer implements Runnable {
                     input = ois.readObject();
 
                     if (input instanceof String) {
-                        if (String.valueOf(input).startsWith("UN")) {
-                            String userName = ((String) input).substring(2);
-                            sendClientNameToLobby(userName);
+                        if (String.valueOf(input).startsWith("UN")){
+                            String temp = String.valueOf(input).substring(0);
+                            String[] playerParts = temp.substring(2).split(",");
+                            String userName = playerParts[0];
+                            String color = playerParts[1];
+                            lanController.addPlayer(userName, color);
+                            if (clientNumber != 0) {
+                                initLobbyFrame();
+                            }
                         }
-                        if (String.valueOf(input).equals("connect")) {
-                            sendLobby();
+                        if (String.valueOf(input).equals("LobbyOK")) {
+                            sendConnectedUserNamesAndColors();
                         }
                     }
+                    oos.flush();
                 }
 
             } catch (IOException | ClassNotFoundException e) {
                 throw new RuntimeException(e);
-            }
-            finally {
+            } finally {
                 try {
                     ois.close();
                     oos.close();
@@ -159,8 +145,6 @@ public class GameServer implements Runnable {
 
 
     public static void main(String[] args) {
-        StartingScreen su = new StartingScreen();
-        Thread t = new Thread(su);
-        t.start();
+        new StartingScreen();
     }
 }

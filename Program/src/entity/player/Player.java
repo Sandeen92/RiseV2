@@ -362,12 +362,33 @@ public class Player implements Serializable {
 		return playerColor;
 	}
 
-    public static ImageIcon resizeImage(ImageIcon originalIcon) {
-        Image originalImage = originalIcon.getImage();
-        int width = 40; // specify the desired width and height
-        int height = 40;
-        Image resizedImage = originalImage.getScaledInstance(width, height, Image.SCALE_SMOOTH);
-        return new ImageIcon(resizedImage);
-    }
+	public String getPlayerColorText(Color playerColor){
+		String color = "";
+		Color magenta = new Color(255, 15, 226);
+		Color red = new Color(255, 0, 10, 255);
+		Color orange = new Color(254, 119, 14, 255);
+		Color yellow = new Color(206, 183, 51, 255);
+		Color green = new Color(35, 254, 14, 255);
+		Color cyan = new Color(93, 188, 210, 255);
+		Color purple = Color.decode("#9542f4");
 
+
+		if (playerColor.equals(magenta)) {
+			color = "MAGENTA";
+		} else if (playerColor.equals(red)) {
+			color = "RED";
+		} else if (playerColor.equals(orange)) {
+			color = "ORANGE";
+		} else if (playerColor.equals(yellow)) {
+			color = "YELLOW";
+		} else if (playerColor.equals(green)) {
+			color = "GREEN";
+		} else if (playerColor.equals(cyan)) {
+			color = "CYAN";
+		} else if (playerColor.equals(purple)) {
+			color = "PURPLE";
+		}
+
+		return color;
+	}
 }

@@ -20,15 +20,27 @@ public class BoardController {
     private PlayerList playerList;
     private EventManager eventManager;
 
-    public BoardController(MainPanel mainPanel) {
+    public BoardController() {
         this.dice1 = new Dice();
         this.dice2 = new Dice();
         this.board = new Board();
         this.playerList = new PlayerList();
-        this.mainPanel = mainPanel;
+        this.mainPanel = new MainPanel(this);
         this.eventManager = new EventManager(this);
     }
 
+    public BoardController(PlayerList playerList) {
+        this.dice1 = new Dice();
+        this.dice2 = new Dice();
+        this.board = new Board();
+        this.playerList = playerList;
+        this.mainPanel = new MainPanel(this);
+        this.eventManager = new EventManager(this);
+    }
+
+    public void startBoard() {
+        mainPanel.startBoard();
+    }
 
     public int rollDices(){
         int roll1 = dice1.roll();

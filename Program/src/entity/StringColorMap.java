@@ -48,8 +48,7 @@ public class StringColorMap implements Serializable {
 		colorIconMap.put("GREEN", GREEN_PAWN);
 		colorIconMap.put("CYAN", CYAN_PAWN);
 	}
-	 
-	
+
 	/**
 	 * Either magenta, red, orange, yellow, green, cyan, purple
 	 * @param chosenColor color to Get
@@ -58,7 +57,6 @@ public class StringColorMap implements Serializable {
 	public Color getColorFromMap(String chosenColor) {
 		return colorMap.get(chosenColor);
 	}
-
 
 	public ImageIcon getImageIconFromMap(String chosenColor) {
 		return colorIconMap.get(chosenColor);
