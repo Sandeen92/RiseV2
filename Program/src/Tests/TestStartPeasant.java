@@ -2,16 +2,14 @@ package Tests;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import player.Player;
-import player.PlayerRanks;
-import startMenu.StartingScreen;
+import entity.player.Player;
 
 import java.awt.*;
+import static entity.player.PlayerRanks.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 public class TestStartPeasant {
-    Player player;
-    StartingScreen startingScreen = new StartingScreen();
+    private Player player;
 
     @BeforeEach
     public void beforeTest(){
@@ -20,13 +18,13 @@ public class TestStartPeasant {
     @Test
     public void testIfPlayerIsPesant(){
         player.checkPlayerRank();
-        assertEquals(PlayerRanks.PEASANT,player.getPlayerRank(),"Should be a Peasant");
+        assertEquals(PEASANT,player.getPlayerRank(),"Should be a Peasant");
     }
     @Test
     public void PesantRankUp(){
         player.setNetWorth(3000);
         player.checkPlayerRank();
-        assertEquals(PlayerRanks.KNIGHT,player.getPlayerRank(),"Should be a Knight");
+        assertEquals(KNIGHT,player.getPlayerRank(),"Should be a Knight");
     }
 
 }

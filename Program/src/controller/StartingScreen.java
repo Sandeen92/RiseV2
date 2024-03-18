@@ -75,6 +75,8 @@ public class StartingScreen extends JFrame {
 		instantiateLabels();
 		chooseLocalOrNetwork();
 	}
+
+
 	public void instantiateLabels(){
 		for(int i = 0;i < 4;i++){
 			JLabel lblPlayerIndex = new JLabel("Player" + (i+1) + ":");

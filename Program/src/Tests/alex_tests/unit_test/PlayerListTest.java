@@ -1,10 +1,8 @@
-package alex_tests.unit_test;
+package Tests.alex_tests.unit_test;
 import entity.player.PlayerList;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-
-import javax.swing.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -21,24 +19,20 @@ public class PlayerListTest {
         assertAll(
                 () -> {
                     playerList.addNewPlayer("Test Player", "red");
-                    assertEquals(1, playerList.getList().getLength(), "PlayerList should have 1 player");
+                    assertEquals(1, playerList.getLength(), "PlayerList should have 1 player");
                 },
                 () -> {
                     playerList.addNewPlayer("Test Player 2", "green");
-                    assertEquals(2, playerList.getList().getLength(), "PlayerList should have 2 players");
+                    assertEquals(2, playerList.getLength(), "PlayerList should have 2 players");
                 }
         );
     }
-    @Test
-    @DisplayName("Test getList")
-    public void testGetList() {
-        assertSame(playerList, playerList.getList(), "PlayerList should return itself");
-    }
+
     @Test
     @DisplayName("Test getPlayerFromIndex")
     public void testGetPlayerFromIndex() {
-        playerList.addNewPlayer("Test Player", "red");
-        playerList.addNewPlayer("Test Player 2", "green");
+        playerList.addNewPlayer("Test Player", "RED");
+        playerList.addNewPlayer("Test Player 2", "GREEN");
         assertAll(
                 () -> assertEquals("Test Player", playerList.getPlayerFromIndex(0).getName(), "Player at index 0 should be Test Player"),
                 () -> assertEquals("Test Player 2", playerList.getPlayerFromIndex(1).getName(), "Player at index 1 should be Test Player 2")
@@ -47,8 +41,8 @@ public class PlayerListTest {
     @Test
     @DisplayName("Test getActivePlayer")
     public void testGetActivePlayer() {
-        playerList.addNewPlayer("Test Player", "red");
-        playerList.addNewPlayer("Test Player 2", "green");
+        playerList.addNewPlayer("Test Player", "RED");
+        playerList.addNewPlayer("Test Player 2", "GREEN");
         assertAll(
                 () -> assertEquals("Test Player", playerList.getActivePlayer().getName(), "Active player should be Test Player"),
                 () -> {

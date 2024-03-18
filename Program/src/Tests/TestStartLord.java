@@ -2,14 +2,15 @@ package Tests;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import player.Player;
-import player.PlayerRanks;
+import entity.player.Player;
 
 import java.awt.*;
+import static entity.player.PlayerRanks.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 public class TestStartLord {
-    Player player;
+    private Player player;
+
     @BeforeEach
     public void beforeTest(){
         player = new Player("John",null, Color.blue,1);
@@ -19,6 +20,6 @@ public class TestStartLord {
     @Test
     public void testIfPlayerIsLord(){
         player.checkPlayerRank();
-        assertEquals(PlayerRanks.LORD,player.getPlayerRank(),"Should be a Lord");
+        assertEquals(LORD,player.getPlayerRank(),"Should be a Lord");
     }
 }

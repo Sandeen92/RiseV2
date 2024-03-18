@@ -100,6 +100,10 @@ public class BoardController {
         eventManager.purchaseProperty(text, property, player);
     }
 
+    public void sellProperty(Property property) {
+        playerList.getActivePlayer().sellProperty(property);
+    }
+
     public void endTurn(){
         playerList.switchToNextPlayer();
         Player activePlayer = playerList.getActivePlayer();

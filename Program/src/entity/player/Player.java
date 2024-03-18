@@ -151,7 +151,6 @@ public class Player implements Serializable {
 	public void setPosition(int amountOfStepsToMove) {
 
 		for (int i = 0; i < amountOfStepsToMove; i++) {
-
 			if (counter < 39) {
 				counter++;
 			} else {

@@ -89,6 +89,10 @@ public class DicePanel extends JPanel implements ActionListener {
         }
     }
 
+    public JButton getBtnEndTurn() {
+        return btnEndTurn;
+    }
+
     public void enableEndTurnBtn(){
         btnEndTurn.setEnabled(true);
     }

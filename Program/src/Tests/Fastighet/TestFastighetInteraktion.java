@@ -1,39 +1,39 @@
 package Tests.Fastighet;
 
-import board.Board;
-import dice.Dice;
-import events.EventCases;
-import events.ManageEvents;
 
+
+import controller.BoardController;
+import controller.EventManager;
+import entity.Board;
+import entity.Dice;
+import entity.player.Player;
+import entity.tiles.Property;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import player.Player;
-import player.PlayerRanks;
-import startMenu.StartingScreen;
-import tiles.Property;
-import tiles.Tile;
 
 import javax.swing.*;
 
+import static entity.player.PlayerRanks.*;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static utilities.Constants.TileImages.*;
 
 import java.awt.*;
 public class TestFastighetInteraktion {
-    Player player;
-    Dice dice = new Dice();
-    Board board;
-
-    ManageEvents events;
+    private Player player;
+    private Dice dice = new Dice();
+    private Board board;
+    private BoardController boardController = new BoardController();
+    private EventManager events;
 
     Property property;
     @BeforeEach
     public void beforeTest(){
         board = new Board();
         player = new Player("John",null,null,1);
-        events = new ManageEvents();
-        property = new Property("Wood Cutter Camp", 60, 2, 30, new Color(58,20,56,255), 50,new ImageIcon("Program/tilePics/Wood.png"));
+        events = new EventManager(boardController);
+        property = new Property("Wood Cutter Camp", 60, 2, 30, new Color(58,20,56,255), 50, PROPERTY_WOOD_TILE);
     }
 
 
@@ -67,7 +67,7 @@ public class TestFastighetInteraktion {
     @Test
     @DisplayName("ID:14 ReqId: FA1.3.1 (Nivåer)")
     public void upgradePropertyKnight(){
-        player.setPlayerRank(PlayerRanks.KNIGHT);
+        player.setPlayerRank(KNIGHT);
         property.setOwner(player);
         property.increaseLevel();
         assertEquals(property.getTotalRent(), 32);
@@ -75,7 +75,7 @@ public class TestFastighetInteraktion {
     @Test
     @DisplayName("ID:15 ReqId: FA1.3.1 (Nivåer)")
     public void upgradePropertyLord(){
-        player.setPlayerRank(PlayerRanks.LORD);
+        player.setPlayerRank(LORD);
         property.setOwner(player);
         property.increaseLevel();
         assertEquals(property.getTotalRent(), 32);

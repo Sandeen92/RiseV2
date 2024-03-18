@@ -1,8 +1,7 @@
-package alex_tests;
+package Tests.alex_tests;
 
-import controller.ManageEvents;
-import entity.Board;
-import entity.Dice;
+
+import controller.BoardController;
 import entity.player.*;
 import entity.tiles.Property;
 import entity.tiles.Tavern;
@@ -10,10 +9,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
-import controller.StartingScreen;
-import view.WestSidePanel;
-import view.eastSidePanels.EastSidePanel;
-import view.eastSidePanels.PropertyWindow;
 
 import javax.swing.*;
 import java.awt.*;
@@ -21,14 +16,14 @@ import java.awt.*;
 public class PlayerTests {
    private Player player;
    private Player player2;
-   private PlayerList playerList;
+   private BoardController boardController;
    @BeforeEach
    public void setUp() {
+      boardController = new BoardController();
       player = new Player("Test Player", new ImageIcon(), new Color(255, 0, 0), 0);
       player2 = new Player("Test Player 2", new ImageIcon(), new Color(0, 255, 0), 1);
-      playerList = new PlayerList();
-      playerList.addNewPlayer(player.getName(), player.getImage());
-      playerList.addNewPlayer(player2.getName(), player2.getImage());
+      boardController.addPlayerToList(player.getName(), "RED");
+      boardController.addPlayerToList(player2.getName(), "GREEN");
    }
 
    @Test
@@ -91,11 +86,9 @@ public class PlayerTests {
    @Test
    @DisplayName("ID:3 S1.1: Color Test")
    public void testPlayerColorS1_1() { // Checks whether the player color is set correctly
-        StartingScreen startingScreen = new StartingScreen();
-        playerList = startingScreen.setUpTest();
         assertAll(
-                () -> assertEquals(new Color(255, 0, 10), playerList.getPlayerFromIndex(0).getPlayerColor()),
-                () -> assertEquals(new Color(35, 254, 14), playerList.getPlayerFromIndex(1).getPlayerColor())
+                () -> assertEquals(new Color(255, 0, 10), boardController.getPlayerList().getPlayerFromIndex(0).getPlayerColor()),
+                () -> assertEquals(new Color(35, 254, 14), boardController.getPlayerList().getPlayerFromIndex(1).getPlayerColor())
         );
    }
    @Test
@@ -137,17 +130,15 @@ public class PlayerTests {
    @Test
    @DisplayName("S9 One Property Per Round Test")
    public void purchasePropertyTest(){
-      ManageEvents manageEvents = new ManageEvents(new Board(new WestSidePanel()), playerList, new WestSidePanel(), new Dice(), new EastSidePanel());
       Property testProp = new Property("TestProp", 100, 10, 10, Color.BLACK, 10, null);
 
-      manageEvents.purchaseTile("YES", testProp,player );
+      boardController.purchaseProperty("YES", testProp, player);
 
       assertFalse(testProp.getPurchaseable(), "Property should not be purchasable after purchase");
    }
    @Test
    @DisplayName("S10 Player Own Property Test")
    public void ownPropertyTest(){
-      ManageEvents manageEvents = new ManageEvents(new Board(new WestSidePanel()), playerList, new WestSidePanel(), new Dice(), new EastSidePanel());
 
       Property testProp1 = new Property("TestProp", 100, 10, 10, Color.BLACK, 10, null);
       Property testProp2 = new Property("TestProp", 100, 10, 10, Color.BLACK, 10, null);
@@ -155,11 +146,11 @@ public class PlayerTests {
       Tavern testTavern2 = new Tavern("TestTavern", 100);
 
 
-      manageEvents.purchaseTile("YES", testProp1, player );
-      manageEvents.purchaseTile("YES", testProp2, player2 );
+      boardController.purchaseProperty("YES", testProp1, player );
+      boardController.purchaseProperty("YES", testProp2, player2 );
 
-      manageEvents.purchaseTavern("YES", testTavern1, player);
-      manageEvents.purchaseTavern("YES", testTavern2, player2);
+      boardController.purchaseTavern("YES", testTavern1, player);
+      boardController.purchaseTavern("YES", testTavern2, player2);
 
       assertAll(
               () -> assertEquals(testProp1.getOwner(), player, "Property should be owned by the correct player"),
@@ -175,10 +166,10 @@ public class PlayerTests {
    @Test
    @DisplayName("S10.1 Player Sell Property Test")
    public void sellPropertyTest(){
-      ManageEvents manageEvents = new ManageEvents(new Board(new WestSidePanel()), playerList, new WestSidePanel(), new Dice(), new EastSidePanel());
       Property testProp1 = new Property("TestProp", 100, 10, 10, Color.BLACK, 10, null);
 
-      manageEvents.purchaseTile("YES", testProp1, player );
+      player.addNewProperty(testProp1);
+      player.decreaseBalace(testProp1.getPrice());
 
       player.sellProperty(testProp1);
 
@@ -190,16 +181,15 @@ public class PlayerTests {
    @Test
    @DisplayName("S10.4 Property List Test")
    public void allOwnedPropertiesTest(){
-      ManageEvents manageEvents = new ManageEvents(new Board(new WestSidePanel()), playerList, new WestSidePanel(), new Dice(), new EastSidePanel());
       Property testProp1 = new Property("TestProp", 100, 10, 10, Color.BLACK, 10, null);
       Property testProp2 = new Property("TestProp", 100, 10, 10, Color.BLACK, 10, null);
       Property testProp3 = new Property("TestProp", 100, 10, 10, Color.BLACK, 10, null);
       Property testProp4 = new Property("TestProp", 100, 10, 10, Color.BLACK, 10, null);
 
-      manageEvents.purchaseTile("YES", testProp1, player );
-      manageEvents.purchaseTile("YES", testProp2, player );
-      manageEvents.purchaseTile("YES", testProp3, player );
-      manageEvents.purchaseTile("YES", testProp4, player );
+      boardController.purchaseProperty("YES", testProp1, player );
+      boardController.purchaseProperty("YES", testProp2, player );
+      boardController.purchaseProperty("YES", testProp3, player );
+      boardController.purchaseProperty("YES", testProp4, player );
 
       assertEquals(4, player.getProperties().size(), "Tab should have the same amount of tabs as owned properties");
    }

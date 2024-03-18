@@ -1,21 +1,19 @@
 package Tests;
 
-
-import colorsAndIcons.StringColorMap;
+import entity.StringColorMap;
+import entity.player.Player;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import player.Player;
-import player.PlayerRanks;
-import startMenu.StartingScreen;
 
 import java.awt.*;
 
+import static entity.player.PlayerRanks.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class TestStartKnight {
     private StringColorMap colorMap = new StringColorMap();
-    Player player;
-    StartingScreen startingScreen = new StartingScreen();
+    private Player player;
+
     @BeforeEach
     public void beforeTest(){
         player = new Player("John",null, Color.blue,1);
@@ -25,13 +23,13 @@ public class TestStartKnight {
     @Test
     public void testIfPlayerIsKnight(){
         player.checkPlayerRank();
-        assertEquals(PlayerRanks.KNIGHT,player.getPlayerRank(),"Should be a Knight");
+        assertEquals(KNIGHT,player.getPlayerRank(),"Should be a Knight");
     }
 
     @Test
     public void KnightRankUp(){
         player.setNetWorth(5000);
         player.checkPlayerRank();
-        assertEquals(PlayerRanks.LORD,player.getPlayerRank(),"Should be a Lord");
+        assertEquals(LORD,player.getPlayerRank(),"Should be a Lord");
     }
 }

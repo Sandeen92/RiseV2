@@ -1,32 +1,31 @@
 package Tests;
 
-import board.Board;
-import dice.Dice;
-import events.ManageEvents;
-import messageGui.WinGui;
+
+import controller.BoardController;
+import entity.Dice;
+import entity.player.Player;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import player.Player;
-import player.PlayerRanks;
-import startMenu.StartingScreen;
+import view.DicePanel;
+import view.messageGui.WinGui;
 
-import java.awt.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 public class GeneralTests {
-    WinGui winGui = new WinGui();
-    Player player;
-    Dice dice = new Dice();
-    Board board;
+    private WinGui winGui = new WinGui();
+    private Player player;
+    private BoardController boardController = new BoardController();
+    private Dice dice = new Dice();
+    private DicePanel dp = new DicePanel(boardController);
+
     @BeforeEach
     public void beforeTest(){
-        board = new Board();
         player = new Player("John",null,null,1);
     }
 
     @Test
     public void endTurn(){
-        assertDoesNotThrow(() -> dice.getBtnEndTurn().doClick());
+        assertDoesNotThrow(() -> dp.getBtnEndTurn().doClick());
     }
 
     @Test
