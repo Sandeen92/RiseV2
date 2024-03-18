@@ -74,8 +74,7 @@ public class TileCollection implements Serializable {
 		tileArray[39] = new Property("The Castle", 400, 50, 400, new Color(4,74,159, 255),200, PROPERTY_CASTLE_TILE);
 
 	}
-	
-	 
+
 	public Tile getTileAtIndex(int index) {
 		return tileArray[index];
 	}
