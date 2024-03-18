@@ -1,16 +1,12 @@
 package alex_tests;
-
-import board.Board;
-import combinedPanels.GamePanels;
-import dice.Dice;
-import eastSidePanels.EastSidePanel;
+import entity.Board;
+import entity.Dice;
+import entity.player.*;
+import view.WestSidePanel;
+import view.eastSidePanels.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import player.PlayerList;
-import startMenu.BackgroundMusic;
-import startMenu.StartingScreen;
-import westSidePanel.WestSidePanel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -34,6 +30,17 @@ public class DiceTest {
         int initialRoll = dice.getRoll();
         dice.actionPerformed(new ActionEvent(dice.btnRollDice, 0, "Roll Dice"));
         assertNotEquals(initialRoll, dice.getRoll(), "Dice roll value should change after button click");
+    }
+    @Test
+    @DisplayName("S2.1 Move Test")
+    public void testMovement() {
+        int roll1 = dice.roll();
+        int roll2 = dice.roll();
+        dice.setRoll(roll1 + roll2);
+
+        int initialPosition = playerList.getActivePlayer().getPosition();
+        playerList.getActivePlayer().setPosition(dice.getRoll());
+        assertEquals((initialPosition + dice.getRoll()), playerList.getActivePlayer().getPosition(), "Player position should change after rolling dice");
     }
     @Test
     @DisplayName("S2.2 Only Roll Once Test")
