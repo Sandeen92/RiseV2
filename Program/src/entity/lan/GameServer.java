@@ -16,6 +16,7 @@ public class GameServer implements Runnable {
     private LanController lanController;
     private ServerSocket serverSocket;
     private ArrayList<ClientHandler> clientHandlerPool;
+    private boolean isRunning = false;
     private int i = 0;
 
 
@@ -30,8 +31,9 @@ public class GameServer implements Runnable {
     }
 
     public void connection() {
+        isRunning = true;
         try {
-            while (true) {
+            while (isRunning) {
                 Socket socket = serverSocket.accept();
 
                 if (socket!=null) {
@@ -44,6 +46,10 @@ public class GameServer implements Runnable {
         } catch (IOException e) {
 
         }
+    }
+
+    public boolean IsRunning() {
+        return isRunning;
     }
 
 

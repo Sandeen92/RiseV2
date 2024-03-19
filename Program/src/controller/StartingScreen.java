@@ -27,13 +27,15 @@ public class StartingScreen extends JFrame {
 	private BackgroundMusic bgm = new BackgroundMusic();
 	private LanController lanController;
 	private BoardController boardController;
+    private JButton btnLocal;
+    private JButton btnLAN;
 	private JButton btnConfirm = new JButton("Confirm");
 	private JButton btnStartGame = new JButton("Start Game");
 	private JButton btnReset = new JButton("Reset");
 
 	private JPanel pnlPlayerInfo = new JPanel();
 
-	private JRadioButton[] radioButtons = new JRadioButton[4];
+	private JRadioButton[] radioButtons = new JRadioButton[3];
 	private ButtonGroup btnGroup = new ButtonGroup();
 
 	private JLabel lblPlayer = new JLabel("How many players?");
@@ -49,6 +51,7 @@ public class StartingScreen extends JFrame {
 	private JComboBox[] playerColors = new JComboBox[4];
 	private JCheckBox mute = new JCheckBox("Music On");
 
+    private boolean localSetUpOK = false;
 
 	private int amountOfPlayers;
 	private int activePlayers = 1;
@@ -91,10 +94,10 @@ public class StartingScreen extends JFrame {
 		lblPickLANOrLocal.setFont(fontLabel);
 		lblPickLANOrLocal.setBounds(355, 175, 300, 200);
 
-		JButton btnLAN = new JButton("LAN");
+        btnLAN = new JButton("LAN");
 		btnLAN.setOpaque(false);
 
-		JButton btnLocal = new JButton("Local");
+        btnLocal = new JButton("Local");
 		btnLocal.setOpaque(false);
 
 		btnLAN.setBounds(375, 315, 150, 30);
@@ -286,6 +289,8 @@ public class StartingScreen extends JFrame {
 		lblBackground.add(lblRise);
 		lblBackground.add(lblPlayer);
 		add(lblBackground);
+
+        localSetUpOK = true;
 	}
 
 	public void createFrame() {
@@ -361,7 +366,7 @@ public class StartingScreen extends JFrame {
 		}
 	}
 
-	/**
+    /**
 	 * Buttonlistener class, listens for clicks.
 	 * @author Aevan Dino
 	 */
@@ -511,4 +516,23 @@ public class StartingScreen extends JFrame {
 		public void mouseReleased(MouseEvent e) {
 		}
 	}
+
+    public JButton getBtnLocal() {
+        return btnLocal;
+    }
+    public JButton getBtnLAN(){
+        return btnLAN;
+    }
+
+    public JRadioButton[] getRadioButtons() {
+        return radioButtons;
+    }
+
+    public LanController getLanController() {
+        return lanController;
+    }
+
+    public boolean getLocalSetUpOK() {
+        return localSetUpOK;
+    }
 }

@@ -5,7 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="369cbea7-d726-43f1-931c-763e77531bfd" name="Changes" comment="..">
+      <change afterPath="$PROJECT_DIR$/Program/src/TestSuites_by_Theodor/TestSuite_IN_Demands.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/RiseV2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/RiseV2.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Program/src/controller/LanController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/controller/LanController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program/src/controller/StartingScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/controller/StartingScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program/src/entity/lan/GameServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/entity/lan/GameServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/controller/LanController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/controller/LanController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/controller/StartingScreen$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/controller/StartingScreen$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/controller/StartingScreen$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/controller/StartingScreen$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/controller/StartingScreen$ButtonListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/controller/StartingScreen$ButtonListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/controller/StartingScreen$MouseAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/controller/StartingScreen$MouseAction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/controller/StartingScreen.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/controller/StartingScreen.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/entity/lan/GameClient$Connection$Listener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/entity/lan/GameClient$Connection$Listener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/entity/lan/GameClient$Connection.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/entity/lan/GameClient$Connection.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/entity/lan/GameClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/entity/lan/GameClient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/entity/lan/GameServer$ClientHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/entity/lan/GameServer$ClientHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/entity/lan/GameServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/entity/lan/GameServer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/view/LobbyFrame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/view/LobbyFrame$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/view/LobbyFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/view/LobbyFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/view/messageGui/Menu$ButtonListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/view/messageGui/Menu$ButtonListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/view/messageGui/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/view/messageGui/Menu.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,11 +41,20 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="Theodor-Testing" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 7
+}</component>
   <component name="ProjectId" id="2bONPJi5LgXRO73mHH0fj9W9sRP" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -37,7 +67,12 @@
   &quot;keyToString&quot;: {
     &quot;Application.GameClient.executor&quot;: &quot;Run&quot;,
     &quot;Application.GameServer.executor&quot;: &quot;Run&quot;,
-    &quot;Application.StartingScreen.executor&quot;: &quot;Run&quot;
+    &quot;Application.StartingScreen.executor&quot;: &quot;Run&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/theod/SysUtv2Rise/RiseV2&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -46,7 +81,7 @@
       <recent name="C:\Users\simon\Desktop\RiseV2" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.GameClient">
+  <component name="RunManager">
     <configuration name="GameClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="entity.lan.GameClient" />
       <module name="RiseV2" />
@@ -88,9 +123,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.StartingScreen" />
         <item itemvalue="Application.GameServer" />
         <item itemvalue="Application.GameClient" />
-        <item itemvalue="Application.StartingScreen" />
+        <item itemvalue="Application.GameServer" />
+        <item itemvalue="Application.GameClient" />
       </list>
     </recent_temporary>
   </component>
@@ -125,5 +162,10 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/RiseV2$TestSuite_IN_Demands.ic" NAME="TestSuite_IN_Demands Coverage Results" MODIFIED="1710684546090" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>TestSuites_by_Theodor.*</FILTER>
+    </SUITE>
   </component>
 </project>

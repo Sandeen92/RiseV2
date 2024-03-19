@@ -51,4 +51,8 @@ public class LanController {
     public PlayerList getPlayerList(){
         return playerList;
     }
+
+    public GameServer getGameServer() {
+        return gameServer;
+    }
 }
