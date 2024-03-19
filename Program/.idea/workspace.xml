@@ -6,8 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="33559794-9b7a-40dd-a66c-06fb2250909a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/alex_tests/DiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/alex_tests/DiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dice/Dice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dice/Dice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/alex_tests/PlayerTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/alex_tests/PlayerTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +56,7 @@
     "git-widget-placeholder": "alex-testing"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.All tests">
+  <component name="RunManager" selected="JUnit.PlayerTests">
     <configuration name="All tests" type="JUnit" factoryName="JUnit">
       <module name="Project-Rise-V2" />
       <extension name="coverage" sample_coverage="false" />
@@ -119,7 +118,7 @@
     <servers />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Program$PlayerTests.ic" NAME="PlayerTests Coverage Results" MODIFIED="1708469799909" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true">
+    <SUITE FILE_PATH="coverage/Program$PlayerTests.ic" NAME="PlayerTests Coverage Results" MODIFIED="1708523542639" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true">
       <FILTER>player.Player</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/Program$All_tests.ic" NAME="All tests Coverage Results" MODIFIED="1708469760879" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" />
