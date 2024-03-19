@@ -523,16 +523,22 @@ public class StartingScreen extends JFrame {
     public JButton getBtnLAN(){
         return btnLAN;
     }
-
     public JRadioButton[] getRadioButtons() {
         return radioButtons;
     }
-
     public LanController getLanController() {
         return lanController;
     }
-
     public boolean getLocalSetUpOK() {
         return localSetUpOK;
+    }
+    public int getAmountOfPlayers() {
+        return amountOfPlayers;
+    }
+    public JButton getBtnConfirm(){
+        return btnConfirm;
+    }
+    public JButton getBtnStartGame(){
+        return btnStartGame;
     }
 }

@@ -3,13 +3,24 @@ package TestSuites_by_Theodor;
 import controller.LanController;
 import controller.StartingScreen;
 import entity.lan.GameServer;
+import org.junit.Before;
 import org.junit.Test;
+import org.junit.jupiter.api.BeforeAll;
+import org.mockito.Mockito;
+
 
 import javax.swing.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 public class TestSuite_IN_Demands {
+
+    private StartingScreen startingScreen;
+
+    @BeforeAll
+    public void setUp(){
+        startingScreen = new StartingScreen();
+    }
 
 
     /**
@@ -25,9 +36,6 @@ public class TestSuite_IN_Demands {
      */
     @Test
     public void chooseLocalOrNetworkTest() {
-
-        // Arrange
-        StartingScreen startingScreen = new StartingScreen();
 
         // Act
         startingScreen.chooseLocalOrNetwork();
@@ -63,9 +71,6 @@ public class TestSuite_IN_Demands {
     @Test
     public void startUpLANGame() {
 
-        // Arrange
-        StartingScreen startingScreen = new StartingScreen();
-
         // Act
         startingScreen.startUpLANGame();
 
@@ -92,9 +97,6 @@ public class TestSuite_IN_Demands {
     @Test
     public void startUpLocalGame() {
 
-        // Arrange
-        StartingScreen startingScreen = new StartingScreen();
-
         // Act
         startingScreen.setUpLocal();
 
@@ -104,11 +106,12 @@ public class TestSuite_IN_Demands {
         assertTrue(startingScreen.getLocalSetUpOK());
     }
 
-    @Test
-    public void numberOfPlayersLocal() {
 
-        // Arrange
-        StartingScreen startingScreen = new StartingScreen();
+    /*
+     * Demand: IN1.1
+     */
+    @Test
+    public void radioButtonsLocal() {
 
         // Act
         startingScreen.setUpLocal();
@@ -136,6 +139,42 @@ public class TestSuite_IN_Demands {
 
     }
 
+   @Test
+   public void testConfirmButtonLocal() {
+        startingScreen.setUpLocal();
+        startingScreen.getRadioButtons()[0].setSelected(true); //Simulate selecting 2 players
+        startingScreen.getBtnConfirm().doClick(); //Simulate clicking the confirm button
+
+       assertEquals(2, startingScreen.getAmountOfPlayers()); //Verify that the amount of players is 2
+    }
+   /* @Test
+   public void testConfirmButtonLAN() {
+        startingScreen.setUpLAN();
+        startingScreen.getRadioButtons()[0].setSelected(true); //Simulate selecting 2 players
+        startingScreen.getBtnConfirm().doClick(); //Simulate clicking the confirm button
+
+       assertEquals(2, startingScreen.getAmountOfPlayers()); //Verify that the amount of players is 2
+    }*/
+
+    @Test
+    public void testStartGameButtonLocal() {
+        startingScreen.setUpLocal();
+        startingScreen.getRadioButtons()[0].setSelected(true); //Simulate selecting 2 players
+        startingScreen.getBtnConfirm().doClick(); //Simulate clicking the confirm button
+
+       assertTrue(startingScreen.getBtnStartGame().isVisible()); //Verify that the start game button is visible
+    }
+
+   /* @Test
+    public void testStartGameButtonLAN() {}
+*/
+    @Test
+    public void testConfirmButtonActionListener(){
+        startingScreen.ButtonListener buttonlistenerMock = Mockito.mock(startingScreen.ButtonListener.class);
+        startingScreen.getBtnConfirm().addActionListener(buttonlistenerMock);
+        startingScreen.getBtnStartGame().doClick();
+        Mockito.verify(buttonlistenerMock).pressConfirmButton();
+    }
     
 
 }
