@@ -5,83 +5,65 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="369cbea7-d726-43f1-931c-763e77531bfd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Program/src/alex_tests/DiceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Program/src/alex_tests/PlayerTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Program/src/alex_tests/unit_test/PlayerListTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/RiseV2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/RiseV2.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Program/src/alex_tests/unit_test/ConstantsTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program/src/utilities/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/utilities/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/controller/ManageEvents$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/controller/ManageEvents$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/controller/ManageEvents$SecretSleeper.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/controller/ManageEvents$SecretSleeper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/controller/ManageEvents.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/controller/ManageEvents.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program/src/alex_tests/DiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/alex_tests/DiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program/src/alex_tests/PlayerTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/alex_tests/PlayerTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program/src/alex_tests/unit_test/PlayerListTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/alex_tests/unit_test/PlayerListTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/alex_tests/DiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/alex_tests/DiceTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/alex_tests/PlayerTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/alex_tests/PlayerTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/alex_tests/unit_test/PlayerListTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/alex_tests/unit_test/PlayerListTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/cheats/CheatGui.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/cheats/CheatGui.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/controller/BoardController$Movement.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/controller/BoardController$Movement.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/controller/BoardController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/controller/BoardController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/controller/EventManager$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/controller/EventManager$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/controller/EventManager$SecretSleeper.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/controller/EventManager$SecretSleeper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/controller/EventManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/controller/EventManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/controller/ManageEvents.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/RiseV2/controller/StartingScreen$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/controller/StartingScreen$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/RiseV2/controller/StartingScreen$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/controller/StartingScreen$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/RiseV2/controller/StartingScreen$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/controller/StartingScreen$3.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/RiseV2/controller/StartingScreen$ButtonListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/controller/StartingScreen$ButtonListener.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/RiseV2/controller/StartingScreen$MouseAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/controller/StartingScreen$MouseAction.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/RiseV2/controller/StartingScreen.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/controller/StartingScreen.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/controller/lan/GameClient$Connection$Listener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/controller/lan/GameClient$Connection$Listener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/controller/lan/GameClient$Connection.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/controller/lan/GameClient$Connection.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/controller/lan/GameClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/controller/lan/GameClient.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/controller/lan/GameServer$ClientHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/controller/lan/GameServer$ClientHandler.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/RiseV2/controller/lan/GameServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/controller/lan/GameServer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/entity/Board$Listener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/entity/Board$Listener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/controller/lan/StartingLan.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/controller/lan/StartingLan.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/entity/Board$Listener.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/RiseV2/entity/Board.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/entity/Board.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/entity/ChanceCard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/entity/ChanceCard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/entity/Dice$LoopThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/entity/Dice$LoopThread.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/entity/Dice$LoopThread.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/RiseV2/entity/Dice.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/entity/Dice.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/entity/EventCases.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/entity/EventCases.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/RiseV2/entity/StringColorMap.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/entity/StringColorMap.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/RiseV2/entity/TileCollection.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/entity/TileCollection.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/RiseV2/entity/player/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/entity/player/Player.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/RiseV2/entity/player/PlayerList.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/entity/player/PlayerList.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/entity/player/PlayerRanks$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/entity/player/PlayerRanks$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/entity/player/PlayerRanks$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/entity/player/PlayerRanks$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/entity/player/PlayerRanks$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/entity/player/PlayerRanks$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/entity/player/PlayerRanks$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/entity/player/PlayerRanks$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/entity/player/PlayerRanks.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/entity/player/PlayerRanks.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/entity/tiles/FortuneTeller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/entity/tiles/FortuneTeller.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/entity/tiles/Go.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/entity/tiles/Go.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/entity/tiles/GoToJail.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/entity/tiles/GoToJail.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/entity/tiles/Jail.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/entity/tiles/Jail.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/RiseV2/entity/tiles/Property.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/entity/tiles/Property.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/entity/tiles/SundayChurch.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/entity/tiles/SundayChurch.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/entity/tiles/Tavern.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/entity/tiles/Tavern.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/entity/tiles/Tax.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/entity/tiles/Tax.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/entity/tiles/Tile.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/entity/tiles/Tile.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/entity/tiles/TileInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/entity/tiles/TileInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/entity/tiles/Work.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/entity/tiles/Work.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/RiseV2/utilities/BackgroundMusic.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/utilities/BackgroundMusic.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/RiseV2/utilities/Constants$AudioFiles.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/utilities/Constants$AudioFiles.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/RiseV2/utilities/Constants$BoardImages.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/utilities/Constants$BoardImages.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/RiseV2/utilities/Constants$DiceImages.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/utilities/Constants$DiceImages.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/utilities/Constants$GameWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/utilities/Constants$GameWindow.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/RiseV2/utilities/Constants$PlayerTokenImages.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/utilities/Constants$PlayerTokenImages.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/RiseV2/utilities/Constants$TileImages.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/utilities/Constants$TileImages.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/RiseV2/utilities/Constants.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/utilities/Constants.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/utilities/WinMusic.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/utilities/WinMusic.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/view/CheatGui.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/view/CheatGui.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/view/BoardPanel$MouseListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/view/BoardPanel$MouseListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/view/BoardPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/view/BoardPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/view/CheatGui.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/view/DicePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/view/DicePanel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/RiseV2/view/EventPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/view/EventPanel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/RiseV2/view/GUITile.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/view/GUITile.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/view/GamePanels.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/view/GamePanels.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/view/Introduction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/view/Introduction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/view/Menu$ButtonListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/view/Menu$ButtonListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/view/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/view/Menu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/view/Rules.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/view/Rules.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/view/ShowPlayersTurn.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/view/ShowPlayersTurn.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/view/WestSidePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/view/WestSidePanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/view/WinPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/view/WinPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/view/eastSidePanels/EastSidePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/view/eastSidePanels/EastSidePanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/view/eastSidePanels/PlayerInfoPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/view/eastSidePanels/PlayerInfoPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/view/eastSidePanels/PlayerProperties.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/view/eastSidePanels/PlayerProperties.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/view/GamePanels.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/view/MainPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/view/MainPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/view/Menu$ButtonListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/view/Menu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/view/ShowPlayersTurn.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/view/WestPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/view/WestPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/view/WestSidePanel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/view/eastSidePanels/EastPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/view/eastSidePanels/EastPanel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/RiseV2/view/eastSidePanels/PropertyWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/view/eastSidePanels/PropertyWindow.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/view/messageGui/DeathGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/view/messageGui/DeathGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/view/messageGui/FortuneTellerGUI$Sleeper.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/view/messageGui/FortuneTellerGUI$Sleeper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/view/messageGui/FortuneTellerGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/view/messageGui/FortuneTellerGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/view/messageGui/SecretGui$Sleeper.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/view/messageGui/SecretGui$Sleeper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/view/messageGui/SecretGui.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/view/messageGui/SecretGui.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/view/messageGui/WinGui.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/view/messageGui/WinGui.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/view/messageGui/Introduction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/view/messageGui/Introduction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/view/messageGui/Menu$ButtonListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/view/messageGui/Menu$ButtonListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/view/messageGui/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/view/messageGui/Menu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/view/messageGui/Rules.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/view/messageGui/Rules.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,7 +105,10 @@
     &quot;Application.StartingScreen.executor&quot;: &quot;Run&quot;,
     &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
     &quot;JUnit.All Tests.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DiceTests.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PlayerListTest.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.PlayerTests.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.Unit Test.executor&quot;: &quot;Run&quot;,
     &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
     &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
     &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
@@ -145,7 +130,7 @@
       <recent name="C:\Users\simon\Desktop\RiseV2" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.PlayerTests">
+  <component name="RunManager" selected="JUnit.Unit Test">
     <configuration name="GameClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="controller.lan.GameClient" />
       <module name="RiseV2" />
@@ -207,6 +192,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="PlayerListTest" type="JUnit" factoryName="JUnit">
+      <module name="RiseV2" />
+      <option name="PACKAGE_NAME" value="alex_tests.unit_test" />
+      <option name="MAIN_CLASS_NAME" value="alex_tests.unit_test.PlayerListTest" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="PlayerTests" type="JUnit" factoryName="JUnit">
       <module name="RiseV2" />
       <extension name="coverage" sample_coverage="false" />
@@ -218,13 +213,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Unit Test" type="JUnit" factoryName="JUnit">
+      <module name="RiseV2" />
+      <extension name="coverage" sample_coverage="false" />
+      <option name="PACKAGE_NAME" value="alex_tests.unit_test" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Application.GameClient" />
       <item itemvalue="Application.GameServer" />
       <item itemvalue="Application.StartingScreen" />
-      <item itemvalue="JUnit.PlayerTests" />
-      <item itemvalue="JUnit.DiceTests" />
       <item itemvalue="JUnit.All Tests" />
+      <item itemvalue="JUnit.DiceTests" />
+      <item itemvalue="JUnit.PlayerListTest" />
+      <item itemvalue="JUnit.PlayerTests" />
+      <item itemvalue="JUnit.Unit Test" />
     </list>
     <recent_temporary>
       <list>

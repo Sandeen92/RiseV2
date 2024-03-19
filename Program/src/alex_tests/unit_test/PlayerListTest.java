@@ -9,6 +9,7 @@ import javax.swing.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class PlayerListTest {
+
     private PlayerList playerList;
     @BeforeEach
     public void setUp() {
@@ -21,18 +22,13 @@ public class PlayerListTest {
         assertAll(
                 () -> {
                     playerList.addNewPlayer("Test Player", "red");
-                    assertEquals(1, playerList.getList().getLength(), "PlayerList should have 1 player");
+                    assertEquals(1, playerList.getLength(), "PlayerList should have 1 player");
                 },
                 () -> {
                     playerList.addNewPlayer("Test Player 2", "green");
-                    assertEquals(2, playerList.getList().getLength(), "PlayerList should have 2 players");
+                    assertEquals(2, playerList.getLength(), "PlayerList should have 2 players");
                 }
         );
-    }
-    @Test
-    @DisplayName("Test getList")
-    public void testGetList() {
-        assertSame(playerList, playerList.getList(), "PlayerList should return itself");
     }
     @Test
     @DisplayName("Test getPlayerFromIndex")

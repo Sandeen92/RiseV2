@@ -1,6 +1,7 @@
 package alex_tests;
 
-import controller.ManageEvents;
+import controller.BoardController;
+import controller.EventManager;
 import entity.Board;
 import entity.Dice;
 import entity.player.*;
@@ -11,8 +12,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 import controller.StartingScreen;
-import view.WestSidePanel;
-import view.eastSidePanels.EastSidePanel;
+import view.MainPanel;
 import view.eastSidePanels.PropertyWindow;
 
 import javax.swing.*;
@@ -27,8 +27,8 @@ public class PlayerTests {
       player = new Player("Test Player", new ImageIcon(), new Color(255, 0, 0), 0);
       player2 = new Player("Test Player 2", new ImageIcon(), new Color(0, 255, 0), 1);
       playerList = new PlayerList();
-      playerList.addNewPlayer(player.getName(), player.getImage());
-      playerList.addNewPlayer(player2.getName(), player2.getImage());
+      playerList.addNewPlayer(player.getName(), player.getImage().toString());
+      playerList.addNewPlayer(player2.getName(), player2.getImage().toString());
    }
 
    @Test
@@ -137,17 +137,17 @@ public class PlayerTests {
    @Test
    @DisplayName("S9 One Property Per Round Test")
    public void purchasePropertyTest(){
-      ManageEvents manageEvents = new ManageEvents(new Board(new WestSidePanel()), playerList, new WestSidePanel(), new Dice(), new EastSidePanel());
+       EventManager manageEvents = new EventManager(new BoardController(new MainPanel()));
       Property testProp = new Property("TestProp", 100, 10, 10, Color.BLACK, 10, null);
 
-      manageEvents.purchaseTile("YES", testProp,player );
+      manageEvents.purchaseProperty("YES", testProp,player );
 
       assertFalse(testProp.getPurchaseable(), "Property should not be purchasable after purchase");
    }
    @Test
    @DisplayName("S10 Player Own Property Test")
    public void ownPropertyTest(){
-      ManageEvents manageEvents = new ManageEvents(new Board(new WestSidePanel()), playerList, new WestSidePanel(), new Dice(), new EastSidePanel());
+      EventManager manageEvents = new EventManager(new BoardController(new MainPanel()));
 
       Property testProp1 = new Property("TestProp", 100, 10, 10, Color.BLACK, 10, null);
       Property testProp2 = new Property("TestProp", 100, 10, 10, Color.BLACK, 10, null);
@@ -155,8 +155,8 @@ public class PlayerTests {
       Tavern testTavern2 = new Tavern("TestTavern", 100);
 
 
-      manageEvents.purchaseTile("YES", testProp1, player );
-      manageEvents.purchaseTile("YES", testProp2, player2 );
+      manageEvents.purchaseProperty("YES", testProp1, player );
+      manageEvents.purchaseProperty("YES", testProp2, player2 );
 
       manageEvents.purchaseTavern("YES", testTavern1, player);
       manageEvents.purchaseTavern("YES", testTavern2, player2);
@@ -175,31 +175,31 @@ public class PlayerTests {
    @Test
    @DisplayName("S10.1 Player Sell Property Test")
    public void sellPropertyTest(){
-      ManageEvents manageEvents = new ManageEvents(new Board(new WestSidePanel()), playerList, new WestSidePanel(), new Dice(), new EastSidePanel());
+      EventManager manageEvents = new EventManager(new BoardController(new MainPanel()));
       Property testProp1 = new Property("TestProp", 100, 10, 10, Color.BLACK, 10, null);
 
-      manageEvents.purchaseTile("YES", testProp1, player );
+      manageEvents.purchaseProperty("YES", testProp1, player );
 
       player.sellProperty(testProp1);
 
-        assertAll(
-                () -> assertNull(testProp1.getOwner(), "Property should not have an owner after being sold"),
-                () -> assertEquals(1500, player.getBalance(), "Player should have the correct balance after selling property")
-        );
+      assertAll(
+               () -> assertNull(testProp1.getOwner(), "Property should not have an owner after being sold"),
+               () -> assertEquals(1500, player.getBalance(), "Player should have the correct balance after selling property")
+      );
    }
    @Test
-   @DisplayName("S10.4 Property List Test")
+   @DisplayName("S10.4 Property List Test") //TODO: The current implementation makes it impossible to test this due to dependencies
    public void allOwnedPropertiesTest(){
-      ManageEvents manageEvents = new ManageEvents(new Board(new WestSidePanel()), playerList, new WestSidePanel(), new Dice(), new EastSidePanel());
+       EventManager manageEvents = new EventManager(new BoardController(new MainPanel()));
       Property testProp1 = new Property("TestProp", 100, 10, 10, Color.BLACK, 10, null);
       Property testProp2 = new Property("TestProp", 100, 10, 10, Color.BLACK, 10, null);
       Property testProp3 = new Property("TestProp", 100, 10, 10, Color.BLACK, 10, null);
       Property testProp4 = new Property("TestProp", 100, 10, 10, Color.BLACK, 10, null);
 
-      manageEvents.purchaseTile("YES", testProp1, player );
-      manageEvents.purchaseTile("YES", testProp2, player );
-      manageEvents.purchaseTile("YES", testProp3, player );
-      manageEvents.purchaseTile("YES", testProp4, player );
+      manageEvents.purchaseProperty("YES", testProp1, player );
+      manageEvents.purchaseProperty("YES", testProp2, player );
+      manageEvents.purchaseProperty("YES", testProp3, player );
+      manageEvents.purchaseProperty("YES", testProp4, player );
 
       assertEquals(4, player.getProperties().size(), "Tab should have the same amount of tabs as owned properties");
    }
