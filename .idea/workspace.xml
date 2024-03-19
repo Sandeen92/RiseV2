@@ -9,9 +9,8 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Program/src/TestSuites_by_Theodor/TestSuite_IN_Demands.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/TestSuites_by_Theodor/TestSuite_IN_Demands.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Program/src/controller/StartingScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/controller/StartingScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/TestSuites_by_Theodor/TestSuite_IN_Demands.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/TestSuites_by_Theodor/TestSuite_IN_Demands.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/controller/BoardController$Movement.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/controller/BoardController$Movement.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/controller/BoardController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/controller/BoardController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/controller/StartingScreen$ButtonListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/controller/StartingScreen$ButtonListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/controller/StartingScreen$MouseAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/controller/StartingScreen$MouseAction.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/RiseV2/controller/StartingScreen.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/controller/StartingScreen.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -61,7 +60,7 @@
     "Repository.Attach.Annotations": "false",
     "Repository.Attach.JavaDocs": "false",
     "Repository.Attach.Sources": "false",
-    "last_opened_file_path": "C:/Users/theod/Dependencies/mockito-core-5.9.0.jar",
+    "last_opened_file_path": "C:/Users/theod/Dependencies/byte-buddy-1.14.12.jar",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.2"
@@ -113,6 +112,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TestSuites" type="JUnit" factoryName="JUnit">
+      <module name="RiseV2" />
+      <option name="PACKAGE_NAME" value="TestSuites_by_Theodor" />
+      <option name="MAIN_CLASS_NAME" value="TestSuites_by_Theodor.TestSuite_IN_Demands" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.GameClient" />
+      <item itemvalue="Application.GameServer" />
+      <item itemvalue="Application.StartingScreen" />
+      <item itemvalue="JUnit.TestSuites" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.GameClient" />
@@ -156,10 +171,11 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/RiseV2$TestSuite_IN_Demands.ic" NAME="TestSuite_IN_Demands Coverage Results" MODIFIED="1710846099996" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/RiseV2$TestSuite_IN_Demands.ic" NAME="TestSuite_IN_Demands Coverage Results" MODIFIED="1710886777177" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>TestSuites_by_Theodor.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/RiseV2$GameClient.ic" NAME="GameClient Coverage Results" MODIFIED="1710845583176" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/RiseV2$TestSuites.ic" NAME="TestSuites Coverage Results" MODIFIED="1710855640022" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/RiseV2$GameClient.ic" NAME="GameClient Coverage Results" MODIFIED="1710850988505" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>entity.lan.*</FILTER>
     </SUITE>
   </component>

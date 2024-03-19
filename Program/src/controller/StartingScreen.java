@@ -32,7 +32,9 @@ public class StartingScreen extends JFrame {
 	private JButton btnConfirm = new JButton("Confirm");
 	private JButton btnStartGame = new JButton("Start Game");
 	private JButton btnReset = new JButton("Reset");
-
+    private JButton btnHostGame;
+    private JButton btnCreateGame;
+    private JButton btnJoinGame;
 	private JPanel pnlPlayerInfo = new JPanel();
 
 	private JRadioButton[] radioButtons = new JRadioButton[3];
@@ -129,10 +131,10 @@ public class StartingScreen extends JFrame {
 
 	public void setUpLAN() {
 
-		JButton btnCreateGame = new JButton("Create Game");
+		btnCreateGame = new JButton("Create Game");
 		btnCreateGame.setOpaque(false);
 
-		JButton btnJoinGame = new JButton("Join Game");
+		btnJoinGame = new JButton("Join Game");
 		btnJoinGame.setOpaque(false);
 
 		btnCreateGame.setBounds(375, 315, 150, 30);
@@ -166,7 +168,6 @@ public class StartingScreen extends JFrame {
 
 		createRadioButtons();
 
-
 		playerLabels[0].setBounds(375, 330, 150, 50);
 		playerLabels[0].setFont(fontLabelPlayer);
 		playerLabels[0].setText("Enter name: ");
@@ -180,7 +181,7 @@ public class StartingScreen extends JFrame {
 		pnlPlayerInfo.add(playerTf[0]);
 		pnlPlayerInfo.add(playerColors[0]);
 
-		JButton btnHostGame = new JButton("Host Game");
+        btnHostGame = new JButton("Host Game");
 		btnHostGame.setOpaque(false);
 		btnHostGame.setBounds(350, 530, 200, 40);
 		btnHostGame.addActionListener(e -> startUpLANGame());
@@ -370,7 +371,7 @@ public class StartingScreen extends JFrame {
 	 * Buttonlistener class, listens for clicks.
 	 * @author Aevan Dino
 	 */
-	private class ButtonListener implements ActionListener {
+	public class ButtonListener implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
 			if (e.getSource() == btnReset) {
 				btnPressed(3, false);
@@ -386,7 +387,7 @@ public class StartingScreen extends JFrame {
 			}
 		}
 
-		private void toggleMusic() {
+		public void toggleMusic() {
 			if (mute.getText().contains("n")) {
 				mute.setText("Music Off");
 				bgm.pauseMusic();
@@ -396,7 +397,7 @@ public class StartingScreen extends JFrame {
 			}
 		}
 
-		private void processConfirmation() {
+		public void processConfirmation() {
 			if (radioButtons[0].isSelected()) {
 				setupPlayers(2);
 			} else if (radioButtons[1].isSelected()) {
@@ -406,12 +407,12 @@ public class StartingScreen extends JFrame {
 			}
 		}
 
-		private void setupPlayers(int numPlayers) {
+		public void setupPlayers(int numPlayers) {
 			btnPressed(numPlayers, true);
 			amountOfPlayers = numPlayers;
 		}
 
-		private void startGame() {
+		public void startGame() {
 			if (!allPlayersHaveNames()) {
 				JOptionPane.showMessageDialog(null, "All players must have a name");
 			} else {
@@ -423,7 +424,7 @@ public class StartingScreen extends JFrame {
 			}
 		}
 
-		private boolean allPlayersHaveNames() {
+		public boolean allPlayersHaveNames() {
 			for (JTextField tf : playerTf) {
 				if (tf.getText().isEmpty()) {
 					return false;
@@ -432,7 +433,7 @@ public class StartingScreen extends JFrame {
 			return true;
 		}
 
-		private boolean playerColorsAreUnique() {
+		public boolean playerColorsAreUnique() {
 			for (int i = 0; i < amountOfPlayers; i++) {
 				for (int j = i + 1; j < amountOfPlayers; j++) {
 					if (playerColors[i].getSelectedItem().equals(playerColors[j].getSelectedItem())) {
@@ -523,6 +524,21 @@ public class StartingScreen extends JFrame {
     public JButton getBtnLAN(){
         return btnLAN;
     }
+    public JButton getBtnStartGame(){
+        return btnStartGame;
+    }
+    public JButton getBtnReset(){
+        return btnReset;
+    }
+    public JButton getBtnCreateGame(){
+        return btnCreateGame;
+    }
+    public JButton getBtnJoinGame(){
+        return btnJoinGame;
+    }
+    public JButton getHostGame(){
+        return btnHostGame;
+    }
     public JRadioButton[] getRadioButtons() {
         return radioButtons;
     }
@@ -535,10 +551,16 @@ public class StartingScreen extends JFrame {
     public int getAmountOfPlayers() {
         return amountOfPlayers;
     }
-    public JButton getBtnConfirm(){
+    public JButton getBtnConfirm() {
         return btnConfirm;
     }
-    public JButton getBtnStartGame(){
-        return btnStartGame;
+    public JTextField[] getPlayerTextField() {
+        return playerTf;
+    }
+    public JComboBox[] getPlayerColors() {
+        return playerColors;
+    }
+    public String[] getColors() {
+        return colors;
     }
 }
