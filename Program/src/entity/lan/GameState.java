@@ -5,10 +5,15 @@ import controller.LanController;
 import entity.Dice;
 import entity.player.Player;
 import entity.player.PlayerList;
+import entity.player.PlayerRanks;
+import entity.tiles.Property;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class GameState {
+
+
     private Player activePlayer;
     private int stepsToTake;
 
@@ -39,10 +44,26 @@ public class GameState {
     }
     public GameState(boolean buttonValue, GameClient gameClient){
         identifier = "Button";
-        gameClient.getBoardController().
+
     }
 
     public void setStepsToTake(int stepsToTake) {
         this.stepsToTake = stepsToTake;
+    }
+
+    public int getStepsToTake() {
+        return stepsToTake;
+    }
+
+    public Player getActivePlayer() {
+        return activePlayer;
+    }
+
+    public void setPropertyList(ArrayList<Property> properties) {
+        activePlayer.setPropertiesOwned(properties);
+    }
+
+    public void setRank(PlayerRanks playerRank) {
+        activePlayer.setPlayerRank(playerRank);
     }
 }

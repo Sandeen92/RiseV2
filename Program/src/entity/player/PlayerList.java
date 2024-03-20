@@ -70,4 +70,9 @@ public class PlayerList implements Serializable {
 			currentPlayer = 0; 
 		}	
 	}
+
+	public void updatePlayerListWithNewInfo(Player activePlayer) {
+		players.remove(activePlayer.getPlayerIndex());
+		players.add(activePlayer);
+	}
 }

@@ -354,6 +354,10 @@ public class Player implements Serializable {
 		return this.propertiesOwned;
 	}
 
+	public void setPropertiesOwned(ArrayList<Property> propertiesOwned) {
+		this.propertiesOwned = propertiesOwned;
+	}
+
 	public ArrayList<Tavern> getTaverns() {
 		return this.tavernsOwned;
 	}

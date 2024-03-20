@@ -55,6 +55,14 @@ public class BoardController {
         }
         return roll1 + roll2;
     }
+    //Här ska updatering för klientens spelplan.
+    public void updateBoardAfterTurn(GameState gameState){
+        //start  updating movement
+        movePlayer(gameState.getActivePlayer().getName(), gameState.getStepsToTake());
+        //Update if player has bought or sold any properties
+        playerList.updatePlayerListWithNewInfo(gameState.getActivePlayer());
+
+    }
 
     public int getDiceSum(){
         return dice1.getValue() + dice2.getValue();
@@ -122,33 +130,27 @@ public class BoardController {
 
 
     }
-
     public void setPlayerToTile(Player player){
         mainPanel.setPlayerToTile(player);
     }
     public Tile getTileAtIndex(int index){
         return board.getTiletIndex(index);
     }
-
     public void setTitleText(String info, String lblTitle, Color titleColor, Color titleTxtColor) {
         mainPanel.setTitleText(info, lblTitle, titleColor, titleTxtColor);
     }
-
     public void setMarker(Player player,int i) {
         mainPanel.setMarker(player, i);
     }
     public void setTextDefault() {
         mainPanel.setTextDefault();
     }
-
     public void addPlayerTabs(){
         mainPanel.addPlayerTabs();
     }
-
     public void updatePlayerTabs(){
         mainPanel.updatePlayerTabs();
     }
-
     public void appendWestPanel(String text){
         mainPanel.appendWestPanel(text);
     }

@@ -141,6 +141,12 @@ public class GameClient extends Thread {
                                 lobbyFrame.appendLobby(((ArrayList<String>) o).get(i));
                             }
                         }
+                        if (o instanceof GameState){
+                            //Step 1 update movement
+                            gameState = (GameState) o;
+                            boardController.updateBoardAfterTurn(gameState);
+
+                        }
 
 
                         oos.flush();
