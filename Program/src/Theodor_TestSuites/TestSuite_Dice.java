@@ -7,6 +7,7 @@ import org.junit.Before;
 import org.junit.Test;
 import view.DicePanel;
 
+import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
 
@@ -15,9 +16,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
 /**
  * This class contains unit tests for the Dice class.
  */
@@ -25,8 +23,6 @@ public class TestSuite_Dice {
 
     private BoardController boardController;
     private static Dice dice;
-    private Dice mockDice1;
-    private Dice mockDice2;
 
     /**
      * Sets up the Dice object for use in the tests.
@@ -45,6 +41,44 @@ public class TestSuite_Dice {
     public void testDice_Sides() {
         assertEquals(6, dice.getDiceImages().length);
     }
+    /**
+     * Demand ID: T2.0
+     * Tests that there is 2 dices
+     */
+    @Test
+    public void test_2dices() {
+      Dice dice1 = boardController.getDice1();
+      Dice dice2 = boardController.getDice2();
+
+        assertNotNull(dice1);
+        assertNotNull(dice2);
+    }
+
+    /**
+     * Demand ID: T2.0
+     * Tests that the dice class method called roll() is called twice in the BoardController class when the user clicks the Roll Dice button in the Dice Panel class.
+     */
+    @Test
+    public void test_DiceRollIsCalledTwice() {
+        DicePanel dicePanel = new DicePanel(boardController);
+
+        JButton btnRollDice = new JButton();
+        btnRollDice.addActionListener(dicePanel);
+
+        //Simulates a click on the Roll Dice button in the Dice Panel class.
+        dicePanel.actionPerformed(new ActionEvent(btnRollDice, ActionEvent.ACTION_PERFORMED, ""));
+
+        Dice dice1 = boardController.getDice1();
+        Dice dice2 = boardController.getDice2();
+
+        boardController.rollDices();
+
+        //Checks that both Dice objects roll method has been called after BoardController.rollDices() is called.
+        assertTrue(dice1.roll() > 0);
+        assertTrue(dice2.roll() > 0);
+    }
+
+
 
     /**
      * Demand ID: T1.0
@@ -78,8 +112,10 @@ public class TestSuite_Dice {
         JButton btnRollDice = new JButton();
         btnRollDice.addActionListener(dicePanel);
 
+        //Simulates a click on the Roll Dice button in the Dice Panel class.
         dicePanel.actionPerformed(new ActionEvent(btnRollDice, ActionEvent.ACTION_PERFORMED, ""));
 
+        //Confirm that the BoardController.rollDices() method has been called.
         assertTrue(boardController.rollDices() > 0);
     }
 

@@ -180,6 +180,7 @@ public class BoardController {
 
 
 
+
     private class Movement extends Thread {
         int diceRoll;
         int flag = 0;
