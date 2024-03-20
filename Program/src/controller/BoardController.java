@@ -19,6 +19,8 @@ public class BoardController {
     private MainPanel mainPanel;
     private PlayerList playerList;
     private EventManager eventManager;
+    private int roll1;
+    private int roll2;
 
     public BoardController() {
         this.dice1 = new Dice();
@@ -47,14 +49,18 @@ public class BoardController {
     }
 
     public int rollDices(){
-        int roll1 = dice1.roll();
-        int roll2 = dice2.roll();
+        roll1 = dice1.roll();
+        roll2 = dice2.roll();
         setDiceImages();
 
-        if (roll1 == roll2) {
-            return (roll1 + roll2) * 2;
+        return checkIfDouble(roll1, roll2);
+    }
+
+    public int checkIfDouble(int roll1Value, int roll2Value){
+        if (roll1Value == roll2Value) {
+            return ((roll1Value + roll2Value) * 2);
         }
-        return roll1 + roll2;
+        return roll1Value + roll2Value;
     }
 
     public int getDiceSum(){
@@ -143,6 +149,36 @@ public class BoardController {
     public EventPanel getEventPanel(){
         return mainPanel.getEventPanel();
     }
+    public Dice getDice1() {
+        return dice1;
+    }
+    public Dice getDice2() {
+        return dice2;
+    }
+    public void setDice1(Dice dice1) {
+        this.dice1 = dice1;
+    }
+    public void setDice2(Dice dice2) {
+        this.dice2 = dice2;
+    }
+
+    public int getRoll1() {
+        return roll1;
+    }
+
+    public void setRoll1(int roll1) {
+        this.roll1 = roll1;
+    }
+
+    public int getRoll2() {
+        return roll2;
+    }
+
+    public void setRoll2(int roll2) {
+        this.roll2 = roll2;
+    }
+
+
 
     private class Movement extends Thread {
         int diceRoll;
