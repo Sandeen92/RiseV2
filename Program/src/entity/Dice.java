@@ -26,4 +26,7 @@ public class Dice {
 	public ImageIcon getCurrentValueImage() {
         return currentValueImage;
     }
+    public ImageIcon[] getDiceImages() {
+        return diceImages;
+    }
 }

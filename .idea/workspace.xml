@@ -5,9 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="369cbea7-d726-43f1-931c-763e77531bfd" name="Changes" comment="..">
-      <change afterPath="$PROJECT_DIR$/Program/src/Theodor_TestSuites/TestSuite_Dice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/RiseV2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/RiseV2.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program/src/Theodor_TestSuites/TestSuite_Dice.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/Theodor_TestSuites/TestSuite_Dice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program/src/entity/Dice.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/entity/Dice.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +45,8 @@
     "Downloaded.Files.Path.Enabled": "false",
     "Repository.Attach.Annotations": "false",
     "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false"
+    "Repository.Attach.Sources": "false",
+    "settings.editor.selected.configurable": "editor.preferences.smartKeys"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -152,6 +154,10 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/RiseV2$TestSuite_IN_Demands.ic" NAME="TestSuite_IN_Demands Coverage Results" MODIFIED="1710887433613" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
