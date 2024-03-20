@@ -6,11 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="369cbea7-d726-43f1-931c-763e77531bfd" name="Changes" comment="..">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program/src/Theodor_TestSuites/TestSuite_Dice.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/Theodor_TestSuites/TestSuite_Dice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program/src/controller/BoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/controller/BoardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/Theodor_TestSuites/TestSuite_Dice.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/Theodor_TestSuites/TestSuite_Dice.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/controller/BoardController$Movement.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/controller/BoardController$Movement.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/controller/BoardController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/controller/BoardController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program/src/Theodor_TestSuites/TestSuite_RankSpecific.java" beforeDir="false" afterPath="$PROJECT_DIR$/Program/src/Theodor_TestSuites/TestSuite_RankSpecific.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiseV2/Theodor_TestSuites/TestSuite_RankSpecific.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiseV2/Theodor_TestSuites/TestSuite_RankSpecific.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,23 +38,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.GameClient.executor": "Run",
-    "Application.GameServer.executor": "Run",
-    "Application.LanController.executor": "Run",
-    "Application.StartingScreen.executor": "Run",
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "last_opened_file_path": "C:/Users/theod/Dependencies/byte-buddy-1.14.12.jar",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "editor.preferences.smartKeys"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.GameClient.executor&quot;: &quot;Run&quot;,
+    &quot;Application.GameServer.executor&quot;: &quot;Run&quot;,
+    &quot;Application.LanController.executor&quot;: &quot;Run&quot;,
+    &quot;Application.StartingScreen.executor&quot;: &quot;Run&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/theod/Dependencies/byte-buddy-1.14.12.jar&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.smartKeys&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\simon\Desktop\RiseV2\Program" />
@@ -172,11 +169,14 @@
     <SUITE FILE_PATH="coverage/RiseV2$TestSuite_IN_Demands.ic" NAME="TestSuite_IN_Demands Coverage Results" MODIFIED="1710887433613" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>TestSuites_by_Theodor.*</FILTER>
     </SUITE>
+    <SUITE FILE_PATH="coverage/RiseV2$TestSuite_RankSpecific.ic" NAME="TestSuite_RankSpecific Coverage Results" MODIFIED="1710949938548" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>Theodor_TestSuites.*</FILTER>
+    </SUITE>
     <SUITE FILE_PATH="coverage/RiseV2$TestSuites.ic" NAME="TestSuites Coverage Results" MODIFIED="1710855640022" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/RiseV2$GameClient.ic" NAME="GameClient Coverage Results" MODIFIED="1710850988505" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>entity.lan.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/RiseV2$TestSuite_Dice.ic" NAME="TestSuite_Dice Coverage Results" MODIFIED="1710946320645" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/RiseV2$TestSuite_Dice.ic" NAME="TestSuite_Dice Coverage Results" MODIFIED="1710947222256" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>Theodor_TestSuites.*</FILTER>
     </SUITE>
   </component>
