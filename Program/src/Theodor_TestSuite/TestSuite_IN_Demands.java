@@ -1,12 +1,10 @@
-package TestSuites_by_Theodor;
+package Theodor_TestSuite;
 
 import controller.LanController;
 import controller.StartingScreen;
 import entity.lan.GameServer;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.jupiter.api.BeforeAll;
-import org.mockito.Mockito;
 
 
 import javax.swing.*;
