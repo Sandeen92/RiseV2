@@ -49,7 +49,7 @@ public class Dice extends JPanel implements ActionListener {
 	private int diceWidth = (screenSize.width) / 20;
 	private int diceHeight = (screenSize.height) / 10;
 	private int roll;
-
+	private CheatGui cheat = new CheatGui(this);
 	
 	
 	/**
@@ -114,7 +114,7 @@ public class Dice extends JPanel implements ActionListener {
 
 		btnRollDice.addActionListener(this);
 
-		faceToShow = new ImageIcon("DicePictures/faceValue1White.png");
+		faceToShow = new ImageIcon("Program/DicePictures/faceValue1White.png");
 		resizedImage = faceToShow.getImage().getScaledInstance(diceWidth, diceHeight, Image.SCALE_SMOOTH);
 		showDice = new ImageIcon(resizedImage);
 		lblDice2.setIcon(showDice);
@@ -124,7 +124,7 @@ public class Dice extends JPanel implements ActionListener {
 		btnEndTurn.addActionListener(this);
 
 		add(btnEndTurn);
-//		add(cheat); //Enable for testing with cheater.
+		add(cheat); //Enable for testing with cheater.
 		btnEndTurn.setEnabled(false);
 	}
 
@@ -141,27 +141,27 @@ public class Dice extends JPanel implements ActionListener {
 
 			switch (faceValueDiceOne) {
 			case 1:
-				faceToShow = new ImageIcon("DicePictures/faceValue1White.png");
+				faceToShow = new ImageIcon("Program/DicePictures/faceValue1White.png");
 				break;
 
 			case 2:
-				faceToShow = new ImageIcon("DicePictures/faceValue2White.png");
+				faceToShow = new ImageIcon("Program/DicePictures/faceValue2White.png");
 				break;
 
 			case 3:
-				faceToShow = new ImageIcon("DicePictures/faceValue3White.png");
+				faceToShow = new ImageIcon("Program/DicePictures/faceValue3White.png");
 				break;
 
 			case 4:
-				faceToShow = new ImageIcon("DicePictures/faceValue4White.png");
+				faceToShow = new ImageIcon("Program/DicePictures/faceValue4White.png");
 				break;
 
 			case 5:
-				faceToShow = new ImageIcon("DicePictures/faceValue5White.png");
+				faceToShow = new ImageIcon("Program/DicePictures/faceValue5White.png");
 				break;
 
 			case 6:
-				faceToShow = new ImageIcon("DicePictures/faceValue6White.png");
+				faceToShow = new ImageIcon("Program/DicePictures/faceValue6White.png");
 				break;
 			}
 
@@ -171,27 +171,27 @@ public class Dice extends JPanel implements ActionListener {
 
 			switch (faceValueDiceTwo) {
 			case 1:
-				faceToShow = new ImageIcon("DicePictures/faceValue1White.png");
+				faceToShow = new ImageIcon("Program/DicePictures/faceValue1White.png");
 				break;
 
 			case 2:
-				faceToShow = new ImageIcon("DicePictures/faceValue2White.png");
+				faceToShow = new ImageIcon("Program/DicePictures/faceValue2White.png");
 				break;
 
 			case 3:
-				faceToShow = new ImageIcon("DicePictures/faceValue3White.png");
+				faceToShow = new ImageIcon("Program/DicePictures/faceValue3White.png");
 				break;
 
 			case 4:
-				faceToShow = new ImageIcon("DicePictures/faceValue4White.png");
+				faceToShow = new ImageIcon("Program/DicePictures/faceValue4White.png");
 				break;
 
 			case 5:
-				faceToShow = new ImageIcon("DicePictures/faceValue5White.png");
+				faceToShow = new ImageIcon("Program/DicePictures/faceValue5White.png");
 				break;
 
 			case 6:
-				faceToShow = new ImageIcon("DicePictures/faceValue6White.png");
+				faceToShow = new ImageIcon("Program/DicePictures/faceValue6White.png");
 				break;
 			}
 
@@ -248,6 +248,7 @@ public class Dice extends JPanel implements ActionListener {
 			
 			eastSidePnl.addPlayerList(playerList);
 			eastSidePnl.setTab();
+			westSidePnl.getEventPanel().resetEventPanel();
 		}
 
 	}
@@ -358,5 +359,10 @@ public class Dice extends JPanel implements ActionListener {
 			westSidePnl.append("Passed Go and received 200 GC\n");
 			playerList.getActivePlayer().resetPassedGo();
 		}
+	}
+
+	//this is to get the end turn button to make sure we can test if it's clicked
+	public JButton getBtnEndTurn(){
+		return btnEndTurn;
 	}
 }

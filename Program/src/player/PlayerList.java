@@ -1,5 +1,7 @@
 package player;
 
+import java.awt.Color;
+import java.awt.Image;
 import java.util.LinkedList;
 
 import javax.swing.ImageIcon;
@@ -30,7 +32,6 @@ public class PlayerList {
 	 */
 	public PlayerList(EastSidePanel p) {
 		currentPlayer = 0;  
-		
 	}
 	
 	/**
@@ -120,5 +121,4 @@ public class PlayerList {
 			currentPlayer = 0; 
 		}	
 	}
-
 }
